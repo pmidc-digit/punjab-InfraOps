@@ -1082,7 +1082,7 @@ fluent-bit:
 # es-v1-cluster >>>>>>>>>>>>>>>>>>>>>>>>>>>>
 elasticsearch-data-v1:
   replicas: 3
-  storage-size: 50Gi
+  storage-size: 100Gi
   images:
     - egovio/elasticsearch-v1:6.4.2
   persistence:
