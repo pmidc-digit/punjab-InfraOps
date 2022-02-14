@@ -902,20 +902,19 @@ fluent-bit:
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 # es-v1-cluster >>>>>>>>>>>>>>>>>>>>>>>>>>>>
-elasticsearch-data-v1:
+s-data-v1:
   replicas: 3
-  image:
-    tag: 6.4.2
-  persistence:
-    enabled: true
-    dataDirSize: "40Gi"
-    aws:
-    - volumeId: "vol-0f2c986e3af53a457"
-      zone: ap-south-1a
-    - volumeId: "vol-043e0533d690c3b85"
-      zone: ap-south-1b
-    - volumeId: "vol-0d3ac7434406aec79"
-      zone: ap-south-1c
+  storage-size: 40Gi
+  images:
+    - egovio/elasticsearch-v1:6.4.2
+  ebs-volumes:
+    - "vol-0f2c986e3af53a457"
+    - "vol-043e0533d690c3b85"
+    - "vol-0d3ac7434406aec79"
+  zones:
+    - ap-south-1a
+    - ap-south-1b
+    - ap-south-1c
   network-host: "_eth0:ipv4_"
 
 es-client-v1:
