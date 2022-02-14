@@ -904,9 +904,11 @@ fluent-bit:
 # es-v1-cluster >>>>>>>>>>>>>>>>>>>>>>>>>>>>
 elasticsearch-data-v1:
   replicas: 3
-  storage-size: 40Gi
-  images:
-    - egovio/elasticsearch-v1:6.4.2
+  image:
+    tag: 6.4.2
+  persistence:
+    enabled: true
+    dataDirSize: "40Gi"
   ebs-volumes:
     - "vol-0f2c986e3af53a457"
     - "vol-043e0533d690c3b85"
