@@ -902,7 +902,7 @@ fluent-bit:
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 # es-v1-cluster >>>>>>>>>>>>>>>>>>>>>>>>>>>>
-s-data-v1:
+es-data-v1:
   replicas: 3
   storage-size: 40Gi
   images:
