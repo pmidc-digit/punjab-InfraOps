@@ -910,11 +910,11 @@ elasticsearch-data-v1:
     enabled: true
     dataDirSize: "40Gi"
     aws:
-    - volumeId: "vol-0f2c986e3af53a457"
+    - volumeId: "vol-087f90bdd97514840"
       zone: ap-south-1a
-    - volumeId: "vol-043e0533d690c3b85"
+    - volumeId: "vol-0f6767f1ff714df51"
       zone: ap-south-1b
-    - volumeId: "vol-0d3ac7434406aec79"
+    - volumeId: "vol-00ecb7a9a48dd23dc"
       zone: ap-south-1c
 
 es-client-v1:
