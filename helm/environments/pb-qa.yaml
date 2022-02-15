@@ -931,7 +931,7 @@ elasticsearch-master-v1:
     enabled: true
     dataDirSize: "2Gi"
     aws:
-    - volumeId: "vol-00ecb7a9a48dd23dc"
+    - volumeId: "vol-0a389b31e7d0893bf"
       zone: ap-south-1a
     - volumeId: "vol-0a6b6566a70baebed"
       zone: ap-south-1b
