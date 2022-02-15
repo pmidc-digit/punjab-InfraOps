@@ -914,7 +914,7 @@ elasticsearch-data-v1:
       zone: ap-south-1a
     - volumeId: "vol-0f6767f1ff714df51"
       zone: ap-south-1b
-    - volumeId: "vol-00ecb7a9a48dd23dc"
+    - volumeId: "vol-0df39b735d310309c"
       zone: ap-south-1c
 
 es-client-v1:
