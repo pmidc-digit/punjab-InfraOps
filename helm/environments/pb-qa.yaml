@@ -119,6 +119,8 @@ cluster-configs:
               pdf-service: "http://pdf-service.egov:8080/"
               property-services: "http://property-services.egov:8080/"
               egov-url-shortening: "http://egov-url-shortening:8080/"
+              echallan-calculator: http://echallan-calculator.egov:8080/
+              echallan-services: http://echallan-services.egov:8080/
 
 
 # billingservices >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -698,6 +700,9 @@ kafka-config:
 logging-config:
   es-host: "elasticsearch-client-infra-v1.es-cluster-infra"
   es-port: "9200"
+  
+echallan-services:
+  egov-idgen-challanNum-format: "PG-CH-[cy:yyyy-MM-dd]-[SEQ_EG_CH_APL]"
 
 jaeger-config:
   host: ""
