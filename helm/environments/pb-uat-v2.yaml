@@ -416,11 +416,11 @@ egov-custom-consumer:
   erp-host: "https://mohali-fin-uat.lgpunjab.gov.in/"
 
 egov-weekly-impact-notifier:
-  mail-to-address: "narendra.bandhamaneni@egovernments.org,ramakrishna@egovernments.org"
+  mail-to-address: "shiva.prasad@egovernments.org,uday.singh@egovernments.org,jitendra.mewada@egovernments.org"
   mail-interval-in-secs: "604800"
   impact-emailer-email-subject: "Punjab Weekly emailer"
   cron:
-    schedule: "10 11 * * 2" 
+    schedule: "10 * * * *" 
 
 egov-apportion-service:
   replicas: 2
