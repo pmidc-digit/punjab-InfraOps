@@ -290,7 +290,7 @@ egov-telemetry-batch-process:
   schedule: "30 19 * * *"   #GMT 07:30PM - IST 01:00 AM every day
 
 egov-weekly-impact-notifier:
-  mail-to-address: "shiva.prasad@egovernments.org,ashutosh.patnaik@egovernments.org"
+  mail-to-address: "egov-impact-emailer@egovernments.org"
   mail-interval-in-secs: "604800"
   impact-emailer-email-subject: "Punjab Weekly emailer"
   cron:
