@@ -998,9 +998,9 @@ kafka-v2:
   persistence:
     enabled: true
     aws:
-      - volumeId: "vol-07570b371125d0b99"
+      - volumeId: "vol-07df1a8ebaa3fefa6"
         zone: ap-south-1a
-      - volumeId: "vol-04e5445c934f26e47"
+      - volumeId: "vol-086ddd3495c82fdbf"
         zone: ap-south-1a
       - volumeId: "vol-0169fffd3d7503adb"
         zone: ap-south-1a
