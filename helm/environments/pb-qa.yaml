@@ -783,6 +783,12 @@ playground:
   replicas: 1
   images:
     - egovio/playground:v2
+  persistence:
+    enabled: true
+    dataDirSize: "50Gi"
+    aws:
+    - volumeId: "vol-066f39a09e31826ed"
+      zone: ap-south-1a  
 
 pgadmin:
   images:
