@@ -1182,7 +1182,7 @@ oauth2-proxy:
   config:
     configFile: |-
       email_domains = [ "*" ]
-      github_org = "pmidc-digit"
+      github_org = "eGovernments"
       github_team = "pb-prod,pb-uat,devops"
       upstreams = [ "file:///dev/null" ]
 
