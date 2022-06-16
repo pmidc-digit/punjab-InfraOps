@@ -994,13 +994,13 @@ kafka-v2:
   min-insync-replicas: "1"
   default-replication-factor: "2"
   num-partitions: "3"
-  storage-size: "150Gi"
+  storage-size: "300Gi"
   persistence:
     enabled: true
     aws:
-      - volumeId: "vol-07570b371125d0b99"
+      - volumeId: "vol-07df1a8ebaa3fefa6"
         zone: ap-south-1a
-      - volumeId: "vol-04e5445c934f26e47"
+      - volumeId: "vol-086ddd3495c82fdbf"
         zone: ap-south-1a
       - volumeId: "vol-0169fffd3d7503adb"
         zone: ap-south-1a
@@ -1182,7 +1182,7 @@ oauth2-proxy:
   config:
     configFile: |-
       email_domains = [ "*" ]
-      github_org = "egovernments"
+      github_org = "eGovernments"
       github_team = "pb-prod,pb-uat,devops"
       upstreams = [ "file:///dev/null" ]
 
