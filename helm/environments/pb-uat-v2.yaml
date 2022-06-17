@@ -1094,8 +1094,8 @@ oauth2-proxy:
   config:
     configFile: |-
       email_domains = [ "*" ]
-      github_org = "pmidc-digit"
-      github_team = "pb-uat,devops,pb-prod"
+      github_org = "egovernments"
+      github_team = "pb-uat,devops"
       upstreams = [ "file:///dev/null" ]
 
 # eGov-Finance Tenants
