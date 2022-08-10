@@ -490,7 +490,7 @@ dashboard-analytics:
   config-schema-paths: "file:///work-dir/punjab-rainmaker-customization/configs/egov-dss-dashboards/dashboard-analytics/*.json"
   initContainers:
     gitSync:
-        repo: "git@github.com:egovernments/punjab-rainmaker-customization"Screenshot from 2022-08-10 16-19-39
+        repo: "git@github.com:egovernments/punjab-rainmaker-customization"
         branch: "UAT_V2"        
 
 dashboard-ingest:
