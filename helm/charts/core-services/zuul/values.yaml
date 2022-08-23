@@ -145,4 +145,11 @@ env: |
         key: redis-host   
   {{- else }}
     value: "redis.backbone"
+  {{- end }}   
+  - name: KAFKA_CONFIG_BOOTSTRAP_SERVER_CONFIG     
+  {{- if index .Values "cluster-configs" "configmaps" "egov-config" "data" "kafka-infra-brokers" }}
+    valueFrom:                                                                                                                                                                                         
+      configMapKeyRef:                                                                                                                                                                                 
+        key: kafka-infra-brokers                                                                                                                                                                            
+        name: egov-config
   {{- end }}
