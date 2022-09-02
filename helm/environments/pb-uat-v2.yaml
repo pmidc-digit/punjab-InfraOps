@@ -725,6 +725,7 @@ collection-services:
   spring-datasource-tomcat-max-active: "10"    
 # WnS >>>>>>>>>>>>>>>>>>>>>>>>>>>>
 ws-services:
+  notification-sms-enabled: "true"
   replicas: 3
   java-args: "-Dspring.profiles.active=production"
   heap: "-Xmx512m -Xms512m"
