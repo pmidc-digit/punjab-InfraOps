@@ -1000,8 +1000,8 @@ kafka-v2:
     dataDirSize: "550Gi"
     enabled: true
     aws:
-    #  - volumeId: "vol-0d80250fa1c312e9c"
-      - volumeId: "vol-02fe2f3d6d3780e47"
+      - volumeId: "vol-0d80250fa1c312e9c"
+      #- volumeId: "vol-02fe2f3d6d3780e47"
         zone: ap-south-1a
       - volumeId: "vol-043235593747edc5c"
         zone: ap-south-1a
