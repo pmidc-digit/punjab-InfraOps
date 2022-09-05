@@ -150,6 +150,6 @@ env: |
   - name: SPRING_KAFKA_BOOTSTRAP_SERVERS                                                                                                                                        
     valueFrom:                                                                                                                                                                                 
       configMapKeyRef:                                                                                                                                                                      
-        key: kafka-brokers                                                                                                                                                            
+        key: kafka-infra-brokers                                                                                                                                                            
         name: egov-config
   {{- end }}
