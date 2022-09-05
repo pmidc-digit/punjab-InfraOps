@@ -1136,6 +1136,7 @@ elasticsearch-data-infra-v1:
     - egovio/elasticsearch-v1:6.4.2
   persistence:
     enabled: true
+    dataDirSize: "150Gi"
     aws:
       - volumeId: "vol-047d4978f8d258cf6"
         zone: ap-south-1a
