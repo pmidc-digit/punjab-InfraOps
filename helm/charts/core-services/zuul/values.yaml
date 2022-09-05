@@ -147,9 +147,9 @@ env: |
     value: "redis.backbone"
   {{- end }}   
   {{- if index .Values "cluster-configs" "configmaps" "egov-config" "data" "kafka-infra-brokers" }}
-  - name: KAFKA_CONFIG_BOOTSTRAP_SERVER_CONFIG                                                                                                                                        
+  - name: SPRING_KAFKA_BOOTSTRAP_SERVERS                                                                                                                                        
     valueFrom:                                                                                                                                                                                 
       configMapKeyRef:                                                                                                                                                                      
-        key: kafka-infra-brokers                                                                                                                                                            
+        key: kafka-brokers                                                                                                                                                            
         name: egov-config
   {{- end }}
