@@ -1085,11 +1085,11 @@ fluent-bit:
 # es-v1-cluster >>>>>>>>>>>>>>>>>>>>>>>>>>>>
 elasticsearch-data-v1:
   replicas: 3
-  #storage-size: 100Gi
+  storage-size: 100Gi
   images:
     - egovio/elasticsearch-v1:6.4.2
   persistence:
-    dataDirSize: "100Gi"
+    #dataDirSize: "100Gi"
     enabled: true
     aws:
       - volumeId: "vol-0aa49c70c4d3c7eae"
