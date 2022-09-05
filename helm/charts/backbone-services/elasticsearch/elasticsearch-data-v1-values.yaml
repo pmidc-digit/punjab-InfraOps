@@ -135,7 +135,7 @@ podSecurityPolicy:
 
 persistence:
   enabled: true
-  dataDirSize: "25Gi"
+  dataDirSize: "50Gi"
   annotations: {}
 
 extraVolumes: []
