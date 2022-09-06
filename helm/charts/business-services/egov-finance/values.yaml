@@ -20,8 +20,8 @@ resources: |
     memory: "3Gi"
   requests:
     memory: "3Gi"
-min-pool-connection: "200"
-max-pool-connection: "200"
+min-pool-connection: "100"
+max-pool-connection: "100"
 collection-version: V2
 
 env: |
