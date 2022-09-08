@@ -126,9 +126,7 @@ spec:
         - sh
         - -exc
         - |
-          export KAFKA_BROKER_ID=${HOSTNAME##*-} && \
-          export KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://${POD_NAME}.{{ template "name" . }}-headless.${POD_NAMESPACE}:9092,EXTERNAL://${HOST_IP}:$((31090 + ${KAFKA_BROKER_ID})) && \
-          exec /etc/confluent/docker/run
+          tail -f /dev/null
         lifecycle:
           preStop:
             exec:
