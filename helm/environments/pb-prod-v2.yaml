@@ -995,9 +995,9 @@ kafka-v2:
   min-insync-replicas: "1"
   default-replication-factor: "2"
   num-partitions: "3"
-  #storage-size: "550Gi"
+  storage-size: "550Gi"
   persistence:
-    dataDirSize: "550Gi"
+    #dataDirSize: "550Gi"
     enabled: true
     aws:
       - volumeId: "vol-0d80250fa1c312e9c"
