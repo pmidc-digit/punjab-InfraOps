@@ -1038,12 +1038,13 @@ kafka-v2-infra:
 # zookeeper-v2 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 zookeeper-v2:
   replicas: 3
-  storage-size: 5Gi
+  #storage-size: 5Gi
   images:
     - confluentinc/cp-zookeeper:5.2.2
   zookeeper-servers: "zookeeper-v2-0.zookeeper-v2-headless.zookeeper-cluster:2888:3888;zookeeper-v2-1.zookeeper-v2-headless.zookeeper-cluster:2888:3888;zookeeper-v2-2.zookeeper-v2-headless.zookeeper-cluster:2888:3888"
   heap: "-Xms256M -Xmx256M"
   persistence:
+    dataDirSize: "5Gi"
     enabled: true
     aws:
       - volumeId: "vol-076b5d24d1964430b"
