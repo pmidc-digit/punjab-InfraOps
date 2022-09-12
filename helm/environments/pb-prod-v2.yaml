@@ -1134,11 +1134,11 @@ kibana-v1:
 # es-infra-v1-cluster >>>>>>>>>>>>>>>>>>>>>>>>>>>>
 elasticsearch-data-infra-v1:
   replicas: 3
-  #storage-size: 150Gi
+  storage-size: 150Gi
   images:
     - egovio/elasticsearch-v1:6.4.2
   persistence:
-    dataDirSize: 150Gi
+    #dataDirSize: 150Gi
     enabled: true
     #dataDirSize: "150Gi"
     aws:
