@@ -505,14 +505,14 @@ egov-user-enc:
   db-url: "jdbc:postgresql://pb-prod-v2-db-new.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com:5432/egov_prod_db?currentSchema=case_management"   
 
 pdf-service:
-  replicas: 2
+  replicas: 5
   resources: |
     limits:
       cpu: 600m
-      memory: 512Mi
+      memory: 3Gi
     requests:
       cpu: 300m
-      memory: 512Mi   
+      memory: 3Gi   
   initContainers:
     gitSync:
       repo: "git@github.com:egovernments/punjab-rainmaker-customization"
