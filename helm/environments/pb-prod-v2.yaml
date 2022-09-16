@@ -963,12 +963,12 @@ pgadmin:
     - egovio/pgadmin:v0.1
 
 pgadmin-config:
-  host: "pb-prod-v2-db-new.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com"
+  dbUrl: "pb-prod-v2-db-new.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com"
+  port: "5432"
+  environment: "PBPROD_V2"
+  maintenance-db-name: "egov_prod_db"
   db-admin-username: "egovprod"
   db-read-username: "pbprod_readonly"
-  port: "5432"
-  env: "PBPROD_V2"
-  maintenance-db-name: "egov_prod_db"
 
 egov-enc-service:
   replicas: 3
