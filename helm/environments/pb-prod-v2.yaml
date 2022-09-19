@@ -958,7 +958,7 @@ playground:
   images:
     - egovio/playground:v2
 
-pgadmin-config:
+pgadmin:
   dbUrl: "pb-prod-v2-db-new.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com"
   port: "5432"
   environment: "PBPROD_V2"
