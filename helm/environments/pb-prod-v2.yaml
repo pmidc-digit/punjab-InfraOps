@@ -963,8 +963,8 @@ pgadmin-config:
   port: "5432"
   environment: "PBPROD_V2"
   maintenance-db-name: "egov_prod_db"
-  db-admin-username: "pb_prod_pg_admin@egovernments.org"
-  db-read-username: "pb_prod_pg_read@egovernments.org"
+  db-admin-username: "egovprod"
+  db-read-username: "pbprod_readonly"
 
 egov-enc-service:
   replicas: 3
