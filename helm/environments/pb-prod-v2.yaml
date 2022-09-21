@@ -1136,7 +1136,7 @@ elasticsearch-data-infra-v1:
   persistence:
     #dataDirSize: 200Gi
     enabled: true
-    #dataDirSize: "200Gi"
+    dataDirSize: "200Gi"
     aws:
       - volumeId: "vol-047d4978f8d258cf6"
         zone: ap-south-1a
