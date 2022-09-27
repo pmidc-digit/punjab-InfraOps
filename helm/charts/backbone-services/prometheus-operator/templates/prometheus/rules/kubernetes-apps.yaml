@@ -142,20 +142,4 @@ spec:
       for: 1h
       labels:
         severity: warning
-    - alert: KubeJobCompletion
-      annotations:
-        message: Job {{`{{`}} $labels.namespace {{`}}`}}/{{`{{`}} $labels.job_name {{`}}`}} is taking more than one hour to complete.
-        runbook_url: {{ .Values.defaultRules.runbookUrl }}alert-name-kubejobcompletion
-      expr: kube_job_spec_completions{job="kube-state-metrics", namespace=~"{{ $targetNamespace }}"} - kube_job_status_succeeded{job="kube-state-metrics", namespace=~"{{ $targetNamespace }}"}  > 0
-      for: 1h
-      labels:
-        severity: warning
-    - alert: KubeJobFailed
-      annotations:
-        message: Job {{`{{`}} $labels.namespace {{`}}`}}/{{`{{`}} $labels.job_name {{`}}`}} failed to complete.
-        runbook_url: {{ .Values.defaultRules.runbookUrl }}alert-name-kubejobfailed
-      expr: kube_job_status_failed{job="kube-state-metrics", namespace=~"{{ $targetNamespace }}"}  > 0
-      for: 1h
-      labels:
-        severity: warning
 {{- end }}
