@@ -425,7 +425,7 @@ egov-weekly-impact-notifier:
   mail-interval-in-secs: "604800"
   impact-emailer-email-subject: "Punjab Weekly emailer"
   cron:
-    schedule: "45 * * * *"    #GMT 3AM - IST 08:30 AM every Friday 
+    schedule: "15 * * * 4"    #GMT 3AM - IST 08:30 AM every Friday 
 
 
 egov-apportion-service:
