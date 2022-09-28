@@ -422,10 +422,10 @@ egov-custom-consumer:
 
 egov-weekly-impact-notifier:
   mail-to-address: "shiva.prasad@egovernments.org"
-  mail-interval-in-secs: "604800000"
+  mail-interval-in-secs: "604800"
   impact-emailer-email-subject: "Punjab Weekly emailer"
   cron:
-    schedule: "15 * * * *"    #GMT 3AM - IST 08:30 AM every Friday 
+    schedule: "45 * * * *"    #GMT 3AM - IST 08:30 AM every Friday 
 
 
 egov-apportion-service:
