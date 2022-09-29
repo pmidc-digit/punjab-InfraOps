@@ -142,11 +142,11 @@ billing-service:
   resources: |
     limits:
       cpu: 500m
-      memory: 600Mi
+      memory: 2Gi
     requests:
       cpu: 500m
-      memory: 600Mi  
-  heap: "-Xmx400m -Xms400m -XX:TieredStopAtLevel=1"
+      memory: 2Gi  
+  heap: "-Xmx500m -Xms500m -XX:TieredStopAtLevel=1"
   java-args: "-Dspring.profiles.active=production"
   server-tomcat-max-threads: "30"
   server-tomcat-max-connections: "1500"
