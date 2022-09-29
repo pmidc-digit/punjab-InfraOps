@@ -323,8 +323,8 @@ xstate-chatbot:
 
 egov-mdms-service:
   replicas: 3
-  memory_limits: 1Gi
-  heap: "-Xmx704m -Xms704m"  
+  memory_limits: 768Mi
+  heap: "-Xmx512m -Xms512m"  
   mdms-path: "/work-dir/punjab-mdms-data/data"
   initContainers:
     gitSync:
