@@ -83,8 +83,9 @@ persistence:
 resources: |
   requests:
     memory: {{ .Values.memory_limits | quote }}
-    cpu: 1000m
+    cpu: 900m
   limits:
+    cpu: 1200m
     memory: {{ .Values.memory_limits | quote }} 
 
 ## Custom pod annotations
