@@ -34,8 +34,8 @@ autoPurgeSnapRetainCount: 3
 autoPurgePurgeInterval: 24
 
 
-heapOptions: "-Xms704M -Xmx704M"
-memory_limits: 1408Mi
+heapOptions: "-Xms2506M -Xmx2506M"
+memory_limits: 2816Mi
 logDirs: "/opt/kafka-data/logs"
 listenerSecurity: "PLAINTEXT:PLAINTEXT,EXTERNAL:PLAINTEXT"
 lingerMs: "250"
@@ -83,7 +83,7 @@ persistence:
 resources: |
   requests:
     memory: {{ .Values.memory_limits | quote }}
-    cpu: 500m
+    cpu: 1000m
   limits:
     memory: {{ .Values.memory_limits | quote }} 
 
