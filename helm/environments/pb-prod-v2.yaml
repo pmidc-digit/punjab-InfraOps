@@ -852,8 +852,8 @@ egf-master:
 
 egf-instrument:
   replicas: 2
-  heap: "-Xmx256m -Xms256m"
-  memory_limits: "512Mi"
+  heap: "-Xmx512m -Xms512m"
+  memory_limits: "756Mi"
 
 egov-hrms:
   replicas: 2
@@ -972,10 +972,10 @@ egov-enc-service:
   resources: |
     limits:
       cpu: 300m
-      memory: 512Mi
+      memory: 756Mi
     requests:
       cpu: 300m
-      memory: 512Mi  
+      memory: 756Mi  
 #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 # kafka-v2 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>REMOVED-TEMP
