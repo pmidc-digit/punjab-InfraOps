@@ -198,8 +198,8 @@ egov-localization:
 
 egov-location:
   replicas: 3
-  memory_limits: 512Mi
-  heap: "-Xmx356m -Xms356m -XX:TieredStopAtLevel=1"
+  memory_limits: 756Mi
+  heap: "-Xmx512m -Xms512m -XX:TieredStopAtLevel=1"
   server-tomcat-max-threads: "10"
   server-tomcat-max-connections: "1500"  
 
