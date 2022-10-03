@@ -985,7 +985,7 @@ kafka-v2:
     - confluentinc/cp-kafka:5.2.2
   # Use chroot to reuse single zookeeper ensemble
   zookeeper-connect: "zookeeper-v2-headless.zookeeper-cluster:2181/kafka"
-  heap: "-Xms2506M -Xmx2506M -XX:TieredStopAtLevel=1"
+  heap: "-Xms3900M -Xmx3900M -XX:TieredStopAtLevel=1"
   offsets-topic-replication-factor: "3"
   linger-ms: "250"
   min-insync-replicas: "1"
