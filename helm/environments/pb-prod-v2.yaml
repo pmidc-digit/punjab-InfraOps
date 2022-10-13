@@ -1172,7 +1172,8 @@ kibana-infra-v1:
   server-basepath: "/kibana-infra"
 
 es-curator:
-  schedule: "30 17 * * *"
+  schedule: "45kubectl create job <your-new-job-name> --from=cronjob/<name-of-deployed-cron-job> -n <target namespace>
+ 18 * * *"
   images:
     - bobrik/curator:5.6.0
   es-host: "elasticsearch-client-infra-v1.es-cluster-infra"
