@@ -132,7 +132,7 @@ cluster-configs:
 
 # billingservices >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 billing-service:
-  replicas: 3
+  replicas: 1
   memory_limits: 512Mi
   resources: |
     limits:
@@ -189,7 +189,7 @@ egov-filestore:
   allowed-file-formats-map: "{jpg:{'image/jpg','image/jpeg'},jpeg:{'image/jpeg','image/jpg'},png:{'image/png'},pdf:{'application/pdf'},odt:{'application/vnd.oasis.opendocument.text'},ods:{'application/vnd.oasis.opendocument.spreadsheet'},docx:{'application/x-tika-msoffice','application/x-tika-ooxml','application/vnd.oasis.opendocument.text'},doc:{'application/x-tika-msoffice','application/x-tika-ooxml','application/vnd.oasis.opendocument.text'},dxf:{'text/plain'},csv:{'text/plain'},txt:{'text/plain'},xlsx:{'application/x-tika-ooxml','application/x-tika-msoffice'},xls:{'application/x-tika-ooxml','application/x-tika-msoffice'}}"
 
 egov-localization:
-  replicas: 3
+  replicas: 2
   heap: "-Xmx850m -Xms850m"
   server-tomcat-max-threads: "50"
   server-tomcat-max-connections: "1500"
@@ -201,7 +201,7 @@ egov-localization:
       memory: 1Gi 
 
 egov-location:
-  replicas: 3
+  replicas: 2
   memory_limits: 512Mi
   heap: "-Xmx356m -Xms356m -XX:TieredStopAtLevel=1"
   server-tomcat-max-threads: "10"
@@ -222,10 +222,10 @@ egov-notification-sms:
   sms-extra-req-params: ""
 
 egov-otp:
-  replicas: 2
+  replicas: 1
 
 egov-user:
-  replicas: 5
+  replicas: 3
   heap: "-Xmx756m -Xms756m -XX:TieredStopAtLevel=1"
   memory_limits: 1Gi
   otp-validation: "true"
@@ -345,7 +345,7 @@ egov-indexer:
   egov-indexer-yaml-repo-path: "file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/whatsapp-adoption-data.yaml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/chatbot-telemetry-v2.yaml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/billingservices-indexer.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/collection-indexer.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/egov-telemetry-indexer.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/egov-uploader-indexer.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/finance-rolloutadoption-indexer.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/rainmaker-pgr-indexer.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/rainmaker-pt-indexer.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/rainmaker-tl-indexer.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/payment-indexer.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/water-service.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/water-services-meter.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/sewerage-service.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/property-services.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/error-queue.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/payment-indexer.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/rainmaker-firenoc-indexer.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/payment-indexer-migration.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/property-services-migration-temp.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/covid-chatbot-telemetry.yaml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/chatbot-telemetry-v2.yaml"
 
 egov-workflow-v2:
-  replicas: 3
+  replicas: 2
   memory_limits: 756Mi
   heap: "-Xmx512m -Xms512m -XX:TieredStopAtLevel=1"
   java-args: "-Dspring.profiles.active=production"
@@ -355,7 +355,7 @@ egov-workflow-v2:
   wf-max-limit: "10000"
 
 egov-persister:
-  replicas: 2
+  replicas: 3
   persist-yml-path: "file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/pg-service-persister.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/pgr-v3-persister.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/property-services-persister.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/pt-calculator-v2-persister.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/pt-drafts-persister.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/tradelicense-persister.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/indexer-job-persister.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/tl-calculation-persister.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/tl-billing-slab-persister.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/hrms-employee-persister.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/egov-workflow-v2-persister.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/apportion-persister.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/assessment-persister-migration-temp.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/migration-batch-count-persister.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/property-services-migration-temp-config.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/collection-migration-persister.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/water-persist.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/water-meter.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/sewerage-persist.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/property-services-registry.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/property-services.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/pt-mutation-calculator-persister.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/assessment-persister.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/pdf-generator.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/pdf-filestoreid-update.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/egov-user-event-persister.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/firenoc_persiter.yaml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/firenoc-calculator-persister.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/egf-bill.yaml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/water-bill-scheduler.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/sewerage-bill-scheduler.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/echallan.yml"
   java-args: "-Dspring.profiles.active=production"
   initContainers:
@@ -403,7 +403,7 @@ telemetry:
     - egovio/telemetry
 
 egov-telemetry-kafka-streams:
-replicas: 2
+replicas: 1
 images:
   - egovio/egov-telemetry-kafka-streams
 
@@ -413,7 +413,7 @@ egov-telemetry-batch-process:
   schedule: "30 19 * * *"   #GMT 07:30PM - IST 01:00 AM every day
 
 egov-custom-consumer:
-  replicas: 2
+  replicas: 1
   erp-host: "https://mohali-fin-uat.lgpunjab.gov.in/"
 
 egov-weekly-impact-notifier:
@@ -424,7 +424,7 @@ egov-weekly-impact-notifier:
     schedule: "10 * * * *" 
 
 egov-apportion-service:
-  replicas: 2
+  replicas: 1
   memory_limits: 512Mi
   heap: -Xmx256m -Xms256m
   java-args: "-Dspring.profiles.active=production"
@@ -463,7 +463,7 @@ redoc:
 # gateway >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 zuul:
-  replicas: 3
+  replicas: 2
   custom-filter-property: "true"
   prehook-config: "https://raw.githubusercontent.com/egovernments/punjab-rainmaker-customization/UAT_V2/configs/egov-zuul/pre-hook.json"
   posthook-config: "https://raw.githubusercontent.com/egovernments/punjab-rainmaker-customization/UAT_V2/configs/egov-zuul/post-hook.json"
@@ -589,7 +589,7 @@ rainmaker-custom-service:
   debug-mode: "true"
   node-env: "development"
 
-employee-tradelicence:
+employee-tradelicence:https://docs.google.com/spreadsheets/d/1RPvh4yVCxELLJHN9FFshkl413snjavc4vZFT3Oa4bXQ/edit#gid=0
   SUBFILTER: "YES"
   TL_ULB_JS_URL: "https://s3.ap-south-1.amazonaws.com/pb-egov-assets/tl-qa-ulb-override.js"
 
@@ -648,7 +648,7 @@ pt-services-v2:
   pt-userevents-pay-link: "citizen/otpLogin?mobileNo=$mobile&redirectTo=egov-common/pay?consumerCode=$applicationNo&tenantId=$tenantId"
 
 property-services:
-  replicas: 4
+  replicas: 2
   heap: "-Xmx384m -Xms384m -XX:TieredStopAtLevel=1"
   memory_limits: "756Mi"
   server-tomcat-max-threads: "15"
@@ -677,7 +677,7 @@ pt-calculator-v2:
 
 
 tl-services:
-  replicas: 3
+  replicas: 2
   heap: "-Xmx192m -Xms192m -XX:TieredStopAtLevel=1"
   memory_limits: 384Mi
   server-tomcat-max-threads: "35"
@@ -693,7 +693,7 @@ tl-services:
 
 
 tl-calculator:
-  replicas: 3
+  replicas: 2
   heap: "-Xmx192m -Xms192m -XX:TieredStopAtLevel=1"
   server-tomcat-max-threads: "35"
   server-tomcat-max-connections: "1500"
@@ -705,7 +705,7 @@ tl-calculator:
 # Collections >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 collection-services:
-  replicas: 3
+  replicas: 2
   resources: |
     limits:
       cpu: 500m
@@ -732,7 +732,7 @@ ws-services:
   is-external-workflow-enabled: "true"
 
 ws-calculator:
-  replicas: 3
+  replicas: 2
   java-args: "-Dspring.profiles.active=production"
   heap: "-Xmx512m -Xms512m"
 
@@ -878,7 +878,7 @@ pgadmin-config:
   maintenance-db-name: "egov_prod_db"
 
 egov-enc-service:
-  replicas: 3
+  replicas: 1
   state-level-tenant-id: "pb"
   resources: |
     limits:
