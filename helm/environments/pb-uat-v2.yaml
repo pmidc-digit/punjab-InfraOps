@@ -589,7 +589,7 @@ rainmaker-custom-service:
   debug-mode: "true"
   node-env: "development"
 
-employee-tradelicence:https://docs.google.com/spreadsheets/d/1RPvh4yVCxELLJHN9FFshkl413snjavc4vZFT3Oa4bXQ/edit#gid=0
+employee-tradelicence:
   SUBFILTER: "YES"
   TL_ULB_JS_URL: "https://s3.ap-south-1.amazonaws.com/pb-egov-assets/tl-qa-ulb-override.js"
 
