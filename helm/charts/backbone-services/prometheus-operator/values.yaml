@@ -391,11 +391,11 @@ alertmanager:
     ##
     resources: 
       requests:
-        memory: 400Mi
-        cpu: 500m
+        memory: 3800Mi
+        cpu: 1000m
       limits:
-        memory: 512Mi  
-        cpu: 500m
+        memory: 3800Mi  
+        cpu: 1000m
 
     ## Pod anti-affinity can prevent the scheduler from placing Prometheus replicas on the same node.
     ## The default value "soft" means that the scheduler should *prefer* to not schedule two replica pods onto the same node but no guarantee is provided.
@@ -1271,11 +1271,11 @@ prometheusOperator:
 
   ## Set the prometheus config reloader side-car CPU limit
   ##
-  configReloaderCpu: 100m
+  configReloaderCpu: 400m
 
   ## Set the prometheus config reloader side-car memory limit
   ##
-  configReloaderMemory: 25Mi
+  configReloaderMemory: 100Mi
 
   ## Hyperkube image to use when cleaning up
   ##
@@ -1727,11 +1727,11 @@ prometheus:
     ##   
     resources:
       requests:
-        memory: 1536Mi
-        cpu: 750m
+        memory: 2536Mi
+        cpu: 1000m
       limits:
-        memory: 1536Mi
-        cpu: "1"
+        memory: 2536Mi
+        cpu: 1000m
 
     ## Prometheus StorageSpec for persistent data
     ## ref: https://github.com/coreos/prometheus-operator/blob/master/Documentation/user-guides/storage.md
