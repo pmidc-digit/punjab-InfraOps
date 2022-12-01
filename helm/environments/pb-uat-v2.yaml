@@ -208,6 +208,7 @@ egov-location:
   server-tomcat-max-connections: "1500"
 
 egov-notification-sms:
+  sms.provider.class: "Console"
   sms-provider-url: "https://smsgw.sms.gov.in/failsafe/HttpLink"
   sms-sender: "PBGOVT"
   sms-sender-requesttype: "GET"
