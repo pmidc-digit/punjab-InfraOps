@@ -8,8 +8,6 @@ ingress:
   enabled: true
   zuul: true
   context: "egov-pdf"
-  additionalAnnotations: |
-    nginx.ingress.kubernetes.io/proxy-body-size: 8m
 
 # Container Configs
 image:
