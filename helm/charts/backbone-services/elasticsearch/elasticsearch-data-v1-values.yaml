@@ -82,10 +82,10 @@ esJavaOpts: "-Xmx1g -Xms1g"
 resources:
   requests:
     # cpu: "1000m"
-    memory: "2Gi"
+    memory: "3800Mi"
   limits:
     # cpu: "1000m"
-    memory: "2Gi"
+    memory: "3800Mi"
 
 initResources: {}
   # limits:
