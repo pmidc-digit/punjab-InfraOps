@@ -1193,10 +1193,10 @@ prometheus-operator:
     prometheusSpec:
       resources:
         requests:
-          memory: 3800Mi
+          memory: 3900Mi
           cpu: 1000m
         limits:
-          memory: 3800Mi
+          memory: 3900Mi
           cpu: 1000m   
 
 
