@@ -1127,3 +1127,13 @@ grafana:
 # nlp-engine >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 nlp-engine:
   isSentenceRecognitionEnabled : "false"
+
+airflow:
+  config:
+    AIRFLOW__WEBSERVER__BASE_URL: "https://mseva-uat.lgpunjab.gov.in/airflow"
+    AIRFLOW__CORE__PLUGINS_FOLDER: "/opt/airflow/dags/repo/egov-national-dashboard-accelerator/plugins"
+dags:
+   gitSync: 
+     repo:  "https://github.com/pmidc-digit/utilities.git"
+     repoSubPath: "egov-national-dashboard-accelerator/dags"
+     branch: develop
