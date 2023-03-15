@@ -753,7 +753,6 @@ pt-calculator-v2:
   custom-pb-firecess-logic: "true"
   java-args: "-Dspring.profiles.active=production"
   server-tomcat-max-threads: "20"
-  server-tomcat-max-connections: "1500"  
   tracing-enabled: "true"
 
 
