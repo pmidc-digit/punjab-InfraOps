@@ -89,7 +89,7 @@ env: |
   - name: EVENTLOG_TOPIC
     value: {{ index .Values "eventlog-topic" | quote }}   
   - name: EVENTLOG_URLS_WHITELIST
-    value: {{ index .Values "eventlog-whitelist" | quote }}   
+    value: {{ index .Values "eventlog-urls-whitelist" | quote }}   
   - name: EGOV_AUTHORIZE_ACCESS_CONTROL_HOST
     valueFrom:
       configMapKeyRef:
