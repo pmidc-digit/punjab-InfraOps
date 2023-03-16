@@ -149,7 +149,7 @@ env: |
   {{- if index .Values "cluster-configs" "configmaps" "egov-config" "data" "kafka-infra-brokers" }}
   - name: SPRING_KAFKA_BOOTSTRAP_SERVERS                                                                                                                                        
     valueFrom:                                                                                                                                                                                 
-      configMapKeyRef:                                                                                                                                                                      
-        key: kafka-infra-brokers                                                                                                                                                            
+      configMapKeyRef:
         name: egov-config
+        key: kafka-infra-brokers
   {{- end }}
