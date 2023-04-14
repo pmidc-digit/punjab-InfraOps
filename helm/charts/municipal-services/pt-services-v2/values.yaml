@@ -36,6 +36,11 @@ pt-userevents-pay-link: "citizen/otpLogin?mobileNo=$mobile&redirectTo=egov-commo
 
 # Additional Container Envs
 env: |
+  - name: SPRING_DATASOURCE_URL
+    valueFrom:
+      configMapKeyRef:
+        name: egov-config
+        key: db-url
   - name: EGOV_IDGEN_HOST
     valueFrom:
       configMapKeyRef:
