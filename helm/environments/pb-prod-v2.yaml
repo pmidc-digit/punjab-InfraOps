@@ -661,7 +661,7 @@ rainmaker-custom-service:
   db-host: "pb-prod-v2-db-new.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com"
   db-name: "egov_prod_db"
   pt-zero-tenants: "pb.zirakpur,pb.kharar,pb.ropar,pb.jalandhar"
-  pt-integration-tenants: "pb.hoshiarpur,pb.phagwara,pb.amritsar,pb.jagraon,pb.mohali,pb.patiala,pb.ahmedgarh,pb.bhawanigarh,pb.dhuri,pb.gurdaspur,pb.handiaya,pb.jagraon,pb.kiratpur,pb.lohiankhas,pb.mahilpur,pb.pathankot,pb.sahnewal,pb.samrala.pb.sirhind,pb.sujanpur,pb.rampuraphul,pb.kapurthala"
+  pt-integration-tenants: "pb.hoshiarpur,pb.phagwara,pb.amritsar,pb.jagraon,pb.mohali,pb.patiala,pb.ahmedgarh,pb.bhawanigarh,pb.dhuri,pb.gurdaspur,pb.handiaya,pb.jagraon,pb.kiratpur,pb.lohiankhas,pb.mahilpur,pb.pathankot,pb.sahnewal,pb.samrala.pb.sirhind,pb.sujanpur,pb.rampuraphul,pb.kapurthala,pb.garhdiwala"
   egov-bnd-login-url: "http://13.71.85.9/LoginByPass/TokenGeneration"
   egov-bnd-redirect-url: "http://13.71.85.9/LoginBypass/Index?healthID="
   debug-mode: "true"
