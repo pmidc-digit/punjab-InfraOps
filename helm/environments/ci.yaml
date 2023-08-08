@@ -40,7 +40,9 @@ jenkins:
     - name: pb-uat-v2
       acl: [pmidc-digit*pb-uat]               
     - name: ci
-      acl: [pmidc-digit*pmidc-service-devops]      
+      acl: [pmidc-digit*pmidc-service-devops]
+    - name: punjab-prod-fsm
+      acl: [pmidc-digit*punjab-prod-fsm]      
       
        
   master:
