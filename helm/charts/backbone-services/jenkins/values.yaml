@@ -15,15 +15,15 @@ clusterZone: "cluster.local"
 
 oauth:
   enabled: false
-  acl:
-    admin: 
-      - egovernments*micro-service-devops
-    user: 
-      - egovernments*micro-service-dev
+    acl:
+      admin:
+        - pmidc-digit*pmidc-service-devops
+      user:
+        - pmidc-digit*pb-dev
 
-jobBuilder:
-  repos: >-
-    'git@github.com:egovernments/core-services.git','git@github.com:egovernments/business-services.git'
+  jobBuilder:
+    repos: >-
+      'git@github.com:pmidc-digit/Punjab-Implementation.git','git@github.com:egovernments/core-services.git','git@github.com:egovernments/business-services.git','git@github.com:egovernments/municipal-services.git','git@github.com:egovernments/utilities.git','git@github.com:egovernments/frontend.git',
 
 master:
   httpsKeyStore:
@@ -416,7 +416,7 @@ master:
                   scm:
                     git:
                       credentialsId: "git_read"
-                      remote: "git@github.com:egovernments/CIOps.git"
+                      remote: "git@github.com:pmidc-digit/CIOps.git"
                       traits:
                       - "gitBranchDiscovery"
       system-message: | 
@@ -537,7 +537,7 @@ master:
                 disabled(false)
               }
               {{- else }}
-              deployer(repo:'git@github.com:egovernments/DIGIT-DevOps.git', branch: 'master', helmDir: 'deploy-as-code/helm', environment: '{{ $job.name }}')""")
+              deployer(repo:'git@github.com:pmidc-digit/punjab-InfraOps.git', branch: 'master', helmDir: 'helm', environment: '{{ $job.name }}')""")
                       sandbox() 
                     }
                 }
