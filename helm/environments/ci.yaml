@@ -1,11 +1,9 @@
 global:
-  domain: pmidc-builds.digit.org ## Add your Domain Name Eg: site.mydomain.com
-  setup: fullsetup
-  
+  domain: pmidc-builds.digit.org
 cluster-configs:
   namespaces:
-    create: true
-    values: [ jenkins, monitoring ]
+    create: false
+    values: [ monitoring, jenkins ]
   root-ingress:
     namespace: jenkins
     serviceName: jenkins
@@ -17,9 +15,8 @@ jenkins:
   persistence:
     enabled: true
     aws:
-      - volumeId: "vol-016e8ddbc1a53f181" # Add volume id for jenkins-home
-        zone: ap-south-1b # Add respective availability_zones 
-
+      - volumeId: "vol-02e527eb1864dc4a3"
+        zone: ap-south-1b
   oauth:
     enabled: true
     acl:
@@ -45,8 +42,8 @@ jenkins:
     - name: ci
       acl: [pmidc-digit*pmidc-service-devops]
     - name: punjab-prod-fsm
-      acl: [pmidc-digit*punjab-prod-fsm] 
-    
+      acl: [pmidc-digit*punjab-prod-fsm]      
+      
        
   master:
     ingress:
@@ -72,16 +69,17 @@ nginx-ingress:
 
 cert-manager:
   namespace: jenkins
-  clusterIssuer:
-    stage:
-      acme:
-        email: "githuboauth@egovernments.org"     # Add mail id
+  email: "dm.it.pmidc@gmail.com"
 
 cluster-autoscaler:
   namespace: jenkins
   cloudProvider: aws  
   awsRegion: ap-south-1
   autoDiscovery:
-    clusterName: punjab-cicd # Add cluster name
+    clusterName: pmidc-cicd
     tags:
-    - kubernetes.io/cluster/punjab-cicd # Add cluster name
+    - kubernetes.io/cluster/pmidc-cicd
+
+postgres:
+  namespace: jenkins
+  postgresDatabase: ci_database
