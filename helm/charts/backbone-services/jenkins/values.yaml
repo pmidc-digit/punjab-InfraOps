@@ -15,11 +15,11 @@ clusterZone: "cluster.local"
 
 oauth:
   enabled: false
-    acl:
-      admin:
-        - pmidc-digit*pmidc-service-devops
-      user:
-        - pmidc-digit*pb-dev
+  acl:
+     admin:
+       - pmidc-digit*pmidc-service-devops
+     user:
+       - pmidc-digit*pb-dev
 
   jobBuilder:
     repos: >-
