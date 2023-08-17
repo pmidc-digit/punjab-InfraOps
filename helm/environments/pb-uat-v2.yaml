@@ -328,7 +328,7 @@ egov-mdms-service:
     zuul: false
   initContainers:
     gitSync:
-        repo: "git@github.com:egovernments/punjab-mdms-data"
+        repo: "git@github.com:pmidc-digit/punjab-mdms-data"
         branch: "UAT_V2"
   mdms-folder: "punjab-mdms-data"
   masters-config-url: "file:///work-dir/punjab-mdms-data/mdms-masters-config.json"
