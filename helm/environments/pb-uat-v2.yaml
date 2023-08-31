@@ -131,6 +131,7 @@ cluster-configs:
               turn-io-adapter: "http://turn-io-adapter.egov:8080/"
               rainmaker-pgr: "http://rainmaker-pgr:8080/"
               egov-pb-digilocker: "http://egov-pb-digilocker:8080/"
+              pt-services-dx: "http://pt-services-dx:8080/"
 
 
 # billingservices >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
