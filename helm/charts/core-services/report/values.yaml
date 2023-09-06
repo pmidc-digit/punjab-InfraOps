@@ -46,7 +46,9 @@ env: |
   - name: SECURITY_BASIC_ENABLED
     value: "false"  
   - name: MANAGEMENT_SECURITY_ENABLED
-    value: "false"  
+    value: "false"
+  - name: REPORT_QUERY_TIMEOUT
+    value: "120"
   - name: EGOV_MDMS_HOST
     valueFrom:
       configMapKeyRef:
