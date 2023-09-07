@@ -1773,7 +1773,7 @@ prometheus:
           - source_labels: [__param_target]
             target_label: instance
           - target_label: __address__
-            replacement: release-name-prometheus-blackbox-exporter:9115
+            replacement: prometheus-blackbox-exporter:9115
     # - job_name: kube-etcd
     #   kubernetes_sd_configs:
     #     - role: node
