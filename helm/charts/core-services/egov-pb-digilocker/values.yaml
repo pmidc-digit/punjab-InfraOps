@@ -7,7 +7,7 @@ labels:
 ingress:
   enabled: true
   zuul: true
-  context: "pt-services-dx"
+  context: "egov-pb-digilocker"
 
 
 
