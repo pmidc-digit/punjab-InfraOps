@@ -1,13 +1,13 @@
 # Common Labels
 labels:
-  app: "pt-services-dx"
+  app: "egov-pb-digilocker"
   group: "core"
 
 # Ingress Configs
 ingress:
   enabled: true
   zuul: true
-  context: "pt-services-dx"
+  context: "egov-pb-digilocker"
 
 
 
