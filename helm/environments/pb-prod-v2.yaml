@@ -167,11 +167,12 @@ egov-filestore:
   replicas: 1
   resources: |
     limits:
-      cpu: 900m
-      memory: 1024Mi
+      cpu: 1200m
+      memory: 2000Mi
     requests:
-      cpu: 600m
-      memory: 1024Mi   
+      cpu: 900m
+      memory: 2000Mi   
+  heap: "-Xmx1800m -Xms1800m -XX:TieredStopAtLevel=1"
   volume: /opt/eGov/filestore
   healthChecks:
     enabled: false
@@ -785,15 +786,15 @@ tl-calculator:
 
 collection-services:
   replicas: 5
-  memory_limits: "1300Mi"
+  memory_limits: "1000Mi"
   resources: |
     limits:
-      cpu: 1536m
-      memory: 1300Mi
+      cpu: 500m
+      memory: 1000Mi
     requests:
-      cpu: 1536m
-      memory: 1300Mi  
-  heap: "-Xmx1024m -Xms768m -XX:TieredStopAtLevel=1"
+      cpu: 500m
+      memory: 1000Mi  
+  heap: "-Xmx768m -Xms768m -XX:TieredStopAtLevel=1"
   receiptnumber-servicebased: "true"
   search-ignore-status: "Cancelled,Rejected"
   java-args: "-Dspring.profiles.active=production"
