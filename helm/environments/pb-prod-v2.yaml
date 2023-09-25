@@ -785,14 +785,14 @@ tl-calculator:
 
 collection-services:
   replicas: 5
-  memory_limits: "2Gi"
+  memory_limits: "1300Mi"
   resources: |
     limits:
       cpu: 1536m
-      memory: 2048Mi
+      memory: 1300Mi
     requests:
       cpu: 1536m
-      memory: 2048Mi  
+      memory: 1300Mi  
   heap: "-Xmx1024m -Xms768m -XX:TieredStopAtLevel=1"
   receiptnumber-servicebased: "true"
   search-ignore-status: "Cancelled,Rejected"
