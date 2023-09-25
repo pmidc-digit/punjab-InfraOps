@@ -784,16 +784,16 @@ tl-calculator:
 # Collections >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 collection-services:
-  replicas: 5
-  memory_limits: 1024Mi
+  replicas: 7
+  memory_limits: "2Gi"
   resources: |
     limits:
-      cpu: 756m
-      memory: 1024Mi
+      cpu: 1536m
+      memory: 2048Mi
     requests:
-      cpu: 756m
-      memory: 1024Mi  
-  heap: "-Xmx768m -Xms768m -XX:TieredStopAtLevel=1"
+      cpu: 1536m
+      memory: 2048Mi  
+  heap: "-Xmx1024m -Xms768m -XX:TieredStopAtLevel=1"
   receiptnumber-servicebased: "true"
   search-ignore-status: "Cancelled,Rejected"
   java-args: "-Dspring.profiles.active=production"
