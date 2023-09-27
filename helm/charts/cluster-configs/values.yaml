@@ -22,7 +22,7 @@ cluster-configs:
 
   configmaps:
     egov-config:
-      namespace: [ egov , monitoring]
+      namespace: [ egov , monitoring , es-cluster-infra ]
       name: egov-config
       server-tomcat-max-connections: "500"
       server-tomcat-max-threads: "10"
