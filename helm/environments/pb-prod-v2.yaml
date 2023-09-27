@@ -338,7 +338,7 @@ egov-mdms-service:
   server-tomcat-max-connections: "10000"  
 
 egov-indexer:
-  replicas: 2
+  replicas: 3
   heap: "-Xmx1700m -Xms1700m -XX:TieredStopAtLevel=1"
   memory_limits: "1800Mi"
   initContainers:
@@ -507,7 +507,7 @@ egov-user-enc:
 
 pdf-service:
   heap: "-Xmx1024m -Xms1024m -XX:TieredStopAtLevel=1"
-  replicas: 5
+  replicas: 9
   resources: |
     limits:
       cpu: 600m
@@ -785,7 +785,7 @@ tl-calculator:
 # Collections >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 collection-services:
-  replicas: 5
+  replicas: 9
   memory_limits: "1000Mi"
   resources: |
     limits:
