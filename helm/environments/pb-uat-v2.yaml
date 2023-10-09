@@ -875,15 +875,17 @@ playground:
     - egovio/playground:v2
 
 pgadmin:
-  host: "pb-uat-v2-db-new2.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com"
+  dbUrl: "pb-uat-v2-db-new2.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com"
   environment: "PBUAT_V2"
   maintenance-db-name: "egov_prod_db"
+  db-admin-username: "egovprod"
+  db-read-username: "pbuat_readonly"
   max-query-history: "50"
   max-login-attempts: "5"
   enable-save-password: "False"
   persistence:
-    dataDirSize: "1Gi"
     enabled: true
+    dataDirSize: "1Gi"
     aws:
       volumeId: "vol-0d2e1fe97891833d5"
       zone: ap-south-1a

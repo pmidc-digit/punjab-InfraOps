@@ -5,8 +5,8 @@ metadata:
   name: {{ .Chart.Name }}-data
   namespace: {{ .Values.namespace }}
   labels:
-    app: {{ .Chart.Name }}
-    group: {{ .Values.labels.group  }}
+    app: {{ .Values.labels.app }}
+    group: {{ .Values.labels.group }}
 spec:
   accessModes:
     - {{ .Values.persistence.accessMode | quote }}
