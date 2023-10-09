@@ -972,11 +972,19 @@ playground:
 
 pgadmin:
   dbUrl: "pb-prod-v2-db-new.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com"
-  port: "5432"
   environment: "PBPROD_V2"
   maintenance-db-name: "egov_prod_db"
   db-admin-username: "egovprod"
   db-read-username: "pbprod_readonly"
+  max-query-history: "50"
+  max-login-attempts: "5"
+  enable-save-password: "False"
+  persistence:
+    enabled: true
+    dataDirSize: "1Gi"
+    aws:
+      volumeId: "vol-0d0a79f95ce1b34cf"
+      zone: ap-south-1a
 
 egov-enc-service:
   replicas: 3
