@@ -17,27 +17,109 @@ initContainers: {}
 # Container Configs
 image:
   repository: "pgadmin"
-  tag: "v4.1.1"
+  tag: "v4.7.7"
 replicas: "1"
 httpPort: 8080
-serverBasePath: "/pgadmin"
 dbUrl: "egov-dev-db.ctm6jbmr5mnj.ap-south-1.rds.amazonaws.com"
-environment: "DEV"
-maintenance-db-name: "postgres"           
+dbWriteUser: "read"
+dbReadUser: "write"
+maintenance-db-name: "postgres"
+environment: "PBPROD-V2"
+data-dir: "/var/lib/pgadmin"
+log-file-path: "/var/lib/pgadmin/pgadmin4.log"
+sqlite-path: "/var/lib/pgadmin/pgadmin4.db"
+session-path: "/var/lib/pgadmin/sessions"
+storage-path: "/var/lib/pgadmin/storage"
+cookie-protection: "True"
+ui-languages: "{'en': 'English'}"
+enable-save-password: "False"
+max-query-history: "50"
+max-login-attempts: "5"
+shared-storage: "[{'name': 'Shared Folder', 'path': '/var/lib/pgadmin/shared_folder', 'restricted_access': True}]"
+
+persistence:
+  enabled: false
+  storageClassName: default
+  accessMode: ReadWriteOnce
+  dataDirSize: 1Gi
+  volumeMode: Filesystem
+   aws:
+     - volumeId: "value"
+       zone: ap-south-1a
+
+extraVolumes: |
+  - name: config
+    configMap:
+      name: {{ .Chart.Name }}-config
+  - name: storage
+    persistentVolumeClaim:
+      claimName: {{ .Chart.Name }}-data
+
+extraVolumeMounts: |
+  - mountPath: /pgadmin4/servers.json
+    name: config
+    subPath: servers.json
+    readOnly: true
+  - mountPath: /var/lib/pgadmin
+    name: storage
+
 
 # Additional Container Envs
-env: |  
-  - name: SERVER_HOST
-    value: {{ .Values.dbUrl | quote }}     
-  - name: SERVER_PORT
-    value: "5432" 
-  - name: SERVER_MODE
-    value: "False"         
-  - name: SERVER_NAME
-    value: {{ .Values.environment | quote }}                 
+env: |
+  - name: PGADMIN_DEFAULT_EMAIL
+    valueFrom:
+      secretKeyRef:
+        name: pgadmin
+        key: admin-email
+  - name: PGADMIN_DEFAULT_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: pgadmin
+        key: admin-password
+  - name: DB_WRITE_USER
+      valueFrom:
+        secretKeyRef:
+          name: db
+          key: username
+  - name: DB_READ_USER
+      valueFrom:
+        secretKeyRef:
+          name: db
+          key: read-username
+  - name: DB_HOST_URL
+    value: {{ .Values.dbUrl | quote }}
   - name: MAINTENANCE_DB_NAME
-    value: {{ index .Values "maintenance-db-name" | quote }}               
-  - name: PGADMIN_PORT
+    value: {{ index .Values "maintenance-db-name" | quote }}
+  - name: SERVER_GROUP
+    value: {{ .Values.environment | quote }}
+  - name: CONFIG_DATABASE_CONNECTION_POOL_SIZE
+    value: "5"
+  - name: PGADMIN_LISTEN_PORT
     value: {{ .Values.httpPort | quote }}
-  - name: SCRIPT_NAME
-    value: {{ .Values.serverBasePath | quote }} 
+  - name: PGADMIN_DISABLE_POSTFIX
+    value: "true"
+  - name: PGADMIN_CONFIG_DATA_DIR
+    value: {{ .Values.data-dir | quote }}
+  - name: PGADMIN_CONFIG_LOG_FILE
+    value: {{ .Values.log-file-path | quote }}
+  - name: PGADMIN_CONFIG_SQLITE_PATH
+    value: {{ .Values.sqlite-path | quote }}
+  - name: PGADMIN_CONFIG_SESSION_DB_PATH
+    value: {{ .Values.session-path | quote }}
+  - name: PGADMIN_CONFIG_STORAGE_DIR
+    value: {{ .Values.storage-path | quote }}
+  - name: PGADMIN_CONFIG_SERVER_MODE
+    value: "True"
+  - name: PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION
+    value: {{ .Values.cookie-protection | quote }}
+  - name: PGADMIN_CONFIG_LANGUAGES
+    value: {{ .Values.ui-languages | quote }}
+  - name: PGADMIN_CONFIG_ALLOW_SAVE_PASSWORD
+    value: {{ .Values.enable-save-password | quote }}
+  - name: PGADMIN_CONFIG_MAX_QUERY_HIST_STORED
+    value: {{ .Values.max-query-history | quote }}
+  - name: PGADMIN_CONFIG_MAX_LOGIN_ATTEMPTS
+    value: {{ .Values.max-login-attempts | quote }}
+  - name: PGADMIN_CONFIG_SHARED_STORAGE
+    value: {{ .Values.shared-storage | quote }}
+

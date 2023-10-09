@@ -875,16 +875,18 @@ playground:
     - egovio/playground:v2
 
 pgadmin:
-  images:
-    - egovio/pgadmin:v0.1
-
-pgadmin-config:
   host: "pb-uat-v2-db-new2.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com"
-  db-admin-username: "egovqa"
-  db-read-username: "pbqa_readonly"
-  port: "5432"
-  env: "PBUAT_V2"
+  environment: "PBUAT_V2"
   maintenance-db-name: "egov_prod_db"
+  max-query-history: "50"
+  max-login-attempts: "5"
+  enable-save-password: "False"
+  persistence:
+    dataDirSize: "1Gi"
+    enabled: true
+    aws:
+      volumeId: "vol-0d2e1fe97891833d5"
+      zone: ap-south-1a
 
 egov-enc-service:
   replicas: 1

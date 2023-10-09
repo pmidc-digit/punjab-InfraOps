@@ -1,0 +1,29 @@
+piVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Chart.Name }}-config
+  namespace: {{ .Values.namespace }}
+data:
+  servers.json: |-
+    {
+        "Servers": {
+          "1": {
+            "Name": "${SERVER_GROUP}_WRITE",
+            "Group": "${SERVER_GROUP}",
+            "Port": 5432,
+            "Username": "${DB_WRITE_USER}",
+            "Host": "${DB_HOST_URL}",
+            "SSLMode": "prefer",
+            "MaintenanceDB": "${MAINTENANCE_DB_NAME}"
+          },
+          "2": {
+            "Name": "${SERVER_GROUP}_READ",
+            "Group": "${SERVER_GROUP}",
+            "Port": 5432,
+            "Username": "${DB_READ_USER}",
+            "Host": "${DB_HOST_URL}",
+            "SSLMode": "prefer",
+            "MaintenanceDB": "${MAINTENANCE_DB_NAME}"
+          }
+        }
+    }
