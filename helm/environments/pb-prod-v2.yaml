@@ -972,6 +972,7 @@ playground:
 
 pgadmin:
   dbUrl: "pb-prod-v2-db-new.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com"
+  dbReadUrl: "pb-prod-v2-db-new-rr.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com"
   environment: "PBPROD_V2"
   maintenance-db-name: "egov_prod_db"
   db-admin-username: "egovprod"

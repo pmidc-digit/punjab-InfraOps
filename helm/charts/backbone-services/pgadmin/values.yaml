@@ -17,9 +17,10 @@ initContainers: {}
 
 # Container Configs
 image:
-  repository: "pmidcio/pgadmin"
+  repository: "pgadmin"
   tag: "v4.7.7"
   pullPolicy: Always
+
 replicas: "1"
 httpPort: "8080"
 dbUrl: "egov-dev-db.ctm6jbmr5mnj.ap-south-1.rds.amazonaws.com"
@@ -27,8 +28,8 @@ dbWriteUser: "read"
 dbReadUser: "write"
 maintenance-db-name: "postgres"
 db-admin-username: "egov"
-db-read-username: "pb_readonly"
-environment: "PB-V2"
+db-read-username: "readonly"
+environment: "DEV"
 data-dir: "/var/lib/pgadmin"
 log-file-path: "/var/lib/pgadmin/pgadmin4.log"
 sqlite-path: "/var/lib/pgadmin/pgadmin4.db"
