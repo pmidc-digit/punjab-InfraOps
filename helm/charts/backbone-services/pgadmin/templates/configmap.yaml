@@ -21,7 +21,11 @@ data:
           "Group": "{{ .Values.environment }}",
           "Port": 5432,
           "Username": "{{ index .Values "db-read-username" }}",
+        {{- if .Values.dbReadUrl }}
+          "Host": "{{ .Values.dbReadUrl }}",
+        {{- else }}
           "Host": "{{ .Values.dbUrl }}",
+        {{- end }}
           "SSLMode": "prefer",
           "MaintenanceDB": "{{ index .Values "maintenance-db-name" }}"
         }
