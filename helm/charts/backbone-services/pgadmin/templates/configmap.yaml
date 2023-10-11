@@ -10,7 +10,7 @@ data:
         "1": {
           "Name": "{{ .Values.environment }}_WRITE",
           "Group": "{{ .Values.environment }}",
-          "Port": 5432,
+          "Port": {{ .Values.dbPort }},
           "Username": "{{ index .Values "db-admin-username" }}",
           "Host": "{{ .Values.dbUrl }}",
           "SSLMode": "prefer",
@@ -19,7 +19,7 @@ data:
         "2": {
           "Name": "{{ .Values.environment }}_READ",
           "Group": "{{ .Values.environment }}",
-          "Port": 5432,
+          "Port": {{ .Values.dbPort }},
           "Username": "{{ index .Values "db-read-username" }}",
         {{- if .Values.dbReadUrl }}
           "Host": "{{ .Values.dbReadUrl }}",
