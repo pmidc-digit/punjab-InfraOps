@@ -977,6 +977,7 @@ pgadmin:
   maintenance-db-name: "egov_prod_db"
   db-admin-username: "egovprod"
   db-read-username: "pbprod_readonly"
+  cookie-protection: "False"
   max-query-history: "50"
   max-login-attempts: "5"
   enable-save-password: "False"
