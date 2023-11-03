@@ -38,6 +38,8 @@ data:
     SESSION_DB_PATH = {{ index .Values "session-path" | quote }}
     STORAGE_DIR = {{ index .Values "storage-path" | quote }}
     SERVER_MODE = True
+    WTF_CSRF_CHECK_DEFAULT = {{ index .Values "csrf-check-default" }}
+    WTF_CSRF_ENABLED = {{ index .Values "csrf-enabled" }}
     ENHANCED_COOKIE_PROTECTION = {{ index .Values "cookie-protection" }}
     LANGUAGES = {{ index .Values "ui-languages" }}
     ALLOW_SAVE_PASSWORD = {{ index .Values "enable-save-password" }}
