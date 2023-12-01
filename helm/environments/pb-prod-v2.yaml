@@ -508,7 +508,7 @@ egov-user-enc:
   db-url: "jdbc:postgresql://pb-prod-v2-db-new.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com:5432/egov_prod_db?currentSchema=case_management"   
 
 pdf-service:
-  replicas: 8
+  replicas: 3
   resources: |
     limits:
       cpu: 1500m
