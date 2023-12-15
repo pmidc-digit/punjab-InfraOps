@@ -971,6 +971,7 @@ playground:
     - egovio/playground:v2
 
 pgadmin:
+  replicas: 1
   dbUrl: "pb-prod-v2-db-new.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com"
   dbReadUrl: "pb-prod-v2-db-new-rr.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com"
   environment: "PBPROD_V2"
