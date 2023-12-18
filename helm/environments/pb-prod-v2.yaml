@@ -424,7 +424,7 @@ egov-custom-consumer:
   erp-host: "https://mohali-prod.lgpunjab.gov.in/"
 
 egov-weekly-impact-notifier:
-  mail-to-address: "egov-impact-emailer@egovernments.org,tarun.sharma@egovernments.org,ajay.rawat@egovernments.org,vinoth.r@egov.org.in,p.sankar@egov.org.in,pradeep@egovernments.org"
+  mail-to-address: "egov-impact-emailer@egovernments.org,tarun.sharma@egovernments.org,ajay.rawat@egovernments.org,vinoth.r@egov.org.in,p.sankar@egov.org.in,pradeep@egovernments.org,leadership-team@egovernments.org,elzan.mathew@egovernments.org"
   mail-interval-in-secs: "604800"
   impact-emailer-email-subject: "Punjab Weekly emailer"
   cron:
