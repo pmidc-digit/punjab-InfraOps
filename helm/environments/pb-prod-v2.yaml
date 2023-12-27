@@ -580,6 +580,7 @@ dashboard-analytics:
         branch: "PROD_V2"        
 
 dashboard-ingest:
+  replicas: 3
   heap: "-Xmx704m -Xms512m -XX:TieredStopAtLevel=1"
   topic-incoming-collection: "dss-collection-update"
   es-index-name: "dss-collection_v2"
