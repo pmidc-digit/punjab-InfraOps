@@ -713,16 +713,9 @@ egov-notification-mail:
 
 
 pt-services-v2:
-  replicas: 2
-  heap: "-Xmx900m -Xms900m -XX:TieredStopAtLevel=1"
-  memory_limits: "1000i"
-  resources: |
-    limits:
-      cpu: 500m
-      memory: 1000Mi
-    requests:
-      cpu: 500m
-      memory: 1000Mi  
+  replicas: 3
+  heap: "-Xmx900m -Xms900m -Xmn600 -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -Xloggc:garbage_collection.log"
+  memory_limits: "1150i"
   notification-sms-enabled: "false"
   java-args: "-Dspring.profiles.active=production"
   tracing-enabled: "true"
@@ -730,7 +723,7 @@ pt-services-v2:
 
 property-services:
   replicas: 3
-  heap: "-Xmx1900m -Xms1900m -Xmn1300m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
+  heap: "-Xmx1900m -Xms1900m -Xmn1500m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -Xloggc:garbage_collection.log"
   memory_limits: "2250Mi"
   server-tomcat-max-threads: "15"
   server-tomcat-max-connections: "1000"
@@ -741,9 +734,9 @@ property-services:
   egov-idgen-ptid-format: "PT-[CITY.CODE]-[SEQ_EG_PT_PTID]"
 
 pt-calculator-v2:
-  replicas: 8
+  replicas: 3
   logging-level: "DEBUG"
-  heap: "-Xmx1900m -Xms1900m -Xmn1300m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
+  heap: "-Xmx2300m -Xms2300m -Xmn1800m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -Xloggc:garbage_collection.log"
   memory_limits: "2Gi"
   server-tomcat-max-threads: "2500"
   server-tomcat-max-connections: "1500"  
@@ -823,17 +816,17 @@ ws-calculator:
   heap: "-Xmx756m -Xms756m"
 
 sw-services:
-  replicas: 5
+  replicas: 3
   memory_limits: "1Gi"
   java-args: "-Dspring.profiles.active=production"
-  heap: "-Xmx756m -Xms756m"
+  heap: "-Xmx756m -Xms756m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -Xloggc:garbage_collection.log"
   is-external-workflow-enabled: "true"
 
 sw-calculator:
-  replicas: 2
+  replicas: 3
   memory_limits: "1Gi"
   java-args: "-Dspring.profiles.active=production"
-  heap: "-Xmx756m -Xms756m"
+  heap: "-Xmx756m -Xms756m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -Xloggc:garbage_collection.log"
 # WnS >>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 # financials >>>>>>>>>>>>>>>>>>>>>>>>>>>>
