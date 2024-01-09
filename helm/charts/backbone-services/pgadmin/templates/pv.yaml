@@ -9,7 +9,6 @@ metadata:
   name: {{ .Chart.Name }}-data
   labels:
     app: {{ .Values.labels.app }}
-    group: {{ .Values.labels.group }}
   {{- if $.Values.persistence.aws }}
     failure-domain.beta.kubernetes.io/zone: {{ $.Values.persistence.aws.zone }}
     topology.kubernetes.io/zone: {{ $.Values.persistence.aws.zone }}
@@ -19,10 +18,7 @@ spec:
     storage: {{ .Values.persistence.dataDirSize | quote }}
   accessModes:
     - {{ .Values.persistence.accessMode | quote }}
-  persistentVolumeReclaimPolicy: Recycle
-  claimRef:
-    namespace: {{ .Values.namespace }}
-    name: {{ .Chart.Name }}-data
+  persistentVolumeReclaimPolicy: Retain
   {{- if .Values.persistence.aws }}
   awsElasticBlockStore:
     volumeID: {{ $.Values.persistence.aws.volumeId }}

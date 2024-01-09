@@ -6,7 +6,9 @@ metadata:
   namespace: {{ .Values.namespace }}
   labels:
     app: {{ .Values.labels.app }}
-    group: {{ .Values.labels.group }}
+  annotations:
+    pv.kubernetes.io/bind-completed: "yes"
+    pv.kubernetes.io/bound-by-controller: "yes"
 spec:
   accessModes:
     - {{ .Values.persistence.accessMode | quote }}
