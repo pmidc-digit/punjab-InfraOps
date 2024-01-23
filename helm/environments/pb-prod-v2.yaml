@@ -511,10 +511,10 @@ pdf-service:
   replicas: 3
   resources: |
     limits:
-      cpu: 1500m
+      cpu: 1200m
       memory: 1Gi
     requests:
-      cpu: 1500m
+      cpu: 1200m
       memory: 700Mi   
   initContainers:
     gitSync:
