@@ -9,7 +9,7 @@ ingress:
 # Init Containers Configs
 initContainers:
   dbMigration:
-    enabled: false
+    enabled: true
     schemaTable: "egov_user_schema"
     image:
       repository: "egov-user-db"
