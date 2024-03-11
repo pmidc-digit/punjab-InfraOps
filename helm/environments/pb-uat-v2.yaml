@@ -395,6 +395,7 @@ egov-data-uploader:
 egov-pg-service:
   replicas: 1
   axis: true
+  ccavenue: true
   payu-url: "test.payu.in"
   payu-url-status: "test.payu.in"
   heap: "-Xmx192m -Xms192m -XX:TieredStopAtLevel=1"
