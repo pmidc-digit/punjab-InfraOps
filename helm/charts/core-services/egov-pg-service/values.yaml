@@ -152,16 +152,16 @@ env: |
       secretKeyRef:
         name: egov-pg-service
         key: ccavenue-merchant-id
-  - name: CCAVENUE_STATUS_WORKING_KEY
+  - name: CCAVENUE_MERCHANT_WORKINGKEY
     valueFrom:
       secretKeyRef:
         name: egov-pg-service
-        key: ccavenue-status-working-key
-  - name: CCAVENUE_REDIRECT_WORKING_KEY
+        key: ccavenue-merchant-working-key
+  - name: CCAVENUE_MERCHANT_ACCESSCODE
     valueFrom:
       secretKeyRef:
         name: egov-pg-service
-        key: ccavenue-redirect-working-key
+        key: ccavenue-merchant-accesscode
   - name: CCAVENUE_STATUS_ACCESS_CODE
     value: {{ index .Values "ccavenue-status-access-code" | quote }}
   - name: CCAVENUE_REDIRECT_ACCESS_CODE
