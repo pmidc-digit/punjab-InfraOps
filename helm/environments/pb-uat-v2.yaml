@@ -395,6 +395,7 @@ egov-data-uploader:
 egov-pg-service:
   replicas: 1
   axis: true
+  ccavanue: true
   payu-url: "test.payu.in"
   payu-url-status: "test.payu.in"
   ccavanue-url: "test.ccavenue.com"
