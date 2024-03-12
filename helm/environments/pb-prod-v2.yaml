@@ -780,7 +780,7 @@ tl-calculator:
 # Collections >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 collection-services:
-  replicas: 3
+  replicas: 8
   memory_limits: "1750Mi"
   resources: |
     limits:
