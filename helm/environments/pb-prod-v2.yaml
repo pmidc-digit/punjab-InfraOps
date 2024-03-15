@@ -511,10 +511,10 @@ pdf-service:
   replicas: 3
   resources: |
     limits:
-      cpu: 1200m
+      cpu: 2000m
       memory: 1Gi
     requests:
-      cpu: 900m
+      cpu: 1500m
       memory: 700Mi   
   initContainers:
     gitSync:
@@ -1002,7 +1002,7 @@ kafka-v2:
   # Use chroot to reuse single zookeeper ensemble
   zookeeper-connect: "zookeeper-v2-headless.zookeeper-cluster:2181/kafka"
   memory_limits: "7Gi"
-  cpu_limits: "1500m"
+  cpu_limits: "2000m"
   heap: "-Xms6500M -Xmx6500M -XX:TieredStopAtLevel=1"
   offsets-topic-replication-factor: "3"
   linger-ms: "250"
