@@ -36,6 +36,7 @@ autoPurgePurgeInterval: 24
 
 heapOptions: "-Xms2506M -Xmx2506M"
 memory_limits: 2816Mi
+cpu_limits: 1200m
 logDirs: "/opt/kafka-data/logs"
 listenerSecurity: "PLAINTEXT:PLAINTEXT,EXTERNAL:PLAINTEXT"
 lingerMs: "250"
@@ -83,9 +84,9 @@ persistence:
 resources: |
   requests:
     memory: {{ .Values.memory_limits | quote }}
-    cpu: 900m
+    cpu: {{ .Values.cpu_limits | quote }}
   limits:
-    cpu: 1200m
+    cpu: {{ .Values.cpu_limits | quote }}
     memory: {{ .Values.memory_limits | quote }} 
 
 ## Custom pod annotations

@@ -222,9 +222,9 @@ egov-otp:
   replicas: 2
 
 egov-user:
-  replicas: 10
-  heap: "-Xmx1900m -Xms1900m -Xmn1600m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
-  memory_limits: "2250Mi"
+  replicas: 6
+  heap: "-Xmx2900m -Xms2900m -Xmn2600m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
+  memory_limits: "3250Mi"
   otp-validation: "true"
   citizen-otp-enabled: "true"
   employee-otp-enabled: "false"
@@ -714,7 +714,7 @@ egov-notification-mail:
 
 pt-services-v2:
   replicas: 3
-  heap: "-Xmx900m -Xms900m -Xmn600 -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -Xloggc:garbage_collection.log"
+  heap: "-Xmx900m -Xms900m -Xmn600 -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
   memory_limits: "1150i"
   notification-sms-enabled: "false"
   java-args: "-Dspring.profiles.active=production"
@@ -723,7 +723,7 @@ pt-services-v2:
 
 property-services:
   replicas: 3
-  heap: "-Xmx1900m -Xms1900m -Xmn1500m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -Xloggc:garbage_collection.log"
+  heap: "-Xmx1900m -Xms1900m -Xmn1700m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
   memory_limits: "2250Mi"
   server-tomcat-max-threads: "15"
   server-tomcat-max-connections: "1000"
@@ -736,10 +736,9 @@ property-services:
 pt-calculator-v2:
   replicas: 3
   logging-level: "DEBUG"
-  heap: "-Xmx2300m -Xms2300m -Xmn1800m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -Xloggc:garbage_collection.log"
+  heap: "-Xmx2300m -Xms2300m -Xmn1900m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
   memory_limits: "2550Mi"
-  server-tomcat-max-threads: "2500"
-  server-tomcat-max-connections: "1500"  
+  server-tomcat-max-connections: "1500"
   JAVA_ENABLE_DEBUG: "true"
   CUSTOM_PB_ZERO_ASSESSMENT: "true"
   CUSTOM_PB_ZERO_ASSESSMENTYEAR: "2014-15"
@@ -780,16 +779,16 @@ tl-calculator:
 # Collections >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 collection-services:
-  replicas: 8
-  memory_limits: "1750Mi"
+  replicas: 3
+  memory_limits: "2350Mi"
   resources: |
     limits:
       cpu: 500m
-      memory: 1750Mi
+      memory: 2350Mi
     requests:
       cpu: 500m
-      memory: 1750Mi  
-  heap: "-Xmx768m -Xms768m -XX:TieredStopAtLevel=1"
+      memory: 2350Mi
+  heap: "-Xmx2000m -Xms2000m -Xmn1400m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
   receiptnumber-servicebased: "true"
   search-ignore-status: "Cancelled,Rejected"
   java-args: "-Dspring.profiles.active=production"
@@ -819,14 +818,14 @@ sw-services:
   replicas: 3
   memory_limits: "1Gi"
   java-args: "-Dspring.profiles.active=production"
-  heap: "-Xmx756m -Xms756m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -Xloggc:garbage_collection.log"
+  heap: "-Xmx756m -Xms756m -Xmn600m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
   is-external-workflow-enabled: "true"
 
 sw-calculator:
   replicas: 3
   memory_limits: "1Gi"
   java-args: "-Dspring.profiles.active=production"
-  heap: "-Xmx756m -Xms756m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -Xloggc:garbage_collection.log"
+  heap: "-Xmx756m -Xms756m -Xmn600m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
 # WnS >>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 # financials >>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -881,9 +880,9 @@ echallan-services:
   memory_limits: "2350Mi"
   resources: |
     limits:
-      memory: 1750Mi
+      memory: 2350Mi
     requests:
-      memory: 1750Mi  
+      memory: 2350Mi
   heap: "-Xmx2000m -Xms2000m -Xmn1400m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
   java-args: "-Dspring.profiles.active=monitoring"
   egov-idgen-challanNum-format: "PG-CH-[cy:yyyy-MM-dd]-[SEQ_EG_CH_APL]"
@@ -1002,7 +1001,9 @@ kafka-v2:
     - confluentinc/cp-kafka:5.2.2
   # Use chroot to reuse single zookeeper ensemble
   zookeeper-connect: "zookeeper-v2-headless.zookeeper-cluster:2181/kafka"
-  heap: "-Xms3900M -Xmx3900M -XX:TieredStopAtLevel=1"
+  memory_limits: "7Gi"
+  cpu_limits: "2000m"
+  heap: "-Xms6500M -Xmx6500M -XX:TieredStopAtLevel=1"
   offsets-topic-replication-factor: "3"
   linger-ms: "250"
   min-insync-replicas: "1"
