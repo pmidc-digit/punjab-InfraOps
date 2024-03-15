@@ -715,7 +715,7 @@ egov-notification-mail:
 pt-services-v2:
   replicas: 3
   heap: "-Xmx900m -Xms900m -Xmn600m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
-  memory_limits: "1150i"
+  memory_limits: "1150Gi"
   notification-sms-enabled: "false"
   java-args: "-Dspring.profiles.active=production"
   tracing-enabled: "true"
