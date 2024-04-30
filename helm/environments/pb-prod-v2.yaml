@@ -137,16 +137,16 @@ cluster-configs:
 
 # billingservices >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 billing-service:
-  replicas: 4
-  memory_limits: "2350Mi"
+  replicas: 3
+  memory_limits: "1850Mi"
   resources: |
     limits:
       cpu: 500m
-      memory: 2350Mi
+      memory: 1850Mi
     requests:
       cpu: 500m
-      memory: 2350Mi  
-  heap: "-Xmx2000m -Xms2000m -Xmn1400m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
+      memory: 1850Mi
+  heap: "-Xmx1600m -Xms1600m -Xmn1400m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
   java-args: "-Dspring.profiles.active=production"
   server-tomcat-max-threads: "30"
   server-tomcat-max-connections: "1500"
@@ -222,9 +222,9 @@ egov-otp:
   replicas: 2
 
 egov-user:
-  replicas: 6
-  heap: "-Xmx2900m -Xms2900m -Xmn2600m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
-  memory_limits: "3250Mi"
+  replicas: 4
+  heap: "-Xmx1800m -Xms1800m -Xmn1600m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
+  memory_limits: "2150Mi"
   otp-validation: "true"
   citizen-otp-enabled: "true"
   employee-otp-enabled: "false"
@@ -511,10 +511,10 @@ pdf-service:
   replicas: 3
   resources: |
     limits:
-      cpu: 2000m
+      cpu: 1200m
       memory: 1Gi
     requests:
-      cpu: 1500m
+      cpu: 1000m
       memory: 700Mi   
   initContainers:
     gitSync:
@@ -723,8 +723,8 @@ pt-services-v2:
 
 property-services:
   replicas: 3
-  heap: "-Xmx1900m -Xms1900m -Xmn1700m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
-  memory_limits: "2250Mi"
+  heap: "-Xmx1800m -Xms1800m -Xmn1600m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
+  memory_limits: "2000Mi"
   server-tomcat-max-threads: "15"
   server-tomcat-max-connections: "1000"
   spring-datasource-tomcat-max-active: "15"  
@@ -736,8 +736,8 @@ property-services:
 pt-calculator-v2:
   replicas: 3
   logging-level: "DEBUG"
-  heap: "-Xmx2300m -Xms2300m -Xmn1900m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
-  memory_limits: "2550Mi"
+  heap: "-Xmx1800m -Xms1800m -Xmn1600m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
+  memory_limits: "2000Mi"
   server-tomcat-max-connections: "1500"
   JAVA_ENABLE_DEBUG: "true"
   CUSTOM_PB_ZERO_ASSESSMENT: "true"
@@ -780,15 +780,15 @@ tl-calculator:
 
 collection-services:
   replicas: 3
-  memory_limits: "2350Mi"
+  memory_limits: "1850Mi"
   resources: |
     limits:
       cpu: 500m
-      memory: 2350Mi
+      memory: 1850Mi
     requests:
       cpu: 500m
-      memory: 2350Mi
-  heap: "-Xmx2000m -Xms2000m -Xmn1400m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
+      memory: 1850Mi
+  heap: "-Xmx1600m -Xms1600m -Xmn1400m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
   receiptnumber-servicebased: "true"
   search-ignore-status: "Cancelled,Rejected"
   java-args: "-Dspring.profiles.active=production"
@@ -802,7 +802,7 @@ collection-services:
 
 # WnS >>>>>>>>>>>>>>>>>>>>>>>>>>>>
 ws-services:
-  replicas: 5
+  replicas: 3
   memory_limits: "1Gi"
   java-args: "-Dspring.profiles.active=production"
   heap: "-Xmx756m -Xms756m"
@@ -810,9 +810,9 @@ ws-services:
 
 ws-calculator:
   replicas: 3
-  memory_limits: "1Gi"
+  memory_limits: "2Gi"
   java-args: "-Dspring.profiles.active=production"
-  heap: "-Xmx756m -Xms756m"
+  heap: "-Xmx1800m -Xms1800m -Xmn1600m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
 
 sw-services:
   replicas: 3
@@ -876,14 +876,14 @@ logging-config:
   es-port: "9200"
 
 echallan-services:
-  replicas: 4
-  memory_limits: "2350Mi"
+  replicas: 3
+  memory_limits: "1850Mi"
   resources: |
     limits:
-      memory: 2350Mi
+      memory: 1850Mi
     requests:
-      memory: 2350Mi
-  heap: "-Xmx2000m -Xms2000m -Xmn1400m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
+      memory: 1850Mi
+  heap: "-Xmx1600m -Xms1600m -Xmn1400m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
   java-args: "-Dspring.profiles.active=monitoring"
   egov-idgen-challanNum-format: "PG-CH-[cy:yyyy-MM-dd]-[SEQ_EG_CH_APL]"
 
@@ -1214,11 +1214,11 @@ prometheus-operator:
     prometheusSpec:
       resources:
         requests:
-          memory: 3800Mi
-          cpu: 1000m
+          memory: 5000Mi
+          cpu: 2000m
         limits:
-          memory: 3800Mi
-          cpu: 1000m   
+          memory: 6000Mi
+          cpu: 2500m
 
 
 # eGov-Finance Tenants
