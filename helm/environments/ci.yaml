@@ -31,8 +31,7 @@ jenkins:
 
   jobBuilder:
     repos: >-
-      'git@github.com:pmidc-digit/Punjab-Implementation.git','git@github.com:pmidc-digit/core-services.git','git@github.com:pmidc-digit/business-services.git','git@github.com:pmidc-digit/municipal-services.git','git@github.com:pmidc-digit/frontend.git','git@github.com:pmidc-digit/DIGIT-PUNJAB.git'
-
+      'git@github.com:pmidc-digit/Punjab-Implementation.git','git@github.com:pmidc-digit/core-services.git','git@github.com:pmidc-digit/business-services.git','git@github.com:pmidc-digit/municipal-services.git','git@github.com:pmidc-digit/frontend.git','git@github.com:pmidc-digit/DIGIT-PUNJAB.git','git@github.com:pmidc-digit/mSevaUPYOG.git'
   deploymentJobs:
     - name: pb-qa
       acl: [pmidc-digit*pb-uat]  
