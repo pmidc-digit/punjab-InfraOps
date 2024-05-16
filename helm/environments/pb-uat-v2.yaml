@@ -896,6 +896,7 @@ pgadmin:
 egov-enc-service:
   replicas: 1
   state-level-tenant-id: "pb"
+  spring.batch.job.enabled: "false"
   resources: |
     limits:
       cpu: 300m
