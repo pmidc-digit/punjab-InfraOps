@@ -324,18 +324,18 @@ xstate-chatbot:
   complaint-search-limit: 3
 
 egov-mdms-service:
-  replicas: 1
-  memory_limits: 556Mi
+  replicas: 2
+  memory_limits: 512Mi
   heap: "-Xmx256m -Xms256m"  
-  mdms-path: "/work-dir/upyog-punjab-mdms-data/data"
-  ingress:
+  mdms-path: "/work-dir/punjab-mdms-data/data"
+    ingress:
     zuul: false
   initContainers:
     gitSync:
-      repo: "git@github.com:pmidc-digit/upyog-punjab-mdms-data"
+      repo: "git@github.com:pmidc-digit/punjab-mdms-data"
       branch: "PROD_V2"
-  mdms-folder: "pyog-punjab-mdms-data"
-  masters-config-url: "file:///work-dir/upyog-punjab-mdms-data/mdms-masters-config.json"
+  mdms-folder: "punjab-mdms-data"
+  masters-config-url: "file:///work-dir/punjab-mdms-data/mdms-masters-config.json"
   java-args: -Dspring.profiles.active=monitoring
   server-tomcat-max-threads: "500"
   server-tomcat-max-connections: "10000"
