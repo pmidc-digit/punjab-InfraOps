@@ -6,7 +6,7 @@ labels:
 # Init Containers Configs
 initContainers:
   dbMigration:
-    enabled: true
+    enabled: false
     schemaTable: "finance-collections-voucher-consumer_schema"
     image:
       repository: "finance-collections-voucher-consumer-db"
