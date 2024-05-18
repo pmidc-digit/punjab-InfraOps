@@ -16,7 +16,7 @@ ingress:
 # Init Containers Configs
 initContainers:
   dbMigration:
-    enabled: true
+    enabled: false
     schemaTable: "xstate_chatbot_schema"
     image:
       repository: "xstate-chatbot-db"
