@@ -777,7 +777,7 @@ egov-hrms:
   replicas: 1
   java-args: "-Dspring.profiles.active=production"
   heap: "-Xmx192m -Xms192m -XX:TieredStopAtLevel=1"
-  employee-applink: "https://mseva-qa.lgpunjab.gov.in/employee/user/login"
+  employee-applink: "https://mseva-uat.lgpunjab.gov.in/employee/user/login"
   tracing-enabled: "true"
 
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
