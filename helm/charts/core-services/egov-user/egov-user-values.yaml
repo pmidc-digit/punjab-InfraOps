@@ -85,7 +85,6 @@ env: |
         name: egov-service-host
         key: egov-enc-service
   - name: EGOV_STATE_LEVEL_TENANT_ID
-#    value: {{ index .Values "egov-state-level-tenant-id" | quote }}
     valueFrom:
       configMapKeyRef:
         name: egov-config
