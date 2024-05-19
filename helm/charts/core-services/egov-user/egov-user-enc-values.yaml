@@ -4,7 +4,7 @@ labels:
   group: "case-management"
 
 ingress:
-  enabled: false
+  enabled: true
 
 # Init Containers Configs
 initContainers:
