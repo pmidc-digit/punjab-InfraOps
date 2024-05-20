@@ -37,6 +37,7 @@ cluster-configs:
               mobile-validation-workaround: "true"
               logging-level-jdbc: "null"
               domain: "mseva-uat.lgpunjab.gov.in"
+              inbox: "http://inbox.egov:8080/"
               tracer-errors-provideexceptionindetails: "true"
               s3-asset-bucket: "pb-egov-assets"
               egov-state-level-tenant-id: "pb"
