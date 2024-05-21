@@ -62,8 +62,8 @@ cluster-configs:
               egf-instrument: "http://egf-instrument:8080/"
               egf-voucher: "http://egf-voucher:8080/"
               egf-bill: "http://egf-bill:8080/"
-              egov-user-enc: http://egov-user-enc.egov:8080/ # add for testing
-              home-isolation-chatbot: http://home-isolation-chatbot.egov:8080/ ## testing
+              egov-user-enc: "http://egov-user-enc.egov:8080/" # add for testing
+              home-isolation-chatbot: "http://home-isolation-chatbot.egov:8080/" ## testing
               egf-voucher-workflow: "http://egf-voucher-workflow:8080/"
               egov-accesscontrol: "http://egov-accesscontrol:8080/"
               egov-user: "http://egov-user:8080/"
