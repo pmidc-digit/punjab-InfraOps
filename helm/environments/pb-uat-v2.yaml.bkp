@@ -12,10 +12,10 @@ cluster-configs:
         egov-config:
             data:
               sms-enabled: "false"
-              db-url: "jdbc:postgresql://pb-uat-v2-db-prod-restore.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com:5432/egov_prod_db"
-              db-read-url: "jdbc:postgresql://pb-uat-v2-db-prod-restore.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com:5432/egov_prod_db"
-              erp-db-url: "jdbc:postgresql://pb-uat-v2-db-prod-restore.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com:5432/finance_egov_prod_db"
-              db-host: "pb-uat-v2-db-prod-restore.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com"
+              db-url: "jdbc:postgresql://pb-uat-v2-db-new2.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com:5432/egov_prod_db"
+              db-read-url: "jdbc:postgresql://pb-uat-v2-db-new2.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com:5432/egov_prod_db"
+              erp-db-url: "jdbc:postgresql://pb-uat-v2-db-new2.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com:5432/finance_egov_prod_db"
+              db-host: "pb-uat-v2-db-new2.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com"
               db-name: "egov_prod_db"
               kafka-brokers: "kafka-v2-headless.kafka-cluster:9092"
               kafka-infra-brokers: kafka-v2-infra.kafka-cluster:9092
