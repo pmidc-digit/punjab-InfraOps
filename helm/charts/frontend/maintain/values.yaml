@@ -20,3 +20,4 @@ healthChecks:
   enabled: true
   livenessProbePath: "/common/"
   readinessProbePath: "/common/"
+namespace: egov
