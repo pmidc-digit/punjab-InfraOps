@@ -18,6 +18,6 @@ replicas: "1"
 httpPort: 80
 healthChecks:
   enabled: true
-  livenessProbePath: "/"
-  readinessProbePath: "/"
+  livenessProbePath: "/common"
+  readinessProbePath: "/common"
 namespace: egov
