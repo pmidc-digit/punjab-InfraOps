@@ -67,7 +67,7 @@ env: |
         key: sms-enabled
   - name: SMS_SENDERID
     value: {{ index .Values "sms-sender" | quote }}
-  - name: SMS_SENDER_REQUESTTYPE
+  - name: SMS_PROVIDER_REQUESTTYPE
     value: {{ index .Values "sms-sender-requesttype" | quote }}
   {{- if index .Values "sms-custom-config" }}
   - name: SMS_SENDER_REQ_PARAM_NAME
