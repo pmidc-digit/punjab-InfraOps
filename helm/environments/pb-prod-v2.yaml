@@ -209,7 +209,7 @@ egov-notification-sms:
   sms-sender: "PBGOVT"
   sms-sender-requesttype: "GET"
   sms-custom-config: "true"
-  java-args: "-Dspring.profiles.active=production"
+  java-args: "-Dspring.profiles.active=production -Djavax.net.ssl.trustStore=/etc/ssl/certs/ca-certificates.crt -Djavax.net.ssl.trustStoreType=PEM"
   sms-enabled: "true"
   sms-sender-req-param-name: "signature"
   sms-sender-username-req-param-name: "username"
