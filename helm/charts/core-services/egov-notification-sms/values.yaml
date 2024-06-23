@@ -20,7 +20,7 @@ sms-gateway-to-use: "NIC"
 sms.provider.url: "https://msdgweb.mgov.gov.in/esms/sendsmsrequest"
 sms.provider.requestType: "POST"
 sms.provider.contentType: "application/json"
-sms.provider.class: "MSDG"
+sms.provider.class: "NIC"
 sms.verify.response: true
 sms.print.response: false
 sms.success.codes: "200,201,202"
