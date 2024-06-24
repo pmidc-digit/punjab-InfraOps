@@ -723,7 +723,7 @@ pt-services-v2:
   pt-userevents-pay-link: "citizen/otpLogin?mobileNo=$mobile&redirectTo=egov-common/pay?consumerCode=$applicationNo&tenantId=$tenantId"
 
 property-services:
-  replicas: 3
+  replicas: 4
   heap: "-Xmx1800m -Xms1800m -Xmn1600m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
   memory_limits: "2000Mi"
   server-tomcat-max-threads: "15"
@@ -780,7 +780,7 @@ tl-calculator:
 # Collections >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 collection-services:
-  replicas: 3
+  replicas: 4
   memory_limits: "1850Mi"
   resources: |
     limits:
@@ -803,27 +803,27 @@ collection-services:
 
 # WnS >>>>>>>>>>>>>>>>>>>>>>>>>>>>
 ws-services:
-  replicas: 3
+  replicas: 4
   memory_limits: "1Gi"
   java-args: "-Dspring.profiles.active=production"
   heap: "-Xmx756m -Xms756m"
   is-external-workflow-enabled: "true"
 
 ws-calculator:
-  replicas: 3
+  replicas: 4
   memory_limits: "2Gi"
   java-args: "-Dspring.profiles.active=production"
   heap: "-Xmx1800m -Xms1800m -Xmn1600m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
 
 sw-services:
-  replicas: 3
+  replicas: 4
   memory_limits: "1Gi"
   java-args: "-Dspring.profiles.active=production"
   heap: "-Xmx756m -Xms756m -Xmn600m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
   is-external-workflow-enabled: "true"
 
 sw-calculator:
-  replicas: 3
+  replicas: 4
   memory_limits: "1Gi"
   java-args: "-Dspring.profiles.active=production"
   heap: "-Xmx756m -Xms756m -Xmn600m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
