@@ -233,6 +233,7 @@ egov-user:
   default-password-expiry: 90
   mobile-number-validation: "false"
   roles-state-level: "true"
+  otp-validation-register-mandatory: "false"
   citizen-registration-withlogin: "true"
   otp-validation-register-mandatory: "false"
   citizen-otp-fixed: "768696"
