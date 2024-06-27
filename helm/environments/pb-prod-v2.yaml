@@ -41,8 +41,8 @@ cluster-configs:
               egov-state-level-tenant-id: "pb"
               timezone: "Asia/Kolkata"
               otp-validation-register-mandatory: "false"
-              citizen-registration-withlogin: "true"
-              otp-validation-register-mandatory: "false"
+              create-user-validate-name: "false"
+              citizen-registration-withlogin: "true"         
         egov-service-host:
             namespace: [ egov, monitoring ]
             data:
@@ -235,7 +235,6 @@ egov-user:
   default-password-expiry: 90
   mobile-number-validation: "false"
   roles-state-level: "true"
-  otp-validation-register-mandatory: "false"
   citizen-registration-withlogin: "true"
   otp-validation-register-mandatory: "false"
   citizen-otp-fixed: "768696"
