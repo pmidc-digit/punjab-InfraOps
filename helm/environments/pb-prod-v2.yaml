@@ -45,7 +45,7 @@ cluster-configs:
             data:
               otp-validation-register-mandatory: "false"
               citizen-registration-withlogin: "true"
-              otp-validation-register-mandatory: "false"     
+              otp-validation-register-mandatory: "false"
         egov-service-host:
             namespace: [ egov, monitoring ]
             data:
