@@ -64,19 +64,16 @@ env: |
       configMapKeyRef:
         name: egov-service-host
         key: egov-accesscontrol
-
   - name: OTP_VALIDATION_REGISTER_MANDATORY
     valueFrom:
       configMapKeyRef:
         name: egov-user
         key: otp-validation-register-mandatory
-		
   - name: CITIZEN_REGISTRATION_WITHLOGIN_ENABLED
     valueFrom:
       configMapKeyRef:
         name: egov-user
-        key: citizen-registration-withlogin		
-		
+        key: citizen-registration-withlogin
   - name: OTP_VALIDATION_REGISTER_MANDATORY
     valueFrom:
       configMapKeyRef:
