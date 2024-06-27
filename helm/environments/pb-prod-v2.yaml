@@ -40,9 +40,6 @@ cluster-configs:
               s3-asset-bucket: "pb-egov-assets"
               egov-state-level-tenant-id: "pb"
               timezone: "Asia/Kolkata"
-        egov-user:
-            namespace: [ egov, monitoring ]
-            data:
               otp-validation-register-mandatory: "false"
               citizen-registration-withlogin: "true"
               otp-validation-register-mandatory: "false"
