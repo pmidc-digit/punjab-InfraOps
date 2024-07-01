@@ -170,10 +170,10 @@ egov-filestore:
   resources: |
     limits:
       cpu: 1200m
-      memory: 2000Mi
+      memory: 2250Mi
     requests:
       cpu: 900m
-      memory: 2000Mi   
+      memory: 2250Mi
   heap: "-Xmx1800m -Xms1800m -XX:TieredStopAtLevel=1"
   volume: /opt/eGov/filestore
   healthChecks:
