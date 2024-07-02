@@ -227,11 +227,11 @@ egov-user:
   memory_limits: "3550Mi"
   resources: |
     limits:
-      cpu: 1500m
-      memory: 3550Mi
+      cpu: 1700m
+      memory: 4000Mi
     requests:
-      cpu: 1500m
-      memory: 3550Mi
+      cpu: 1700m
+      memory: 4000Mi
   otp-validation: "false"
   citizen-otp-enabled: "true"
   employee-otp-enabled: "false"
