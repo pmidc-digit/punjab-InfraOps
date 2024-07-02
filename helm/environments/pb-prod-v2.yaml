@@ -40,7 +40,7 @@ cluster-configs:
               s3-asset-bucket: "pb-egov-assets"
               egov-state-level-tenant-id: "pb"
               timezone: "Asia/Kolkata"
-              create-user-validate-name: "false"         
+              create-user-validate-name: "false"
         egov-service-host:
             namespace: [ egov, monitoring ]
             data:
@@ -225,6 +225,13 @@ egov-user:
   replicas: 4
   heap: "-Xmx3000m -Xms3000m -Xmn2500m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
   memory_limits: "3550Mi"
+  resources: |
+    limits:
+      cpu: 1500m
+      memory: 3550Mi
+    requests:
+      cpu: 500m
+      memory: 3550Mi
   otp-validation: "false"
   citizen-otp-enabled: "true"
   employee-otp-enabled: "false"
@@ -234,6 +241,7 @@ egov-user:
   mobile-number-validation: "false"
   roles-state-level: "true"
   citizen-registration-withlogin: "true"
+  otp-validation-register-mandatory: "false"
   citizen-otp-fixed: "768696"
   citizen-otp-fixed-enabled: "true"
   create-user-validate-name: "false"
