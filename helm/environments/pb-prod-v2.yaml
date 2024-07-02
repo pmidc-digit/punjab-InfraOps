@@ -230,7 +230,7 @@ egov-user:
       cpu: 1500m
       memory: 3550Mi
     requests:
-      cpu: 500m
+      cpu: 1500m
       memory: 3550Mi
   otp-validation: "false"
   citizen-otp-enabled: "true"
