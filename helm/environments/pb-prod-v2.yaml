@@ -223,8 +223,8 @@ egov-otp:
 
 egov-user:
   replicas: 4
-  heap: "-Xmx3000m -Xms3000m -Xmn2500m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
-  memory_limits: "3550Mi"
+  heap: "-Xmx4000m -Xms4000m -Xmn2000m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
+  memory_limits: "6000Mi"
   resources: |
     limits:
       cpu: 1800m
