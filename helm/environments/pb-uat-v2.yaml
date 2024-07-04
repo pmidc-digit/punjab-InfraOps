@@ -43,6 +43,7 @@ cluster-configs:
               s3-asset-bucket: "pb-egov-assets"
               egov-state-level-tenant-id: "pb"
               timezone: "Asia/Kolkata"
+              create-user-validate-name: "false"
 
         egov-service-host:
             namespace: [ egov, monitoring ]    
