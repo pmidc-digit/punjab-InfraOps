@@ -667,7 +667,7 @@ rainmaker-pgr:
   tracing-enabled: "true"
 
 egov-notification-mail:
-  username: "egov-micro.services@egovernments.org"
+  username: "noreplypmidc@gmail.com"
 
 
 pt-services-v2:
