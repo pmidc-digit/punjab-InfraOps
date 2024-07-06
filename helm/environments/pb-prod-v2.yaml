@@ -606,26 +606,28 @@ dashboard-ingest:
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 nginx-ingress:
-    replicas: 2
-    images:
-      - egovio/nginx-ingress-controller:0.26.1
-    default-backend-service: "egov/nginx"
-    namespace: egov
-    cert-issuer: "letsencrypt-prod"
-    ssl-protocols: "TLSv1.2 TLSv1.3"
-    ssl-ciphers: "EECDH+CHACHA20:EECDH+AES"
-    ssl-ecdh-curve: "X25519:prime256v1:secp521r1:secp384r1"
-    controller:
-      metrics:
+  default-backend-service: "egov/nginx"
+  namespace: egov
+  cert-issuer: "letsencrypt-prod"
+  ssl-protocols: "TLSv1.2 TLSv1.3"
+  ssl-ciphers: "EECDH+CHACHA20:EECDH+AES"
+  ssl-ecdh-curve: "X25519:prime256v1:secp521r1:secp384r1"
+  controller:
+    replicas: 3
+    metrics:
+      enabled: false
+      serviceMonitor:
         enabled: true
-        serviceMonitor:
-          enabled: true
-      service:
-        annotations:
-          service.beta.kubernetes.io/aws-load-balancer-type: nlb
-          enabled: true
-        prometheusRule:
-          enabled: true  
+      prometheusRule:
+        enabled: true
+    addHeaders:
+      X-Content-Type-Options: "nosniff"
+      X-Frame-Options: "SAMEORIGIN"
+      X-XSS-Protection: "1; mode=block"
+      Access-Control-Allow-Origin: "https://mseva.lgpunjab.gov.in"
+      Access-Control-Allow-Methods: "GET, POST, OPTIONS"
+      Access-Control-Allow-Headers: "DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range"
+    setSslTls: "mseva.lgpunjab.gov.in-tls-certs"
 
 cert-manager:
   email: "nithin.dv@egovernments.org"
