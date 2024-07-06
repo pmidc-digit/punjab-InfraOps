@@ -721,6 +721,8 @@ rainmaker-pgr:
   tracing-enabled: "true"
 
 egov-notification-mail:
+  memory_limits: 956Mi
+  heap: -Xmx756m -Xms512m
   username: "egov-micro.services@egovernments.org"
 
 
