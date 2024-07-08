@@ -22,7 +22,7 @@ env: |
   - name: KAFKA_TOPICS_NOTIFICATION_MAIL_ID
     value: egov.core.notification.email
   - name: KAFKA_TOPICS_NOTIFICATION_MAIL_GROUP
-    value: egov.core.notification.email
+    value: email_group1
   - name: MAIL_SENDER_USERNAME
     valueFrom:
       secretKeyRef:
