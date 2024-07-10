@@ -11,7 +11,7 @@ cluster-configs:
         egov-config:
             namespace: [ egov, es-cluster-infra ]
             data:
-              sms-enabled: "false"
+              sms-enabled: "true"
               db-url: "jdbc:postgresql://pb-prod-v2-db-new.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com:5432/egov_prod_db"
               db-read-url: "jdbc:postgresql://pb-prod-v2-db-new-rr.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com:5432/egov_prod_db"
               erp-db-url: "jdbc:postgresql://pb-prod-v2-db-new.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com:5432/finance_egov_prod_db"
@@ -210,7 +210,7 @@ egov-notification-sms:
   sms-sender-requesttype: "GET"
   sms-custom-config: "true"
   java-args: "-Dspring.profiles.active=production -Djavax.net.ssl.trustStore=/etc/ssl/certs/truststore.jks -Djavax.net.ssl.trustStorePassword=changeit"
-  sms-enabled: "false"
+  sms-enabled: "true"
   sms-sender-req-param-name: "signature"
   sms-sender-username-req-param-name: "username"
   sms-sender-password-req-param-name: "pin"
