@@ -49,7 +49,10 @@ func DeployCharts(options Options) {
 			if clusterImage != "" {
 				_, tag = getDockerComponents(clusterImage)
 				args = append(args, fmt.Sprintf("--set image.tag=%s", tag))
-				args = append(args, fmt.Sprintf("--set initContainers.dbMigration.image.tag=%s", tag))
+				clusterInitImage := getInitImageTagFromCluster(name)
+				if clusterInitImage != "" {
+				    args = append(args, fmt.Sprintf("--set initContainers.dbMigration.image.tag=%s", tag))
+				}
 				log.Printf("Fetched image from cluster, %s:%s", repository, tag)
 			}
 		} else {
@@ -111,6 +114,14 @@ func deployCrds(serviceChartDirectory string) {
 
 func getImageTagFromCluster(service string) (tag string) {
 	kubectlGetImageCmd := fmt.Sprintf("kubectl get deployments -l app=%s --all-namespaces -o=jsonpath={.items[*].spec.template.spec.containers[:1].image}", service)
+
+	output := execCommandRaw(kubectlGetImageCmd, "", true)
+	return output.String()
+
+}
+
+func getInitImageTagFromCluster(service string) (tag string) {
+	kubectlGetImageCmd := fmt.Sprintf("kubectl get deployments -l app=%s --all-namespaces -o=jsonpath={.items[*].spec.template.spec.initContainers[:1].image}", service)
 
 	output := execCommandRaw(kubectlGetImageCmd, "", true)
 	return output.String()
