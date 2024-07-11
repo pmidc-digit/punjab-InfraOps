@@ -1425,3 +1425,10 @@ grafana:
 # nlp-engine >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 nlp-engine:
   isSentenceRecognitionEnabled : "false"
+
+kafka-ui:
+  yamlApplicationConfig:
+    kafka:
+      clusters:
+      - name: pb-prod-v2
+        bootstrapServers: kafka-v2.kafka-cluster:9092
