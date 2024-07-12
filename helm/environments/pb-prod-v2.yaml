@@ -1413,15 +1413,6 @@ financeTenants: |
   location.user.role=Collection Operator
   collection.debitaccounthead.client.impl.class=org.egov.collection.integration.services.DebitAccountHeadDetailsServiceImpl
 
-  #grafana >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-grafana:
-  dashboardsFolder: /work-dir/punjab-rainmaker-customization/configs/monitoring-dashboards      
-  initContainers:
-    gitSync:
-      enabled: true
-      repo: "git@github.com:egovernments/punjab-rainmaker-customization"
-      branch: "PROD_V2" 
-
 # nlp-engine >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 nlp-engine:
   isSentenceRecognitionEnabled : "false"
@@ -1432,3 +1423,46 @@ kafka-ui:
       clusters:
       - name: pb-prod-v2
         bootstrapServers: kafka-v2.kafka-cluster:9092
+
+prometheus:
+  alertmanager:
+    enabled: true
+  externalLabels:
+    cluster: pb-prod-v2
+  additionalScrapeConfigs:
+    - job_name: 'nginx-ingress-metrics'
+      static_configs:
+        - targets: [ 'nginx-ingress-metrics.egov:10254' ]
+    - job_name: 'blackbox'
+      metrics_path: /probe
+      params:
+        module: [ http_2xx ]
+      static_configs:
+        - targets:
+            - https://mseva.lgpunjab.gov.in/common-screen/
+            - https://mseva.lgpunjab.gov.in/employee/
+            - https://mseva.lgpunjab.gov.in/pgadmin/
+            - https://mseva.lgpunjab.gov.in/tracing/
+            - https://mseva.lgpunjab.gov.in/kibana/
+      relabel_configs:
+        - source_labels: [ __address__ ]
+          target_label: __param_target
+        - source_labels: [ __param_target ]
+          target_label: instance
+        - target_label: __address__
+          replacement: prometheus-blackbox-exporter:9115
+    - job_name: 'blackbox_exporter'
+      static_configs:
+        - targets: [ 'prometheus-blackbox-exporter:9115' ]
+
+grafana:
+  github:
+    allowed_organizations: ["pmidc-digit"]
+    role_attribute_path: contains(groups[*], '@pmidc-digit/grafana-admin') && 'Admin' || contains(groups[*], '@pmidc-digit/pmidc-service-devops') && 'Editor' || contains(groups[*], '@pmidc-digit/pb-prod') && 'Viewer'
+
+loki:
+  persistence:
+    enabled: true
+    accessModes:
+      - ReadWriteOnce
+    size: 50Gi

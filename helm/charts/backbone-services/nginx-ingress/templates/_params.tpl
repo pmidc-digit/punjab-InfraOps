@@ -55,7 +55,7 @@
 - --enable-topology-aware-routing=true
 {{- end }}
 {{- if .Values.controller.setSslTls }}
-- --default-ssl-certificate=works/{{ .Values.controller.setSslTls }}
+- --default-ssl-certificate=egov/{{ .Values.controller.setSslTls }}
 {{- end }}
 {{- range $key, $value := .Values.controller.extraArgs }}
 {{- /* Accept keys without values or with false as value */}}
