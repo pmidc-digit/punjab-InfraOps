@@ -433,7 +433,7 @@ alertmanager:
     
     - name: slack-notification
       slack_configs:
-        - channel: '#punjab-mgramseva-alerts'
+        - channel: '#punjab-mseva-alerts'
           send_resolved: true
           username: 'Alertmanager'
           title: |
