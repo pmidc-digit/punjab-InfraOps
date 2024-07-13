@@ -67,8 +67,6 @@ envs:
   secret: {}
   config:
     SERVER_SERVLET_CONTEXT_PATH: "/kafka-ui"
-    KAFKA_CLUSTERS_0_READONLY: "true"
-
 
 networkPolicy:
   enabled: false
@@ -181,8 +179,6 @@ affinity: {}
 env:
   - name: SERVER_SERVLET_CONTEXT_PATH
     value: /kafka-ui
-  - name: KAFKA_CLUSTERS_0_READONLY
-    value: "true"
 
 initContainers: {}
 
