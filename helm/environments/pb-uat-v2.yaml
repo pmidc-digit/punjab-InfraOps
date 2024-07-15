@@ -418,7 +418,7 @@ egov-data-uploader:
   initContainers:
     gitSync:
         repo: "git@github.com:pmidc-digit/punjab-rainmaker-customization"
-        branch: "PROD_V2"
+        branch: "UAT_V2"
   internal-file-folder-path: "/tmp"
   java-args: "-Dspring.profiles.active=production"
 
