@@ -138,15 +138,15 @@ cluster-configs:
 # billingservices >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 billing-service:
   replicas: 3
-  memory_limits: "1850Mi"
+  memory_limits: "1950Mi"
   resources: |
     limits:
       cpu: 500m
-      memory: 1850Mi
+      memory: 1950Mi
     requests:
       cpu: 500m
-      memory: 1850Mi
-  heap: "-Xmx1600m -Xms1600m -Xmn1400m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
+      memory: 1950Mi
+  heap: "-Xmx1700m -Xms1700m -Xmn1400m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
   java-args: "-Dspring.profiles.active=production"
   server-tomcat-max-threads: "30"
   server-tomcat-max-connections: "1500"
@@ -756,8 +756,8 @@ property-services:
 pt-calculator-v2:
   replicas: 3
   logging-level: "DEBUG"
-  heap: "-Xmx1800m -Xms1800m -Xmn1600m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
-  memory_limits: "2250Mi"
+  heap: "-Xmx1900m -Xms1900m -Xmn1600m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
+  memory_limits: "2350Mi"
   server-tomcat-max-connections: "1500"
   JAVA_ENABLE_DEBUG: "true"
   CUSTOM_PB_ZERO_ASSESSMENT: "true"
@@ -800,15 +800,15 @@ tl-calculator:
 
 collection-services:
   replicas: 4
-  memory_limits: "1850Mi"
+  memory_limits: "1950Mi"
   resources: |
     limits:
       cpu: 500m
-      memory: 1850Mi
+      memory: 1950Mi
     requests:
       cpu: 500m
-      memory: 1850Mi
-  heap: "-Xmx1600m -Xms1600m -Xmn1400m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
+      memory: 1950Mi
+  heap: "-Xmx1700m -Xms1700m -Xmn1400m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
   receiptnumber-servicebased: "true"
   search-ignore-status: "Cancelled,Rejected"
   java-args: "-Dspring.profiles.active=production"
