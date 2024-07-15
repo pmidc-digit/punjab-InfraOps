@@ -379,7 +379,7 @@ egov-persister:
   initContainers:
     gitSync:
         repo: "git@github.com:pmidc-digit/punjab-rainmaker-customization"
-        branch: "PROD_V2"
+        branch: "UAT_V2"
 
 egov-user-enc:
   replicas: 1
