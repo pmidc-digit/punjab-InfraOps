@@ -700,9 +700,9 @@ report:
   replicas: 2
   heap: "-Xmx856m -Xms856m"
   tracing-enabled: "true"
-  server-tomcat-max-threads: "30"
+  server-tomcat-max-threads: "15"
   server-tomcat-max-connections: "1000"
-  spring-datasource-tomcat-max-active: "100"  
+  spring-datasource-tomcat-max-active: "15"  
   java-args: "-Dspring.profiles.active=production"
   report-locationsfile-path: "file:///work-dir/punjab-rainmaker-customization/configs/reports/report.config"
   initContainers:
