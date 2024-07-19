@@ -896,7 +896,7 @@ logging-config:
   es-port: "9200"
 
 echallan-services:
-  replicas: 3
+  replicas: 5
   memory_limits: "2150Mi"
   resources: |
     limits:
