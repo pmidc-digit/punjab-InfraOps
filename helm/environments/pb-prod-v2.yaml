@@ -148,9 +148,9 @@ billing-service:
       memory: 1950Mi
   heap: "-Xmx1700m -Xms1700m -Xmn1400m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
   java-args: "-Dspring.profiles.active=production"
-  server-tomcat-max-threads: "30"
+  server-tomcat-max-threads: "50"
   server-tomcat-max-connections: "1500"
-  spring-datasource-tomcat-max-active: "10"  
+  spring-datasource-tomcat-max-active: "25"  
   tracing-enabled: "true"
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
@@ -816,9 +816,9 @@ collection-services:
   receipt-search-paginate: "true"
   receipt-search-defaultsize: 500
   user-create-enabled: "true"
-  server-tomcat-max-threads: "25"
+  server-tomcat-max-threads: "50"
   server-tomcat-max-connections: "1500"
-  spring-datasource-tomcat-max-active: "10"  
+  spring-datasource-tomcat-max-active: "25"  
 
 # WnS >>>>>>>>>>>>>>>>>>>>>>>>>>>>
 ws-services:
