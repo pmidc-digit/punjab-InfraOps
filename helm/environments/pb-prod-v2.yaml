@@ -743,8 +743,8 @@ pt-services-v2:
 
 property-services:
   replicas: 4
-  heap: "-Xmx1800m -Xms1800m -Xmn1600m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
-  memory_limits: "2000Mi"
+  heap: "-Xmx2900m -Xms2900m -Xmn2700m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
+  memory_limits: "3350Mi"
   server-tomcat-max-threads: "15"
   server-tomcat-max-connections: "1000"
   spring-datasource-tomcat-max-active: "15"  
