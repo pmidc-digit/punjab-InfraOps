@@ -137,7 +137,7 @@ cluster-configs:
 
 # billingservices >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 billing-service:
-  replicas: 3
+  replicas: 5
   memory_limits: "1950Mi"
   resources: |
     limits:
@@ -754,7 +754,7 @@ property-services:
   egov-idgen-ptid-format: "PT-[CITY.CODE]-[SEQ_EG_PT_PTID]"
 
 pt-calculator-v2:
-  replicas: 4
+  replicas: 5
   logging-level: "DEBUG"
   heap: "-Xmx2000m -Xms2000m -Xmn1900m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
   memory_limits: "3000Mi"
@@ -799,7 +799,7 @@ tl-calculator:
 # Collections >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 collection-services:
-  replicas: 4
+  replicas: 5
   memory_limits: "2250Mi"
   resources: |
     limits:
