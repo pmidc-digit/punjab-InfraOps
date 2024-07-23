@@ -236,12 +236,12 @@ egov-otp:
   replicas: 1
 
 inbox:
-  replicas: 2
+  replicas: 1
   db-url: "jdbc:postgresql://pb-uat-v2-db-new2.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com:5432/egov_prod_db"
 
 
 egov-user:
-  replicas: 3
+  replicas: 1
   heap: "-Xmx456m -Xms456m -XX:TieredStopAtLevel=1"
   memory_limits: 512Mi
   otp-validation: "true"
@@ -379,7 +379,7 @@ egov-persister:
   initContainers:
     gitSync:
         repo: "git@github.com:pmidc-digit/punjab-rainmaker-customization"
-        branch: "PROD_V2"
+        branch: "UAT_V2"
 
 egov-user-enc:
   replicas: 1
@@ -407,7 +407,7 @@ egov-searcher:
   java-args: "-Dspring.profiles.active=production"
   initContainers:
     gitSync:
-        repo: "git@github.com:pmidc-digit/punjab-rainmaker-customization"
+        repo: "git@github.com:egovernments/punjab-rainmaker-customization"
         branch: "PROD_V2"
 
 egov-data-uploader:
@@ -418,7 +418,7 @@ egov-data-uploader:
   initContainers:
     gitSync:
         repo: "git@github.com:pmidc-digit/punjab-rainmaker-customization"
-        branch: "PROD_V2"
+        branch: "UAT_V2"
   internal-file-folder-path: "/tmp"
   java-args: "-Dspring.profiles.active=production"
 
@@ -671,6 +671,7 @@ rainmaker-pgr:
   heap: "-Xmx192m -Xms192m -XX:TieredStopAtLevel=1"
   java-args: "-Dspring.profiles.active=production"
   tracing-enabled: "true"
+  read-db-enabled: "true"
 
 egov-notification-mail:
   username: "noreplypmidc@gmail.com"

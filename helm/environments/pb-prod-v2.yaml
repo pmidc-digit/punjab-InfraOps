@@ -137,20 +137,20 @@ cluster-configs:
 
 # billingservices >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 billing-service:
-  replicas: 3
-  memory_limits: "1850Mi"
+  replicas: 5
+  memory_limits: "1950Mi"
   resources: |
     limits:
       cpu: 500m
-      memory: 1850Mi
+      memory: 1950Mi
     requests:
       cpu: 500m
-      memory: 1850Mi
-  heap: "-Xmx1600m -Xms1600m -Xmn1400m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
+      memory: 1950Mi
+  heap: "-Xmx1700m -Xms1700m -Xmn1400m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
   java-args: "-Dspring.profiles.active=production"
-  server-tomcat-max-threads: "30"
+  server-tomcat-max-threads: "50"
   server-tomcat-max-connections: "1500"
-  spring-datasource-tomcat-max-active: "10"  
+  spring-datasource-tomcat-max-active: "25"
   tracing-enabled: "true"
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
@@ -352,7 +352,7 @@ egov-indexer:
   memory_limits: "1800Mi"
   initContainers:
     gitSync:
-        repo: "git@github.com:egovernments/punjab-rainmaker-customization"
+        repo: "git@github.com:pmidc-digit/punjab-rainmaker-customization"
         branch: "PROD_V2"
   egov-indexer-yaml-repo-path: "file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/whatsapp-adoption-data.yaml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/chatbot-telemetry-v2.yaml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/billingservices-indexer.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/collection-indexer.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/egov-telemetry-indexer.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/egov-uploader-indexer.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/finance-rolloutadoption-indexer.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/rainmaker-pgr-indexer.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/rainmaker-pt-indexer.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/rainmaker-tl-indexer.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/payment-indexer.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/water-service.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/water-services-meter.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/sewerage-service.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/property-services.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/error-queue.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/payment-indexer.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/rainmaker-firenoc-indexer.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/payment-indexer-migration.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/property-services-migration-temp.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/covid-chatbot-telemetry.yaml,file:///work-dir/punjab-rainmaker-customization/configs/egov-indexer/chatbot-telemetry-v2.yaml"
 
@@ -369,7 +369,7 @@ egov-workflow-v2:
 egov-persister:
   memory_limits: 2200Mi
   heap: "-Xmx1900m -Xms1900m -Xmn1600m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
-  replicas: 3
+  replicas: 5
   persist-yml-path: "file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/echallan.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/pg-service-persister.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/pgr-v3-persister.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/property-services-persister.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/pt-calculator-v2-persister.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/pt-drafts-persister.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/tradelicense-persister.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/indexer-job-persister.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/tl-calculation-persister.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/tl-billing-slab-persister.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/hrms-employee-persister.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/egov-workflow-v2-persister.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/apportion-persister.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/assessment-persister-migration-temp.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/migration-batch-count-persister.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/property-services-migration-temp-config.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/collection-migration-persister.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/water-persist.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/water-meter.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/sewerage-persist.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/property-services-registry.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/property-services.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/pt-mutation-calculator-persister.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/assessment-persister.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/pdf-generator.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/pdf-filestoreid-update.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/egov-user-event-persister.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/firenoc_persiter.yaml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/firenoc-calculator-persister.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/egf-bill.yaml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/water-bill-scheduler.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-persister/sewerage-bill-scheduler.yml"
   java-args: "-Dspring.profiles.active=production"
   initContainers:
@@ -385,7 +385,7 @@ egov-searcher:
   java-args: "-Dspring.profiles.active=production"
   initContainers:
     gitSync:
-        repo: "git@github.com:egovernments/punjab-rainmaker-customization"
+        repo: "git@github.com:pmidc-digit/punjab-rainmaker-customization"
         branch: "PROD_V2"
 
 egov-data-uploader:
@@ -395,7 +395,7 @@ egov-data-uploader:
   template-download-prefix: "file:///work-dir/punjab-rainmaker-customization/configs/upload-templates"
   initContainers:
     gitSync:
-        repo: "git@github.com:egovernments/punjab-rainmaker-customization"
+        repo: "git@github.com:pmidc-digit/punjab-rainmaker-customization"
         branch: "UAT_V2"
   internal-file-folder-path: "/tmp"
   java-args: "-Dspring.profiles.active=production"
@@ -462,7 +462,7 @@ data-upload:
   config-paths: "file:///work-dir/punjab-rainmaker-customization/configs/data-upload/case-management.yaml"
   initContainers:
     gitSync:
-        repo: "git@github.com:egovernments/punjab-rainmaker-customization"
+        repo: "git@github.com:pmidc-digit/punjab-rainmaker-customization"
         branch: "PROD_V2" 
 
 mailbot:
@@ -471,7 +471,7 @@ mailbot:
   config-paths: "file:///work-dir/punjab-rainmaker-customization/configs/mailbot/case-management.yaml"
   initContainers:
     gitSync:
-        repo: "git@github.com:egovernments/punjab-rainmaker-customization"
+        repo: "git@github.com:pmidc-digit/punjab-rainmaker-customization"
         branch: "PROD_V2"        
 
 home-isolation-chatbot:
@@ -528,7 +528,7 @@ pdf-service:
       memory: 700Mi   
   initContainers:
     gitSync:
-      repo: "git@github.com:egovernments/punjab-rainmaker-customization"
+      repo: "git@github.com:pmidc-digit/punjab-rainmaker-customization"
       branch: "PROD_V2"
   data-config-urls: "file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/data-config/mcollect-bill.json, file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/data-config//mcollect-challan.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/data-config/consolidatedbill.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/data-config/consolidatedreceipt.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/data-config/consolidatedreceiptold.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/data-config/ws-consolidatedacknowlegment.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/data-config/ws-consolidatedsewerageconnection.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/data-config/ws-applicationsewerage.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/data-config/ws-applicationwater.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/data-config/ws-estimationnotice.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/data-config/ws-sanctionletter.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/data-config/ws-bill.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/data-config/ws-onetime-receipt.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/data-config/tlrenewalcertificate.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/data-config/tradelicense-receipt.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/data-config/property-receipt.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/data-config/property-bill.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/data-config/tradelicense-bill.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/data-config/firenoc-receipt.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/data-config/pt-receipt.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/data-config/tl-receipt.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/data-config/tlapplication.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/data-config/tlcertificate.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/data-config/ptmutationcertificate.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/data-config/misc-receipt.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/data-config/bill-amendment.json, file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/data-config/bill-amendment-note.json, file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/data-config/fsm-receipt.json, file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/data-config/sewerage-bill-amendment-note.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/data-config/sw-bill.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/data-config/firenocreceipt.json"
   format-config-urls: "file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/format-config/mcollect-bill.json, file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/format-config/mcollect-challan.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/format-config/consolidatedbill.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/format-config/consolidatedreceipt.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/format-config/consolidatedreceiptold.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/format-config/ws-consolidatedacknowlegment.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/format-config/ws-consolidatedsewerageconnection.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/format-config/ws-applicationsewerage.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/format-config/ws-applicationwater.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/format-config/ws-estimationnotice.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/format-config/ws-sanctionletter.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/format-config/ws-bill.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/format-config/ws-onetime-receipt.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/format-config/tlrenewalcertificate.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/format-config/tradelicense-receipt.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/format-config/property-receipt.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/format-config/property-bill.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/format-config/tradelicense-bill.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/format-config/firenoc-receipt.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/format-config/pt-receipt.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/format-config/tl-receipt.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/format-config/tlapplication.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/format-config/tlcertificate.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/format-config/ptmutationcertificate.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/format-config/misc-receipt.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/format-config/bill-amendment.json, file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/format-config/bill-amendment-note.json, file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/format-config/fsm-receipt.json, file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/format-config/sewerage-bill-amendment-note.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/format-config/sw-bill.json,file:///work-dir/punjab-rainmaker-customization/configs/pdf-service/format-config/firenocreceipt.json"
@@ -557,7 +557,7 @@ zuul:
   posthook-config: "https://raw.githubusercontent.com/egovernments/punjab-rainmaker-customization/PROD_V2/configs/egov-zuul/post-hook.json"
   initContainers:
     gitSync:
-        repo: "git@github.com:egovernments/punjab-rainmaker-customization"
+        repo: "git@github.com:pmidc-digit/punjab-rainmaker-customization"
         branch: "PROD_V2"
   heap: "-Xmx1280m -Xms1280m -XX:TieredStopAtLevel=1"
   memory_limits: 1536Mi
@@ -586,7 +586,7 @@ dashboard-analytics:
   config-schema-paths: "file:///work-dir/punjab-rainmaker-customization/configs/egov-dss-dashboards/dashboard-analytics/*.json"
   initContainers:
     gitSync:
-        repo: "git@github.com:egovernments/punjab-rainmaker-customization"
+        repo: "git@github.com:pmidc-digit/punjab-rainmaker-customization"
         branch: "PROD_V2"        
 
 dashboard-ingest:
@@ -598,7 +598,7 @@ dashboard-ingest:
   config-schema-paths: "file:///work-dir/punjab-rainmaker-customization/configs/egov-dss-dashboards/dashboard-ingest/*.json"
   initContainers:
     gitSync:
-        repo: "git@github.com:egovernments/punjab-rainmaker-customization"
+        repo: "git@github.com:pmidc-digit/punjab-rainmaker-customization"
         branch: "PROD_V2" 
 
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -700,14 +700,14 @@ report:
   replicas: 2
   heap: "-Xmx856m -Xms856m"
   tracing-enabled: "true"
-  server-tomcat-max-threads: "30"
+  server-tomcat-max-threads: "15"
   server-tomcat-max-connections: "1000"
-  spring-datasource-tomcat-max-active: "100"  
+  spring-datasource-tomcat-max-active: "15"
   java-args: "-Dspring.profiles.active=production"
   report-locationsfile-path: "file:///work-dir/punjab-rainmaker-customization/configs/reports/report.config"
   initContainers:
     gitSync:
-        repo: "git@github.com:egovernments/punjab-rainmaker-customization"
+        repo: "git@github.com:pmidc-digit/punjab-rainmaker-customization"
         branch: "PROD_V2"
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -743,8 +743,8 @@ pt-services-v2:
 
 property-services:
   replicas: 4
-  heap: "-Xmx1800m -Xms1800m -Xmn1600m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
-  memory_limits: "2000Mi"
+  heap: "-Xmx2900m -Xms2900m -Xmn2700m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
+  memory_limits: "3350Mi"
   server-tomcat-max-threads: "15"
   server-tomcat-max-connections: "1000"
   spring-datasource-tomcat-max-active: "15"  
@@ -754,10 +754,10 @@ property-services:
   egov-idgen-ptid-format: "PT-[CITY.CODE]-[SEQ_EG_PT_PTID]"
 
 pt-calculator-v2:
-  replicas: 3
+  replicas: 5
   logging-level: "DEBUG"
-  heap: "-Xmx1800m -Xms1800m -Xmn1600m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
-  memory_limits: "2250Mi"
+  heap: "-Xmx2000m -Xms2000m -Xmn1900m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
+  memory_limits: "3000Mi"
   server-tomcat-max-connections: "1500"
   JAVA_ENABLE_DEBUG: "true"
   CUSTOM_PB_ZERO_ASSESSMENT: "true"
@@ -799,16 +799,16 @@ tl-calculator:
 # Collections >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 collection-services:
-  replicas: 4
-  memory_limits: "1850Mi"
+  replicas: 5
+  memory_limits: "2250Mi"
   resources: |
     limits:
       cpu: 500m
-      memory: 1850Mi
+      memory: 2250Mi
     requests:
       cpu: 500m
-      memory: 1850Mi
-  heap: "-Xmx1600m -Xms1600m -Xmn1400m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
+      memory: 2250Mi
+  heap: "-Xmx1700m -Xms1700m -Xmn1500m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
   receiptnumber-servicebased: "true"
   search-ignore-status: "Cancelled,Rejected"
   java-args: "-Dspring.profiles.active=production"
@@ -816,9 +816,9 @@ collection-services:
   receipt-search-paginate: "true"
   receipt-search-defaultsize: 500
   user-create-enabled: "true"
-  server-tomcat-max-threads: "25"
+  server-tomcat-max-threads: "50"
   server-tomcat-max-connections: "1500"
-  spring-datasource-tomcat-max-active: "10"  
+  spring-datasource-tomcat-max-active: "25"
 
 # WnS >>>>>>>>>>>>>>>>>>>>>>>>>>>>
 ws-services:
@@ -896,13 +896,13 @@ logging-config:
   es-port: "9200"
 
 echallan-services:
-  replicas: 3
-  memory_limits: "1850Mi"
+  replicas: 5
+  memory_limits: "2150Mi"
   resources: |
     limits:
-      memory: 1850Mi
+      memory: 2150Mi
     requests:
-      memory: 1850Mi
+      memory: 2150Mi
   heap: "-Xmx1600m -Xms1600m -Xmn1400m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
   java-args: "-Dspring.profiles.active=monitoring"
   egov-idgen-challanNum-format: "PG-CH-[cy:yyyy-MM-dd]-[SEQ_EG_CH_APL]"

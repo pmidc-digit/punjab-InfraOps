@@ -143,8 +143,4 @@ env: |
   - name: EGOV_USR_EVENTS_RATE_CODE
     value: "RATE"
   - name: EGOV_USR_EVENTS_REOPEN_CODE
-    value: "REOPEN"          
-  {{- if index .Values "tracing-enabled" }}
-  - name: TRACER_OPENTRACING_ENABLED
-    value: "true" 
-  {{- end }}
+    value: "REOPEN"
