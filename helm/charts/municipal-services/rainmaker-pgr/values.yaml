@@ -39,19 +39,6 @@ java-args: "-Dspring.profiles.active=monitoring"
 
 # Additional Container Envs
 env: |
-  {{- if index .Values "cluster-configs" "configmaps" "egov-config" "data" "db-read-url" }}
-  - name: SPRING_DATASOURCE_URL
-    valueFrom:
-      configMapKeyRef:
-        name: egov-config
-        key: db-read-url
-  {{- else if index .Values "cluster-configs" "configmaps" "egov-config" "data" "db-url" }}
-  - name: SPRING_DATASOURCE_URL
-    valueFrom:
-      configMapKeyRef:
-        name: egov-config
-        key: db-url
-  {{- end }}  
   - name: SPRING_KAFKA_CONSUMER_GROUP_ID
     value: rainmaker-service
   - name: SPRING_KAFKA_PRODUCER_KEY_SERIALIZER
@@ -156,8 +143,4 @@ env: |
   - name: EGOV_USR_EVENTS_RATE_CODE
     value: "RATE"
   - name: EGOV_USR_EVENTS_REOPEN_CODE
-    value: "REOPEN"          
-  {{- if index .Values "tracing-enabled" }}
-  - name: TRACER_OPENTRACING_ENABLED
-    value: "true" 
-  {{- end }}
+    value: "REOPEN"

@@ -671,6 +671,7 @@ rainmaker-pgr:
   heap: "-Xmx192m -Xms192m -XX:TieredStopAtLevel=1"
   java-args: "-Dspring.profiles.active=production"
   tracing-enabled: "true"
+  read-db-enabled: "true"
 
 egov-notification-mail:
   username: "noreplypmidc@gmail.com"

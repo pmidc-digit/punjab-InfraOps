@@ -109,6 +109,8 @@ lifecycle:
             - -c
             - "sleep 10"
 
+read-db-enabled: false
+tracing-enabled: true
 memory_limits: "512Mi"
 resources: |
   {{- if eq .Values.appType "java-spring" -}}
@@ -120,11 +122,19 @@ resources: |
 ## Allows specification of additional environment variables
 extraEnv:
   java: |
+      {{- if index .Values "read-db-enabled" }}
+      - name: SPRING_DATASOURCE_URL
+        valueFrom:
+          configMapKeyRef:
+            name: egov-config
+            key: db-read-url
+      {{- else }}
       - name: SPRING_DATASOURCE_URL
         valueFrom:
           configMapKeyRef:
             name: egov-config
             key: db-url
+      {{- end }}
       - name: FLYWAY_ENABLED
         value: "false"      
       - name: SPRING_FLYWAY_ENABLED
@@ -220,8 +230,10 @@ extraEnv:
         value: "6831"
       - name: JAEGER_SAMPLER_MANAGER_HOST_PORT
         value: "$(JAEGER_AGENT_HOST):5778"
+      {{- if index .Values "tracing-enabled" }}
       - name: TRACER_OPENTRACING_ENABLED
-        value: "true"         
+        value: "true"
+      {{- end }}
 ## Additional init containers
 extraInitContainers: |
 
