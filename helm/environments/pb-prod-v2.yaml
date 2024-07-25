@@ -1226,7 +1226,7 @@ oauth2-proxy:
     configFile: |-
       email_domains = [ "*" ]
       github_org = "pmidc-digit"
-      github_team = "pb-prod,pmidc-service-devops,msevaupyogDevops"
+      github_team = "pb-prod,pmidc-service-devops,msevaupyogDevops,niua"
       upstreams = [ "file:///dev/null" ]
 
 prometheus-operator:      
