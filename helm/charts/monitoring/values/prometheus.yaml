@@ -252,34 +252,18 @@ additionalPrometheusRules:
      - name: KubernetesPersistentvolume
        rules:
        - alert: KubernetesVolumeOutOfDiskSpace
-         expr: '(kubelet_volume_stats_available_bytes / kubelet_volume_stats_capacity_bytes * 100) < 10'
+         expr: '(kubelet_volume_stats_available_bytes / kubelet_volume_stats_capacity_bytes * 100) < 20'
          for: 2m
          labels:
            severity: warning
          annotations:
            summary: Kubernetes Volume out of disk space (instance {{ $labels.instance }})
-           description: "Volume is almost full (< 10% left)\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
-           repeat_interval: 30m
-       - alert: KubernetesVolumeFullInFourDays
-         expr: 'predict_linear(kubelet_volume_stats_available_bytes[1h:5m], 4 * 24 * 3600) < 0 and (kubelet_volume_stats_available_bytes / kubelet_volume_stats_capacity_bytes) < 0.6'
-         for: 2m
-         labels:
-           severity: critical
-         annotations:
-           summary: Kubernetes Volume full in four days (instance {{ $labels.instance }})
            description: |
-             Volume under {{ $labels.namespace }}/{{ $labels.persistentvolumeclaim }} is expected to fill up within four days.
-             {{- if lt $value 0.0 }}
-             Currently, the volume is predicted to be out of space soon. Please check the volume usage.
-             {{- else }}
-             Currently, {{ $value | humanize }} bytes are available.
-             {{- end }}
-             VALUE = {{ $value | humanize }}
+             Volume is almost full (< 20% left)
+             Current Usage = {{ $value }}%
              LABELS:
-               - instance: {{ $labels.instance }}
                - namespace: {{ $labels.namespace }}
-               - persistentvolumeclaim: {{ $labels.persistentvolumeclaim }}
-               - node: {{ $labels.node }}
+               - persistentvolume: {{ $labels.persistentvolume }}
            repeat_interval: 30m
        - alert: KubernetesPersistentvolumeError
          expr: 'kube_persistentvolume_status_phase{phase=~"Failed|Pending", job="kube-state-metrics", namespace!~"monitoring|kube-system|default|logging"} > 0'

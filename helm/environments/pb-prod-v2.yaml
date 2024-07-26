@@ -1459,11 +1459,13 @@ prometheus:
 grafana:
   github:
     allowed_organizations: ["pmidc-digit"]
-    role_attribute_path: contains(groups[*], '@pmidc-digit/grafana-admin') && 'Admin' || contains(groups[*], '@pmidc-digit/pmidc-service-devops') && 'Editor' || contains(groups[*], '@pmidc-digit/pb-prod') && 'Viewer'
+    role_attribute_path: contains(groups[*], '@pmidc-digit/grafana-admin') && 'Admin' || contains(groups[*], '@pmidc-digit/pmidc-service-devops') && 'Editor' || contains(groups[*], '@pmidc-digit/pb-prod') && 'Viewer' || contains(groups[*], '@pmidc-digit/niua') && 'Viewer'
 
 loki:
   persistence:
     enabled: true
     accessModes:
       - ReadWriteOnce
-    size: 50Gi
+    size: 25Gi
+  aws:
+    bucket_url: s3://ap-south-1/pb-loki-stack

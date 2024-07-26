@@ -30,6 +30,10 @@ releases:
   - ./values/loki-stack.yaml
   - loki:
       persistence: {{ .Values.loki.persistence | toYaml | nindent 8 }}
+      config:
+        storage_config:
+          aws:
+            s3: {{ .Values.loki.aws.bucket_url }}
 
 - name: kube-prometheus-stack
   installed: true
