@@ -31,9 +31,12 @@ releases:
   - loki:
       persistence: {{ .Values.loki.persistence | toYaml | nindent 8 }}
       config:
-        storage_config:
-          aws:
-            s3: {{ .Values.loki.aws.bucket_url }}
+        schema_config: {{ .Values.loki.schema_config | toYaml | nindent 10 }}
+        storage_config: {{ .Values.loki.storage_config | toYaml | nindent 10 }}
+        compactor: {{ .Values.loki.compactor | toYaml | nindent 10 }}
+        limits_config: {{ .Values.loki.limits_config | toYaml | nindent 10 }}
+        chunk_store_config: {{ .Values.loki.chunk_store_config | toYaml | nindent 10 }}
+        table_manager: {{ .Values.loki.table_manager | toYaml | nindent 10 }}
 
 - name: kube-prometheus-stack
   installed: true
