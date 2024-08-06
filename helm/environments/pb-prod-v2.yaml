@@ -1061,11 +1061,11 @@ kafka-v2-infra:
     #dataDirSize: "500Gi"
     enabled: true
     aws:
-      - volumeId: "vol-0892f7ddd8087abae"
+      - volumeId: "vol-0db33514e43491624"
         zone: ap-south-1a
-      - volumeId: "vol-0ac54994097ec02e3"
+      - volumeId: "vol-071e171ee57b9529a"
         zone: ap-south-1a
-      - volumeId: "vol-08ac704a8ef3ea861"
+      - volumeId: "vol-0ffce1f8c235c93a4"
         zone: ap-south-1a
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
@@ -1127,13 +1127,13 @@ elasticsearch-data-v1:
   persistence:
     #dataDirSize: "150Gi"
     enabled: true
-    dataDirSize: "150Gi"
+    dataDirSize: "250Gi"
     aws:
-      - volumeId: "vol-0aa49c70c4d3c7eae"
+      - volumeId: "vol-051fbd8bf7b367fa1"
         zone: ap-south-1a
-      - volumeId: "vol-08b91413ec549b355"
+      - volumeId: "vol-0c9d32b57eb28c76f"
         zone: ap-south-1a
-      - volumeId: "vol-065833b2aa938c276"
+      - volumeId: "vol-0bdeb5b9483cac689"
         zone: ap-south-1a
 
 elasticsearch-client-v1:
@@ -1150,11 +1150,11 @@ elasticsearch-master-v1:
   persistence:
     enabled: true
     aws:
-      - volumeId: "vol-020156e0370b8188b"
+      - volumeId: "vol-03e9cde14887ba7c6"
         zone: ap-south-1a
-      - volumeId: "vol-04e5257a9cae368f1"
+      - volumeId: "vol-0b12ceecda2b1a6d6"
         zone: ap-south-1a
-      - volumeId: "vol-0822a0681c7cd61b5"
+      - volumeId: "vol-04db54e2ba6e55966"
         zone: ap-south-1a
 
 kibana-v1:
