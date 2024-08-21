@@ -44,6 +44,7 @@ numberPartitions: "3"
 replicationFactor: "2"
 minInsyncReplicas: "1"
 offsetsReplicationFactor: "3"
+logRetention: "604800000"
 
 
 ## Persistent Volumes

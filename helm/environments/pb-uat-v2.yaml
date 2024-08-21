@@ -950,21 +950,24 @@ kafka-v2:
     - confluentinc/cp-kafka:5.2.2
   # Use chroot to reuse single zookeeper ensemble
   zookeeper-connect: "zookeeper-v2-headless.zookeeper-cluster:2181/kafka"
-  heap: "-Xms1024M -Xmx10024M -XX:TieredStopAtLevel=1"
-  offsets-topic-replication-factor: "3"
-  linger-ms: "250"
-  min-insync-replicas: "1"
-  default-replication-factor: "2"
-  num-partitions: "3"
-  storage-size: "100Gi"
+  heapOptions: "-Xms2506M -Xmx2506M -XX:TieredStopAtLevel=1"
+  memory_limits: 2816Mi
+  cpu_limits: 1200m
+  offsetsReplicationFactor: "3"
+  lingerMs: "250"
+  minInsyncReplicas: "1"
+  replicationFactor: "2"
+  numberPartitions: "3"
+  logRetention: "259200000"
   persistence:
     enabled: true
+    dataDirSize: 100Gi
     aws:
-      - volumeId: "vol-04121ebc439daf074"
+      - volumeId: "vol-0169bb5523e9f5810"
         zone: ap-south-1a
-      - volumeId: "vol-04dc1bfb86f67ec1a"
+      - volumeId: "vol-0ff0506addfc25749"
         zone: ap-south-1a
-      - volumeId: "vol-05b14be12751588d0"
+      - volumeId: "vol-0978c26297d6108b9"
         zone: ap-south-1a
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
