@@ -1,5 +1,5 @@
 global:
-  domain: pmidc-builds.digit.org ## Add your Domain Name Eg: site.mydomain.com
+  domain: pmidc-build.lgpunjab.gov.in
   setup: fullsetup
   
 cluster-configs:
