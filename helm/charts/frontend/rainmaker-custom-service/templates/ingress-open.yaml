@@ -3,6 +3,9 @@ kind: Ingress
 metadata:
   name: rainmaker-custom-service-open
   namespace: {{ .Values.namespace }}
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
   rules:
   - host: {{ .Values.global.domain }}
@@ -14,6 +17,7 @@ spec:
             port:
               number: 8000
         path: /customization/(open|static)
+        pathType: ImplementationSpecific
   tls:
   - hosts:
     - {{ .Values.global.domain }}
