@@ -62,6 +62,9 @@ loki:
       - ReadWriteOnce
     size: 10Gi  # Set the desired size for the persistent volume
 
+serviceAccount:
+  annotations: {}
+
 promtail:
   enabled: true
   config:
