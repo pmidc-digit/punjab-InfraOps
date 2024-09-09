@@ -1192,7 +1192,7 @@ kafka-ui:
 
 prometheus:
   alertmanager:
-    enabled: true
+    enabled: false
   externalLabels:
     cluster: pb-uat-v2
   additionalScrapeConfigs:
