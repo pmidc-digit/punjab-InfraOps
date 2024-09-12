@@ -783,7 +783,7 @@ dashboards:
       url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-nodes.json
       token: ''
     k8s-views-pods:
-      url: https://raw.githubusercontent.com/pmidc/punjab-InfraOps/monitoring/helm/charts/monitoring/dashboards/k8s-views-pods.json
+      url: https://raw.githubusercontent.com/pmidc-digit/punjab-InfraOps/monitoring_upgrade/helm/charts/monitoring/dashboards/k8s-views-pods.json
       token: ''
     ingress-dashboard:
       url: https://raw.githubusercontent.com/egovernments/configs/master/monitoring-dashboards/k8s-ingress-dashbaord.json
