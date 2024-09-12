@@ -138,15 +138,15 @@ cluster-configs:
 # billingservices >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 billing-service:
   replicas: 5
-  memory_limits: "1950Mi"
+  memory_limits: "4000Mi"
   resources: |
     limits:
       cpu: 500m
-      memory: 1950Mi
+      memory: 4000Mi
     requests:
       cpu: 500m
-      memory: 1950Mi
-  heap: "-Xmx1700m -Xms1700m -Xmn1400m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
+      memory: 4000Mi
+  heap: "-Xmx3000m -Xms3000m -Xmn2700m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -Xloggc:garbage_collection.log"
   java-args: "-Dspring.profiles.active=production"
   server-tomcat-max-threads: "50"
   server-tomcat-max-connections: "1500"
@@ -733,18 +733,18 @@ egov-notification-mail:
 
 
 pt-services-v2:
-  replicas: 3
-  heap: "-Xmx900m -Xms900m -Xmn600m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
-  memory_limits: "1150Mi"
+  replicas: 5
+  heap: "-Xmx3000m -Xms3000m -Xmn2700m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -Xloggc:garbage_collection.log"
+  memory_limits: "4000Mi"
   notification-sms-enabled: "false"
   java-args: "-Dspring.profiles.active=production"
   tracing-enabled: "true"
   pt-userevents-pay-link: "citizen/otpLogin?mobileNo=$mobile&redirectTo=egov-common/pay?consumerCode=$applicationNo&tenantId=$tenantId"
 
 property-services:
-  replicas: 4
-  heap: "-Xmx2900m -Xms2900m -Xmn2700m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
-  memory_limits: "3350Mi"
+  replicas: 5
+  heap: "-Xmx3000m -Xms3000m -Xmn2700m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -Xloggc:garbage_collection.log"
+  memory_limits: "4000Mi"
   server-tomcat-max-threads: "15"
   server-tomcat-max-connections: "1000"
   spring-datasource-tomcat-max-active: "15"  
@@ -756,8 +756,8 @@ property-services:
 pt-calculator-v2:
   replicas: 5
   logging-level: "DEBUG"
-  heap: "-Xmx2000m -Xms2000m -Xmn1900m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
-  memory_limits: "3000Mi"
+  heap: "-Xmx3000m -Xms3000m -Xmn2700m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -Xloggc:garbage_collection.log"
+  memory_limits: "4000Mi"
   server-tomcat-max-connections: "1500"
   JAVA_ENABLE_DEBUG: "true"
   CUSTOM_PB_ZERO_ASSESSMENT: "true"
@@ -800,15 +800,15 @@ tl-calculator:
 
 collection-services:
   replicas: 5
-  memory_limits: "2250Mi"
+  memory_limits: "4000Mi"
   resources: |
     limits:
       cpu: 500m
-      memory: 2250Mi
+      memory: 4000Mi
     requests:
       cpu: 500m
-      memory: 2250Mi
-  heap: "-Xmx1700m -Xms1700m -Xmn1400m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
+      memory: 4000Mi
+  heap: "-Xmx3000m -Xms3000m -Xmn2700m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -Xloggc:garbage_collection.log"
   receiptnumber-servicebased: "true"
   search-ignore-status: "Cancelled,Rejected"
   java-args: "-Dspring.profiles.active=production"
