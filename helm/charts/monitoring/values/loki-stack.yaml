@@ -63,7 +63,7 @@ loki:
     size: 10Gi  # Set the desired size for the persistent volume
 
 serviceAccount:
-  annotations: {}
+  annotations: ""
 
 promtail:
   enabled: true

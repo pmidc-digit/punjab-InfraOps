@@ -42,7 +42,6 @@ releases:
         annotations: {{ .Values.loki.serviceAccount.annotations | toYaml | nindent 10 }}
       {{- end }}
 
-
 - name: kube-prometheus-stack
   installed: true
   namespace: {{ .Values.namespace | default "default-namespace" }}
@@ -55,9 +54,7 @@ releases:
       enabled: {{ .Values.prometheus.alertmanager.enabled }}
   {{- if .Values.prometheus.alertmanager.enabled }}
   - alertmanager:
-      config:
-        global:
-          slack_api_url: {{ index .Values "cluster-configs" "secrets" "alertmanager" "slack_api_url" }}
+      config: {{ index .Values "cluster-configs" "secrets" "alertmanager" "config" | toYaml | nindent 8 }}
   {{- end }}
   - prometheus:
       prometheusSpec:
@@ -72,8 +69,8 @@ releases:
   values:
   - ./values/jaeger.yaml
   set:
-    - name: query.ingress.hosts[0]
-      value: "{{ .Values.global.domain }}"
+  - name: query.ingress.hosts[0]
+    value: "{{ .Values.global.domain }}"
 
 - name: grafana
   installed: true
@@ -90,10 +87,10 @@ releases:
       GF_AUTH_GITHUB_CLIENT_ID: {{ index .Values "cluster-configs" "secrets" "grafana" "clientID" }}
       GF_AUTH_GITHUB_CLIENT_SECRET: {{ index .Values "cluster-configs" "secrets" "grafana" "clientSecret" }}
   set:
-    - name: ingress.hosts[0]
-      value: "{{ .Values.global.domain }}"
-    - name: ingress.tls[0].hosts[0]
-      value: "{{ .Values.global.domain }}"
+  - name: ingress.hosts[0]
+    value: "{{ .Values.global.domain }}"
+  - name: ingress.tls[0].hosts[0]
+    value: "{{ .Values.global.domain }}"
 
 - name: blackbox
   installed: true

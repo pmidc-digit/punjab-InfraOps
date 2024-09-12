@@ -1467,6 +1467,8 @@ loki:
     accessModes:
       - ReadWriteOnce
     size: 25Gi
+  serviceAccount:
+    annotations: {}
   additionalConfigs:
     schema_config:
       configs:
@@ -1490,12 +1492,8 @@ loki:
     compactor:
       working_directory: /data/loki/boltdb-shipper-compactor
       shared_store: s3
-    limits_config:
-      enforce_metric_name: false
-      reject_old_samples: true
-      reject_old_samples_max_age: 720h  # 30 days
-    chunk_store_config:
-      max_look_back_period: 168h  # 7 days
+      retention_enabled: true
+      compaction_interval: 720h
     table_manager:
       retention_deletes_enabled: true
       retention_period: 720h  # 30 days
