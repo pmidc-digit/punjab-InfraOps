@@ -158,7 +158,8 @@ billing-service:
 egov-accesscontrol:
   replicas: 2
   java-args: "-Dspring.profiles.active=production"
-  heap: "-Xmx376m -Xms376m"  
+  heap: "-Xmx376m -Xms376m"
+  memory_limits: 756Mi
 
 egov-common-masters:
   replicas: 2
@@ -205,6 +206,7 @@ egov-location:
   server-tomcat-max-connections: "1500"  
 
 egov-notification-sms:
+  memory_limits: 1Gi
   sms-provider-url: "https://smsgw.sms.gov.in/failsafe/HttpLink"
   sms-sender: "PBGOVT"
   sms-sender-requesttype: "GET"
