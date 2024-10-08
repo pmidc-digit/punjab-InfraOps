@@ -137,6 +137,9 @@ cluster-configs:
               turn-io-adapter: "http://turn-io-adapter.egov:8080/"
               rainmaker-pgr: "http://rainmaker-pgr:8080/"
               egov-pb-digilocker: "http://egov-pb-digilocker:8080/"
+              bpa-services: "http://bpa-services.egov:8080/"
+              bpa-calculator: "http://bpa-calculator.egov:8080/"
+              egov-edcr: "http://egov-edcr.egov:8080/"
              # pt-services-dx: "http://pt-services-dx:8080/"
 
 
@@ -1184,6 +1187,37 @@ grafana:
       repo: "git@github.com:pmidc-digit/punjab-rainmaker-customization"
       branch: "PROD_V2" 
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+#  bpa-edcr>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+bpa-services:
+  memory_limits: 384Mi
+  java-args: -Dspring.profiles.active=monitoring
+  java-debug: true
+  tracing-enabled: "true"
+  egov.idgen.bpa.applicationNum.format: PB-BP-[cy:yyyy-MM-dd]-[SEQ_EG_BP_APN]
+
+bpa-calculator:
+  memory_limits: 384Mi
+  java-args: -Dspring.profiles.active=monitoring
+  java-debug: true
+  tracing-enabled: "true"
+
+egov-edcr:
+  ingress:
+    enabled: true
+    zuul: true
+    context: "edcr"
+microservice: |
+  indexer.host=http://egov-indexer.egov:8080/
+  egov.services.egov-indexer.url=egov-indexer/index-operations/{edcr-create-application}/_index
+  edcr.indexer.data.push.required=true
+  ms.url=http://egov-filestore.egov:8080/
+  filestoreservice.beanname=egovMicroServiceStore
+# eGov-eDCR Tenants
+edcrTenants: |
+  common.domain.name=mseva-uat.lgpunjab.gov.in
+  tenant.mseva-uat.lgpunjab.gov.in=state
+  client.id=pb
+  collection.debitaccounthead.client.impl.class=org.egov.collection.integration.services.DebitAccountHeadDetailsServiceImpl
 
 # nlp-engine >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 nlp-engine:
