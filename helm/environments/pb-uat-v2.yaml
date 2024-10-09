@@ -141,6 +141,7 @@ cluster-configs:
               bpa-calculator: "http://bpa-calculator.egov:8080/"
               egov-edcr: "http://egov-edcr.egov:8080/"
               noc-services: "http://noc-services.egov:8080/"
+              land-services: "http://land-services.egov:8080/"
              # pt-services-dx: "http://pt-services-dx:8080/"
 
 
