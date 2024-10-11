@@ -1,0 +1,74 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redmine
+  namespace: {{ .Values.namespace }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: redmine
+  template:
+    metadata:
+      labels:
+        app: redmine
+    spec:
+      containers:
+        - name: redmine
+          image: "{{ .Values.global.containerRegistry }}/{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          ports:
+            - containerPort: 3000
+          env:
+            - name: REDMINE_DB_POSTGRES
+              value: "{{ .Values.env.REDMINE_DB_POSTGRES }}"
+            - name: REDMINE_DB_PORT
+              value: "{{ .Values.env.REDMINE_DB_PORT }}"
+            - name: REDMINE_DB_DATABASE
+              value: "{{ .Values.env.REDMINE_DB_DATABASE }}"
+            - name: REDMINE_DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.secretName }}
+                  key: db.username
+            - name: REDMINE_DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.secretName }}
+                  key: db.password
+            - name: PATH
+              value: "{{ .Values.env.PATH }}"
+            - name: LANG
+              value: "{{ .Values.env.LANG }}"
+            - name: RUBY_VERSION
+              value: "{{ .Values.env.RUBY_VERSION }}"
+            - name: RUBY_DOWNLOAD_URL
+              value: "{{ .Values.env.RUBY_DOWNLOAD_URL }}"
+            - name: RUBY_DOWNLOAD_SHA256
+              value: "{{ .Values.env.RUBY_DOWNLOAD_SHA256 }}"
+            - name: GEM_HOME
+              value: "{{ .Values.env.GEM_HOME }}"
+            - name: BUNDLE_SILENCE_ROOT_WARNING
+              value: "{{ .Values.env.BUNDLE_SILENCE_ROOT_WARNING }}"
+            - name: BUNDLE_APP_CONFIG
+              value: "{{ .Values.env.BUNDLE_APP_CONFIG }}"
+            - name: GOSU_VERSION
+              value: "{{ .Values.env.GOSU_VERSION }}"
+            - name: RAILS_ENV
+              value: "{{ .Values.env.RAILS_ENV }}"
+            - name: HOME
+              value: "{{ .Values.env.HOME }}"
+            - name: REDMINE_VERSION
+              value: "{{ .Values.env.REDMINE_VERSION }}"
+            - name: REDMINE_DOWNLOAD_URL
+              value: "{{ .Values.env.REDMINE_DOWNLOAD_URL }}"
+            - name: REDMINE_DOWNLOAD_SHA256
+              value: "{{ .Values.env.REDMINE_DOWNLOAD_SHA256 }}"
+          volumeMounts:
+            - name: redmine-storage
+              mountPath: /usr/src/redmine/files
+      volumes:
+        - name: redmine-storage
+          persistentVolumeClaim:
+            claimName: redmine-pvc
+      imagePullSecrets:
+        - name: "{{ .Values.global.containerRegistry }}-secret"
