@@ -1,3 +1,7 @@
+global:
+  containerRegistry: pmidcio
+namespace: egov 
+
 replicaCount: 1
 
 image:
@@ -9,16 +13,28 @@ service:
   type: ClusterIP
   port: 3000
 
+##ingress:
+##  enabled: true
+#  annotations: {}
+#  hosts:
+#    - host: redmine.example.com
+#      paths:
+#        - path: /
+#          pathType: Prefix
+#  tls: []
+ 
+
+# Ingress Configs
+#ingress:
+#  enabled: true
+#  context: "kibana"
+#  additionalAnnotations: |
+#    nginx.ingress.kubernetes.io/auth-signin:  https://$host/oauth2/start?rd=$escaped_request_uri
+#    nginx.ingress.kubernetes.io/auth-url:     https://$host/oauth2/auth 
+  
 ingress:
   enabled: true
-  annotations: {}
-  hosts:
-    - host: redmine.example.com
-      paths:
-        - path: /
-          pathType: Prefix
-  tls: []
-
+  context: "redmine"
 resources: {}
 
 hpa:
@@ -33,7 +49,7 @@ persistence:
 
 # Environment variables
 env:
-  REDMINE_DB_POSTGRES: "172.19.0.1"
+  REDMINE_DB_POSTGRES: "jdbc:postgresql://pb-uat-v2-db-prod-restore.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com"
   REDMINE_DB_PORT: "5432"
   REDMINE_DB_DATABASE: "redmine"
   RAILS_ENV: "production"
