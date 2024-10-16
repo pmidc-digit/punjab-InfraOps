@@ -47,6 +47,7 @@ hpa:
   targetCPUUtilizationPercentage: 80
 
 storageClass: gps1
+enabled: false
 persistence:
   size: 10Gi
 
