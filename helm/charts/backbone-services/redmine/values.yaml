@@ -1,3 +1,7 @@
+labels:
+  app: "redmine"
+  group: "web"
+
 global:
   containerRegistry: pmidcio
 namespace: egov 
