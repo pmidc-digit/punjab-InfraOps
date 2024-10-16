@@ -34,7 +34,7 @@ service:
   
 ingress:
   enabled: true
-  context: "employee"
+  context: "redmine"
   
 hpa:
   enabled: true
