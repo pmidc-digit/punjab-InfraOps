@@ -38,7 +38,7 @@ service:
   
 ingress:
   enabled: true
-  context: "redmine"
+  context: "admin"
   servicePort: 3000
 hpa:
   enabled: true
