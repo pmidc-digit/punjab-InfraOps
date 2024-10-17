@@ -54,7 +54,7 @@ hpa:
 env:
   REDMINE_DB_POSTGRES: "pb-uat-v2-db-prod-restore.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com"
   REDMINE_DB_PORT: "5432"
-  REDMINE_DB_DATABASE: "redmine"
+  REDMINE_DB_DATABASE: "postgres"
   RAILS_ENV: "production"
   REDMINE_VERSION: "5.1.3"
   REDMINE_DOWNLOAD_URL: "https://www.redmine.org/releases/redmine-5.1.3.tar.gz"
