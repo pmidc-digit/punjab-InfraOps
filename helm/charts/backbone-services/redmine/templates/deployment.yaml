@@ -28,13 +28,15 @@ spec:
             - name: REDMINE_DB_USERNAME
               valueFrom:
                 secretKeyRef:
-                  name: {{ .Values.secretName }}
-                  key: db.username
+                  name: db
+                  key: username
+              #    name: {{ .Values.secretName }}
+              #    key: db.username
             - name: REDMINE_DB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: {{ .Values.secretName }}
-                  key: db.password
+                  name: db
+                  key: password
             - name: PATH
               value: "{{ .Values.env.PATH }}"
             - name: LANG
