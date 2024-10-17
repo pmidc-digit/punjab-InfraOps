@@ -38,7 +38,7 @@ service:
   
 ingress:
   enabled: true
-  context: "redmin"
+  context: "redmin/*"
   servicePort: 3000
 hpa:
   enabled: true
