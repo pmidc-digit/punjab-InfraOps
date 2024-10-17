@@ -70,4 +70,4 @@ env:
   GOSU_VERSION: "1.17"
   HOME: "/home/redmine"
 
-secretName: pb-uat-v2-secrets
+#secretName: pb-uat-v2-secrets
