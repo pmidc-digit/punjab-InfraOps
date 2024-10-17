@@ -38,7 +38,9 @@ service:
   
 ingress:
   enabled: true
-  context: "redmin/*"
+  additionalAnnotations: |
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+  context: "/redmine(/|$)(.*)"
   servicePort: 3000
 hpa:
   enabled: true
