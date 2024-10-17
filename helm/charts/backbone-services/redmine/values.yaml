@@ -46,10 +46,9 @@ hpa:
   maxReplicas: 2
   targetCPUUtilizationPercentage: 80
 
-storageClass: gps1
-enabled: false
-persistence:
-  size: 10Gi
+#storageClass: gps1
+#enabled: false
+#  size: 10Gi
 
 # Environment variables
 env:
