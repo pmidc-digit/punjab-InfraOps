@@ -39,7 +39,8 @@ service:
 ingress:
   enabled: true
   context: "redmine"
-  
+  port:
+    number: 3000
 hpa:
   enabled: true
   minReplicas: 1
