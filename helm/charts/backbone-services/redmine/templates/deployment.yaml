@@ -72,5 +72,5 @@ spec:
 #        - name: redmine-storage
 #          persistentVolumeClaim:
 #            claimName: redmine-pvc
-      imagePullSecrets:
-        - name: "{{ .Values.global.containerRegistry }}-secret"
+#      imagePullSecrets:
+#        - name: "{{ .Values.global.containerRegistry }}-secret"
