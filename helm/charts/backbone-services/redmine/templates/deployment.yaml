@@ -20,7 +20,7 @@ spec:
             - containerPort: 3000
           env:
             - name: REDMINE_DATABASE_TYPE
-              value: {{ .Values.databaseType }}
+              value: {{ .Values.env.databaseType }}
             #- name: REDMINE_DB_POSTGRES
             #  value: "{{ .Values.env.REDMINE_DB_POSTGRES }}"
             - name: REDMINE_DATABASE_HOST
