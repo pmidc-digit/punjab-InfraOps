@@ -55,7 +55,7 @@ hpa:
 
 # Environment variables
 env:
-  databaseType: "postgres"
+  databaseType: "postgresql"
   REDMINE_DB_POSTGRES: "pb-uat-v2-db-prod-restore.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com"
   REDMINE_DB_PORT: "5432"
   REDMINE_DB_DATABASE: "postgres"
@@ -73,6 +73,6 @@ env:
   BUNDLE_APP_CONFIG: "/usr/local/bundle"
   GOSU_VERSION: "1.17"
   HOME: "/redmine"
-  RAILS_RELATIVE_URL_ROOT: "/redmine"
+ # RAILS_RELATIVE_URL_ROOT: "/redmine"
   SUB_URI_PATH: '/redmine'
 #secretName: pb-uat-v2-secrets
