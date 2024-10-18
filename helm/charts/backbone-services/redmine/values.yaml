@@ -9,7 +9,7 @@ namespace: egov
 replicaCount: 1
 
 image:
-  repository: bitnami/redmine
+  repository: redmine
   tag: 5.1.3-debian-12-r12
   pullPolicy: IfNotPresent
 
