@@ -73,6 +73,6 @@ env:
   BUNDLE_APP_CONFIG: "/usr/local/bundle"
   GOSU_VERSION: "1.17"
   HOME: "/redmine"
- # RAILS_RELATIVE_URL_ROOT: "/redmine"
-  SUB_URI_PATH: '/redmine'
+  RAILS_RELATIVE_URL_ROOT: "/redmine"
+  #SUB_URI_PATH: '/redmine'
 #secretName: pb-uat-v2-secrets
