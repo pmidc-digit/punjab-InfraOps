@@ -19,30 +19,30 @@ spec:
           ports:
             - containerPort: 3000
           env:
-            - name: REDMINE_DATABASE_TYPE
-              value: {{ .Values.env.databaseType }}
-            #- name: REDMINE_DB_POSTGRES
-            #  value: "{{ .Values.env.REDMINE_DB_POSTGRES }}"
-            - name: REDMINE_DATABASE_HOST
+            #- name: REDMINE_DATABASE_TYPE
+            #  value: {{ .Values.env.databaseType }}
+            - name: REDMINE_DB_POSTGRES
               value: "{{ .Values.env.REDMINE_DB_POSTGRES }}"
-            #- name: REDMINE_DB_PORT
-            #  value: "{{ .Values.env.REDMINE_DB_PORT }}"
-            - name: REDMINE_DATABASE_PORT_NUMBER
+            #- name: REDMINE_DATABASE_HOST
+            #  value: "{{ .Values.env.REDMINE_DB_POSTGRES }}"
+            - name: REDMINE_DB_PORT
               value: "{{ .Values.env.REDMINE_DB_PORT }}"
-            #- name: REDMINE_DB_DATABASE
-            #  value: "{{ .Values.env.REDMINE_DB_DATABASE }}"
-            - name: REDMINE_DATABASE_NAME
+            #- name: REDMINE_DATABASE_PORT_NUMBER
+            #  value: "{{ .Values.env.REDMINE_DB_PORT }}"
+            - name: REDMINE_DB_DATABASE
               value: "{{ .Values.env.REDMINE_DB_DATABASE }}"
-            #- name: REDMINE_DB_USERNAME
-            - name: REDMINE_DATABASE_USER
+            #- name: REDMINE_DATABASE_NAME
+            #  value: "{{ .Values.env.REDMINE_DB_DATABASE }}"
+            - name: REDMINE_DB_USERNAME
+            #- name: REDMINE_DATABASE_USER
               valueFrom:
                 secretKeyRef:
                   name: db
                   key: username
               #    name: {{ .Values.secretName }}
               #    key: db.username
-           # - name: REDMINE_DB_PASSWORD
-            - name: REDMINE_DATABASE_PASSWORD
+            - name: REDMINE_DB_PASSWORD
+           # - name: REDMINE_DATABASE_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: db
