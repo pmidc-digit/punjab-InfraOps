@@ -57,8 +57,10 @@ spec:
               value: "{{ .Values.env.GOSU_VERSION }}"
             - name: RAILS_ENV
               value: "{{ .Values.env.RAILS_ENV }}"
-            - name: HOME
-              value: "{{ .Values.env.HOME }}"
+            #- name: HOME
+            #  value: "{{ .Values.env.HOME }}"
+            - name: RAILS_RELATIVE_URL_ROOT
+              value: "{{ .Values.env.RAILS_RELATIVE_URL_ROOT }}"
             - name: REDMINE_VERSION
               value: "{{ .Values.env.REDMINE_VERSION }}"
             - name: REDMINE_DOWNLOAD_URL
