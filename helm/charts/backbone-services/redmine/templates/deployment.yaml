@@ -32,7 +32,7 @@ spec:
             #- name: REDMINE_DB_DATABASE
             #  value: "{{ .Values.env.REDMINE_DB_DATABASE }}"
             - name: REDMINE_DATABASE_NAME
-               value: "{{ .Values.env.REDMINE_DB_DATABASE }}"
+              value: "{{ .Values.env.REDMINE_DB_DATABASE }}"
             #- name: REDMINE_DB_USERNAME
             - name: REDMINE_DATABASE_USER
               valueFrom:
