@@ -55,6 +55,7 @@ hpa:
 
 # Environment variables
 env:
+  databaseType: "postgres"
   REDMINE_DB_POSTGRES: "pb-uat-v2-db-prod-restore.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com"
   REDMINE_DB_PORT: "5432"
   REDMINE_DB_DATABASE: "postgres"
