@@ -1220,6 +1220,7 @@ edcrTenants: |
   common.domain.name=mseva-uat.lgpunjab.gov.in
   tenant.mseva-uat.lgpunjab.gov.in=state
   client.id=pb
+  tenant.amritsar.mseva-uat.lgpunjab.gov.in=amritsar
   collection.debitaccounthead.client.impl.class=org.egov.collection.integration.services.DebitAccountHeadDetailsServiceImpl
 
 # nlp-engine >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
