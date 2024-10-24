@@ -12,6 +12,9 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: zuul
-          servicePort: 8080
-        path: /{{ .Values.ingress.context }}  
+          service:
+            name: zuul
+            port:
+              number: 8080
+        path: /{{ .Values.ingress.context }}
+        pathType: Prefix  
