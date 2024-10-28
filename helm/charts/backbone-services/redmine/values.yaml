@@ -48,7 +48,6 @@ ingress:
 #      sub_filter_once off;
   context: "redmine(/|$)(.*)"
   servicePort: 3000
-  #pathType: "ImplementationSpecific"
  
 hpa:
   enabled: true
