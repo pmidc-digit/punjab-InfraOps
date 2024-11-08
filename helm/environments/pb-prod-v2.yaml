@@ -381,8 +381,8 @@ egov-persister:
 
 egov-searcher:
   replicas: 2
-  heap: "-Xmx1400m -Xms1400m -XX:TieredStopAtLevel=1"
-  memory_limits: 1500Mi
+  heap: "-Xmx1700m -Xms1400m -XX:TieredStopAtLevel=1"
+  memory_limits: 1900Mi
   search-yaml-path: "file:///work-dir/punjab-rainmaker-customization/configs/egov-searcher/rainmaker-pgr-v2-searcher.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-searcher/rainmaker-pt-customsearch-punjab.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-searcher/rainmaker-pt-gissearch.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-searcher/weekly-impact-emailer-searcher.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-searcher/propertyopensearch.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-searcher/localitySearcher.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-searcher/bill-genie.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-searcher/PTDemandBasedSearcher.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-searcher/rainmaker-tl.yml,file:///work-dir/punjab-rainmaker-customization/configs/egov-searcher/weekly-impact-emailer-searcher.yml"
   java-args: "-Dspring.profiles.active=production"
   initContainers:
