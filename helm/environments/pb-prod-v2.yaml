@@ -188,15 +188,15 @@ egov-filestore:
 
 egov-localization:
   replicas: 3
-  heap: "-Xmx950m -Xms950m"
+  heap: "-Xmx1550m -Xms1250m"
   server-tomcat-max-threads: "50"
   server-tomcat-max-connections: "1500"
   spring-datasource-tomcat-max-active: "10"  
   resources: |
     limits:
-      memory: 1280Mi
+      memory: 2280Mi
     requests:
-      memory: 1Gi 
+      memory: 2Gi 
 
 egov-location:
   replicas: 3
@@ -225,15 +225,15 @@ egov-otp:
 
 egov-user:
   replicas: 7
-  heap: "-Xmx4000m -Xms4000m -Xmn2000m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -Xloggc:garbage_collection.log"
-  memory_limits: "7000Mi"
+  heap: "-Xmx3000m -Xms3000m -Xmn1800m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -Xloggc:garbage_collection.log"
+  memory_limits: "5000Mi"
   resources: |
     limits:
       cpu: 1800m
-      memory: 6000Mi
+      memory: 4500Mi
     requests:
-      cpu: 1800m
-      memory: 6000Mi
+      cpu: 1500m
+      memory: 4000Mi
   otp-validation: "false"
   citizen-otp-enabled: "true"
   employee-otp-enabled: "false"
