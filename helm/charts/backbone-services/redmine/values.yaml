@@ -39,7 +39,7 @@ service:
 ingress:
   enabled: true
   additionalAnnotations: |
-     nginx.ingress.kubernetes.io/rewrite-target: /redmine
+     nginx.ingress.kubernetes.io/rewrite-target: /
 #    nginx.ingress.kubernetes.io/use-regex: "true"
 
 
@@ -75,7 +75,7 @@ env:
   BUNDLE_SILENCE_ROOT_WARNING: "1"
   BUNDLE_APP_CONFIG: "/usr/local/bundle"
   GOSU_VERSION: "1.17"
-  HOME: "/redmine"
+ # HOME: "/redmine"
 #  RAILS_RELATIVE_URL_ROOT: "/redmine"
   #SUB_URI_PATH: '/redmine'
 #secretName: pb-uat-v2-secrets
