@@ -21,7 +21,7 @@ appType: "java-spring"
 tracing-enabled: true
 heap: "-Xmx256m -Xms256m"
 #db-url: "jdbc:postgresql://egov-micro-dev.pes.database.azure.com/s?currentSchema=egov_master"
-db-url: "jdbc:postgresql://pb-uat-v2-db-prod-restore.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com:5432/egov_prod_db"
+# db-url: "jdbc:postgresql://pb-uat-v2-db-prod-restore.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com:5432/egov_prod_db"
 java-args: "-Dspring.profiles.active=monitoring"
 
 # Additional Container Envs
