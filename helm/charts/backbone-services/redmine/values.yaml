@@ -38,8 +38,8 @@ service:
   
 ingress:
   enabled: true
-  additionalAnnotations: |
-     nginx.ingress.kubernetes.io/rewrite-target: /
+#  additionalAnnotations: |
+ #    nginx.ingress.kubernetes.io/rewrite-target: /
 #    nginx.ingress.kubernetes.io/use-regex: "true"
 
 
