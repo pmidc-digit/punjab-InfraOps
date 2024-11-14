@@ -69,7 +69,7 @@ env: |
   - name: EGOV_MDMS_HOST
     valueFrom:
       configMapKeyRef:
-        name: egov-config
+        name: egov-service-host
         key:  egov-mdms-service
       
 #  - name: SECURITY_BASIC_ENABLED
