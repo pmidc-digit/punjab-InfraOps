@@ -66,6 +66,12 @@ env: |
       configMapKeyRef:
         name: egov-config
         key: es-indexer-host
+  - name EGOV_MDMS_HOST
+    valueFrom:
+     configMapKeyRef:
+       name: egov-config
+       key:  egov-mdms-service
+      
 #  - name: SECURITY_BASIC_ENABLED
 #    value: "false"  
 #  - name: MANAGEMENT_SECURITY_ENABLED
