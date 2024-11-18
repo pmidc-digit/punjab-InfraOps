@@ -23,7 +23,7 @@ service:
 #  hosts:
 #    - host: redmine.example.com
 #      paths:
-#        - path: /
+#        - path: /$contex
 #          pathType: Prefix
 #  tls: []
  
@@ -42,7 +42,7 @@ ingress:
       nginx.ingress.kubernetes.io/use-regex: "true"
       nginx.ingress.kubernetes.io/rewrite-target: /$1
 
-  context: "redmine(/|$)(.*)"
+  context: "redmine(.*)"
   servicePort: 3000
  
 hpa:
