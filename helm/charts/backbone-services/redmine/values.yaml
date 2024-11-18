@@ -38,11 +38,11 @@ service:
   
 ingress:
   enabled: true
-  additionalAnnotations: |
-      nginx.ingress.kubernetes.io/use-regex: "true"
-      nginx.ingress.kubernetes.io/rewrite-target: /$1
+ # additionalAnnotations: |
+ #     nginx.ingress.kubernetes.io/use-regex: "true"
+ #     nginx.ingress.kubernetes.io/rewrite-target: /$1
 
-  context: "redmine(.*)"
+  context: "redmine"
   servicePort: 3000
  
 hpa:
