@@ -64,7 +64,7 @@ pv:
   accessMode: ReadWriteOnce
   reclaimPolicy: Retain
   storageClass: gp2
-  awsVolumeID: vol-0abcd1234efgh5678 # Replace with your AWS EBS volume ID
+  awsVolumeID: vol-0931d42d492704656 # Replace with your AWS EBS volume ID
   fsType: ext4
 
 pvc:
