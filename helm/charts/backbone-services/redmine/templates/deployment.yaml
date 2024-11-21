@@ -77,12 +77,12 @@ spec:
               value: "{{ .Values.env.REDMINE_DOWNLOAD_URL }}"
             - name: REDMINE_DOWNLOAD_SHA256
               value: "{{ .Values.env.REDMINE_DOWNLOAD_SHA256 }}"
-#          volumeMounts:
-#            - name: redmine-storage
-#              mountPath: /usr/src/redmine/files
-#      volumes:
-#        - name: redmine-storage
-#          persistentVolumeClaim:
-#            claimName: redmine-pvc
+          volumeMounts:
+            - name: redmine-storage
+              mountPath: /usr/src/redmine/files
+      volumes:
+        - name: redmine-storage
+          persistentVolumeClaim:
+            claimName: redmine-pvc
 #      imagePullSecrets:
 #        - name: "{{ .Values.global.containerRegistry }}-secret"
