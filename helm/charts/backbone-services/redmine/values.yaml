@@ -56,6 +56,22 @@ hpa:
 #  size: 10Gi
 
 # Environment variables
+persistence:
+  enabled: true
+pv:
+  name: redmine-pv
+  storage: 10Gi
+  accessMode: ReadWriteOnce
+  reclaimPolicy: Retain
+  storageClass: gp2
+  awsVolumeID: vol-0abcd1234efgh5678 # Replace with your AWS EBS volume ID
+  fsType: ext4
+
+pvc:
+  name: redmine-pvc
+  storage: 10Gi
+  accessMode: ReadWriteOnce
+  storageClass: gp2
 env:
   databaseType: "postgresql"
   REDMINE_DB_POSTGRES: "pb-uat-v2-db-prod-restore.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com"
