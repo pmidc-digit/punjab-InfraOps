@@ -79,7 +79,13 @@ spec:
               value: "{{ .Values.env.REDMINE_DOWNLOAD_SHA256 }}"
           volumeMounts:
             - name: redmine-storage
-              mountPath: /usr/src/redmine
+              mountPath: /usr/src/redmine/files
+            - name: redmine-storage
+              mountPath: /usr/src/redmine/log
+            - name: redmine-storage
+              mountPath: /usr/src/redmine/plugins
+            - name: redmine-storage
+              mountPath: /usr/src/redmine/public/themes
       volumes:
         - name: redmine-storage
           persistentVolumeClaim:
