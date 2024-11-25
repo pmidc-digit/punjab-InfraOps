@@ -86,6 +86,8 @@ spec:
               mountPath: /usr/src/redmine/plugins
             - name: redmine-storage
               mountPath: /usr/src/redmine/public/themes
+            - name: redmine-storage
+              mountPath: /usr/src/redmine/sqlite
       volumes:
         - name: redmine-storage
           persistentVolumeClaim:
