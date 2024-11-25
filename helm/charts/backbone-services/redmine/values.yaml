@@ -77,7 +77,7 @@ env:
   REDMINE_DB_POSTGRES: "pb-uat-v2-db-prod-restore.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com"
   REDMINE_DB_PORT: "5432"
   REDMINE_DB_DATABASE: "postgres"
-  REDMINE_DB_ADAPTER: "postgres"
+  REDMINE_DB_ADAPTER: "postgresql"
   RAILS_ENV: "development"
 #  RAILS_ENV: "production"
 #  REDMINE_VERSION: "5.1.3"
