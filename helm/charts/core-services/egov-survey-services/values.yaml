@@ -23,8 +23,8 @@ image:
 replicas: "2"
 healthChecks:
   enabled: true
-  livenessProbePath: "/user/health"
-  readinessProbePath: "/user/health"
+  livenessProbePath: "/egov-survey-services/health"
+  readinessProbePath: "/egov-survey-services/health"
 appType: "java-spring"
 tracing-enabled: true
 egov-state-level-tenant-id: "pb"
