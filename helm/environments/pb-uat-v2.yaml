@@ -206,15 +206,15 @@ egov-filestore:
 
 egov-localization:
   replicas: 2
-  heap: "-Xmx378m -Xms378m"
+  heap: "-Xmx578m -Xms478m"
   server-tomcat-max-threads: "50"
   server-tomcat-max-connections: "1500"
   spring-datasource-tomcat-max-active: "10"  
   resources: |
     limits:
-      memory: 512Mi
+      memory: 750Mi
     requests:
-      memory: 512Mi
+      memory: 750Mi
 
 egov-location:
   replicas: 1
