@@ -870,6 +870,7 @@ egov-hrms:
   heap: "-Xmx192m -Xms192m -XX:TieredStopAtLevel=1"
   employee-applink: "https://mseva-uat.lgpunjab.gov.in/employee/user/login"
   tracing-enabled: "true"
+  esewa-applink: "https://esewatst.punjab.gov.in"
 
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
