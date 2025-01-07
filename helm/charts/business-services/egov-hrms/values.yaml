@@ -28,11 +28,17 @@ healthChecks:
 appType: "java-spring"
 tracing-enabled: true
 employee-applink: "https://egov-micro-dev.egovernments.org/employee/user/login"
+esewa-applink: "https://esewa.punjab.gov.in"
+eseva-api-endpoint: "/externalapi/api/LocalGovernment/AuthenticateUser"
 heap: "-Xmx192m -Xms192m"
 java-args: "-Dspring.profiles.active=monitoring"
 
 # Additional Container Envs
 env: |
+  - name: EGOV_HRMS_ESEVA_API_HOST
+    value: {{ index .Values "esewa-applink" | quote }}
+  - name: EGOV_HRMS_ESEVA_API_ENDPOINT
+    value: {{ index .Values "eseva-api-endpoint" | quote }}
   - name: EGOV_SERVICES_DATA_SYNC_EMPLOYEE_REQUIRED 
     value:  "false"
   - name: EGOV_MDMS_HOST
