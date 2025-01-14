@@ -77,7 +77,7 @@ podAnnotations: {}
 # additionals labels
 labels: {}
 
-esJavaOpts: "-Xmx8g -Xms8g"
+esJavaOpts: "-Xmx8g -Xms8g -XX:InitiatingHeapOccupancyPercent=75 -XX:MaxGCPauseMillis=200"
 
 resources:
   requests:
