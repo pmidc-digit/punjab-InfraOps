@@ -1140,7 +1140,7 @@ elasticsearch-data-v1:
   persistence:
     #dataDirSize: "150Gi"
     enabled: true
-    dataDirSize: "250Gi"
+    dataDirSize: "450Gi"
     aws:
       - volumeId: "vol-051fbd8bf7b367fa1"
         zone: ap-south-1a
