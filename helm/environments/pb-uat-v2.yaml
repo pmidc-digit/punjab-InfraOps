@@ -393,7 +393,7 @@ egov-mdms-service:
   initContainers:
     gitSync:
       repo: "git@github.com:pmidc-digit/upyog-punjab-mdms-data"
-      branch: "mdms_anuj"
+      branch: "PROD_V2"
   mdms-folder: "upyog-punjab-mdms-data"
   masters-config-url: "file:///work-dir/upyog-punjab-mdms-data/mdms-masters-config.json"
   java-args: -Dspring.profiles.active=monitoring
