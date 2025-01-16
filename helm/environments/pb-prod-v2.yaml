@@ -709,7 +709,7 @@ employee-tradelicence:
 
 # reportinfra >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 report:
-  replicas: 2
+  replicas: 4
   heap: "-Xmx856m -Xms856m"
   tracing-enabled: "true"
   server-tomcat-max-threads: "15"
