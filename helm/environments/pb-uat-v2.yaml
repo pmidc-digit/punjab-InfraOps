@@ -207,7 +207,7 @@ egov-filestore:
 
 egov-localization:
   replicas: 2
-  heap: "-Xmx578m -Xms478m"
+  heap: "-Xmx1578m -Xms1478m"
   server-tomcat-max-threads: "50"
   server-tomcat-max-connections: "1500"
   spring-datasource-tomcat-max-active: "10"  
