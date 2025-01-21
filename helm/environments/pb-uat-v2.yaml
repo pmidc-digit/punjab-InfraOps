@@ -284,6 +284,8 @@ egov-user:
   decryption-abac-enabled: "false"
   tracing-enabled: "true"
   account-unlock-cool-down-period-minutes: 5
+  esewa-applink: "https://esewatst.punjab.gov.in"
+  employee-apilink-new: "https://mseva-uat.lgpunjab.gov.in/employee/"
   
 
 egov-survey-services:
