@@ -213,9 +213,9 @@ egov-localization:
   spring-datasource-tomcat-max-active: "10"  
   resources: |
     limits:
-      memory: 750Mi
+      memory: 1750Mi
     requests:
-      memory: 750Mi
+      memory: 1750Mi
 
 egov-location:
   replicas: 1
