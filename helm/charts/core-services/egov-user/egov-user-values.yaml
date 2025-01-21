@@ -43,8 +43,22 @@ citizen-otp-fixed: "123456"
 citizen-otp-fixed-enabled: "true"
 heap: "-Xmx192m -Xms192m"
 java-args: ""
+esewa-applink: "https://esewa.punjab.gov.in"
+employee-apilink-new: "https://mseva.lgpunjab.gov.in/employee/"
+eseva-api-endpoint: "/externalapi/api/LocalGovernment/AuthenticateUser"
 # Additional Container Envs
 env: |
+  - name: EGOV_HRMS_UAT_EMPLOYEE_LINK_APP
+    value: {{ index .Values "employee-apilink-new" | quote }}
+  - name: EGOV_HRMS_SSO_MSEVA_DECRYPTION_KEY
+    valueFrom:
+      secretKeyRef:
+        name: sso-secret-token
+        key: sso-secret
+  - name: EGOV_HRMS_ESEVA_API_HOST
+    value: {{ index .Values "esewa-applink" | quote }}
+  - name: EGOV_HRMS_ESEVA_API_ENDPOINT
+    value: {{ index .Values "eseva-api-endpoint" | quote }} 
   - name: SERVER_PORT
     value: "8080"
   - name: SPRING_REDIS_HOST
