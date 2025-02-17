@@ -12,7 +12,7 @@ ingress:
 # Init Containers Configs
 initContainers:
   dbMigration:
-    enabled: false
+    enabled: ture
     schemaTable: "egov_survey_schema"
     image:
       repository: "egov-survey-services-db"
