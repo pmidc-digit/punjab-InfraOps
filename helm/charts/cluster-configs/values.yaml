@@ -9,7 +9,8 @@ cluster-configs:
     name: root-ingress
     namespace: egov
     cert-issuer: "letsencrypt-staging"
-    appRoot: common-screen
+ #   appRoot: common-screen
+    appRoot: common
     serviceName: common-screen
     servicePort: 80
  
