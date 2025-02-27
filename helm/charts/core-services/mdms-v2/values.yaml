@@ -26,7 +26,7 @@ healthChecks:
   readinessProbePath: "/mdms-v2/health"
 appType: "java-spring"
 tracing-enabled: true
-heap: "-Xmx250m -Xms250m"
+heap: "-Xmx512m -Xms512m"
 java-args: "-Dspring.profiles.active=monitoring"
 egov-mdms-schema-definition-save-topic: "save-mdms-schema-definition"
 egov-mdms-data-save-topic: "save-mdms-data"
