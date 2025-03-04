@@ -821,7 +821,7 @@ collection-services:
     requests:
       cpu: 500m
       memory: 4000Mi
-  heap: "-Xmx3000m -Xms3000m -Xmn2700m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -Xloggc:garbage_collection.log"
+  heap: "-Xmx3000m -Xms3000m -Xmn3000m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -Xloggc:garbage_collection.log"
   receiptnumber-servicebased: "true"
   search-ignore-status: "Cancelled,Rejected"
   java-args: "-Dspring.profiles.active=production"
