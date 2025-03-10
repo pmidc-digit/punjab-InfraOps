@@ -308,7 +308,7 @@ covid-chatbot:
     
 xstate-chatbot:
   replicas: 2
-    memory_limits: 550Mi
+  memory_limits: 550Mi
   resources: |
     limits:
       cpu: 500m
