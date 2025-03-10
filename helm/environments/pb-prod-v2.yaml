@@ -307,6 +307,7 @@ covid-chatbot:
     ip-whitelist: "0.0.0.0/0"
     
 xstate-chatbot:
+  replicas: 2
   whatsapp-provider: "ValueFirst"
   contact-card-whatsapp-number: "+918750975975"
   contact-card-whatsapp-name: "mSeva Punjab"
