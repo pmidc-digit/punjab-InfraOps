@@ -26,7 +26,7 @@ image:
   repository: "xstate-chatbot"
 replicas: "1"
 tracing-enabled: true
-
+heap: "-Xmx512m -Xms511m"
 # Additional Container Envs
 env: |  
   - name: KAFKA_BOOTSTRAP_SERVER
