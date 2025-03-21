@@ -263,7 +263,7 @@ inbox:
 
 
 egov-user:
-  replicas: 2
+  replicas: 3
   heap: "-Xmx456m -Xms456m -XX:TieredStopAtLevel=1"
   memory_limits: 512Mi
   otp-validation: "true"
@@ -557,7 +557,7 @@ chb-services:
 # gateway >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 zuul:
-  replicas: 1
+  replicas: 2
   initContainers:
     gitSync:
         repo: "git@github.com:pmidc-digit/punjab-rainmaker-customization"
@@ -761,7 +761,7 @@ pt-services-v2:
   pt-userevents-pay-link: "citizen/otpLogin?mobileNo=$mobile&redirectTo=egov-common/pay?consumerCode=$applicationNo&tenantId=$tenantId"
 
 property-services:
-  replicas: 1
+  replicas: 2
   heap: "-Xmx900m -Xms900m -XX:TieredStopAtLevel=1"
   memory_limits: "1024Mi"
   server-tomcat-max-threads: "15"
@@ -839,7 +839,7 @@ collection-services:
 # WnS >>>>>>>>>>>>>>>>>>>>>>>>>>>>
 ws-services:
   notification-sms-enabled: "true"
-  replicas: 1
+  replicas: 2
   java-args: "-Dspring.profiles.active=production"
   heap: "-Xmx756m -Xms512m"
   memory_limits: "1024Mi"
@@ -851,7 +851,7 @@ ws-calculator:
   heap: "-Xmx512m -Xms512m"
 
 sw-services:
-  replicas: 1
+  replicas: 2
   java-args: "-Dspring.profiles.active=production"
   heap: "-Xmx756m -Xms512m"
   memory_limits: "1024Mi"
