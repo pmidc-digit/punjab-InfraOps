@@ -262,7 +262,7 @@ tenant:
   replicas: 2
 
 egov-idgen:
-  replicas: 2
+  replicas: 4
   heap: "-Xmx512m -Xms512m -XX:TieredStopAtLevel=1"
   server-tomcat-max-threads: "50"
   server-tomcat-max-connections: "2000"
@@ -721,7 +721,7 @@ employee-tradelicence:
 # reportinfra >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 report:
   replicas: 4
-  heap: "-Xmx856m -Xms856m"
+  heap: "-Xmx1856m -Xms1856m"
   tracing-enabled: "true"
   server-tomcat-max-threads: "15"
   server-tomcat-max-connections: "1000"
@@ -737,7 +737,7 @@ report:
 
 # rainmaker-pgr >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 rainmaker-pgr:
-  replicas: 2
+  replicas: 3
   notification-sms-enabled: "true"
   notification-email-enabled: "false"
   new-complaint-enabled: "true"
@@ -777,7 +777,7 @@ property-services:
   egov-idgen-ptid-format: "PT-[CITY.CODE]-[SEQ_EG_PT_PTID]"
 
 pt-calculator-v2:
-  replicas: 5
+  replicas: 6
   logging-level: "DEBUG"
   heap: "-Xmx3000m -Xms3000m -Xmn2700m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -Xloggc:garbage_collection.log"
   memory_limits: "4000Mi"
@@ -920,7 +920,7 @@ logging-config:
   es-port: "9200"
 
 echallan-services:
-  replicas: 5
+  replicas: 6
   memory_limits: "2150Mi"
   resources: |
     limits:
