@@ -38,6 +38,21 @@ receiptnumber-servicebased: "false"
 
 # Additional Container Envs
 env: |
+  - name: WS_SERIVCE_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: ws-services
+  - name: SW_SERIVCE_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: sw-services
+  - name: PT_SERIVCE_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: property-services
   - name: SERVER_PORT
     value: "8080"
   - name: COLLECTION_RECEIPTS_SEARCH_PAGINATE
