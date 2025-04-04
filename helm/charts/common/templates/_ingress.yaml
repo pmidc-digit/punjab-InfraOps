@@ -35,7 +35,8 @@ spec:
               number: 8080
 {{- else }}
           service:
-            name: {{ .Values.ingress.serviceName | default (include "common.name" .) }}
+       #     name: {{ .Values.ingress.serviceName | default (include "common.name" .) }}
+            name: "maintain"
             port:
               number: {{ .Values.ingress.servicePort | default .Values.httpPort }}
 {{- end }}
