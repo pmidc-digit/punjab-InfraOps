@@ -379,7 +379,8 @@ xstate-chatbot:
   bill-supported-modules: "WS, PT"
   pgr-version: "v1"
   pgr-update-topic: "update-pgr-service"
-  information-image-filestoreid: "ad9ce23d-6a22-4b85-b3bb-b7814dac55a4"
+#  information-image-filestoreid: "ad9ce23d-6a22-4b85-b3bb-b7814dac55a4"
+  information-image-filestoreid: "ba536dd6-c3b3-4997-93c6-13c6193d4120"
   open-search-image-filestoreid: "454b355b-fd56-4afe-8f0e-2d7a2178bf28"
   nlp-geoSearch: true
   bill-search-limit: 3
