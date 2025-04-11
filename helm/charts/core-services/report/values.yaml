@@ -76,12 +76,12 @@ env: |
       configMapKeyRef:
         name: egov-config
         key: db-url
-  {{- else if index .Values "cluster-configs" "configmaps" "egov-config" "data" "db-url" }}
+  {{- else if index .Values "cluster-configs" "configmaps" "egov-config" "data" "db-read-url" }}
   - name: SPRING_DATASOURCE_URL
     valueFrom:
       configMapKeyRef:
         name: egov-config
-        key: db-url
+        key: db-read-url
   {{- end }}         
   - name: APP_TIMEZONE
     valueFrom:
