@@ -1,33 +1,33 @@
 # Common Labels
 labels:
-  app: "chb-services"
+  app: "pet-services"
   group: "rainmaker"
 
 # Ingress Configs
 ingress:
   enabled: true
   zuul: true
-  context: "chb-services"
+  context: "pet-services"
 
 # Init Containers Configs
 initContainers:
   dbMigration:
     enabled: true
-    schemaTable: "chb_services_schema"
+    schemaTable: "pet_services_schema"
     image:
-      repository: "chb-services-db"
+      repository: "pet-services-db"
 
 # Container Configs
 image:
-  repository: "chb-services"
+  repository: "pet-services"
 replicas: "1"
 healthChecks:
-  enabled: false
-  livenessProbePath: "/chb-services/health"
-  readinessProbePath: "/chb-services/health"
+  enabled: true
+  livenessProbePath: "/pet-services/health"
+  readinessProbePath: "/pet-services/health"
 appType: "java-spring"
 tracing-enabled: true
-heap: "-Xmx256m -Xms256m"
+heap: "-Xmx384m -Xms256m"
 java-args: "-Dspring.profiles.active=monitoring"
 notification-sms-enabled: ""
 employee-allowed-search-params: ""
@@ -70,36 +70,26 @@ env: |
       configMapKeyRef:
         name: egov-service-host
         key: egov-localization
+  - name: EGOV_CALCULATION_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: pt-calculator-v2
+  - name: EGOV_PT-SERVICES-V2_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: pt-services-v2  
+  - name: EGOV_WORKFLOW_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-workflow-v2 
   - name: EGOV_BILLINGSERVICE_HOST
     valueFrom:
       configMapKeyRef:
         name: egov-service-host
-        key: billing-service
-  - name: EGOV_URL_SHORTNER_HOST
-    valueFrom:
-      configMapKeyRef:
-        name: egov-service-host
-        key: egov-url-shortening
-  - name: EGOV_ENC_HOST
-    valueFrom:
-      configMapKeyRef:
-        name: egov-service-host
-        key: egov-enc-service
-  - name: WORKFLOW_HOST
-    valueFrom:
-      configMapKeyRef:
-        name: egov-service-host
-        key: egov-workflow-v2
-  #- name: EGOV_CALCULATION_HOST
-  #  valueFrom:
-  #    configMapKeyRef:
-  #      name: egov-service-host
-  #      key: pt-calculator-v2
-  #- name: EGOV_PT-SERVICES-V2_HOST
-  # valueFrom:
-  #    configMapKeyRef:
-  #      name: egov-service-host
-  #      key: pt-services-v2      
+        key: billing-service     
   {{- if index .Values "global" "tracer-errors-provideexceptionindetails" }}
   - name: TRACER_ERRORS_PROVIDEEXCEPTIONINDETAILS
     valueFrom:
@@ -107,16 +97,12 @@ env: |
         name: egov-config
         key: tracer-errors-provideexceptionindetails
   {{- end }}
-  - name: DECRYPTION_ABAC_ENABLED
-    value: {{ index .Values "chb-decryption-abac-enabled" | quote }}
-  - name: KAFKA_TOPIC_AUDIT
-    value: "enc-user-audit-data" 
   - name: SPRING_KAFKA_CONSUMER_GROUP_ID
-    value: chb-services
-  - name: PERSISTER_SAVE_COMMUNITYHALL_BOOKING_TOPIC
-    value: save-community-hall-booking
-  - name: PERSISTER_UPDATE_COMMUNITYHALL_BOOKING_TOPIC
-    value: update-community-hall-booking
+    value: egov-pet-services
+  - name: PERSISTER_SAVE_PET_TOPIC
+    value: save-pet-registry
+  - name: PERSISTER_UPDATE_PET_TOPIC
+    value: update-pet-registry
   - name: SPRING_KAFKA_PRODUCER_KEY_SERIALIZER
     value: org.apache.kafka.common.serialization.StringSerializer
   - name: SPRING_KAFKA_PRODUCER_VALUE_SERIALIZER
@@ -168,10 +154,10 @@ env: |
         key: egov-services-fqdn-name
   - name: EGOV_USR_EVENTS_CREATE_TOPIC
     value: "persist-user-events-async"
-  #- name: EGOV_USR_EVENTS_PAY_LINK
-  #  value: "citizen/withoutAuth?redirectTo=egov-common/pay?consumerCode=$consumerCode&tenantId=$tenantId&businessService=$businessService"
-  #- name: EGOV_USR_EVENTS_PAY_CODE
-  #  value: "PAY"          
+  - name: EGOV_USR_EVENTS_PAY_LINK
+    value: "citizen/withoutAuth?redirectTo=egov-common/pay?consumerCode=$consumerCode&tenantId=$tenantId&businessService=$businessService"
+  - name: EGOV_USR_EVENTS_PAY_CODE
+    value: "PAY"          
   {{- if index .Values "tracing-enabled" }}
   - name: TRACER_OPENTRACING_ENABLED
     value: "true" 
