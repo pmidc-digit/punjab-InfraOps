@@ -22,8 +22,8 @@ image:
 replicas: "1"
 healthChecks:
   enabled: true
-  livenessProbePath: "/report/health"
-  readinessProbePath: "/report/health"
+  livenessProbePath: "/report-v2/health"
+  readinessProbePath: "/report-v2/health"
 tracing-enabled: "true"
 report-locationsfile-path: "file:///work-dir/configs/reports/reportFileLocationsv1.txt"
 heap: "-Xmx192m -Xms192m"
