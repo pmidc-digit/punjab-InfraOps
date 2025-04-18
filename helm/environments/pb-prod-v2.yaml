@@ -747,7 +747,7 @@ report-v2:
   initContainers:
     gitSync:
         repo: "git@github.com:pmidc-digit/punjab-rainmaker-customization"
-        branch: "PROD_V2"     
+        branch: "PROD_LIVE"     
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
