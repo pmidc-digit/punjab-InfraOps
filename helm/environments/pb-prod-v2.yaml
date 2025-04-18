@@ -104,6 +104,7 @@ cluster-configs:
               pgr-master: "http://pgr-master:8080/"
               pgr-rest: "http://pgr-rest:8080/"
               report: "http://report:8080/"
+              report-v2: "http://report-v2.egov:8080/"
               swm-services: "http://swm-services:8080/"
               tenant: "http://tenant:8080/"
               tl-masters: "http://tl-masters:8080/"
@@ -732,6 +733,21 @@ report:
     gitSync:
         repo: "git@github.com:pmidc-digit/punjab-rainmaker-customization"
         branch: "PROD_V2"
+
+
+report-v2:
+  replicas: 1
+  heap: "-Xmx756m -Xms756m"  
+  tracing-enabled: "true"
+  server-tomcat-max-threads: "30"
+  server-tomcat-max-connections: "1000"
+  java-args: "-Dspring.profiles.active=production"
+  spring-datasource-tomcat-max-active: 10
+  report-locationsfile-path: "file:///work-dir/punjab-rainmaker-customization/configs/reports/report.config"
+  initContainers:
+    gitSync:
+        repo: "git@github.com:pmidc-digit/punjab-rainmaker-customization"
+        branch: "PROD_V2"     
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
