@@ -21,7 +21,7 @@ image:
   repository: "report-v2"
 replicas: "1"
 healthChecks:
-  enabled: false
+  enabled: true
   livenessProbePath: "/report-v2/health"
   readinessProbePath: "/report-v2/health"
 tracing-enabled: "true"
