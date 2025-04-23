@@ -131,8 +131,8 @@ master:
   # maxUnavailable: 25%
   resources:
     requests:
-      cpu: "50m"
-      memory: "256Mi"
+      cpu: "100m"
+      memory: "1256Mi"
     limits:
       cpu: "1000m"
       memory: "1024Mi"
