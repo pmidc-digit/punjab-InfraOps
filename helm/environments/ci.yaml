@@ -54,8 +54,8 @@ jenkins:
     resources:
       limits:
         cpu: "2000m"
-        memory: "4096Mi"
-    javaOpts: "-Xms3560M -Xmx3560M -Duser.timezone=Asia/Calcutta"
+        memory: "6096Mi"
+    javaOpts: "-Xms5560M -Xmx5560M -Duser.timezone=Asia/Calcutta"
 
 nginx-ingress:
   replicas: 1
