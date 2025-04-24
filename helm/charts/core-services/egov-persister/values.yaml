@@ -37,7 +37,7 @@ env: |
   - name: JAEGER_SAMPLER_PARAM
     value: "1"
   - name: SPRING_KAFKA_CONSUMER_GROUP_ID
-    value: "persister-group"  # Or use unique IDs for each pod if needed
+    value: "egov-infra-persist"  # Or use unique IDs for each pod if needed
   - name: SPRING_KAFKA_CONSUMER_AUTO-OFFSET-RESET
     value: "latest"
   - name: SPRING_KAFKA_CONSUMER_MAX-POLL-RECORDS
