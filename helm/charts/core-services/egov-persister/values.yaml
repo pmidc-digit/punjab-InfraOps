@@ -36,3 +36,16 @@ env: |
     value: "8080"
   - name: JAEGER_SAMPLER_PARAM
     value: "1"
+##############################
+  - name: SPRING_KAFKA_CONSUMER_GROUP_ID
+    value: "persister-group"  # Or use unique IDs for each pod if needed
+  - name: SPRING_KAFKA_CONSUMER_AUTO-OFFSET-RESET
+    value: "latest"
+  - name: SPRING_KAFKA_CONSUMER_MAX-POLL-RECORDS
+    value: "500"
+  - name: SPRING_KAFKA_PROPERTIES_SESSION_TIMEOUT_MS
+    value: "10000"
+  - name: SPRING_KAFKA_PROPERTIES_HEARTBEAT_INTERVAL_MS
+    value: "3000"
+  - name: SPRING_KAFKA_PROPERTIES_MAX_POLL_INTERVAL_MS
+    value: "300000"
