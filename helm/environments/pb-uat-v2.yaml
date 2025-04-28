@@ -420,8 +420,8 @@ egov-mdms-service:
   replicas: 2
   memory_limits: "768Mi"
   heap: "-Xmx512m -Xms512m"
-#  mdms-path: "/work-dir/upyog-punjab-mdms-data/data"
-  mdms-path: "/work-dir/punjab-mdms-data/data"
+  mdms-path: "/work-dir/upyog-punjab-mdms-data/data"
+#  mdms-path: "/work-dir/punjab-mdms-data/data"
   ingress:
     zuul: false
   initContainers:
