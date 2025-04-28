@@ -425,10 +425,13 @@ egov-mdms-service:
     zuul: false
   initContainers:
     gitSync:
-      repo: "git@github.com:pmidc-digit/upyog-punjab-mdms-data"
+#      repo: "git@github.com:pmidc-digit/upyog-punjab-mdms-data"
+      repo: "git@github.com:pmidc-digit/punjab-mdms-data"
       branch: "PROD_V2"
-  mdms-folder: "upyog-punjab-mdms-data"
-  masters-config-url: "file:///work-dir/upyog-punjab-mdms-data/mdms-masters-config.json"
+#  mdms-folder: "upyog-punjab-mdms-data"
+  mdms-folder: "punjab-mdms-data"
+  masters-config-url: "file:///work-dir/punjab-mdms-data/mdms-masters-config.json"
+#  masters-config-url: "file:///work-dir/upyog-punjab-mdms-data/mdms-masters-config.json"
   java-args: -Dspring.profiles.active=monitoring
   server-tomcat-max-threads: "500"
   server-tomcat-max-connections: "10000"
