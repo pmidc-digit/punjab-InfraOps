@@ -130,3 +130,11 @@ env: |
         key: kafka-brokers
   - name: SERVER_PORT
     value: "8080"
+  - name: SPRING_KAFKA_CONSUMER_MAX-POLL-RECORDS
+    value: "500"
+  - name: SPRING_KAFKA_PROPERTIES_SESSION_TIMEOUT_MS
+    value: "10000"
+  - name: SPRING_KAFKA_PROPERTIES_HEARTBEAT_INTERVAL_MS
+    value: "3000"
+  - name: SPRING_KAFKA_PROPERTIES_MAX_POLL_INTERVAL_MS
+    value: "300000"
