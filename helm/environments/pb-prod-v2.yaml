@@ -309,15 +309,15 @@ covid-chatbot:
     
 xstate-chatbot:
   replicas: 4
-  memory_limits: 750Mi
+  memory_limits: 1550Mi
   resources: |
     limits:
       cpu: 500m
-      memory: 750Mi
+      memory: 1450Mi
     requests:
       cpu: 500m
-      memory: 750Mi  
-  heap: "-Xmx721m -Xms720m -XX:TieredStopAtLevel=1"
+      memory: 1350Mi  
+  heap: "-Xmx1221m -Xms1220m -XX:TieredStopAtLevel=1"
   whatsapp-provider: "ValueFirst"
   contact-card-whatsapp-number: "+918750975975"
   contact-card-whatsapp-name: "mSeva Punjab"
