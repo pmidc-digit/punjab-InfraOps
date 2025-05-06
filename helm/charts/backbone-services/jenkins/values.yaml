@@ -129,16 +129,16 @@ master:
   # Ignored if Persistence is enabled
   # maxSurge: 1
   # maxUnavailable: 25%
-  resources:
-    enabled: false
-    requests:
-      cpu: "100m"
-      memory: "1256Mi"
-    limits:
-      cpu: "1000m"
-      memory: "1024Mi"
+##  resources:
+  ##  enabled: false
+  ##  requests:
+  ##    cpu: "100m"
+  ##    memory: "1256Mi"
+  ##  limits:
+  ##    cpu: "1000m"
+  ##    memory: "1024Mi"
   # Set min/max heap here if needed with:
-  javaOpts: "-Xms512M -Xmx512M -Duser.timezone=Asia/Calcutta"
+ ## javaOpts: "-Xms512M -Xmx512M -Duser.timezone=Asia/Calcutta"
   # jenkinsOpts: ""
   # jenkinsUrl: ""
   # If you set this prefix and use ingress controller then you might want to set the ingress path below
