@@ -52,6 +52,7 @@ jenkins:
     ingress:
       enabled: true
     resources:
+      enabled: false
       limits:
         cpu: "2000m"
         memory: "10096Mi"
