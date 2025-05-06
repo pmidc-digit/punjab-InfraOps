@@ -51,12 +51,11 @@ jenkins:
   master:
     ingress:
       enabled: true
-    resources:
-      enabled: false
-      limits:
-        cpu: "2000m"
-        memory: "10096Mi"
-    javaOpts: "-Xms9560M -Xmx9560M -Duser.timezone=Asia/Calcutta"
+  #  resources:
+  #    limits:
+  #      cpu: "2000m"
+  #      memory: "10096Mi"
+  #  javaOpts: "-Xms9560M -Xmx9560M -Duser.timezone=Asia/Calcutta"
 
 nginx-ingress:
   replicas: 1
