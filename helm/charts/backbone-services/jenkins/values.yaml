@@ -130,6 +130,7 @@ master:
   # maxSurge: 1
   # maxUnavailable: 25%
   resources:
+    enabled: false
     requests:
       cpu: "100m"
       memory: "1256Mi"
