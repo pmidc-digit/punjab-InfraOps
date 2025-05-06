@@ -54,7 +54,7 @@ jenkins:
     resources:
       limits:
         cpu: "2000m"
-        memory: "1096Mi"
+        memory: "10096Mi"
     javaOpts: "-Xms9560M -Xmx9560M -Duser.timezone=Asia/Calcutta"
 
 nginx-ingress:
