@@ -692,7 +692,8 @@ user-otp:
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 firenoc-services:
   replicas: 3
-
+firenoc-calculator:
+  replicas: 3
 # web >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 react-pgr-web:
   ULB_JS_URL: "https://s3.ap-south-1.amazonaws.com/pb-egov-assets/ulb-overrides-prod-v2-20201001.js"
