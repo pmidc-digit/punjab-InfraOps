@@ -543,6 +543,20 @@ master:
                 }
                 disabled(false)
               }
+              {{- else if (eq $job.name "pb-sdc-uat") }}            
+              deployer(repo:'git@github.com:pmidc-digit/punjab-InfraOps.git', branch: 'punjab-prod', helmDir: 'helm', environment: '{{ $job.name }}')""")
+                      sandbox() 
+                    }
+                }
+                disabled(false)
+              }
+              {{- else if (eq $job.name "pb-sdc-dev") }}            
+              deployer(repo:'git@github.com:pmidc-digit/punjab-InfraOps.git', branch: 'punjab-prod', helmDir: 'helm', environment: '{{ $job.name }}')""")
+                      sandbox() 
+                    }
+                }
+                disabled(false)
+              }              
               {{- else if (eq $job.name "pb-prod-v2") }}            
               deployer(repo:'git@github.com:pmidc-digit/punjab-InfraOps.git', branch: 'punjab-prod', helmDir: 'helm', environment: '{{ $job.name }}')""")
                       sandbox() 
