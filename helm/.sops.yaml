@@ -8,31 +8,32 @@ creation_rules:
           encrypted_regex: '^(secrets)$'
           kms: 'arn:aws:kms:ap-south-1:023860687624:key/406a29cf-09d4-4874-93f3-0a893aaea0e8'  
           #gcp_kms: 'projects/digit-egov/locations/asia-south1/keyRings/egov-sops/cryptoKeys/egov-sops-key'
-          pgp: 'B9FF61E01273EDF7DE298B52F4D6BD77E5C66196'
+         # pgp: 'B9FF61E01273EDF7DE298B52F4D6BD77E5C66196'
 
         - path_regex: environments/pb\-uat\-secrets\.yaml$  # PMIDC-UAT
           encrypted_regex: '^(secrets)$'
           kms: 'arn:aws:kms:ap-south-1:023860687624:key/406a29cf-09d4-4874-93f3-0a893aaea0e8'
-          gcp_kms: 'projects/digit-egov/locations/asia-south1/keyRings/egov-sops/cryptoKeys/egov-sops-key'
-          pgp: 'B9FF61E01273EDF7DE298B52F4D6BD77E5C66196'
+#          gcp_kms: 'projects/digit-egov/locations/asia-south1/keyRings/egov-sops/cryptoKeys/egov-sops-key'
+#          pgp: 'B9FF61E01273EDF7DE298B52F4D6BD77E5C66196'
 
         - path_regex: environments/pb\-prod\-secrets\.yaml$   #PMIDC-PROD
           encrypted_regex: '^(secrets)$'
           kms: 'arn:aws:kms:ap-south-1:023860687624:key/406a29cf-09d4-4874-93f3-0a893aaea0e8'
           #gcp_kms: 'projects/digit-egov/locations/asia-south1/keyRings/egov-sops/cryptoKeys/egov-sops-key'
-          pgp: 'B9FF61E01273EDF7DE298B52F4D6BD77E5C66196'
+#          pgp: 'B9FF61E01273EDF7DE298B52F4D6BD77E5C66196'
 
         - path_regex: environments/pb\-uat-v2\-secrets\.yaml$   #PMIDC-PROD
           encrypted_regex: '^(secrets)$'
           kms: 'arn:aws:kms:ap-south-1:023860687624:key/406a29cf-09d4-4874-93f3-0a893aaea0e8'
           #gcp_kms: 'projects/digit-egov/locations/asia-south1/keyRings/egov-sops/cryptoKeys/egov-sops-key'
-          pgp: 'B9FF61E01273EDF7DE298B52F4D6BD77E5C66196'
+#          pgp: 'B9FF61E01273EDF7DE298B52F4D6BD77E5C66196'
 
         - path_regex: environments/pb\-prod-v2\-secrets\.yaml$   #PMIDC-PROD
           encrypted_regex: '^(secrets)$'
           kms: 'arn:aws:kms:ap-south-1:023860687624:key/406a29cf-09d4-4874-93f3-0a893aaea0e8'
           #gcp_kms: 'projects/digit-egov/locations/asia-south1/keyRings/egov-sops/cryptoKeys/egov-sops-key'
-          pgp: 'B9FF61E01273EDF7DE298B52F4D6BD77E5C66196'
+#          pgp: 'B9FF61E01273EDF7DE298B52F4D6BD77E5C66196'
+
         - path_regex: environments/ci\-secrets\.yaml$   #PMIDC-PROD
           encrypted_regex: '^(secrets)$'
           kms: 'arn:aws:kms:ap-south-1:023860687624:key/406a29cf-09d4-4874-93f3-0a893aaea0e8'
@@ -45,7 +46,7 @@ creation_rules:
         - kms: 'arn:aws:kms:ap-south-1:023860687624:key/406a29cf-09d4-4874-93f3-0a893aaea0e8'
           #gcp_kms: 'projects/digit-egov/locations/asia-south1/keyRings/egov-sops/cryptoKeys/egov-sops-key'
           encrypted_regex: '^(secrets)$'
-          pgp: 'B9FF61E01273EDF7DE298B52F4D6BD77E5C66196'
+ #         pgp: 'B9FF61E01273EDF7DE298B52F4D6BD77E5C66196'
 
         # - path_regex: environments/dev\.yaml$
         #   encrypted_regex: '^(secrets)$'
