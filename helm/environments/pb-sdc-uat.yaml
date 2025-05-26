@@ -244,6 +244,29 @@ egov-notification-sms:
 egov-otp:
   replicas: 1
 
+## New service ##
+
+adv-services:
+  memory_limits: 512Mi
+  heap: "-Xmx256m -Xms256m"
+
+sv-services:
+  memory_limits: 512Mi
+  heap: "-Xmx256m -Xms256m"
+
+pet-services:
+  memory_limits: 512Mi
+  heap: "-Xmx256m -Xms256m"  
+  
+asset-services:
+  memory_limits: 512Mi
+  heap: "-Xmx256m -Xms256m"
+
+asset-calculator:  # Configuration for the common search module module
+  memory_limits: 512Mi  
+  heap: "-Xmx256m -Xms256m"  
+###
+
 inbox:
   replicas: 1
   memory_limits: 512Mi
@@ -727,6 +750,20 @@ report:
     gitSync:
         repo: "git@github.com:pmidc-digit/punjab-rainmaker-customization"
         branch: "UAT_V2"
+
+report-v2:
+  replicas: 1
+  heap: "-Xmx256m -Xms256m"  
+  tracing-enabled: "true"
+  server-tomcat-max-threads: "30"
+  server-tomcat-max-connections: "1000"
+  java-args: "-Dspring.profiles.active=production"
+  spring-datasource-tomcat-max-active: 10
+  report-locationsfile-path: "file:///work-dir/punjab-rainmaker-customization/configs/reports/report.config"
+  initContainers:
+    gitSync:
+        repo: "git@github.com:pmidc-digit/punjab-rainmaker-customization"
+        branch: "UAT_LIVE" 
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
