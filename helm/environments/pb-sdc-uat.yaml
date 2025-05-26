@@ -147,6 +147,14 @@ cluster-configs:
               land-services: "http://land-services.egov:8080/"
              # pt-services-dx: "http://pt-services-dx:8080/"
               mdms-v2: "http://mdms-v2.egov:8080/"
+              inbox: "http://inbox.egov:8080/"
+              sv-services: "http://sv-services.egov:8080/"
+              chb-services: "http://chb-services.egov:8080/"
+              adv-services: "http://adv-services.egov:8080/"
+              pet-services: "http://pet-services.egov:8080/"
+              asset-services: "http://asset-services.egov:8080/"
+              asset-services-maha: "http://asset-services-maha.egov:8080/"
+              asset-calculator: "http://asset-calculator.egov:8080/"
 
 
 # billingservices >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
