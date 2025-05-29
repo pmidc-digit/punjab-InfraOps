@@ -349,6 +349,32 @@ egov-survey-services:
   employee-apilink-new: "https://sdc-uat.lgpunjab.gov.in/employee/"
   eseva-api-endpoint: "/externalapi/api/LocalGovernment/AuthenticateUser"
 
+  ndc-services:
+  replicas: 1
+  heap: "-Xmx356m -Xms356m -XX:TieredStopAtLevel=1"
+  memory_limits: 412Mi
+  otp-validation: "true"
+  citizen-otp-enabled: "true"
+  employee-otp-enabled: "false"
+  access-token-validity: 10080
+  refresh-token-validity: 20160
+  default-password-expiry: 90
+  mobile-number-validation: "false"
+  roles-state-level: "true"
+  citizen-registration-withlogin: "true"
+  citizen-otp-fixed: "123456"
+  citizen-otp-fixed-enabled: "true"
+  java-args: "-Dspring.profiles.active=production"
+  server-tomcat-max-threads: "50"
+  server-tomcat-max-connections: "2500"
+  spring-datasource-tomcat-max-active: "25"    
+  egov-state-level-tenant-id: "pb"
+  decryption-abac-enabled: "false"
+  tracing-enabled: "true"
+  account-unlock-cool-down-period-minutes: 5
+  esewa-applink: "https://esewatst.punjab.gov.in"
+  employee-apilink-new: "https://mseva-uat.lgpunjab.gov.in/employee/"
+  eseva-api-endpoint: "/externalapi/api/LocalGovernment/AuthenticateUser"
 
 tenant:
   replicas: 1
