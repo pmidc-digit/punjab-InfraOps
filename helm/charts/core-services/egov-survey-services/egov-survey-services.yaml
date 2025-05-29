@@ -13,7 +13,7 @@ ingress:
 initContainers:
   dbMigration:
     enabled: true
-    schemaTable: "egov_user_schema"
+    schemaTable: "egov_survey_schema"
     image:
       repository: "egov-survey-services-db"
 
