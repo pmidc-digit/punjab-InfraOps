@@ -50,6 +50,7 @@ cluster-configs:
         egov-service-host:
             namespace: [ egov, monitoring ]    
             data:
+              minio-url: "http://10.44.237.28:9000/"
               asset-services: "http://asset-services:8080/"
               asset-services-maha: "http://asset-services-maha:8080/"
               billing-service: "http://billing-service:8080/"
