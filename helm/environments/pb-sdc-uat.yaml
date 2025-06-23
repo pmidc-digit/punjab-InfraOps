@@ -582,8 +582,8 @@ egov-weekly-impact-notifier:
 
 egov-apportion-service:
   replicas: 1
-  memory_limits: 256Mi
-  heap: -Xmx128m -Xms128m
+  memory_limits: 550Mi
+  heap: -Xmx500m -Xms500m
   java-args: "-Dspring.profiles.active=production"
 
 pdf-service:
