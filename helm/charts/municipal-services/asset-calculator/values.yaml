@@ -49,7 +49,7 @@ env: |
     valueFrom:
       configMapKeyRef:
         name: egov-service-host
-        key: mdms-v2
+        key: egov-mdms-service
   - name: WORKFLOW_CONTEXT_PATH
     valueFrom:
       configMapKeyRef:
