@@ -148,6 +148,7 @@ cluster-configs:
               noc-services: "http://noc-services.egov:8080/"
               land-services: "http://land-services.egov:8080/"
              # pt-services-dx: "http://pt-services-dx:8080/"
+              egov-filestore-url: "https://sdc-uat.lgpunjab.gov.in"
               mdms-v2: "http://mdms-v2.egov:8080/"
               inbox: "http://inbox.egov:8080/"
               sv-services: "http://sv-services.egov:8080/"
