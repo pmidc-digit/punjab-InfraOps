@@ -42,7 +42,7 @@ env: |
     valueFrom:
       configMapKeyRef:
         name: egov-service-host
-        key: egov-filestore
+        key: egov-filestore-url
   - name: SERVER_PORT
     value: "8080"
   - name: SECURITY_BASIC_ENABLED
