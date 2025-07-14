@@ -12,13 +12,13 @@ labels:
 image:
   collector:
     repository: "jaegertracing/jaeger-collector"
-    tag: "1.18"
+    tag: "1.71.0"
   query:  
     repository: "jaegertracing/jaeger-query"
-    tag: "1.18" 
+    tag: "1.71.0" 
   agent: 
     repository: "jaegertracing/jaeger-agent"
-    tag: "1.18" 
+    tag: "1.71.0" 
   spark:   
     repository: "jaegertracing/spark-dependencies"
     tag: "latest"
