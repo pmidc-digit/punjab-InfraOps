@@ -1,5 +1,5 @@
 global:
-  domain: pmidc-build.lgpunjab.gov.in
+  domain: punjabjenkins.lgpunjab.gov.in
   setup: fullsetup
   
 cluster-configs:
