@@ -8,8 +8,8 @@ cron:
 # Container Configs
 namespace: jenkins
 image:
-  repository: "gcr.io/kaniko-project/warmer"
-  tag: "latest"
+  repository: "gcr.io/kaniko-project/executor"
+  tag: "debug-v0.16.0"
 storageSize: 10Gi
 
 args: ["--cache-dir=/cache",
