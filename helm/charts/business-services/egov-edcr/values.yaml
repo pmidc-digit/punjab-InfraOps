@@ -31,12 +31,12 @@ env: |
   - name: DB_USERNAME
     valueFrom: 
       secretKeyRef: 
-        name: db
+        name: dbedcr
         key: username
   - name: DB_PASSWORD
     valueFrom: 
       secretKeyRef: 
-        name: db
+        name: dbedcr
         key: password
   - name: NO_TXN_DB_URL
     valueFrom: 
@@ -46,12 +46,12 @@ env: |
   - name: NO_TXN_DB_USER
     valueFrom: 
       secretKeyRef: 
-        name: db
+        name: dbedcr
         key: username
   - name: NO_TXN_DB_PASSWORD 
     valueFrom: 
       secretKeyRef: 
-        name: db
+        name: dbedcr
         key: password
   - name: min-pool-size
     value: {{ index .Values "min-pool-connection" | quote }}
