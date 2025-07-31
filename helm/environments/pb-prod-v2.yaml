@@ -161,8 +161,8 @@ billing-service:
 egov-accesscontrol:
   replicas: 2
   java-args: "-Dspring.profiles.active=production"
-  heap: "-Xmx376m -Xms376m"
-  memory_limits: 756Mi
+  heap: "-Xmx876m -Xms876m"
+  memory_limits: 956Mi
 
 egov-common-masters:
   replicas: 2
