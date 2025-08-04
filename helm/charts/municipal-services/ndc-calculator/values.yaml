@@ -71,9 +71,9 @@ env: |
     valueFrom:
       configMapKeyRef:
         name: egov-service-host
-        key: sw-services
+        key: ndc-calculator
   - name: SPRING_KAFKA_CONSUMER_GROUP_ID
-    value: egov-sw-calculator
+    value: egov-ndc-calculator
   - name: SPRING_KAFKA_PRODUCER_KEY_SERIALIZER
     value: org.apache.kafka.common.serialization.StringSerializer
   - name: SPRING_KAFKA_PRODUCER_VALUE_SERIALIZER
@@ -85,7 +85,7 @@ env: |
   - name: SERVER_PORT
     value: "8080"
   - name: SERVER_CONTEXT_PATH
-    value: /sw-calculator                       
+    value: /ndc-calculator                       
   - name: NOTIFICATION_URL
     valueFrom:
       configMapKeyRef:
