@@ -161,6 +161,7 @@ cluster-configs:
              # pt-services-dx: "http://pt-services-dx:8080/"
               mdms-v2: "http://mdms-v2.egov:8080/"
               pgr-ai-services: "http://pgr-ai-services.egov:8080/"
+              ndc-calculator: "http://ndc-calculator.egov:8080/"
 
 
 # billingservices >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -384,6 +385,11 @@ egov-survey-services:
   esewa-applink: "https://esewatst.punjab.gov.in"
   employee-apilink-new: "https://mseva-uat.lgpunjab.gov.in/employee/"
   eseva-api-endpoint: "/externalapi/api/LocalGovernment/AuthenticateUser"
+
+ndc-calculator:
+  replicas: 2
+  java-args: "-Dspring.profiles.active=production"
+  heap: "-Xmx512m -Xms512m"
 
 tenant:
   replicas: 1
