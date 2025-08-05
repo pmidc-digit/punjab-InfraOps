@@ -1,0 +1,67 @@
+apiVersion: v1
+data:
+  server.properties: |-
+    # Listeners configuration
+    listeners=CLIENT://:9092,INTERNAL://:9094,CONTROLLER://:9093
+    advertised.listeners=CLIENT://advertised-address-placeholder:9092,INTERNAL://advertised-address-placeholder:9094
+    listener.security.protocol.map=CLIENT:PLAINTEXT,INTERNAL:PLAINTEXT,CONTROLLER:PLAINTEXT
+    # KRaft process roles
+    process.roles=controller,broker
+    #node.id=
+    controller.listener.names=CONTROLLER
+    controller.quorum.voters=0@release-name-kafka-kraft-controller-0.release-name-kafka-kraft-controller-headless.backbone.svc.cluster.local:9093,1@release-name-kafka-kraft-controller-1.release-name-kafka-kraft-controller-headless.backbone.svc.cluster.local:9093,2@release-name-kafka-kraft-controller-2.release-name-kafka-kraft-controller-headless.backbone.svc.cluster.local:9093
+    #
+    #
+    #
+    log.dir=/bitnami/kafka/data
+    # Interbroker configuration
+    inter.broker.listener.name=INTERNAL
+kind: ConfigMap
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","data":{"server.properties":"# Listeners configuration\nlisteners=CLIENT://:9092,INTERNAL://:9094,CONTROLLER://:9093\nadvertised.listeners=CLIENT://advertised-address-placeholder:9092,INTERNAL://advertised-address-placeholder:9094\nlistener.security.protocol.map=CLIENT:PLAINTEXT,INTERNAL:PLAINTEXT,CONTROLLER:PLAINTEXT\n# KRaft process roles\nprocess.roles=controller,broker\n#node.id=\ncontroller.listener.names=CONTROLLER\ncontroller.quorum.voters=0@release-name-kafka-kraft-controller-0.release-name-kafka-kraft-controller-headless.backbone.svc.cluster.local:9093,1@release-name-kafka-kraft-controller-1.release-name-kafka-kraft-controller-headless.backbone.svc.cluster.local:9093,2@release-name-kafka-kraft-controller-2.release-name-kafka-kraft-controller-headless.backbone.svc.cluster.local:9093\n#\n#\n#\nlog.dir=/bitnami/kafka/data\n# Interbroker configuration\ninter.broker.listener.name=INTERNAL"},"kind":"ConfigMap","metadata":{"annotations":{},"labels":{"app.kubernetes.io/component":"controller-eligible","app.kubernetes.io/instance":"release-name","app.kubernetes.io/managed-by":"Helm","app.kubernetes.io/name":"kafka-kraft","app.kubernetes.io/part-of":"kafka","app.kubernetes.io/version":"3.6.1","helm.sh/chart":"kafka-26.2.0"},"name":"release-name-kafka-kraft-controller-configuration","namespace":"backbone"}}
+  labels:
+    app.kubernetes.io/component: controller-eligible
+    app.kubernetes.io/instance: release-name
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: kafka-kraft
+    app.kubernetes.io/part-of: kafka
+    app.kubernetes.io/version: 3.6.1
+    helm.sh/chart: kafka-26.2.0
+  name: release-name-kafka-kraft-controller-configuration
+  namespace: backbone
+---
+apiVersion: v1
+data:
+  server.properties: |-
+    # Listeners configuration
+    listeners=CLIENT://:9092,INTERNAL://:9094,CONTROLLER://:9093
+    advertised.listeners=CLIENT://advertised-address-placeholder:9092,INTERNAL://advertised-address-placeholder:9094
+    listener.security.protocol.map=CLIENT:PLAINTEXT,INTERNAL:PLAINTEXT,CONTROLLER:PLAINTEXT
+    # KRaft process roles
+    process.roles=controller,broker
+    #node.id=
+    controller.listener.names=CONTROLLER
+    controller.quorum.voters=0@release-name-kafka-controller-0.release-name-kafka-controller-headless.backbone.svc.cluster.local:9093,1@release-name-kafka-controller-1.release-name-kafka-controller-headless.backbone.svc.cluster.local:9093,2@release-name-kafka-controller-2.release-name-kafka-controller-headless.backbone.svc.cluster.local:9093
+    #
+    #
+    #
+    log.dir=/bitnami/kafka/data
+    # Interbroker configuration
+    inter.broker.listener.name=INTERNAL
+kind: ConfigMap
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","data":{"server.properties":"# Listeners configuration\nlisteners=CLIENT://:9092,INTERNAL://:9094,CONTROLLER://:9093\nadvertised.listeners=CLIENT://advertised-address-placeholder:9092,INTERNAL://advertised-address-placeholder:9094\nlistener.security.protocol.map=CLIENT:PLAINTEXT,INTERNAL:PLAINTEXT,CONTROLLER:PLAINTEXT\n# KRaft process roles\nprocess.roles=controller,broker\n#node.id=\ncontroller.listener.names=CONTROLLER\ncontroller.quorum.voters=0@release-name-kafka-controller-0.release-name-kafka-controller-headless.backbone.svc.cluster.local:9093,1@release-name-kafka-controller-1.release-name-kafka-controller-headless.backbone.svc.cluster.local:9093,2@release-name-kafka-controller-2.release-name-kafka-controller-headless.backbone.svc.cluster.local:9093\n#\n#\n#\nlog.dir=/bitnami/kafka/data\n# Interbroker configuration\ninter.broker.listener.name=INTERNAL"},"kind":"ConfigMap","metadata":{"annotations":{},"labels":{"app.kubernetes.io/component":"controller-eligible","app.kubernetes.io/instance":"release-name","app.kubernetes.io/managed-by":"Helm","app.kubernetes.io/name":"kafka","app.kubernetes.io/part-of":"kafka","app.kubernetes.io/version":"3.6.1","helm.sh/chart":"kafka-26.2.0"},"name":"release-name-kafka-controller-configuration","namespace":"backbone"}}
+  labels:
+    app.kubernetes.io/component: controller-eligible
+    app.kubernetes.io/instance: release-name
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: kafka
+    app.kubernetes.io/part-of: kafka
+    app.kubernetes.io/version: 3.6.1
+    helm.sh/chart: kafka-26.2.0
+  name: release-name-kafka-controller-configuration
+  namespace: backbone

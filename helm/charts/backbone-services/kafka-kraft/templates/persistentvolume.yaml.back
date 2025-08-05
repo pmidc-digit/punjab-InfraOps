@@ -1,0 +1,98 @@
+{{- if $.Values.controller.persistence.enabled }}
+{{- range $idx, $v := until (int $.Values.controller.replicaCount) }}
+#---
+#apiVersion: storage.k8s.io/v1
+#kind: StorageClass
+#metadata:
+#  name: iscsi-storage1
+#provisioner: kubernetes.io/iscsi
+#allowVolumeExpansion: true
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: "data-kafka-kraft-{{ $idx }}"
+  labels:
+    app: data-kafka-kraft
+spec:
+  capacity:
+    storage: {{ $.Values.controller.persistence.dataDirSize | quote }}
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+#  storageClassName: "iscsi-storage1"
+  #claimRef:
+  #  name: "data-kafka-kraft-release-name-kafka-kraft-controller-{{ $idx }}"
+  #  namespace: {{ $.Values.namespace }}
+{{- if and $.Values.controller.persistence.iscsi $.Values.controller.persistence.iscsi.volumes }}
+  iscsi:
+    targetPortal: {{ index $.Values.controller.persistence.iscsi.volumes $idx "targetPortal" }}
+    iqn: {{ index $.Values.controller.persistence.iscsi.volumes $idx "iqn" }}
+    lun: 0
+    fsType: ext4
+    readOnly: false
+{{- end }}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: "data-kafka-kraft-release-name-kafka-kraft-controller-{{ $idx }}"
+  namespace: {{ $.Values.namespace }}
+  labels:
+    app: data-kafka-kraft
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ $.Values.controller.persistence.dataDirSize | quote }}
+  volumeName: "data-kafka-kraft-{{ $idx }}"
+#  storageClassName: "iscsi-storage1"
+{{- end }}
+{{- end }}
+
+{{- if $.Values.controller.persistence.enabled }}
+{{- range $idx, $v := until (int $.Values.controller.replicaCount) }}
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: "logs-kafka-kraft-{{ $idx }}"
+  labels:
+    app: logs-kafka-kraft
+spec:
+  capacity:
+    storage: {{ $.Values.controller.persistence.dataDirSize | quote }}
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+#  storageClassName: "iscsi-storage1"
+ # claimRef:
+ #   name: "logs-kafka-kraft-release-name-kafka-kraft-controller-{{ $idx }}"
+ #   namespace: {{ $.Values.namespace }}
+{{- if and $.Values.controller.persistence.iscsi $.Values.controller.persistence.iscsi.volumes }}
+  iscsi:
+    targetPortal: {{ index $.Values.controller.persistence.iscsi.volumes $idx "targetPortal" }}
+    iqn: {{ index $.Values.controller.persistence.iscsi.volumes $idx "iqn" }}
+    lun: 0
+    fsType: ext4
+    readOnly: false
+{{- end }}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: "logs-kafka-kraft-release-name-kafka-kraft-controller-{{ $idx }}"
+  namespace: {{ $.Values.namespace }}
+  labels:
+    app: logs-kafka-kraft
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ $.Values.controller.persistence.dataDirSize | quote }}
+  volumeName: "logs-kafka-kraft-{{ $idx }}"
+#  storageClassName: "iscsi-storage1"
+{{- end }}
+{{- end }}
