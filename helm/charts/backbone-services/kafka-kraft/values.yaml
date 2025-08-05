@@ -751,7 +751,7 @@ controller:
     ##
     enabled: true
     iscsi:
-      enabled: true
+      enabled: false
       volumes:
         - targetPortal: "10.44.237.27:3260"
           iqn: "iqn.2025-01.com.es:kafka-kafka-00"
