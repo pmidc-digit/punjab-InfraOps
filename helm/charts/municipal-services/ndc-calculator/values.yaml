@@ -67,7 +67,7 @@ env: |
       configMapKeyRef:
         name: egov-service-host
         key: billing-service
-  - name: EGOV_NDC_HOST
+  - name: EGOV_NDCCALCULATOR_HOST
     valueFrom:
       configMapKeyRef:
         name: egov-service-host
