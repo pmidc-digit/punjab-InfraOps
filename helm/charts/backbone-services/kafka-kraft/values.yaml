@@ -747,8 +747,6 @@ controller:
   ## ref: https://kubernetes.io/docs/user-guide/persistent-volumes/
   ##
   persistence:
-    ## @param controller.persistence.enabled Enable Kafka data persistence using PVC, note that ZooKeeper persistence is unaffected
-    ##
     enabled: true
     aws:
       - volumeId: vol-001ee5274af580b89
@@ -757,21 +755,21 @@ controller:
         zone: ap-south-1a
       - volumeId: vol-015f2880ea1d950c4
         zone: ap-south-1a
-    iscsi:
-      enabled: false
-      volumes:
-        - targetPortal: "10.44.237.27:3260"
-          iqn: "iqn.2025-01.com.es:kafka-kafka-00"
-        - targetPortal: "10.44.237.27:3260"
-          iqn: "iqn.2025-01.com.es:kafka-kafka-01"
-        - targetPortal: "10.44.237.27:3260"
-          iqn: "iqn.2025-01.com.es:kafka-kafka-02"
-        - targetPortal: "10.44.237.27:3260"
-          iqn: "iqn.2025-01.com.es:kafka-kafka-infra-00"
-        - targetPortal: "10.44.237.27:3260"
-          iqn: "iqn.2025-01.com.es:kafka-kafka-infra-01"
-        - targetPortal: "10.44.237.27:3260"
-          iqn: "iqn.2025-01.com.es:kafka-kafka-infra-02"
+  #  iscsi:
+  #    enabled: false
+  #   volumes:
+  #      - targetPortal: "10.44.237.27:3260"
+  #        iqn: "iqn.2025-01.com.es:kafka-kafka-00"
+  #      - targetPortal: "10.44.237.27:3260"
+  #        iqn: "iqn.2025-01.com.es:kafka-kafka-01"
+  #      - targetPortal: "10.44.237.27:3260"
+  #        iqn: "iqn.2025-01.com.es:kafka-kafka-02"
+  #      - targetPortal: "10.44.237.27:3260"
+  #        iqn: "iqn.2025-01.com.es:kafka-kafka-infra-00"
+  #      - targetPortal: "10.44.237.27:3260"
+  #        iqn: "iqn.2025-01.com.es:kafka-kafka-infra-01"
+  #      - targetPortal: "10.44.237.27:3260"
+  #        iqn: "iqn.2025-01.com.es:kafka-kafka-infra-02"
     dataDirSize: 300Gi
     ## @param controller.persistence.existingClaim A manually managed Persistent Volume and Claim
     ## If defined, PVC must be created manually before volume will be bound
