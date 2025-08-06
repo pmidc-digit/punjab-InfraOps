@@ -750,6 +750,13 @@ controller:
     ## @param controller.persistence.enabled Enable Kafka data persistence using PVC, note that ZooKeeper persistence is unaffected
     ##
     enabled: true
+    aws:
+      - volumeId: vol-001ee5274af580b89
+        zone: ap-south-1a
+      - volumeId: vol-0b98cc5e06ca4f374
+        zone: ap-south-1a
+      - volumeId: vol-015f2880ea1d950c4
+        zone: ap-south-1a
     iscsi:
       enabled: false
       volumes:
@@ -765,7 +772,7 @@ controller:
           iqn: "iqn.2025-01.com.es:kafka-kafka-infra-01"
         - targetPortal: "10.44.237.27:3260"
           iqn: "iqn.2025-01.com.es:kafka-kafka-infra-02"
-    dataDirSize: 450Gi
+    dataDirSize: 300Gi
     ## @param controller.persistence.existingClaim A manually managed Persistent Volume and Claim
     ## If defined, PVC must be created manually before volume will be bound
     ## The value is evaluated as a template
