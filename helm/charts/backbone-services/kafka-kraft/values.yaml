@@ -789,7 +789,7 @@ controller:
       - ReadWriteOnce
     ## @param controller.persistence.size PVC Storage Request for Kafka data volume
     ##
-    size: 450Gi
+    size: 300Gi
     ## @param controller.persistence.annotations Annotations for the PVC
     ##
     annotations: {}
