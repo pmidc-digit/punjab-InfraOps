@@ -35,6 +35,8 @@ citizen-allowed-search-params: ""
 
 # Additional Container Envs
 env: |
+  - name: SERVER_PORT
+    value: "8080"
   - name: EGOV_IDGEN_HOST
     valueFrom:
       configMapKeyRef:
