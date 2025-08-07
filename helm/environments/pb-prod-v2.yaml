@@ -19,6 +19,7 @@ cluster-configs:
               db-name: "egov_prod_db"
               kafka-brokers: "kafka-v2.kafka-cluster:9092"
               kafka-infra-brokers: kafka-v2-infra.kafka-cluster:9092
+              kafka-kraft-brokers: release-name-kafka.backbone:9092
               spring-datasource-tomcat-initialSize: "1"
               spring-datasource-tomcat-max-active: "5"
               server-tomcat-max-threads: "10"
