@@ -50,6 +50,11 @@ env: |
       configMapKeyRef:
         name: egov-service-host
         key: ndc-calculator
+  - name: EGOV_USER_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-user
   - name: WORKFLOW_CONTEXT_PATH
     valueFrom:
       configMapKeyRef:
