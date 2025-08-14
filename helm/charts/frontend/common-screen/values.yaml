@@ -6,7 +6,7 @@ labels:
 # Ingress Configs
 ingress:
   enabled: true
-  context: "common-mantain"
+  context: "common"
 
 # Init Containers Configs
 initContainers: {}
