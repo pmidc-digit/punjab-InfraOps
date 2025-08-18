@@ -455,7 +455,7 @@ xstate-chatbot:
   pgr-version: "v1"
   pgr-update-topic: "update-pgr-service"
   #information-image-filestoreid: "ad9ce23d-6a22-4b85-b3bb-b7814dac55a4"
-  information-image-filestoreid: "ba536dd6-c3b3-4997-93c6-13c6193d4120"
+  information-image-filestoreid: "5c3a93a0-e501-4b97-aa84-97f9b9b34517"
   open-search-image-filestoreid: "454b355b-fd56-4afe-8f0e-2d7a2178bf28"
   nlp-geoSearch: true
   bill-search-limit: 3
