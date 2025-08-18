@@ -308,50 +308,21 @@ covid-chatbot:
   ingress:
     ip-whitelist: "0.0.0.0/0"
     
-#xstate-chatbot:
-#  replicas: 4
- # memory_limits: 1550Mi
- # resources: |
- #   limits:
- #     cpu: 500m
- #     memory: 1450Mi
- #   requests:
- #     cpu: 500m
- #     memory: 1350Mi  
-#  heap: "-Xmx1221m -Xms1220m -XX:TieredStopAtLevel=1"
-#  whatsapp-provider: "ValueFirst"
-#  contact-card-whatsapp-number: "+918750975975"
-#  contact-card-whatsapp-name: "mSeva Punjab"
-#  valuefirst-whatsapp-number: "918750975975"
-#  valuefirst-notification-assigned-templateid: "195265"
-#  valuefirst-notification-resolved-templateid: "195267"
-#  valuefirst-notification-rejected-templateid: "195269"
-#  valuefirst-notification-reassigned-templateid: "195271"
-#  valuefirst-notification-commented-templateid: "195273"
-#  valuefirst-notification-welcome-templateid: "3797437"
-#  valuefirst-notification-root-templateid: "3797435"
-#  valuefirst-notification-viewrecept-templateid: "3597461"
-#  valuefirst-notification-pt-bill-templateid: "3595729"
-#  valuefirst-notification-ws-bill-templateid: "3595727"
-#  valuefirst-notification-owner-bill-success-templateid: "3797135"
-#  valuefirst-notification-other-pt-bill-success-templateid: "3797441"
-#  valuefirst-notification-other-ws-bill-success-templateid: "3797443"
-#  valuefirst-send-message-url: "https://api.myvfirst.com/psms/servlet/psms.JsonEservice"
-#  bill-supported-modules: "WS, PT"
-#  pgr-version: "v1"
-#  pgr-update-topic: "update-pgr-service"
-#  information-image-filestoreid: "8d0e6ee0-622f-438d-a5e3-2f70abd49bb5"
-#  open-search-image-filestoreid: "9c5df846-d8b0-4a66-a48f-2e53cdee2758"
-#  nlp-geoSearch: true
-#  bill-search-limit: 3
-#  receipt-search-limit: 3
-#  complaint-search-limit: 3
-
 xstate-chatbot:
+  replicas: 4
+  memory_limits: 1550Mi
+  resources: |
+    limits:
+      cpu: 500m
+      memory: 1450Mi
+    requests:
+      cpu: 500m
+      memory: 1350Mi  
+  heap: "-Xmx1221m -Xms1220m -XX:TieredStopAtLevel=1"
   whatsapp-provider: "ValueFirst"
-  contact-card-whatsapp-number: "+918448098734"
+  contact-card-whatsapp-number: "+918750975975"
   contact-card-whatsapp-name: "mSeva Punjab"
-  valuefirst-whatsapp-number: "918448098734"
+  valuefirst-whatsapp-number: "918750975975"
   valuefirst-notification-assigned-templateid: "195265"
   valuefirst-notification-resolved-templateid: "195267"
   valuefirst-notification-rejected-templateid: "195269"
@@ -369,13 +340,41 @@ xstate-chatbot:
   bill-supported-modules: "WS, PT"
   pgr-version: "v1"
   pgr-update-topic: "update-pgr-service"
-  #information-image-filestoreid: "ad9ce23d-6a22-4b85-b3bb-b7814dac55a4"
-  information-image-filestoreid: "ba536dd6-c3b3-4997-93c6-13c6193d4120"
-  open-search-image-filestoreid: "454b355b-fd56-4afe-8f0e-2d7a2178bf28"
+  information-image-filestoreid: "8d0e6ee0-622f-438d-a5e3-2f70abd49bb5"
+  open-search-image-filestoreid: "9c5df846-d8b0-4a66-a48f-2e53cdee2758"
   nlp-geoSearch: true
   bill-search-limit: 3
   receipt-search-limit: 3
   complaint-search-limit: 3
+#xstate-chatbot:
+#  whatsapp-provider: "ValueFirst"
+#  contact-card-whatsapp-number: "+918448098734"
+#  contact-card-whatsapp-name: "mSeva Punjab"
+#  valuefirst-whatsapp-number: "918448098734"
+#  valuefirst-notification-assigned-templateid: "195265"
+#  valuefirst-notification-resolved-templateid: "195267"
+#  valuefirst-notification-rejected-templateid: "195269"
+#  valuefirst-notification-reassigned-templateid: "195271"
+#  valuefirst-notification-commented-templateid: "195273"
+#  valuefirst-notification-welcome-templateid: "3797437"
+#  valuefirst-notification-root-templateid: "3797435"
+#  valuefirst-notification-viewrecept-templateid: "3597461"
+#  valuefirst-notification-pt-bill-templateid: "3595729"
+#  valuefirst-notification-ws-bill-templateid: "3595727"
+#  valuefirst-notification-owner-bill-success-templateid: "3797135"
+#  valuefirst-notification-other-pt-bill-success-templateid: "3797441"
+#  valuefirst-notification-other-ws-bill-success-templateid: "3797443"
+#  valuefirst-send-message-url: "https://api.myvfirst.com/psms/servlet/psms.JsonEservice"
+#  bill-supported-modules: "WS, PT"
+#  pgr-version: "v1"
+#  pgr-update-topic: "update-pgr-service"
+##  #information-image-filestoreid: "ad9ce23d-6a22-4b85-b3bb-b7814dac55a4"
+#  information-image-filestoreid: "ba536dd6-c3b3-4997-93c6-13c6193d4120"
+#  open-search-image-filestoreid: "454b355b-fd56-4afe-8f0e-2d7a2178bf28"
+#  nlp-geoSearch: true
+#  bill-search-limit: 3
+#  receipt-search-limit: 3
+#  complaint-search-limit: 3
   
 egov-mdms-service:
   replicas: 3
