@@ -144,7 +144,7 @@ cluster-configs:
               egov-pb-digilocker: "http://egov-pb-digilocker:8080/"
               bpa-services: "http://bpa-services.egov:8080/"
               bpa-calculator: "http://bpa-calculator.egov:8080/"
-              egov-edcr: "http://egov-edcr.egov:8080/"
+              egov-edcr: "http://sdc-uat.lgpunjab.gov:8080/"
               noc-services: "http://noc-services.egov:8080/"
               land-services: "http://land-services.egov:8080/"
              # pt-services-dx: "http://pt-services-dx:8080/"
@@ -1420,13 +1420,13 @@ microservice: |
   filestoreservice.beanname=egovMicroServiceStore
 # eGov-eDCR Tenants
 edcrTenants: |
-  common.domain.name=sdc-uat.lgpunjab.gov.in
-  tenant.sdc-uat.lgpunjab.gov.in=state
+  common.domain.name=sdc-uat.lgpunjab.gov
+  tenant.sdc-uat.lgpunjab.gov=state
   client.id=pb
-  tenant.amritsar.sdc-uat.lgpunjab.gov.in=amritsar
-  tenant.tapa.sdc-uat.lgpunjab.gov.in=tapa
-  tenant.barnala.sdc-uat.lgpunjab.gov.in=barnala
-  tenant.patiala.sdc-uat.lgpunjab.gov.in=patiala
+  tenant.amritsar.sdc-uat.lgpunjab.gov=amritsar
+  tenant.tapa.sdc-uat.lgpunjab.gov=tapa
+  tenant.barnala.sdc-uat.lgpunjab.gov=barnala
+  tenant.patiala.sdc-uat.lgpunjab.gov=patiala
   collection.debitaccounthead.client.impl.class=org.egov.collection.integration.services.DebitAccountHeadDetailsServiceImpl
 
 # nlp-engine >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
