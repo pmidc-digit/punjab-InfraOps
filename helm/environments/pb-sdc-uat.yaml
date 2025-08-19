@@ -1420,13 +1420,13 @@ microservice: |
   filestoreservice.beanname=egovMicroServiceStore
 # eGov-eDCR Tenants
 edcrTenants: |
-  common.domain.name=sdc-uat.lgpunjab.gov
-  tenant.sdc-uat.lgpunjab.gov=state
+  common.domain.name=sdc-uat.lgpunjab.gov.in
+  tenant.sdc-uat.lgpunjab.gov.in=state
   client.id=pb
-  tenant.amritsar.sdc-uat.lgpunjab.gov=amritsar
-  tenant.tapa.sdc-uat.lgpunjab.gov=tapa
-  tenant.barnala.sdc-uat.lgpunjab.gov=barnala
-  tenant.patiala.sdc-uat.lgpunjab.gov=patiala
+  tenant.amritsar.sdc-uat.lgpunjab.gov.in=amritsar
+  tenant.tapa.sdc-uat.lgpunjab.gov.in=tapa
+  tenant.barnala.sdc-uat.lgpunjab.gov.in=barnala
+  tenant.patiala.sdc-uat.lgpunjab.gov.in=patiala
   collection.debitaccounthead.client.impl.class=org.egov.collection.integration.services.DebitAccountHeadDetailsServiceImpl
 
 # nlp-engine >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
