@@ -50,7 +50,9 @@ jenkins:
       acl: [pmidc-digit*pb-sdc-uat]
     - name: pb-sdc-dev
       acl: [pmidc-digit*pb-sdc-dev]  
-       
+    - name: pb-sdc-prod
+      acl: [pmidc-digit*pb-sdc-dev]
+        
   master:
     ingress:
       enabled: true
