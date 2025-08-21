@@ -56,7 +56,15 @@ env: |
   - name: min-pool-size
     value: {{ index .Values "min-pool-connection" | quote }}
   - name: max-pool-size
-    value: {{ index .Values "max-pool-connection" | quote }}     
+    value: {{ index .Values "max-pool-connection" | quote }}
+  - name: IS_ENVIRONMENT_CENTRAL_INSTANCE
+    value: "false"
+  - name: STATE_TENANTID_INDEX_POSITION
+    value: "1"
+  - name: STATE_LEVEL_TENANTID_LENGTH
+    value: "0"
+  - name: IS_SUBTENANT_SCHEMA_BASED
+    value: "true"
 healthChecks:
   enabled: true
   livenessProbePath: "/"
