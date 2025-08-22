@@ -64,7 +64,7 @@ env: |
   - name: STATE_LEVEL_TENANTID_LENGTH
     value: "1"
   - name: IS_SUBTENANT_SCHEMA_BASED
-    value: "true"
+    value: "false"
 healthChecks:
   enabled: true
   livenessProbePath: "/"
