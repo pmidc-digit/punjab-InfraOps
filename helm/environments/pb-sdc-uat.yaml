@@ -1422,6 +1422,7 @@ microservice: |
 edcrTenants: |
   common.domain.name=sdc-uat.lgpunjab.gov.in
   tenant.sdc-uat.lgpunjab.gov.in=state
+  tenant.pb.sdc-uat.lgpunjab.gov.in=pb
   client.id=pb
   tenant.amritsar.sdc-uat.lgpunjab.gov.in=amritsar
   tenant.tapa.sdc-uat.lgpunjab.gov.in=tapa
