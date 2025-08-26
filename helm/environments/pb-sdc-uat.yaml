@@ -1096,7 +1096,7 @@ pgadmin:
   max-login-attempts: "5"
   enable-save-password: "False"
   persistence:
-    enabled: true
+    enabled: false
     dataDirSize: "1Gi"
     aws:
       volumeId: "vol-0d2e1fe97891833d5"
