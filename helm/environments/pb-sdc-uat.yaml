@@ -1087,11 +1087,11 @@ playground:
     - egovio/playground:v2
 
 pgadmin:
-  dbUrl: "pb-uat-v2-db-new2.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com"
+  dbUrl: "10.44.237.25:5432"
   environment: "PBPROD_V2"
   maintenance-db-name: "egov_prod_db"
   db-admin-username: "egovprod"
-  db-read-username: "pbuat_readonly"
+  db-read-username: "egovuser_uat"
   max-query-history: "50"
   max-login-attempts: "5"
   enable-save-password: "False"
