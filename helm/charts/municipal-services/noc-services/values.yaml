@@ -53,6 +53,8 @@ env: |
       secretKeyRef:
         name: db
         key: password
+  - name: DB_PORT
+    value: "5432"          
   - name: EGOV_IDGEN_HOST
     valueFrom:
       configMapKeyRef:
