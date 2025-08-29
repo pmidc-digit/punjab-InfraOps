@@ -38,11 +38,6 @@ env: |
       configMapKeyRef:
         name: egov-config
         key: db-host
-  - name: FLYWAY_URL
-    valueFrom:
-      configMapKeyRef:
-        name: egov-config
-        key: db-host
   - name: SPRING_DATASOURCE_URL
     valueFrom:
       configMapKeyRef:
