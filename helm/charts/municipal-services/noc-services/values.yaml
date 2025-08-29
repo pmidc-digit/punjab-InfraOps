@@ -33,6 +33,26 @@ egov.idgen.bpa.applicationNum.format: "PB-BP-[cy:yyyy-MM-dd]-[SEQ_EG_BP_APN]"
 
 # Additional Container Envs
 env: |
+  - name: DB_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-config
+        key: db-host
+  - name: DB_NAME
+    valueFrom:
+      configMapKeyRef:
+        name: egov-config
+        key: db-name
+  - name: DB_USERNAME
+    valueFrom:
+      secretKeyRef:
+        name: db
+        key: username
+  - name: DB_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: db
+        key: password
   - name: EGOV_IDGEN_HOST
     valueFrom:
       configMapKeyRef:
