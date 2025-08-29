@@ -38,6 +38,11 @@ env: |
       configMapKeyRef:
         name: egov-config
         key: db-host
+  - name: SPRING_DATASOURCE_URL
+    valueFrom:
+      configMapKeyRef:
+        name: egov-config
+        key: db-host
   - name: DB_NAME
     valueFrom:
       configMapKeyRef:
