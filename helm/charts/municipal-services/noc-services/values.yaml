@@ -59,7 +59,12 @@ env: |
         name: db
         key: password
   - name: DB_PORT
-    value: "5432"          
+    value: "5432"
+  - name: EGOV_BPA_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: bpa-services
   - name: EGOV_IDGEN_HOST
     valueFrom:
       configMapKeyRef:
