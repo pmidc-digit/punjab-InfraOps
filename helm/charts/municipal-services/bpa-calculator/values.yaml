@@ -55,7 +55,7 @@ env: |
     valueFrom:
       configMapKeyRef:
         name: egov-config
-        key: egov-services-fqdn-name
+        key: egov-edcr
   - name: EGOV_BPA_HOST
     valueFrom:
       configMapKeyRef:
