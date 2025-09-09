@@ -1413,7 +1413,14 @@ bpa-calculator:
   tracing-enabled: "true"
 
 egov-edcr:
-  replicas: 2
+  replicas: 1
+  resources: |
+    limits:
+      cpu: 2000m
+      memory: 4Gi
+    requests:
+      cpu: 2000m
+      memory: 4Gi  
   ingress:
     enabled: true
     zuul: true
