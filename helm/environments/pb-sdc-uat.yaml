@@ -1314,12 +1314,18 @@ elasticsearch-data-infra-v1:
       #  zone: ap-south-1a
       #- volumeId: "vol-015e38cadb757b5c7"
       #  zone: ap-south-1a
+   # iscsi:
+   #   targetPortal: "10.44.237.27:3260"
+   #   iqn:
+   #     - "iqn.2025-01.com.example:es-data-infra"
+   #     - "iqn.2025-01.com.example:es-d-infra-01"
+   #     - "iqn.2025-01.com.example:es-d-infra-02"
     iscsi:
       targetPortal: "10.44.237.27:3260"
       iqn:
-        - "iqn.2025-01.com.example:es-data-infra"
-        - "iqn.2025-01.com.example:es-d-infra-01"
-        - "iqn.2025-01.com.example:es-d-infra-02"
+        - "iqn.2025-01.com.es:uates-es-01"
+        - "iqn.2025-01.com.es:uates-es-02"
+        - "iqn.2025-01.com.es:uates-es-03"
   network-host: "_eth0:ipv4_"
 
 elasticsearch-client-infra-v1:
