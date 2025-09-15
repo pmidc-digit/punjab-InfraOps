@@ -723,6 +723,15 @@ user-otp:
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 firenoc-services:
   replicas: 3
+  memory_limits: "2000Mi"
+  resources: |
+    limits:
+      cpu: 2000m
+      memory: 2000Mi
+    requests:
+      cpu: 2000m
+      memory: 2000Mi
+  
 firenoc-calculator:
   replicas: 3
 # web >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
