@@ -730,16 +730,7 @@ user-otp:
   replicas: 1
   java-args: "-Dspring.profiles.active=production"
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-firenoc-services:
-  replicas: 2
-  memory_limits: "1000Mi"
-  resources: |
-    limits:
-      cpu: 500m
-      memory: 1000Mi
-    requests:
-      cpu: 500m
-      memory: 1000Mi
+
 # web >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 react-pgr-web:
   ULB_JS_URL: "https://s3.ap-south-1.amazonaws.com/pb-egov-assets/ulb-overrides-uat-v2-20201001.js"
