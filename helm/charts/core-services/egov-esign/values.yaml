@@ -23,8 +23,11 @@ image:
 replicas: "1"
 healthChecks:
   enabled: true
-  livenessProbePath: "/egov-esign/actuator/health"
-  readinessProbePath: "/egov-esign/actuator/health"
+  livenessProbePath: "/egov-esign/health"
+  readinessProbePath: "/egov-esign/health"
+  livenessProbeInitialDelay: 30
+  readinessProbeInitialDelay: 20
+  periodSeconds: 10
 appType: "java-spring"
 tracing-enabled: true
 heap: "-Xmx292m -Xms292m"
