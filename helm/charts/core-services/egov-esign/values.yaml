@@ -42,7 +42,7 @@ resources:
 # Additional Container Envs
 env: |
   - name: ESIGN_RESPONSE_HOST
-  - value: "http://egov-esign.egov:8080/"
+    value: "http://egov-esign.egov:8080/"
   - name: SERVER_PORT
     value: "8080"
   - name: JAVA_OPTS
