@@ -22,7 +22,7 @@ image:
   repository: "egov-esign"
 replicas: "1"
 healthChecks:
-  enabled: true
+  enabled: false
   livenessProbePath: "/egov-esign/health"
   readinessProbePath: "/egov-esign/health"
   livenessProbeInitialDelay: 30
