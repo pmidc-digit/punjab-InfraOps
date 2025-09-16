@@ -38,4 +38,9 @@ env: |
   - name: SECURITY_BASIC_ENABLED
     value: "false"  
   - name: MANAGEMENT_SECURITY_ENABLED
-    value: "false"    
+    value: "false"
+  - name: ESIGN_PRIVATE_KEY_FILENAME
+    valueFrom:
+      secretKeyRef:
+        name: esign-secret
+        key: esign.private.key.filename   
