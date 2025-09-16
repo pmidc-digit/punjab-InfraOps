@@ -27,7 +27,7 @@ healthChecks:
   readinessProbePath: "/egov-esign/health"
 appType: "java-spring"
 tracing-enabled: true
-heap: "-Xmx192m -Xms192m"
+heap: "-Xmx292m -Xms292m"
 
 # Additional Container Envs
 env: |
