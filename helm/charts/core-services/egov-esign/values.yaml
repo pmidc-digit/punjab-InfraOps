@@ -43,6 +43,8 @@ resources:
 env: |
   - name: ESIGN_RESPONSE_HOST
     value: "http://egov-esign.egov:8080/"
+  - name: ESIGN_ASP_ID
+    value: "DLGP-900"
   - name: SERVER_PORT
     value: "8080"
   - name: JAVA_OPTS
