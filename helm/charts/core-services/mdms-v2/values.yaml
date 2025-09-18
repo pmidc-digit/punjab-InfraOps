@@ -11,7 +11,7 @@ ingress:
 
 initContainers:
   dbMigration:
-    enabled: true
+    enabled: false
     schemaTable: "mdms_v2_schema"
     image:
       repository: "mdms-v2-db"
