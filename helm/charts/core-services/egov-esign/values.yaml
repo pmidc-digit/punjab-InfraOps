@@ -42,7 +42,10 @@ resources:
 # Additional Container Envs
 env: |
   - name: ESIGN_RESPONSE_HOST
-    value: "http://egov-esign.egov:8080/"
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-filestore
   - name: ESIGN_ASP_ID
     value: "DLGP-900"
   - name: SERVER_PORT
