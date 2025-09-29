@@ -7,7 +7,7 @@ labels:
 ingress:
   enabled: true
   zuul: true
-  context: "egov-esign"
+  context: "egov-gisintegration"
 
 # Init Containers Configs
 initContainers:
