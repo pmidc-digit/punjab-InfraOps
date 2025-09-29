@@ -1,0 +1,72 @@
+# Common Labels
+labels:
+  app: "egov-gisintegration"
+  group: "core"
+
+# Ingress Configs
+ingress:
+  enabled: true
+  zuul: true
+  context: "egov-esign"
+
+# Init Containers Configs
+initContainers:
+  dbMigration:
+    enabled: false
+    schemaTable: "egov_gisintegration_schema"
+    image:
+      repository: "egov-gisintegration-db"
+
+# Container Configs
+image:
+  repository: "egov-gisintegration"
+replicas: "1"
+healthChecks:
+  enabled: false
+  livenessProbePath: "/egov-gisintegration/health"
+  readinessProbePath: "/egov-gisintegration/health"
+  livenessProbeInitialDelay: 30
+  readinessProbeInitialDelay: 20
+  periodSeconds: 10
+appType: "java-spring"
+tracing-enabled: true
+heap: "-Xmx510m -Xms510m"
+resources:
+  requests:
+    cpu: "500m"
+    memory: "512Mi"
+  limits:
+    cpu: "1"
+    memory: "1Gi"
+
+# Additional Container Envs
+env: |
+  - name: SPRING_DATASOURCE_URL
+    valueFrom:
+      configMapKeyRef:
+        name: egov-config
+        key: db-host
+  - name: SPRING_DATASOURCE_DRIVER_CLASS_NAME
+    value: org.postgresql.Driver
+  - name: DB_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-config
+        key: db-host
+  - name: DB_NAME
+    valueFrom:
+      configMapKeyRef:
+        name: egov-config
+        key: db-name
+  - name: DB_USERNAME
+    valueFrom:
+      secretKeyRef:
+        name: db
+        key: username
+  - name: DB_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: db
+        key: password
+  - name: DB_PORT
+    value: "5432"
