@@ -45,7 +45,7 @@ env: |
     valueFrom:
       configMapKeyRef:
         name: egov-service-host
-        key: egov-filestore
+        key: egov-filestore-url
   - name: ESIGN_ASP_ID
     value: "DLGP-900"
   - name: SERVER_PORT
