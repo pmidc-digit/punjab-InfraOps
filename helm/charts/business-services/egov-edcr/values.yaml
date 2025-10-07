@@ -38,6 +38,11 @@ env: |
       secretKeyRef: 
         name: dbedcr
         key: password
+  - name: EGOV_MDMS_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-mdms-service
   - name: NO_TXN_DB_URL
     valueFrom: 
       configMapKeyRef: 
