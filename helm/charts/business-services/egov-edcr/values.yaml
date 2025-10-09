@@ -38,7 +38,7 @@ env: |
       secretKeyRef: 
         name: dbedcr
         key: password
-  - name: MDMS_HOST
+  - name: EGOV_MDMS_HOST
     valueFrom:
       configMapKeyRef:
         name: egov-service-host
