@@ -44,7 +44,7 @@ env: |
         name: egov-service-host
         key: egov-mdms-service
   - name: MDMS_ENABLE
-    value: "true"
+    value: "false"
   - name: NO_TXN_DB_URL
     valueFrom: 
       configMapKeyRef: 
