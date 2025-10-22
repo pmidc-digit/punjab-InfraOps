@@ -1621,7 +1621,7 @@ edcrTenants: |
   tenant.urmartanda.sdc-uat.lgpunjab.gov.in=urmartanda
   tenant.zira.sdc-uat.lgpunjab.gov.in=zira
   tenant.zirakpur.sdc-uat.lgpunjab.gov.in=zirakpur
- collection.debitaccounthead.client.impl.class=org.egov.collection.integration.services.DebitAccountHeadDetailsServiceImpl
+  collection.debitaccounthead.client.impl.class=org.egov.collection.integration.services.DebitAccountHeadDetailsServiceImpl
 
 # nlp-engine >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 nlp-engine:
