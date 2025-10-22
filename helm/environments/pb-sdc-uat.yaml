@@ -1506,12 +1506,12 @@ edcrTenants: |
   tenant.firozpur.sdc-uat.lgpunjab.gov.in=firozpur
   tenant.firozpurregion.sdc-uat.lgpunjab.gov.in=firozpurregion
   tenant.gardhiwala.sdc-uat.lgpunjab.gov.in=gardhiwala
-  tenant.garhshankargarhshanker.sdc-uat.lgpunjab.gov.in=garhshankargarhshanker
+  tenant.garhshankar.sdc-uat.lgpunjab.gov.in=garhshankar
   tenant.ghagga.sdc-uat.lgpunjab.gov.in=ghagga
   tenant.ghanaur.sdc-uat.lgpunjab.gov.in=ghanaur
   tenant.gharuan.sdc-uat.lgpunjab.gov.in=gharuan
-  tenant.gidderbahagiddarbaha.sdc-uat.lgpunjab.gov.in=gidderbahagiddarbaha
-  tenant.gobindgarhmandigobindgarh.sdc-uat.lgpunjab.gov.in=gobindgarhmandigobindgarh
+  tenant.gidderbaha.sdc-uat.lgpunjab.gov.in=gidderbaha
+  tenant.gobindgarh.sdc-uat.lgpunjab.gov.in=gobindgarh
   tenant.goniana.sdc-uat.lgpunjab.gov.in=goniana
   tenant.goraya.sdc-uat.lgpunjab.gov.in=goraya
   tenant.gurdaspur.sdc-uat.lgpunjab.gov.in=gurdaspur
@@ -1553,7 +1553,7 @@ edcrTenants: |
   tenant.makhu.sdc-uat.lgpunjab.gov.in=makhu
   tenant.malerkotla.sdc-uat.lgpunjab.gov.in=malerkotla
   tenant.mallanwalakhass.sdc-uat.lgpunjab.gov.in=mallanwalakhass
-  tenant.maloudmalaudh.sdc-uat.lgpunjab.gov.in=maloudmalaudh
+  tenant.maloud.sdc-uat.lgpunjab.gov.in=maloud
   tenant.malout.sdc-uat.lgpunjab.gov.in=malout
   tenant.maluka.sdc-uat.lgpunjab.gov.in=maluka
   tenant.mamdot.sdc-uat.lgpunjab.gov.in=mamdot
@@ -1597,7 +1597,7 @@ edcrTenants: |
   tenant.rampuraphul.sdc-uat.lgpunjab.gov.in=rampuraphul
   tenant.rayya.sdc-uat.lgpunjab.gov.in=rayya
   tenant.rupnagar.sdc-uat.lgpunjab.gov.in=rupnagar
-  tenant.sasnagarmohaliajitgarh.sdc-uat.lgpunjab.gov.in=sasnagarmohaliajitgarh
+  tenant.sasmohali.sdc-uat.lgpunjab.gov.in=sasmohali
   tenant.sahnewal.sdc-uat.lgpunjab.gov.in=sahnewal
   tenant.samana.sdc-uat.lgpunjab.gov.in=samana
   tenant.samrala.sdc-uat.lgpunjab.gov.in=samrala
@@ -1609,7 +1609,7 @@ edcrTenants: |
   tenant.shamchaurasi.sdc-uat.lgpunjab.gov.in=shamchaurasi
   tenant.sirhindfatehgarhsahib.sdc-uat.lgpunjab.gov.in=sirhindfatehgarhsahib
   tenant.srihargobindpur.sdc-uat.lgpunjab.gov.in=srihargobindpur
-  tenant.srimuktsarsahibsrisrimuktsarsahibsahib.sdc-uat.lgpunjab.gov.in=srimuktsarsahibsrisrimuktsarsahibsahib
+  tenant.srimuktsarsahib.sdc-uat.lgpunjab.gov.in=srimuktsarsahib
   tenant.sujanpur.sdc-uat.lgpunjab.gov.in=sujanpur
   tenant.sultanpur.sdc-uat.lgpunjab.gov.in=sultanpur
   tenant.sunam.sdc-uat.lgpunjab.gov.in=sunam
