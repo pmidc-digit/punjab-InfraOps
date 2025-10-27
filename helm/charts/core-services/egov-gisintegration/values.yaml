@@ -34,10 +34,10 @@ heap: "-Xmx510m -Xms510m"
 resources:
   requests:
     cpu: "500m"
-    memory: "512Mi"
+    memory: "2000Mi"
   limits:
     cpu: "1"
-    memory: "1Gi"
+    memory: "2Gi"
 
 # Additional Container Envs
 env: |
