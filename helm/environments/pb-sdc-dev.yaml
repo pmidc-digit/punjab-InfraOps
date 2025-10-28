@@ -164,6 +164,8 @@ cluster-configs:
               pgr-ai-services: "http://pgr-ai-services.egov:8080/"
               ndc-calculator: "http://ndc-calculator.egov:8080/"
               ndc-services: "http://ndc-services.egov:8080/"
+              challan-generation: http://challan-generation.egov:8080/
+              challan_generation-calculator: http://challan_generation-calculator.egov:8080/
 
 
 # billingservices >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
