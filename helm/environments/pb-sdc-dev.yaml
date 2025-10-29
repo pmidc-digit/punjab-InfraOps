@@ -1432,6 +1432,7 @@ edcrTenants: |
   common.domain.name=mseva-dev.lgpunjab.gov.in
   tenant.mseva-dev.lgpunjab.gov.in=state
   client.id=pb
+  tenant.pb.mseva-dev.lgpunjab.gov.in=pb
   tenant.amritsar.mseva-dev.lgpunjab.gov.in=amritsar
   tenant.tapa.mseva-dev.lgpunjab.gov.in=tapa
   tenant.barnala.mseva-dev.lgpunjab.gov.in=barnala
