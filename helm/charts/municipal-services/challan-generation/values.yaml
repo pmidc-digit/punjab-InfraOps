@@ -22,7 +22,7 @@ image:
   repository: "challan-generation"
 replicas: "1"
 healthChecks:
-  enabled: false
+  enabled: true
   livenessProbePath: "/challan-generation/health"
   readinessProbePath: "/challan-generation/health"
 appType: "java-spring"
