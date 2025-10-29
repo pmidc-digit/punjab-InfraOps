@@ -1555,6 +1555,7 @@ edcrTenants: |
   tenant.longowal.sdc-uat.lgpunjab.gov.in=longowal
   tenant.ludhiana.sdc-uat.lgpunjab.gov.in=ludhiana
   tenant.ludhianaregion.sdc-uat.lgpunjab.gov.in=ludhianaregion
+  tenant.ropar.sdc-uat.lgpunjab.gov.in=ropar
   tenant.machhiwara.sdc-uat.lgpunjab.gov.in=machhiwara
   tenant.mahilpur.sdc-uat.lgpunjab.gov.in=mahilpur
   tenant.majitha.sdc-uat.lgpunjab.gov.in=majitha
