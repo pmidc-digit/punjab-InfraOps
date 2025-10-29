@@ -83,7 +83,7 @@ env: |
   - name: EGOV_MSG_PAY_LINK
     value: {{ index .Values "egov-msg-pay-link" | quote }}
   - name: SPRING_KAFKA_CONSUMER_GROUP_ID
-    value: egov-echallan-services
+    value: challan-generation
   - name: SPRING_KAFKA_PRODUCER_KEY_SERIALIZER
     value: org.apache.kafka.common.serialization.StringSerializer
   - name: SPRING_KAFKA_PRODUCER_VALUE_SERIALIZER
