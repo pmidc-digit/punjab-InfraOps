@@ -10,14 +10,20 @@ ingress:
   context: "challan_generation-calculator"
 
 # Init Containers Configs
-initContainers: {}
+initContainers:
+  dbMigration:
+    enabled: false
+    schemaTable: "challan_generation_calculator_schema"
+    image:
+      repository: "challan_generation-calculator-db"
+
 
 # Container Configs
 image:
   repository: "challan_generation-calculator"
 replicas: "1"
 healthChecks:
-  enabled: true
+  enabled: false
   livenessProbePath: "/challan_generation-calculator/health"
   readinessProbePath: "/challan_generation-calculator/health"
 appType: "java-spring"
