@@ -1,13 +1,13 @@
 # Common Labels
 labels:
-  app: "challan_generation-calculator"
+  app: "challan-generation-calculator"
   group: "rainmaker"
 
 # Ingress Configs
 ingress:
   enabled: true
   zuul: true
-  context: "challan_generation-calculator"
+  context: "challan-generation-calculator"
 
 # Init Containers Configs
 initContainers:
@@ -15,17 +15,17 @@ initContainers:
     enabled: false
     schemaTable: "challan_generation_calculator_schema"
     image:
-      repository: "challan_generation-calculator-db"
+      repository: "challan-generation-calculator-db"
 
 
 # Container Configs
 image:
-  repository: "challan_generation-calculator"
+  repository: "challan-generation-calculator"
 replicas: "1"
 healthChecks:
   enabled: false
-  livenessProbePath: "/challan_generation-calculator/health"
-  readinessProbePath: "/challan_generation-calculator/health"
+  livenessProbePath: "/challan-generation-calculator/health"
+  readinessProbePath: "/challan-generation-calculator/health"
 appType: "java-spring"
 tracing-enabled: true
 heap: "-Xmx192m -Xms192m"
@@ -34,9 +34,9 @@ java-args: "-Dspring.profiles.active=monitoring"
 # Additional Container Envs
 env: |
   - name: SERVER_CONTEXTPATH
-    value: /challan_generation-calculator
+    value: /challan-generation-calculator
   - name: SPRING_KAFKA_CONSUMER_GROUP_ID
-    value: challan_generation-calculator
+    value: challan-generation-calculator
   - name: SPRING_KAFKA_PRODUCER_KEY_SERIALIZER
     value: org.apache.kafka.common.serialization.StringSerializer
   - name: SPRING_KAFKA_PRODUCER_VALUE_SERIALIZER
