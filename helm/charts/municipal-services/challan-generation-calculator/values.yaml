@@ -23,7 +23,7 @@ image:
   repository: "challan-generation-calculator"
 replicas: "1"
 healthChecks:
-  enabled: false
+  enabled: true
   livenessProbePath: "/challan-generation-calculator/health"
   readinessProbePath: "/challan-generation-calculator/health"
 appType: "java-spring"
