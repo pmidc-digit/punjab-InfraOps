@@ -53,6 +53,11 @@ env: |
       configMapKeyRef:
         name: egov-service-host
         key: egov-localization
+  - name: EGOV_CHALLAN_CALCULATOR_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: challan-generation-calculator
   - name: EGOV_BILLINGSERVICE_HOST
     valueFrom:
       configMapKeyRef:
