@@ -22,7 +22,7 @@ image:
   repository: "layout-services"
 replicas: "1"
 healthChecks:
-  enabled: false
+  enabled: true
   livenessProbePath: "/layout-services/health"
   readinessProbePath: "/layout-services/health"
 appType: "java-spring"
