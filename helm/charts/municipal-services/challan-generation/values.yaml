@@ -79,7 +79,10 @@ env: |
         name: egov-service-host
         key: egov-workflow-v2
   - name: EGOV_LOCALITY_SERVICE_HOST
-    value: "https://mseva-dev.lgpunjab.gov.in"
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-location
   - name: WORKFLOW_TRANSITION_PATH
     value: "egov-workflow-v2/egov-wf/process/_transition"
   - name: EGOV_MSG_PAY_LINK
