@@ -38,6 +38,11 @@ env: |
       configMapKeyRef:
         name: egov-config
         key: db-host
+  - name: EGOV_LAYOUTCALCULATOR_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: layout-calculator
   - name: SPRING_DATASOURCE_URL
     valueFrom:
       configMapKeyRef:
