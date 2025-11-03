@@ -85,11 +85,6 @@ env: |
       configMapKeyRef:
         name: egov-service-host
         key: egov-workflow-v2 
-  - name: EGOV_LAYOUTCAL_HOST
-    valueFrom:
-      configMapKeyRef:
-        name: egov-service-host
-        key: layout-calculator
   - name: WORKFLOW_TRANSITION_PATH
     value: "egov-workflow-v2/egov-wf/process/_transition"
   - name: SPRING_KAFKA_CONSUMER_GROUP_ID
