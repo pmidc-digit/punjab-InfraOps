@@ -167,6 +167,7 @@ cluster-configs:
               challan-generation: http://challan-generation.egov:8080/
               challan-generation-calculator: http://challan-generation-calculator.egov:8080/
               layout-services: "http://layout-services.egov:8080/"
+              layout-calculator: "http://layout-calculator.egov:8080/"
 
 
 # billingservices >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
