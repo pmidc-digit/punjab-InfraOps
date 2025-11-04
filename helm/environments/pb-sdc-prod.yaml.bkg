@@ -144,7 +144,6 @@ cluster-configs:
               mdms-v2: "http://mdms-v2.egov:8080/"
               es-client: "http://elasticsearch-data-v1.es-cluster:9200"
               ndc-calculator: "http://ndc-calculator.egov:8080/"
-              ndc-services: "http://ndc-services.egov:8080/"
 
 # billingservices >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 billing-service:
