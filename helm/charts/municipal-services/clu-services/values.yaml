@@ -1,30 +1,30 @@
 # Common Labels
 labels:
-  app: "layout-clu-services"
+  app: "clu-services"
   group: "rainmaker"
 
 # Ingress Configs
 ingress:
   enabled: true
   zuul: true
-  context: "layout-clu-services"
+  context: "clu-services"
 
 # Init Containers Configs
 initContainers:
   dbMigration:
     enabled: true
-    schemaTable: "layout_clu_services_schema"
+    schemaTable: "clu_services_schema"
     image:
-      repository: "layout-clu-services-db"
+      repository: "clu-services-db"
 
 # Container Configs
 image:
-  repository: "layout-clu-services"
+  repository: "clu-services"
 replicas: "1"
 healthChecks:
   enabled: true
-  livenessProbePath: "/layout-clu-services/health"
-  readinessProbePath: "/layout-clu-services/health"
+  livenessProbePath: "/clu-services/health"
+  readinessProbePath: "/clu-services/health"
 appType: "java-spring"
 tracing-enabled: true
 heap: "-Xmx256m -Xms256m"

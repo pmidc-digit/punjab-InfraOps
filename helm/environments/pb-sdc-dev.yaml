@@ -168,8 +168,8 @@ cluster-configs:
               challan-generation-calculator: http://challan-generation-calculator.egov:8080/
               layout-services: "http://layout-services.egov:8080/"
               layout-calculator: "http://layout-calculator.egov:8080/"
-              layout-clu-services: "http://layout-clu-services.egov:8080/"
-              layout-clu-calculator: "http://layout-clu-calculator.egov:8080/"
+              clu-services: "http://clu-services.egov:8080/"
+              clu-calculator: "http://clu-calculator.egov:8080/"
 
 
 # billingservices >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
