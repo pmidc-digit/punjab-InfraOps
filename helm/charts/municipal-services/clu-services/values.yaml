@@ -38,11 +38,11 @@ env: |
       configMapKeyRef:
         name: egov-config
         key: db-host
-  - name: EGOV_LAYOUTCALCULATOR_HOST
+  - name: EGOV_CLUCALCULATOR_HOST
     valueFrom:
       configMapKeyRef:
         name: egov-service-host
-        key: layout-calculator
+        key: clu-calculator
   - name: SPRING_DATASOURCE_URL
     valueFrom:
       configMapKeyRef:
@@ -93,13 +93,13 @@ env: |
   - name: WORKFLOW_TRANSITION_PATH
     value: "egov-workflow-v2/egov-wf/process/_transition"
   - name: SPRING_KAFKA_CONSUMER_GROUP_ID
-    value: egov-layout-services
+    value: egov-clu-services
   - name: PERSISTER_SAVE_LAYOUT_TOPIC
-    value: save-layout-application
+    value: save-clu-application
   - name: PERSISTER_UPDATE_LAYOUT_TOPIC
-    value: update-layout-application
-  - name: PERSISTER_UPDATE_LAYOUT_WORKFLOW_TOPIC
-    value: update-layout-workflow
+    value: update-clu-application
+  - name: PERSISTER_UPDATE_CLU_WORKFLOW_TOPIC
+    value: update-clu-workflow
   - name: SPRING_KAFKA_PRODUCER_KEY_SERIALIZER
     value: org.apache.kafka.common.serialization.StringSerializer
   - name: SPRING_KAFKA_PRODUCER_VALUE_SERIALIZER
