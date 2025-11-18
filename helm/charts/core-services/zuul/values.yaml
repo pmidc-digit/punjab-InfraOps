@@ -9,6 +9,10 @@ namespace: egov
 # Init Containers Configs
 initContainers: 
   extraInitContainers: |
+    - name: SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE
+      value: "31457280"
+    - name: SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE
+      value: "31457280"
     - name: "zuul-kubernetes-discovery"
       image: "{{ .Values.global.containerRegistry }}/zuul-kubernetes-discovery:2-master-91c9795"      
       env: 
