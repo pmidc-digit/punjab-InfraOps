@@ -23,8 +23,6 @@ resources: |
 min-pool-connection: "5"
 max-pool-connection: "5"
 env: |
-  - name: MAX_FILE_UPLOAD_SIZE
-    value: "31457280"
   - name: DB_URL
     valueFrom: 
       configMapKeyRef: 
