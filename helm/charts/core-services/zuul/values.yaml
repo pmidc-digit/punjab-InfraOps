@@ -9,10 +9,6 @@ namespace: egov
 # Init Containers Configs
 initContainers: 
   extraInitContainers: |
-    - name: SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE
-      value: "31457280"
-    - name: SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE
-      value: "31457280"
     - name: "zuul-kubernetes-discovery"
       image: "{{ .Values.global.containerRegistry }}/zuul-kubernetes-discovery:2-master-91c9795"      
       env: 
@@ -58,6 +54,10 @@ home-isolation-chatbot-router-enabled: false
 
 # Additional Container Envs
 env: |
+  - name: SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE
+      value: "31457280"
+  - name: SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE
+      value: "31457280"
   - name: URL_LISTS
     value: /pt-services-v2/property/_create:http://rainmaker-custom-service:8000/customization/protected/punjab-pt/property/_create|/pt-services-v2/property/_update:http://rainmaker-custom-service:8000/customization/protected/punjab-pt/property/_update|/pt-calculator-v2/propertytax/_estimate:http://rainmaker-custom-service:8000/customization/protected/punjab-pt/pt-calculator-v2/_estimate
   - name: CUSTOM_FILTER_PROPERTY
