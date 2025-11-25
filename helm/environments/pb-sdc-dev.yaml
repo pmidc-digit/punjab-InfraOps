@@ -1417,10 +1417,10 @@ egov-edcr:
   resources: |
     limits:
       cpu: 2000m
-      memory: 4Gi
+      memory: 10Gi
     requests:
       cpu: 2000m
-      memory: 4Gi 
+      memory: 10Gi 
   ingress:
     enabled: true
     zuul: true
