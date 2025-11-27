@@ -28,6 +28,14 @@ healthChecks:
   livenessProbePath: "/kibana/"
   readinessProbePath: "/kibana/"            
 
+kibana.yml:
+  xpack.security.authc.providers:
+    anonymous.anonymous1:
+      order: 0
+      credentials:
+        username: "kibana_anon"
+        password: ""
+      allowRoleAssignment: true
 # Additional Container Envs
 env: |
   - name: ELASTICSEARCH_URL
