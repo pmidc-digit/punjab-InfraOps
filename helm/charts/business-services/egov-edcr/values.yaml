@@ -23,6 +23,8 @@ resources: |
 min-pool-connection: "5"
 max-pool-connection: "5"
 env: |
+  - name: PLAN_PDF
+    value: "false"
   - name: DB_URL
     valueFrom: 
       configMapKeyRef: 
