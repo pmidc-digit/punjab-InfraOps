@@ -170,6 +170,8 @@ cluster-configs:
               layout-calculator: "http://layout-calculator.egov:8080/"
               clu-services: "http://clu-services.egov:8080/"
               clu-calculator: "http://clu-calculator.egov:8080/"
+              gc-services: "http://gc-services.egov:8080/"
+              gc-calculator: "http://gc-calculator.egov:8080/"
 
 
 # billingservices >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -972,8 +974,18 @@ sw-calculator:
   heap: "-Xmx512m -Xms512m"
 
 
-# WnS >>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# garbage-collection >>>>>>>>>>>>>>>>>>>>>>>>>>>>
+gc-services:
+  replicas: 1
+  java-args: "-Dspring.profiles.active=production"
+  heap: "-Xmx756m -Xms512m"
+  memory_limits: "1024Mi"
 
+gc-calculator:
+  replicas: 1
+  java-args: "-Dspring.profiles.active=production"
+  heap: "-Xmx512m -Xms512m"
+  
 # financials >>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 egf-master:
