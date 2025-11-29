@@ -106,6 +106,16 @@ env: |
     value: save-gc-connection
   - name: EGOV_GARBAGESERVICE_UPDATEGARBAGECONNECTION
     value: update-gc-connection
+  - name: EGOV_DISCONNECT_BUSINESSSERVICE
+    value: DisconnectGCConnection
+  - name: IS_EXTERNAL_WORKFLOW_ENABLED
+    value: "true"
+  - name: CREATE_GC_WORKFLOW_NAME
+    value: NewGC
+  - name: MODIFY_GC_WORKFLOW_NAME
+    value: ModifyGCConnection
+  - name: RECONNECTION_GC_WORKFLOW_NAME
+    value: GCReconnection
   - name: SPRING_KAFKA_PRODUCER_KEY_SERIALIZER
     value: org.apache.kafka.common.serialization.StringSerializer
   - name: SPRING_KAFKA_PRODUCER_VALUE_SERIALIZER
@@ -133,3 +143,4 @@ env: |
     value: {{ index .Values "is-external-workflow-enabled" | quote }}
   - name: JAVA_ENABLE_DEBUG
     value: "true"
+
