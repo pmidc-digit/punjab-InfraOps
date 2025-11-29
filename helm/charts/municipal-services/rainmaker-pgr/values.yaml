@@ -41,6 +41,16 @@ java-args: "-Dspring.profiles.active=monitoring"
 env: |
   - name: SPRING_KAFKA_CONSUMER_GROUP_ID
     value: rainmaker-service
+  - name: DGR_TOKEN_ACCESS_KEY
+    valueFrom:
+      secretKeyRef:
+        key: token
+        name: dgrtoken
+  - name: DGR_TOKEN_PUBLIC_KEY
+    valueFrom:
+      secretKeyRef:
+        key: key
+        name: dgrpublic
   - name: SPRING_KAFKA_PRODUCER_KEY_SERIALIZER
     value: org.apache.kafka.common.serialization.StringSerializer
   {{- if index .Values "global" "serializers-timezone-in-ist" }}
