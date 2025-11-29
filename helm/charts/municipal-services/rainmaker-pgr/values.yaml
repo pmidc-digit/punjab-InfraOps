@@ -49,7 +49,7 @@ env: |
   - name: DGR_TOKEN_PUBLIC_KEY
     valueFrom:
       secretKeyRef:
-        key: key
+        key: token
         name: dgrpublic
   - name: SPRING_KAFKA_PRODUCER_KEY_SERIALIZER
     value: org.apache.kafka.common.serialization.StringSerializer
