@@ -35,8 +35,6 @@ java-args: "-Dspring.profiles.active=monitoring"
 env: |
   - name: EGOV_DISCONNECT_BUSINESSSERVICE
     value: DisconnectGCConnection
-  - name: IS_EXTERNAL_WORKFLOW_ENABLED
-    value: "true"
   - name: CREATE_GC_WORKFLOW_NAME
     value: NewGC
   - name: MODIFY_GC_WORKFLOW_NAME
@@ -143,5 +141,6 @@ env: |
     value: {{ index .Values "is-external-workflow-enabled" | quote }}
   - name: JAVA_ENABLE_DEBUG
     value: "true"
+
 
 
