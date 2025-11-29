@@ -138,9 +138,10 @@ env: |
     value: "true"
   {{- end }}
   - name: IS_EXTERNAL_WORKFLOW_ENABLED
-    value: {{ index .Values "is-external-workflow-enabled" | quote }}
+    value: "true"
   - name: JAVA_ENABLE_DEBUG
     value: "true"
+
 
 
 
