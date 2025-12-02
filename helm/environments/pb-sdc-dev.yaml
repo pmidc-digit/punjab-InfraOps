@@ -1438,7 +1438,7 @@ egov-edcr:
     zuul: true
     context: "edcr"
 microservice: |
-  indexer.host=http://egov-indexer:8080/
+  indexer.host=http://egov-indexer.egov:8080/
   egov.services.egov-indexer.url=egov-indexer/index-operations/{edcr-create-application}/_index
   edcr.indexer.data.push.required=true
   ms.url=http://egov-filestore.egov:8080/
