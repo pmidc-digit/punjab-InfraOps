@@ -1451,6 +1451,7 @@ microservice: |
   filestoreservice.beanname=egovMicroServiceStore
 # eGov-eDCR Tenants
 edcrTenants: |
+  tenant.testing.mseva-dev.lgpunjab.gov.in=testing
   common.domain.name=mseva-dev.lgpunjab.gov.in
   tenant.mseva-dev.lgpunjab.gov.in=state
   client.id=pb
