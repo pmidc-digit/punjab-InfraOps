@@ -81,7 +81,7 @@ env: |
     value: update-rl-allotment
   - name: SAVE_RL_CLSURE
     value: save-rl-clsure
- - name: UPDATE_RL_CLSURE
+  - name: UPDATE_RL_CLSURE
     value: update-rl-clsure
   - name: SPRING_KAFKA_PRODUCER_KEY_SERIALIZER
     value: org.apache.kafka.common.serialization.StringSerializer
@@ -122,4 +122,5 @@ env: |
   - name: TRACER_OPENTRACING_ENABLED
     value: "true" 
   {{- end }}
+
   
