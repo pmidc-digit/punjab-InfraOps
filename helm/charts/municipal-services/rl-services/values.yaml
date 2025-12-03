@@ -24,8 +24,8 @@ image:
 replicas: "1"
 healthChecks:
   enabled: true
-  livenessProbePath: "/property-services/health"
-  readinessProbePath: "/property-services/health"
+  livenessProbePath: "/rl-services/health"
+  readinessProbePath: "/rl-services/health"
 appType: "java-spring"
 tracing-enabled: true
 heap: "-Xmx192m -Xms192m"
@@ -124,4 +124,5 @@ env: |
   {{- end }}
 
   
+
 
