@@ -12,7 +12,7 @@ ingress:
 # Init Containers Configs
 initContainers:
   dbMigration:
-    enabled: true
+    enabled: false
     schemaTable: "bpa_services_schema"
     image:
       repository: "bpa-services-db"
@@ -33,6 +33,11 @@ egov.idgen.bpa.applicationNum.format: "PB-BP-[cy:yyyy-MM-dd]-[SEQ_EG_BP_APN]"
 
 # Additional Container Envs
 env: |
+  - name: EGOV_HRMS_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-hrms
   - name: EGOV_IDGEN_HOST
     valueFrom:
       configMapKeyRef:
