@@ -15,6 +15,7 @@ cluster-configs:
               db-url: "jdbc:postgresql://10.44.242.67:5432/egov_prod_db"
               db-read-url: "jdbc:postgresql://10.44.242.68:5432/egov_prod_db"
               erp-db-url: "jdbc:postgresql://10.44.242.67:5432/finance_egov_prod_db"
+              bpa-db-url: "jdbc:postgresql://10.44.242.67:5432/edcr_prod_db"
               db-host: "10.44.242.67"
               db-name: "egov_prod_db"
              # kafka-brokers: "kafka-v2.kafka-cluster:9092"
