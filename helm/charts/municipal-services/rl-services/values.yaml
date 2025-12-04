@@ -79,7 +79,7 @@ env: |
         key: tracer-errors-provideexceptionindetails
   {{- end }}
   - name: SPRING_KAFKA_CONSUMER_GROUP_ID
-    value: egov-location
+    value: egov-rl-service
   - name: SAVE_RL_ALLOTMENT
     value: save-rl-allotment
   - name: UPDATE_RL_ALLOTMENT
@@ -129,6 +129,7 @@ env: |
   {{- end }}
 
   
+
 
 
 
