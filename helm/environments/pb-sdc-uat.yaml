@@ -1434,7 +1434,7 @@ bpa-calculator:
   tracing-enabled: "true"
 
 egov-edcr:
-  replicas: 4
+  replicas: 1
   resources: |
     limits:
       cpu: 2000m
