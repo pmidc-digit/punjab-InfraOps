@@ -1118,10 +1118,13 @@ pgadmin:
   persistence:
     enabled: false
     dataDirSize: "1Gi"
-    aws:
-      volumeId: "vol-0d2e1fe97891833d5"
-      zone: ap-south-1a
-
+ #   aws:
+#      volumeId: "vol-0d2e1fe97891833d5"
+#      zone: ap-south-1a
+    iscsi:
+      targetPortal: "10.44.237.27:3260"
+      iqn:
+        - "iqn.2025-01.com.example"
 egov-enc-service:
   replicas: 1
   state-level-tenant-id: "pb"
