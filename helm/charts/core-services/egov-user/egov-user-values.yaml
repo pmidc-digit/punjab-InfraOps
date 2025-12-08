@@ -55,6 +55,16 @@ env: |
       secretKeyRef:
         name: sso-secret-token
         key: sso-secret
+  - name: OTP_BYPASS_FOR
+    valueFrom:
+      secretKeyRef:
+        name: enaksha
+        key: bypassuser
+  - name: BYPASS_OTP
+    valueFrom:
+      secretKeyRef:
+        name: enaksha
+        key: bypassotp
   - name: EGOV_HRMS_ESEVA_API_HOST
     value: {{ index .Values "esewa-applink" | quote }}
   - name: EGOV_HRMS_ESEVA_API_ENDPOINT
