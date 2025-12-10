@@ -23,6 +23,11 @@ resources: |
 min-pool-connection: "5"
 max-pool-connection: "5"
 env: |
+  - name: INTERNAL_EDCR_SERVICE_URL
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-edcr
   - name: PLAN_PDF
     value: "false"
   - name: DB_URL
