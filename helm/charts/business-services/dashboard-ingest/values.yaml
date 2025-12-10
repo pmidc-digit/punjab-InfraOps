@@ -25,6 +25,7 @@ tracing-enabled: true
 heap: "-Xmx704m -Xms512m -XX:TieredStopAtLevel=1"
 java-args: ""
 es-index-name: "dss-collection_v2"
+es-push-direct: "false"
 topic-incoming-collection: "dss-collection-update"
 
 # Additional Container Envs
