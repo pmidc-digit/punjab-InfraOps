@@ -23,6 +23,11 @@ resources: |
 min-pool-connection: "5"
 max-pool-connection: "5"
 env: |
+  - name: INTERNAL_EDCR_SERVICE_URL
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-edcr
   - name: PLAN_PDF
     value: "false"
   - name: DB_URL
@@ -173,7 +178,6 @@ microservice: |
   mdms.enable=true
   mdms.host=http://egov-mdms-service.egov:8080/
   mdms.searchurl=egov-mdms-service/v1/_search
-  internal.edcr.service.url=http://egov-edcr.egov:8080
 
 # Ingress Configs
 ingress:
