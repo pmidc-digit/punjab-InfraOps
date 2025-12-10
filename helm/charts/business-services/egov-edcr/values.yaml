@@ -23,6 +23,11 @@ resources: |
 min-pool-connection: "5"
 max-pool-connection: "5"
 env: |
+  - name: INTERNAL_EDCR_SERVICE_URL
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-edcr
   - name: PLAN_PDF
     value: "false"
   - name: DB_URL
@@ -169,7 +174,6 @@ tenants: |
 
 microservice: |
   ms.url=http://egov-filestore.egov:8080/
-  internal.edcr.service.url=http://egov-edcr.egov:8080
   filestoreservice.beanname=egovMicroServiceStore
   mdms.enable=true
   mdms.host=http://egov-mdms-service.egov:8080/
