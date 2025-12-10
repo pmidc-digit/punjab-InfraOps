@@ -1562,7 +1562,7 @@ edcrTenants: |
   tenant.lohiankhass.sdc-uat.lgpunjab.gov.in=lohiankhass
   tenant.longowal.sdc-uat.lgpunjab.gov.in=longowal
   tenant.ludhiana.sdc-uat.lgpunjab.gov.in=ludhiana
-  tenant.ludhianaregion.sdc-uat.lgpunjab.gov.in=ludhianaregion
+  #tenant.ludhianaregion.sdc-uat.lgpunjab.gov.in=ludhianaregion
   tenant.ropar.sdc-uat.lgpunjab.gov.in=ropar
   tenant.machhiwara.sdc-uat.lgpunjab.gov.in=machhiwara
   tenant.mahilpur.sdc-uat.lgpunjab.gov.in=mahilpur
