@@ -1559,7 +1559,7 @@ edcrTenants: |
   tenant.lohiankhass.mseva-dev.lgpunjab.gov.in=lohiankhass
   tenant.longowal.mseva-dev.lgpunjab.gov.in=longowal
   tenant.ludhiana.mseva-dev.lgpunjab.gov.in=ludhiana
-  tenant.ludhianaregion.mseva-dev.lgpunjab.gov.in=ludhianaregion
+  #tenant.ludhianaregion.mseva-dev.lgpunjab.gov.in=ludhianaregion
   tenant.ropar.mseva-dev.lgpunjab.gov.in=ropar
   tenant.machhiwara.mseva-dev.lgpunjab.gov.in=machhiwara
   tenant.mahilpur.mseva-dev.lgpunjab.gov.in=mahilpur
