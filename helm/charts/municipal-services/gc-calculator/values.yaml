@@ -13,7 +13,7 @@ ingress:
 # Init Containers Configs
 initContainers:
   dbMigration:
-    enabled: true
+    enabled: false
     schemaTable: "gc_calculator_schema"
     image:
       repository: "gc-calculator-db"
@@ -109,3 +109,4 @@ env: |
   {{- end }}
   - name: JAVA_ENABLE_DEBUG
     value: "true"
+
