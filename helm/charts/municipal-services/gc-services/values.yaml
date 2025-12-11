@@ -13,7 +13,7 @@ ingress:
 # Init Containers Configs
 initContainers:
   dbMigration:
-    enabled: false
+    enabled: true
     schemaTable: "gc_services_schema"
     image:
       repository: "gc-services-db"
@@ -141,6 +141,7 @@ env: |
     value: "true"
   - name: JAVA_ENABLE_DEBUG
     value: "true"
+
 
 
 
