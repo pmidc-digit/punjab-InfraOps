@@ -36,6 +36,11 @@ citizen-allowed-search-params: ""
 
 # Additional Container Envs
 env: |
+  - name: EGOV_BILLINGSERVICE_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: billing-service
   - name: WORKFLOW_HOST
     valueFrom:
       configMapKeyRef:
@@ -129,6 +134,7 @@ env: |
   {{- end }}
 
   
+
 
 
 
