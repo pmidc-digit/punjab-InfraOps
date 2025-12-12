@@ -317,7 +317,7 @@ tenant:
 
 egov-idgen:
   replicas: 4
-  heap: "-Xmx512m -Xms512m -XX:TieredStopAtLevel=1"
+  heap: "-Xmx1024m -Xms1024m -XX:TieredStopAtLevel=1"
   server-tomcat-max-threads: "50"
   server-tomcat-max-connections: "2000"
   spring-datasource-tomcat-max-active: "30"  
