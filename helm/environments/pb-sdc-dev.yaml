@@ -173,6 +173,7 @@ cluster-configs:
               gc-services: "http://gc-services.egov:8080/"
               gc-calculator: "http://gc-calculator.egov:8080/"
               rl-services: "http://rl-services.egov:8080/"
+              rl-calculator: "http://rl-calculator.egov:8080/"
 
 
 # billingservices >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -988,6 +989,12 @@ gc-calculator:
   heap: "-Xmx512m -Xms512m"
 
 rl-services:
+  replicas: 1
+  java-args: "-Dspring.profiles.active=production"
+  heap: "-Xmx900m -Xms900m -XX:TieredStopAtLevel=1"
+  memory_limits: "1024Mi"
+
+rl-calculator:
   replicas: 1
   java-args: "-Dspring.profiles.active=production"
   heap: "-Xmx900m -Xms900m -XX:TieredStopAtLevel=1"
