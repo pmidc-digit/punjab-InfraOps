@@ -36,6 +36,11 @@ citizen-allowed-search-params: ""
 
 # Additional Container Envs
 env: |
+  - name: EGOV_RLCALCULATOR_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: rl-calculator
   - name: EGOV_BILLINGSERVICE_HOST
     valueFrom:
       configMapKeyRef:
@@ -134,6 +139,7 @@ env: |
   {{- end }}
 
   
+
 
 
 
