@@ -36,6 +36,11 @@ heap: "-Xmx192m -Xms192m"
 
 # Additional Container Envs
 env: |
+  - name: EGOV_BPA_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: bpa-services
   - name: EGOV_SERVICES_INFRA_INDEXER_HOST
     valueFrom:
       configMapKeyRef:
