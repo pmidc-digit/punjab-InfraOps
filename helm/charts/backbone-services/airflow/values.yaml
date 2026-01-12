@@ -1851,7 +1851,7 @@ postgresql:
     ## if postgres will use Persistent Volume Claims to store data
     ## - [WARNING] if false, data will be LOST as postgres Pods restart
     ##
-    enabled: true
+    enabled: false
 
     ## the name of the StorageClass used by the PVC
     ##
