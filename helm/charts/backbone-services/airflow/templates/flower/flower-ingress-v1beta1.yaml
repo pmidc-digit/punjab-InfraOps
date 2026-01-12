@@ -35,21 +35,21 @@ spec:
             backend:
               service:
                 name: {{ .serviceName }}
-              service:
-                port: {{ .servicePort }}
+              port:
+                number: {{ .servicePort }}
           {{- end }}
           - path: {{ .Values.ingress.flower.path }}
             backend:
               service:
                 name: {{ include "airflow.fullname" . }}-flower
-              service:
-                port: flower
+              port:
+                name: flower
           {{- range .Values.ingress.flower.succeedingPaths }}
           - path: {{ .path }}
             backend:
               service:
                 name: {{ .serviceName }}
-              service:
-                port: {{ .servicePort }}
+              port:
+                number: {{ .servicePort }}
           {{- end }}
 {{- end }}
