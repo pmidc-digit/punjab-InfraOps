@@ -41,7 +41,7 @@ spec:
          {{- end }}
           - path: {{ .Values.ingress.web.path }}
             backend:
-              service
+              service:
                 name: {{ include "airflow.fullname" . }}-web
                 port:
                   name: web
