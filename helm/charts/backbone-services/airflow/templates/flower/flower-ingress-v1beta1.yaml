@@ -33,17 +33,23 @@ spec:
           {{- range .Values.ingress.flower.precedingPaths }}
           - path: {{ .path }}
             backend:
-              serviceName: {{ .serviceName }}
-              servicePort: {{ .servicePort }}
+              service:
+                name: {{ .serviceName }}
+              service:
+                port: {{ .servicePort }}
           {{- end }}
           - path: {{ .Values.ingress.flower.path }}
             backend:
-              serviceName: {{ include "airflow.fullname" . }}-flower
-              servicePort: flower
+              service:
+                name: {{ include "airflow.fullname" . }}-flower
+              service:
+                port: flower
           {{- range .Values.ingress.flower.succeedingPaths }}
           - path: {{ .path }}
             backend:
-              serviceName: {{ .serviceName }}
-              servicePort: {{ .servicePort }}
+              service:
+                name: {{ .serviceName }}
+              service:
+                port: {{ .servicePort }}
           {{- end }}
 {{- end }}
