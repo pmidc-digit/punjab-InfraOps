@@ -63,7 +63,7 @@ initContainers:
   gitSync:
     enabled: false
     image:
-      repository: k8s.gcr.io/git-sync
+      repository: pmidcio/git-sync
       tag: v3.1.1
       pullPolicy: IfNotPresent   
     env: |
@@ -277,3 +277,4 @@ cron:
 
   ## Add additional mounts
   extraVolumeMounts: |
+
