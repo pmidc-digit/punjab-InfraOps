@@ -68,8 +68,8 @@ env: |
     value: "false"
   - name: MANAGEMENT_SECURITY_ENABLED
     value: "false"
-  - name: FILESTORE_BASE_URL
-    valueFrom:
-      configMapKeyRef:
-        name: egov-service-host
-        key: egov-filestore
+#  - name: FILESTORE_BASE_URL
+#    valueFrom:
+#      configMapKeyRef:
+#        name: egov-service-host
+#        key: egov-filestore
