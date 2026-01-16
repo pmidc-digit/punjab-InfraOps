@@ -57,7 +57,7 @@ env: |
         key: username
   - name: DB_SV_URL
     valueFrom:
-        configMapKeyRef:
+      configMapKeyRef:
       - name: egov-config
         key: dvsv-url
   - name: SERVER_PORT
