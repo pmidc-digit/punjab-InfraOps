@@ -48,17 +48,17 @@ env: |
   - name: DB_SV_PASSWORD
     valueFrom:
       secretKeyRef:
-      - name: dbsv
+        name: dbsv
         key: username
   - name: DB_SV_USER
     valueFrom:
       secretKeyRef:
-      - name: dbsv
+        name: dbsv
         key: username
   - name: DB_SV_URL
     valueFrom:
       configMapKeyRef:
-      - name: egov-config
+        name: egov-config
         key: dvsv-url
   - name: SERVER_PORT
     value: "8080"
