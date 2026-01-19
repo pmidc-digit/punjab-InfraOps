@@ -49,7 +49,7 @@ env: |
     valueFrom:
       secretKeyRef:
         name: dbsv
-        key: username
+        key: password
   - name: DB_SV_USER
     valueFrom:
       secretKeyRef:
