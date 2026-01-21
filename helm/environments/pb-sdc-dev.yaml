@@ -484,9 +484,9 @@ egov-mdms-service:
   initContainers:
     gitSync:
       repo: "git@github.com:pmidc-digit/punjab-mdms-data"
-      branch: "PMIDC-Upgrade-Dev3"
+      #branch: "PMIDC-Upgrade-Dev3"
       #branch: "dev_testing_mdms"
-      #branch: "PROD_V2"
+      branch: "PROD_V2"
   mdms-folder: "punjab-mdms-data"
   masters-config-url: "file:///work-dir/punjab-mdms-data/mdms-masters-config.json"
   java-args: -Dspring.profiles.active=monitoring
