@@ -17,6 +17,11 @@ heap: "-Xmx256m -Xms256m"
 memory_limits: 512Mi
 # Additional Container Envs
 env: |
+  - name: KAFKA_BROKER_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-config
+        key: kafka-brokers
   - name: EGOV_MDMS_HOST
     valueFrom:
       configMapKeyRef:
