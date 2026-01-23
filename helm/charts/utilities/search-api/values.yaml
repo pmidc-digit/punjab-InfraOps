@@ -40,6 +40,8 @@ resources:
 
 # Additional Container Envs
 env: |
+  - name: SERVER_CONTEXTPATH
+    value: /search-api
   - name: SPRING_DATASOURCE_URL
     valueFrom:
       configMapKeyRef:
