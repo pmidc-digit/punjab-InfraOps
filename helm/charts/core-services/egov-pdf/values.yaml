@@ -17,6 +17,33 @@ heap: "-Xmx256m -Xms256m"
 memory_limits: 512Mi
 # Additional Container Envs
 env: |
+  - name: NODE_ENV
+    value: "production"
+  - name: DEFAULT_LOCALISATION_TENANT
+    valueFrom:
+      configMapKeyRef:
+        name: egov-config
+        key: egov-state-level-tenant-id
+  - name: DB_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-config
+        key: db-host
+  - name: DB_NAME
+    valueFrom:
+      configMapKeyRef:
+        name: egov-config
+        key: db-name
+  - name: DB_USER
+    valueFrom:
+      secretKeyRef:
+        name: db
+        key: username
+  - name: DB_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: db
+        key: password
   - name: KAFKA_BROKER_HOST
     valueFrom:
       configMapKeyRef:
