@@ -33,6 +33,11 @@ egov.idgen.bpa.applicationNum.format: "PB-BP-[cy:yyyy-MM-dd]-[SEQ_EG_BP_APN]"
 
 # Additional Container Envs
 env: |
+  - name: EGOV_PROPERTY_SERVICE_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: property-services
   - name: EGOV_HRMS_HOST
     valueFrom:
       configMapKeyRef:
