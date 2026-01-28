@@ -13,7 +13,7 @@ ingress:
 # Init Containers Configs
 initContainers:
   dbMigration:
-    enabled: false
+    enabled: true
     schemaTable: "egov_property_rate_search_schema"
     image:
       repository: "egov-property-rate-search-db"
@@ -78,5 +78,6 @@ env: |
         key: password
   - name: DB_PORT
     value: "5432"
+
 
 
