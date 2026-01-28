@@ -45,7 +45,7 @@ env: |
   - name: SERVER_PORT
     value: "8080"
   - name: EGOV_USER_HOST
-     valueFrom:
+    valueFrom:
       configMapKeyRef:
         name: egov-service-host
         key: egov-user
@@ -78,4 +78,5 @@ env: |
         key: password
   - name: DB_PORT
     value: "5432"
+
 
