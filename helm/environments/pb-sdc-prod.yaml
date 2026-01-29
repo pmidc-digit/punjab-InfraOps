@@ -657,8 +657,8 @@ chb-services:
 zuul:
   replicas: 3
   custom-filter-property: "true"
-  prehook-config: "https://raw.githubusercontent.com/pmidc/punjab-rainmaker-customization/PROD_V2/configs/egov-zuul/pre-hook.json"
-  posthook-config: "https://raw.githubusercontent.com/pmidc/punjab-rainmaker-customization/PROD_V2/configs/egov-zuul/post-hook.json"
+  prehook-config: "https://raw.githubusercontent.com/pmidc-digit/punjab-rainmaker-customization/PROD_V2/configs/egov-zuul/pre-hook.json"
+  posthook-config: "https://raw.githubusercontent.com/pmidc-digit/punjab-rainmaker-customization/PROD_V2/configs/egov-zuul/post-hook.json"
   initContainers:
     gitSync:
         repo: "git@github.com:pmidc-digit/punjab-rainmaker-customization"
