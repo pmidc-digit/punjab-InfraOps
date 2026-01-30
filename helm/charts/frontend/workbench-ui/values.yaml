@@ -22,6 +22,11 @@ healthChecks:
   enabled: true
   livenessProbePath: "/workbench-ui/"
   readinessProbePath: "/workbench-ui/"
+  
+# Additional Container Envs
+env: |
+  - name: REACT_APP_STATE_LEVEL_TENANT_ID
+    value: "pb"
 
 extraVolumes: |
   - name: js-injection
