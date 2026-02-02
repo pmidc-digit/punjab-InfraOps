@@ -47,16 +47,16 @@ env: |
       configMapKeyRef:
         name: egov-config
         key: db-url
-  - name: DB_SV_PASSWORD
+  - name: SPRING_DATASOURCE_USERNAME
     valueFrom:
       secretKeyRef:
-        name: dbsv
-        key: password
-  - name: DB_SV_USER
-    valueFrom:
-      secretKeyRef:
-        name: dbsv
+        name: db
         key: username
+  - name: SPRING_DATASOURCE_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: db
+        key: password
   - name: SERVER_PORT
     value: "8080"
 #  - name: JAVA_OPTS
@@ -71,3 +71,4 @@ env: |
 #        name: egov-service-host
 
 #        key: egov-filestore
+
