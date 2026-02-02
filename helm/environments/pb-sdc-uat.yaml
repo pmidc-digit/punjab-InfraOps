@@ -18,6 +18,7 @@ cluster-configs:
               bpa-db-url: "jdbc:postgresql://10.44.237.25:5432/uat_1"
               db-host: "10.44.237.25"
               db-name: "egov_prod_db"
+              dvsv-url: "jdbc:postgresql://10.44.237.25:5432/pmidcdb"
              # kafka-brokers: "kafka-v2.kafka-cluster:9092"
               kafka-brokers: "release-name-kafka-kraft.backbone:9092"
               kafka-infra-brokers: kafka-v2-infra.kafka-cluster:9092
