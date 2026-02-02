@@ -46,7 +46,7 @@ env: |
     valueFrom:
       configMapKeyRef:
         name: egov-config
-        key: db-url
+        key: db-searchurl
   - name: SPRING_DATASOURCE_USERNAME
     valueFrom:
       secretKeyRef:
@@ -71,4 +71,5 @@ env: |
 #        name: egov-service-host
 
 #        key: egov-filestore
+
 
