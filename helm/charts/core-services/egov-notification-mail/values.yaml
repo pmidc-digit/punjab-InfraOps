@@ -37,7 +37,8 @@ env: |
   - name: MAIL_PORT
     value: {{ index .Values "mail-port" | quote }}
   - name: MAIL_HOST
-    value: smtp.gmail.com       
+    value: smtp.gmail.com  
+  {{- end }}
   - name: JAVA_OPTS
     value: {{ index .Values "heap" | quote }}
   - name: EGOV_LOCALIZATION_HOST
