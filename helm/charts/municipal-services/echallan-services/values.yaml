@@ -20,7 +20,7 @@ initContainers:
 # Container Configs
 image:
   repository: "echallan-services"
-replicas: "1"
+replicas: "3"
 healthChecks:
   enabled: true
   livenessProbePath: "/echallan-services/health"
