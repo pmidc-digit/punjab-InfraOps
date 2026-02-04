@@ -9,7 +9,7 @@ initContainers: {}
 # Container Configs
 image:
   repository: "egov-notification-sms"
-replicas: "1"
+replicas: "3"
 appType: "java-spring"
 tracing-enabled: true
 sms-provider-url: "https://msdgweb.mgov.gov.in/esms/sendsmsrequest"
