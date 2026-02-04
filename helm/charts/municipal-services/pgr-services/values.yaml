@@ -20,7 +20,7 @@ initContainers:
 # Container Configs
 image:
   repository: "pgr-services"
-replicas: "1"
+replicas: "3"
 healthChecks:
   enabled: true
   livenessProbePath: "/pgr-services/health"
