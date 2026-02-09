@@ -1670,5 +1670,6 @@ externalDatabase:
 dags:
    gitSync: 
      repo:  "https://github.com/pmidc-digit/utilities.git"
+     sshKeySecret: "git-creds"
      repoSubPath: "egov-national-dashboard-accelerator/dags"
      branch: develop
