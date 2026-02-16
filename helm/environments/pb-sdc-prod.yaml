@@ -18,6 +18,7 @@ cluster-configs:
               bpa-db-url: "jdbc:postgresql://10.44.242.67:5432/edcr_prod_db"
               db-host: "10.44.242.67"
               db-name: "egov_prod_db"
+              db-searchurl: "jdbc:postgresql://10.44.242.67:5432/legacy_data"
              # kafka-brokers: "kafka-v2.kafka-cluster:9092"
               kafka-brokers: "release-name-kafka.backbone:9092"
              # kafka-infra-brokers: kafka-v2-infra.kafka-cluster:9092
