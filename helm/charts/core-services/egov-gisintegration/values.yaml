@@ -30,7 +30,7 @@ healthChecks:
   periodSeconds: 10
 appType: "java-spring"
 tracing-enabled: true
-heap: "-Xmx2000m -Xms2000m"
+heap: "-Xms1024m -Xmx1536m"
 resources:
   requests:
     cpu: "500m"
