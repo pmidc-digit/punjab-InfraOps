@@ -29,19 +29,19 @@ healthChecks:
   periodSeconds: 10
 appType: "java-spring"
 tracing-enabled: true
-heap: "-Xmx800m -Xms800m"
+heap: "-Xms1524m -Xmx1836m"
 resources:
   requests:
-    cpu: "500m"
-    memory: "768Mi"
+    cpu: "800m"
+    memory: "2000Mi"
   limits:
-    cpu: "1"
-    memory: "1Gi"
+    cpu: "1000m"
+    memory: "2Gi"
 
 # Additional Container Envs
 env: |
   - name: JAVA_OPTS
-    value: "-Xmx800m -Xms800m"
+    value: "-Xms1524m -Xmx1836m -XX:+UseG1GC -XX:+UseContainerSupport"
   - name: SERVER_CONTEXTPATH
     value: /search-api
   - name: SPRING_DATASOURCE_URL
@@ -71,6 +71,7 @@ env: |
 #        name: egov-service-host
 
 #        key: egov-filestore
+
 
 
 
