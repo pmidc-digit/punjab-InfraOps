@@ -994,6 +994,7 @@ egov-gisintegration:
   replicas: 1
   java-args: "-Dspring.profiles.active=production"
   heap: "-Xms1524m -Xmx1836m"
+  memory_limits: "2024Mi"
 
 # garbage-collection >>>>>>>>>>>>>>>>>>>>>>>>>>>>
 gc-services:
