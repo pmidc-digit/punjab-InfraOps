@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: {{ .Values.labels.app }}
-          image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
+          image: "{{ .Values.image.repository }}"
           imagePullPolicy: IfNotPresent
 
           ports:
@@ -48,5 +48,6 @@ spec:
 
           env:
 {{ tpl .Values.env . | indent 12 }}
+
 
 
