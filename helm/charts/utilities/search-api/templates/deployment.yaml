@@ -1,2 +1,52 @@
-# deployment.yaml
-{{- template "common.deployment" . -}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "search-api.fullname" . }}
+  labels:
+    app: {{ .Values.labels.app }}
+    group: {{ .Values.labels.group }}
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.labels.app }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.labels.app }}
+        group: {{ .Values.labels.group }}
+    spec:
+      containers:
+        - name: {{ .Values.labels.app }}
+          image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
+          imagePullPolicy: IfNotPresent
+
+          ports:
+            - containerPort: 8080
+
+          {{- if .Values.healthChecks.enabled }}
+          livenessProbe:
+            httpGet:
+              path: {{ .Values.healthChecks.livenessProbePath }}
+              port: 8080
+            initialDelaySeconds: {{ .Values.healthChecks.livenessProbeInitialDelay }}
+            periodSeconds: {{ .Values.healthChecks.periodSeconds }}
+
+          readinessProbe:
+            httpGet:
+              path: {{ .Values.healthChecks.readinessProbePath }}
+              port: 8080
+            initialDelaySeconds: {{ .Values.healthChecks.readinessProbeInitialDelay }}
+            periodSeconds: {{ .Values.healthChecks.periodSeconds }}
+          {{- end }}
+
+          resources:
+            requests:
+              cpu: {{ .Values.resources.requests.cpu }}
+              memory: {{ .Values.resources.requests.memory }}
+            limits:
+              cpu: {{ .Values.resources.limits.cpu }}
+              memory: {{ .Values.resources.limits.memory }}
+
+          env:
+{{ tpl .Values.env . | indent 12 }}
