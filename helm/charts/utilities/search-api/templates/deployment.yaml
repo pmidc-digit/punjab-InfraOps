@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: {{ .Values.labels.app }}
-          image: "{{ .Values.image.repository }}"
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: IfNotPresent
 
           ports:
@@ -48,6 +48,7 @@ spec:
 
           env:
 {{ tpl .Values.env . | indent 12 }}
+
 
 
 
