@@ -993,7 +993,7 @@ sw-calculator:
 egov-gisintegration:
   replicas: 1
   java-args: "-Dspring.profiles.active=production"
-  heap: "-Xms1024m -Xmx1536m"
+  heap: "-Xms1524m -Xmx1836m"
 
 # garbage-collection >>>>>>>>>>>>>>>>>>>>>>>>>>>>
 gc-services:
