@@ -40,10 +40,11 @@ spec:
             periodSeconds: {{ .Values.healthChecks.periodSeconds }}
 {{ end }}
 
-{{ if .Values.resources }}
+{{- if and .Values.resources (kindIs "map" .Values.resources) }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
-{{ end }}
+{{- end }}
 
           env:
 {{ tpl .Values.env . | indent 12 }}
+
