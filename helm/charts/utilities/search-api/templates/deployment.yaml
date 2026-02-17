@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Values.labels.app }}
+  namespace: egov
   labels:
     app: {{ .Values.labels.app }}
     group: {{ .Values.labels.group }}
@@ -47,4 +48,5 @@ spec:
 
           env:
 {{ tpl .Values.env . | indent 12 }}
+
 
