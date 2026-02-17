@@ -42,7 +42,7 @@ resources:
 # Additional Container Envs
 env: |
   - name: JAVA_OPTS
-    value: "-Xms1024m -Xmx1536m -XX:+UseG1GC -XX:+UseContainerSupport"
+    value: "-Xms1524m -Xmx1836m -XX:+UseG1GC -XX:+UseContainerSupport"
   - name: EGOV_WATERSERVICE_HOST
     valueFrom:
       configMapKeyRef:
