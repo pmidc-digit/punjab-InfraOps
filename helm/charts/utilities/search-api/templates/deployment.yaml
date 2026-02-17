@@ -24,7 +24,7 @@ spec:
           ports:
             - containerPort: 8080
 
-          {{- if .Values.healthChecks.enabled }}
+{{ if .Values.healthChecks.enabled }}
           livenessProbe:
             httpGet:
               path: {{ .Values.healthChecks.livenessProbePath }}
@@ -38,8 +38,12 @@ spec:
               port: 8080
             initialDelaySeconds: {{ .Values.healthChecks.readinessProbeInitialDelay }}
             periodSeconds: {{ .Values.healthChecks.periodSeconds }}
-          {{- end }}
+{{ end }}
 
-{{- if .Values.resources }}
+{{ if .Values.resources }}
           resources:
-{{ toYaml .Values.resources | indent
+{{ toYaml .Values.resources | indent 12 }}
+{{ end }}
+
+          env:
+{{ tpl .Values.env . | indent 12 }}
