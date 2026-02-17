@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "search-api.fullname" . }}
+  name: {{ .Values.labels.app }}
   labels:
     app: {{ .Values.labels.app }}
     group: {{ .Values.labels.group }}
@@ -50,3 +50,4 @@ spec:
 
           env:
 {{ tpl .Values.env . | indent 12 }}
+
