@@ -30,13 +30,13 @@ healthChecks:
   periodSeconds: 10
 appType: "java-spring"
 tracing-enabled: true
-heap: "-Xms1024m -Xmx1536m"
+heap: "-Xms1524m -Xmx1836m"
 resources:
   requests:
-    cpu: "500m"
+    cpu: "800m"
     memory: "2000Mi"
   limits:
-    cpu: "1"
+    cpu: "1000m"
     memory: "2Gi"
 
 # Additional Container Envs
