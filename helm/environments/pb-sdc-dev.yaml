@@ -901,7 +901,7 @@ property-services:
   egov-idgen-ptid-format: "PT-[CITY.CODE]-[SEQ_EG_PT_PTID]"
 
 pt-calculator-v2:
-  replicas: 1
+  replicas: 3
   memory_limits: 512Mi
   server-tomcat-max-threads: "20"
   server-tomcat-max-connections: "1500"  
