@@ -77,16 +77,16 @@ env: |
     valueFrom:
       configMapKeyRef:
         name: egov-config
-        key: db-name
+        key: db-name-gis
   - name: SPRING_DATASOURCE_USERNAME
     valueFrom:
       secretKeyRef:
-        name: db
+        name: db-gis
         key: username
   - name: SPRING_DATASOURCE_PASSWORD
     valueFrom:
       secretKeyRef:
-        name: db
+        name: db-gis
         key: password
   - name: SPRING_DATASOURCE_PORT
     value: "5432"
