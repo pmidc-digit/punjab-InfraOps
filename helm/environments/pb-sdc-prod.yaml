@@ -619,6 +619,18 @@ egov-user-enc:
   account-unlock-cool-down-period-minutes: 5
   db-url: "jdbc:postgresql://10.44.242.67:5432/egov_prod_db?currentSchema=case_management"   
 
+egov-gisintegration:
+  replicas: 1
+  resources: |
+    limits:
+      cpu: 600m
+      memory: 2024Mi
+    requests:
+      cpu: 500m
+      memory: 1912Mi
+  java-args: "-Dspring.profiles.active=production"
+  heap: "-Xms1524m -Xmx1836m"
+  
 pdf-service:
   replicas: 3
   resources: |
