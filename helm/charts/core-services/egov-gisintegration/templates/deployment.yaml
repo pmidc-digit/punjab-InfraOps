@@ -1,2 +1,66 @@
-# deployment.yaml
-{{- template "common.deployment" . -}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "egov-gisintegration.fullname" . }}
+  namespace: {{ .Values.metadata.namespace }}
+  labels:
+    app: {{ .Values.labels.app }}
+    group: {{ .Values.labels.group }}
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.labels.app }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.labels.app }}
+        group: {{ .Values.labels.group }}
+        tracing-enabled: "{{ .Values.tracing-enabled }}"
+    spec:
+
+      {{- if .Values.initContainers.dbMigration.enabled }}
+      initContainers:
+        - name: db-migration
+          image: "{{ .Values.initContainers.dbMigration.image.repository }}:{{ .Chart.AppVersion }}"
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: SCHEMA_TABLE
+              value: "{{ .Values.initContainers.dbMigration.schemaTable }}"
+      {{- end }}
+
+      containers:
+        - name: {{ .Values.labels.app }}
+          image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
+          imagePullPolicy: IfNotPresent
+
+          {{- if .Values.healthChecks.enabled }}
+          livenessProbe:
+            httpGet:
+              path: {{ .Values.healthChecks.livenessProbePath }}
+              port: 8080
+            initialDelaySeconds: {{ .Values.healthChecks.livenessProbeInitialDelay }}
+            periodSeconds: {{ .Values.healthChecks.periodSeconds }}
+
+          readinessProbe:
+            httpGet:
+              path: {{ .Values.healthChecks.readinessProbePath }}
+              port: 8080
+            initialDelaySeconds: {{ .Values.healthChecks.readinessProbeInitialDelay }}
+            periodSeconds: {{ .Values.healthChecks.periodSeconds }}
+          {{- end }}
+
+          resources:
+            requests:
+              cpu: {{ .Values.resources.requests.cpu }}
+              memory: {{ .Values.resources.requests.memory }}
+            limits:
+              cpu: {{ .Values.resources.limits.cpu }}
+              memory: {{ .Values.resources.limits.memory }}
+
+          env:
+{{ .Values.env | indent 12 }}
+
+          ports:
+            - containerPort: 8080
+              protocol: TCP
