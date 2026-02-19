@@ -4,6 +4,7 @@ labels:
   group: "core"
   
 metadata:
+  name: "egov-gisintegration"
   namespace: "egov"
 
 # Ingress Configs
@@ -40,12 +41,12 @@ resources:
     memory: "2000Mi"
   limits:
     cpu: "1000m"
-    memory: "2Gi"
+    memory: "2.1Gi"
 
 # Additional Container Envs
 env: |
   - name: JAVA_OPTS
-    value: "-Xms1524m -Xmx1836m -XX:+UseG1GC -XX:+UseContainerSupport"
+    value: "-Xms1524m -Xmx1900m -XX:+UseG1GC -XX:+UseContainerSupport"
   - name: EGOV_WATERSERVICE_HOST
     valueFrom:
       configMapKeyRef:
@@ -61,23 +62,18 @@ env: |
       configMapKeyRef:
         name: egov-service-host
         key: property-services
-  - name: SPRING_DATASOURCE_URL
-    valueFrom:
-      configMapKeyRef:
-        name: egov-config
-        key: db-host
   - name: SPRING_DATASOURCE_DRIVER_CLASS_NAME
     value: org.postgresql.Driver
   - name: SPRING_DATASOURCE_URL
     valueFrom:
       configMapKeyRef:
         name: egov-config
-        key: db-host
+        key: db-host-gis
   - name: SPRING_DATASOURCE_DB_NAME
     valueFrom:
       configMapKeyRef:
         name: egov-config
-        key: db-name-gis
+        key: db-name
   - name: SPRING_DATASOURCE_USERNAME
     valueFrom:
       secretKeyRef:
