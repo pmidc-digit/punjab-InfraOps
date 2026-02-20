@@ -52,10 +52,7 @@ env: |
         name: egov-service-host
         key: egov-indexer
   - name: EGOV_INFRA_INDEXER_HOST
-    valueFrom:
-      configMapKeyRef:
-        name: egov-config
-        key: es-indexer-host
+    value: "http://elasticsearch-data-v2.es-cluster-v2:9200/"
   - name: EGOV_INDEXER_YML_REPO_PATH
     value: {{ index .Values "egov-indexer-yaml-repo-path" | quote }}
   {{- if index .Values "global" "serializers-timezone-in-ist" }}
@@ -74,4 +71,5 @@ env: |
     valueFrom:
       configMapKeyRef:
         name: egov-config
+
         key: egov-state-level-tenant-id
