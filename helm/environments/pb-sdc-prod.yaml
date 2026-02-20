@@ -16,6 +16,7 @@ cluster-configs:
               db-read-url: "jdbc:postgresql://10.44.242.68:5432/egov_prod_db"
               erp-db-url: "jdbc:postgresql://10.44.242.67:5432/finance_egov_prod_db"
               bpa-db-url: "jdbc:postgresql://10.44.242.67:5432/edcr_prod_db"
+              db-host-gis: "jdbc:postgresql://40.80.83.245:5432/punjab"
               db-host: "10.44.242.67"
               db-name: "egov_prod_db"
               db-searchurl: "jdbc:postgresql://10.44.242.67:5432/legacy_data"
@@ -624,10 +625,10 @@ egov-gisintegration:
   resources: |
     limits:
       cpu: 600m
-      memory: 2024Mi
+      memory: 2500Mi
     requests:
       cpu: 500m
-      memory: 1912Mi
+      memory: 2.1Gi
   java-args: "-Dspring.profiles.active=production"
   heap: "-Xms1524m -Xmx1836m"
   

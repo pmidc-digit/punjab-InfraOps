@@ -1,0 +1,3 @@
+{{- define "egov-gisintegration.fullname" -}}
+{{ .Release.Name }}-{{ .Values.labels.app }}
+{{- end -}}
