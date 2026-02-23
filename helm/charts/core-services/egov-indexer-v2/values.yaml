@@ -37,6 +37,11 @@ heap: "-Xmx192m -Xms192m"
 
 # Additional Container Envs
 env: |
+  - name: EGOV_MDMS_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-mdms-service
   - name: EGOV_EDCR_HOST
     valueFrom:
       configMapKeyRef:
@@ -74,6 +79,7 @@ env: |
         name: egov-config
 
         key: egov-state-level-tenant-id
+
 
 
 
