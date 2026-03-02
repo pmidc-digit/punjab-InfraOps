@@ -62,6 +62,12 @@ env: |
         key: dvsv-url
   - name: SERVER_PORT
     value: "8080"
+  - name: FILESTORE_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-filestore
+
 #  - name: JAVA_OPTS
 #    value: {{ index .Values "heap" | quote }}
 #  - name: SECURITY_BASIC_ENABLED
