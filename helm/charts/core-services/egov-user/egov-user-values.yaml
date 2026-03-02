@@ -65,6 +65,11 @@ env: |
       secretKeyRef:
         name: enaksha
         key: bypassotp
+  - name: DEFAULT_EMPLOYEE_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: employee-password-otp
+        key:  otp
   - name: EGOV_HRMS_ESEVA_API_HOST
     value: {{ index .Values "esewa-applink" | quote }}
   - name: EGOV_HRMS_ESEVA_API_ENDPOINT
