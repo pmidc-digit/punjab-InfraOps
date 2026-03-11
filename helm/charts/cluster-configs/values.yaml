@@ -35,6 +35,10 @@ cluster-configs:
       name: egov-service-host
       namespace: [ egov, monitoring ] 
 
+    hcm-moz-impl:
+      name: hcm-moz-impl
+      namespace: [ health ]
+
   secrets:
     db: 
       namespace: [ egov ]
@@ -46,7 +50,11 @@ cluster-configs:
 
     egov-filestore: 
       namespace: egov
-      name: egov-filestore     
+      name: egov-filestore
+
+    hcm-moz-impl:
+      namespace: health1
+      name: hcm-moz-impl  
       
     egov-location: 
       namespace: egov
@@ -143,3 +151,28 @@ cluster-configs:
     postgres:
       namespace: jenkins
       name: postgres
+    elasticsearch-master-creds:
+
+      namespace: [ backbone, egov, staging, kenya ]
+
+      name: elasticsearch-master-credentials
+
+    kafka-kraft:
+      name: release-name-kafka-kraft-cluster-id
+      namespace: backbone
+
+    matomo:
+      name: matomo
+      namespace: analytics
+
+    matomo-mariadb:
+      name: matomo-mariadb
+      namespace: analytics
+
+    ifms-adapter:
+      namespace: staging
+      name: ifms-adapter
+      
+    program-service:
+      namespace: [ staging ]
+      name: program-service
