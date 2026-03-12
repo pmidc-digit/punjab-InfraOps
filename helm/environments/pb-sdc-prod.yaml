@@ -152,6 +152,8 @@ cluster-configs:
               pet-services: "http://pet-services.egov:8080/"
               chb-services: "http://chb-services.egov:8080/"
               egov-edcr: "http://egov-edcr.egov:8080/"
+              layout-services: "http://layout-services.egov:8080/"
+              layout-calculator: "http://layout-calculator.egov:8080/"
               bpa-services: "http://bpa-services.egov:8080/"
               bpa-calculator: "http://bpa-calculator.egov:8080/"
               land-services: "http://land-services.egov:8080/"
