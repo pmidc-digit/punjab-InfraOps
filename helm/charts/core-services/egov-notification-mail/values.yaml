@@ -55,4 +55,9 @@ env: |
     valueFrom:
       configMapKeyRef:
         name: egov-config
-        key: egov-state-level-tenant-id        
+        key: egov-state-level-tenant-id   
+  - name: EGOV_FILESTORE_INTERNAL_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-filestore
