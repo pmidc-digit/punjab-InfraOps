@@ -15,7 +15,7 @@ initContainers: {}
 # Container Configs
 image:
   repository: "echallan-calculator"
-replicas: "1"
+replicas: "5"
 healthChecks:
   enabled: true
   livenessProbePath: "/echallan-calculator/health"
