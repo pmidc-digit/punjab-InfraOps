@@ -1041,7 +1041,7 @@ rl-services:
   memory_limits: "1024Mi"
 
 rl-calculator:
-  replicas: 1
+  replicas: 3
   java-args: "-Dspring.profiles.active=production"
   heap: "-Xmx512m -Xms512m"
 # financials >>>>>>>>>>>>>>>>>>>>>>>>>>>>
