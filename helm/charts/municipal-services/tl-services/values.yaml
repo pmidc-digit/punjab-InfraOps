@@ -48,7 +48,9 @@ env: |
     valueFrom:
       configMapKeyRef:
         name: egov-service-host
-        key: egov-mdms-service
+        key: egov-mdms-
+  - name: EGOV_PDF_INTERNAL_HOST
+    value: "http://pdf-service.egov:8080/"
   - name: EGOV_USER_HOST
     valueFrom:
       configMapKeyRef:
