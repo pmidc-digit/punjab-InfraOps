@@ -35,6 +35,11 @@ citizen-allowed-search-params: ""
 
 # Additional Container Envs
 env: |
+  - name: EGOV_WORKFLOW_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-workflow-v2
   - name: EGOV_IDGEN_HOST
     valueFrom:
       configMapKeyRef:
