@@ -55,6 +55,8 @@ env: |
         key: property-services
   - name: SERVER_PORT
     value: "8080"
+  - name: EGOV.FILESTORE.HOST
+    value: "http://egov-filestore.egov:8080/"
   - name: COLLECTION_RECEIPTS_SEARCH_PAGINATE
     value: {{ index .Values "receipt-search-paginate" | quote }}
   - name: COLLECTION_RECEIPTS_SEARCH_DEFAULT_SIZE
