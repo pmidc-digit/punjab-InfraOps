@@ -27,25 +27,23 @@ initContainers:
 
 # Container Configs
 image:
-  repository: confluentinc/cp-kafka-connect
-  tag: 7.5.0
+  repository: pmidcio/cp-kafka-connect
+  tag: 7.5.0-kafka-connect-elasticsearch
 
 replicas: 3
 httpPort: 8083
-
-heap: "-Xms1G -Xmx1G"
 
 config-storage-replication-factor: "3"
 offset-storage-replication-factor: "3"
 status-storage-replication-factor: "3"
 
-memory_limits: 1Gi
-
 resources: |
   requests:
-    memory: {{ .Values.memory_limits | quote }}
+    memory: "4Gi"
+    cpu: "500m"
   limits:
-    memory: {{ .Values.memory_limits | quote }}
+    memory: "6Gi"
+    cpu: "1"
 
 # Volumes
 volumes:
@@ -58,6 +56,9 @@ volumeMounts:
 
 # Additional Container Envs
 env: |
+  - name: KAFKA_HEAP_OPTS
+    value: "-Xms1G -Xmx2G"
+    
   - name: CONNECT_REST_ADVERTISED_HOST_NAME
     valueFrom:
       fieldRef:
