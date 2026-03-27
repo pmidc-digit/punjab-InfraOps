@@ -35,6 +35,8 @@ cluster-configs:
               server-tomcat-max-connections-high: "2000"
               es-indexer-host: "http://10.44.237.231:30920/"
               es-host: "10.44.237.231"
+              es-indexer-host-v2: "http://10.44.237.233:30920/"
+              es-host-v2: "10.44.237.233"
               egov-services-fqdn-name: "https://mseva.lgpunjab.gov.in/"
               flyway-locations: "filesystem:/flyway/sql,filesystem:/flyway/seed,filesystem:/flyway/qa"
               spring-jpa-show-sql: "true"
@@ -748,6 +750,17 @@ dashboard-ingest:
         branch: "PROD_V2" 
 
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+dashboard-ingest-v2:
+  replicas: 7
+  heap: "-Xmx704m -Xms512m -XX:TieredStopAtLevel=1"
+  topic-incoming-collection: "dss-collection-update"
+  es-index-name: "dss-collection_v2"
+  es-push-direct: "false"
+  config-schema-paths: "file:///work-dir/punjab-rainmaker-customization/configs/egov-dss-dashboards/dashboard-ingest/*.json"
+  initContainers:
+    gitSync:
+        repo: "git@github.com:pmidc-digit/punjab-rainmaker-customization"
+        branch: "PROD_V2" 
 
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
