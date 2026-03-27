@@ -1,0 +1,119 @@
+# Common Labels
+name: kafka-connect-v2
+namespace: kafka-cluster-v2
+
+labels:
+  app: kafka-connect-v2
+  group: infra
+
+# ✅ Init Containers (EGOV compatible structure)
+initContainers:
+  gitSync:
+    enabled: false
+
+  extraInitContainers: |
+    - name: install-es-plugin
+      image: confluentinc/cp-kafka-connect:7.5.0
+      command:
+        - sh
+        - -c
+        - |
+          echo "Installing Elasticsearch Sink Connector..."
+          confluent-hub install --no-prompt confluentinc/kafka-connect-elasticsearch:14.0.0
+          echo "Copying plugin to shared volume..."
+          cp -r /usr/share/confluent-hub-components/* /plugins/
+          echo "Done"
+      volumeMounts:
+        - name: plugin-volume
+          mountPath: /plugins
+
+# Container Configs
+image:
+  repository: confluentinc/cp-kafka-connect
+  tag: 7.5.0
+
+replicas: 3
+httpPort: 8083
+
+heap: "-Xms1G -Xmx1G"
+
+config-storage-replication-factor: "3"
+offset-storage-replication-factor: "3"
+status-storage-replication-factor: "3"
+
+# ✅ Proper resource format
+resources: |
+  requests:
+    memory: "1Gi"
+  limits:
+    memory: "1Gi"
+
+# ✅ EGOV compatible volumes
+extraVolumes: |
+  - name: plugin-volume
+    emptyDir: {}
+
+extraVolumeMounts: |
+  - name: plugin-volume
+    mountPath: /usr/share/confluent-hub-components
+
+# ✅ Environment Variables (NO Helm templating)
+env: |
+  - name: CONNECT_REST_ADVERTISED_HOST_NAME
+    valueFrom:
+      fieldRef:
+        fieldPath: status.podIP
+
+  - name: CONNECT_BOOTSTRAP_SERVERS
+    value: "kafka.kafka-cluster.svc.cluster.local:9092"
+
+  - name: CONNECT_GROUP_ID
+    value: kafka-connect-v2
+
+  - name: CONNECT_CONFIG_STORAGE_TOPIC
+    value: kafka-connect-v2-config
+
+  - name: CONNECT_OFFSET_STORAGE_TOPIC
+    value: kafka-connect-v2-offset
+
+  - name: CONNECT_STATUS_STORAGE_TOPIC
+    value: kafka-connect-v2-status
+
+  - name: CONNECT_CONFIG_STORAGE_REPLICATION_FACTOR
+    value: "3"
+
+  - name: CONNECT_OFFSET_STORAGE_REPLICATION_FACTOR
+    value: "3"
+
+  - name: CONNECT_STATUS_STORAGE_REPLICATION_FACTOR
+    value: "3"
+
+  - name: CONNECT_KEY_CONVERTER
+    value: org.apache.kafka.connect.json.JsonConverter
+
+  - name: CONNECT_KEY_CONVERTER_SCHEMAS_ENABLE
+    value: "false"
+
+  - name: CONNECT_VALUE_CONVERTER
+    value: org.apache.kafka.connect.json.JsonConverter
+
+  - name: CONNECT_VALUE_CONVERTER_SCHEMAS_ENABLE
+    value: "false"
+
+  - name: CONNECT_INTERNAL_KEY_CONVERTER
+    value: org.apache.kafka.connect.json.JsonConverter
+
+  - name: CONNECT_INTERNAL_VALUE_CONVERTER
+    value: org.apache.kafka.connect.json.JsonConverter
+
+  - name: CONNECT_PLUGIN_PATH
+    value: "/usr/share/java,/usr/share/confluent-hub-components"
+
+  - name: KAFKA_HEAP_OPTS
+    value: "-Xms1G -Xmx1G"
+
+  - name: CONNECT_LOG4J_ROOT_LOGLEVEL
+    value: INFO
+
+  - name: CONNECT_LOG4J_LOGGERS
+    value: org.apache.kafka.connect.runtime.rest=WARN,org.reflections=ERROR

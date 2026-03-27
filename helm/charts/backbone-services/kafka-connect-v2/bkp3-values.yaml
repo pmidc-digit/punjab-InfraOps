@@ -1,0 +1,82 @@
+# Common Labels
+name: kafka-connect-v2
+namespace: kafka-cluster-v2
+
+labels:
+  app: kafka-connect-v2
+  group: infra
+
+# ✅ Image (UPDATED)
+image:
+  repository: pmidcio/kafka-connect-es
+  tag: 7.5.0
+  pullPolicy: Always
+
+replicas: 3
+httpPort: 8083
+
+heap: "-Xms1G -Xmx1G"
+
+config-storage-replication-factor: "3"
+offset-storage-replication-factor: "3"
+status-storage-replication-factor: "3"
+
+# ✅ Resources
+resources: |
+  requests:
+    memory: "1Gi"
+  limits:
+    memory: "1Gi"
+
+# ✅ Environment Variables
+env: |
+  - name: CONNECT_BOOTSTRAP_SERVERS
+    value: "kafka.kafka-cluster.svc.cluster.local:9092"
+
+  - name: CONNECT_REST_ADVERTISED_HOST_NAME
+    value: "localhost"
+
+  - name: CONNECT_GROUP_ID
+    value: kafka-connect-v2
+
+  - name: CONNECT_CONFIG_STORAGE_TOPIC
+    value: kafka-connect-v2-config
+
+  - name: CONNECT_OFFSET_STORAGE_TOPIC
+    value: kafka-connect-v2-offset
+
+  - name: CONNECT_STATUS_STORAGE_TOPIC
+    value: kafka-connect-v2-status
+
+  - name: CONNECT_CONFIG_STORAGE_REPLICATION_FACTOR
+    value: "3"
+
+  - name: CONNECT_OFFSET_STORAGE_REPLICATION_FACTOR
+    value: "3"
+
+  - name: CONNECT_STATUS_STORAGE_REPLICATION_FACTOR
+    value: "3"
+
+  - name: CONNECT_KEY_CONVERTER
+    value: org.apache.kafka.connect.json.JsonConverter
+
+  - name: CONNECT_KEY_CONVERTER_SCHEMAS_ENABLE
+    value: "false"
+
+  - name: CONNECT_VALUE_CONVERTER
+    value: org.apache.kafka.connect.json.JsonConverter
+
+  - name: CONNECT_VALUE_CONVERTER_SCHEMAS_ENABLE
+    value: "false"
+
+  - name: CONNECT_INTERNAL_KEY_CONVERTER
+    value: org.apache.kafka.connect.json.JsonConverter
+
+  - name: CONNECT_INTERNAL_VALUE_CONVERTER
+    value: org.apache.kafka.connect.json.JsonConverter
+
+  - name: CONNECT_PLUGIN_PATH
+    value: "/usr/share/java,/usr/share/confluent-hub-components"
+
+  - name: KAFKA_HEAP_OPTS
+    value: "-Xms1G -Xmx1G"
