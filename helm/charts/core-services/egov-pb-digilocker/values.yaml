@@ -36,7 +36,7 @@ env: |
       configMapKeyRef:
         name: egov-service-host
         key: egov-searcher
-  - name: EGOV_PROPERTYSEARCH_HOST
+  - name: EGOV_PROPERTY_SEARCH_HOST
     valueFrom:
       configMapKeyRef:
         name: egov-service-host
