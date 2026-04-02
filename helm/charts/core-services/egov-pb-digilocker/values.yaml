@@ -21,6 +21,41 @@ heap: "-Xmx192m -Xms192m"
 
 # Additional Container Envs
 env: |
+  - name: EGOV_SERVICES_HOSTNAME
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: pdf-service
+  - name: EGOV_COLLECTIONSERVICE_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: collection-services  
+  - name: EGOV_SEARCHSERVICE_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-searcher
+  - name: EGOV_PROPERTYSEARCH_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: property-services
+  - name: EGOV_FILESTORE_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-filestore
+  - name: EGOV_MDMS_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-mdms-service
+  - name: USER_SERVICE_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-user
   - name: SERVER_PORT
     value: "8080"
   - name: COLLECTION_RECEIPTS_SEARCH_PAGINATE
