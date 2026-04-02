@@ -56,6 +56,16 @@ env: |
       configMapKeyRef:
         name: egov-service-host
         key: egov-user
+  - name: EGOV_WS_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: ws-services
+  - name: EGOV_SW_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: sw-services
   - name: SERVER_PORT
     value: "8080"
   - name: COLLECTION_RECEIPTS_SEARCH_PAGINATE
