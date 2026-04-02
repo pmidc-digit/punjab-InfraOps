@@ -20,7 +20,7 @@ initContainers:
 image:
   repository: "dashboard-ingest-v2"
 replicas: "1"
-config-schema-paths: "file:///work-dir/configs/egov-dss-dashboards/dashboard-ingest/*.json"
+config-schema-paths: "file:///work-dir/punjab-rainmaker-customization/configs/egov-dss-dashboards/dashboard-ingest/*.json"
 tracing-enabled: true
 heap: "-Xmx704m -Xms512m -XX:TieredStopAtLevel=1"
 java-args: ""
