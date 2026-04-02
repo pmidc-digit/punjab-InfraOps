@@ -62,10 +62,7 @@ env: |
   - name: SERVER_PORT
     value: "8080"
   - name: SERVICES_ESINDEXER_HOST
-    valueFrom:
-      configMapKeyRef:
-        name: egov-config
-        key: es-indexer-host
+    value: "http://elasticsearch-data-v2.es-cluster-v2:9200/"
   - name: EGOV_MDMS_HOST
     valueFrom:
       configMapKeyRef:
