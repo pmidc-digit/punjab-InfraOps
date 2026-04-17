@@ -20,8 +20,8 @@ resources: |
     memory: "10Gi"
   requests:
     memory: "10Gi"
-min-pool-connection: "5"
-max-pool-connection: "5"
+min-pool-connection: "10"
+max-pool-connection: "200"
 env: |
   - name: PLAN_PDF
     value: "false"
