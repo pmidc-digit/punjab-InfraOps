@@ -659,11 +659,11 @@ egov-gisintegration:
   heap: "-Xms1524m -Xmx1900m"
 
 pdf-service:
-  replicas: 3
+  replicas: 1
   resources: |
     limits:
-      cpu: 1200m
-      memory: 3Gi
+      cpu: 4000m
+      memory: 10Gi
     requests:
       cpu: 1100m
       memory: 2500Mi   
