@@ -74,7 +74,7 @@ env: |
   - name: SERVER_PORT
     value: "8080"
   - name: MAX_NUMBER_PAGES
-    value: "80"   
+    value: "1500"   
   - name: DATA_CONFIG_URLS
     value: {{ index .Values "data-config-urls" | quote }}
   - name: FORMAT_CONFIG_URLS
