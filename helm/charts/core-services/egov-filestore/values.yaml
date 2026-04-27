@@ -39,7 +39,7 @@ persistence:
 # Additional Container Envs
 env: |
   - name: SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE
-    value: "200MB"
+    value: "1500MB"
   - name: SERVER_PORT
     value: "8080"
   - name: SECURITY_BASIC_ENABLED
