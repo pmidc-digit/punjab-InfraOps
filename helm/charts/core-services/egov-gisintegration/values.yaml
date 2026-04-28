@@ -57,6 +57,11 @@ env: |
       configMapKeyRef:
         name: egov-service-host
         key: sw-services
+  - name: MDMS_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-mdms-service
   - name: EGOV_PROPERTYSERVICE_HOST
     valueFrom:
       configMapKeyRef:
