@@ -73,7 +73,7 @@ env: |
         name: gis-security
         key: password 
   - name: SERVER_PORT
-    value: 8080
+    value: "8080"
   - name: EGOV_PROPERTYSERVICE_HOST
     valueFrom:
       configMapKeyRef:
