@@ -45,8 +45,6 @@ resources: |
 
 # Additional Container Envs
 env: |
-  - name: SERVER_PORT
-    VALUE: 8080
   - name: JAVA_OPTS
     value: "-Xms1524m -Xmx1900m -XX:+UseG1GC -XX:+UseContainerSupport"
   - name: EGOV_WATERSERVICE_HOST
@@ -69,11 +67,13 @@ env: |
       secretKeyRef:
         name: gis-security
         key: username
-  - name: SPRING.SECURITY.USER.PASSWORD
+  - name: SPRING_SECURITY_USER_PASSWORD
     valueFrom:
       secretKeyRef:
         name: gis-security
         key: password 
+  - name: SERVER_PORT
+    VALUE: 8080
   - name: EGOV_PROPERTYSERVICE_HOST
     valueFrom:
       configMapKeyRef:
