@@ -45,6 +45,8 @@ resources: |
 
 # Additional Container Envs
 env: |
+  - name: SERVER_PORT
+    VALUE: 8080
   - name: JAVA_OPTS
     value: "-Xms1524m -Xmx1900m -XX:+UseG1GC -XX:+UseContainerSupport"
   - name: EGOV_WATERSERVICE_HOST
