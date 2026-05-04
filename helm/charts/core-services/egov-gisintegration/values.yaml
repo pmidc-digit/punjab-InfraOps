@@ -64,6 +64,16 @@ env: |
       configMapKeyRef:
         name: egov-service-host
         key: egov-mdms-service
+  - name: SPRING_SECURITY_USER_NAME
+    valueFrom:
+      secretKeyRef:
+        name: gis-security
+        key: username
+  - name: SPRING.SECURITY.USER.PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: gis-security
+        key: password 
   - name: EGOV_PROPERTYSERVICE_HOST
     valueFrom:
       configMapKeyRef:
