@@ -47,6 +47,11 @@ resources: |
 env: |
   - name: JAVA_OPTS
     value: "-Xms1524m -Xmx1900m -XX:+UseG1GC -XX:+UseContainerSupport"
+  - name: MDMS_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-mdms-service  
   - name: EGOV_WATERSERVICE_HOST
     valueFrom:
       configMapKeyRef:
