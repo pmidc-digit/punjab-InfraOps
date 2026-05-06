@@ -10,7 +10,7 @@ docker:
 ingress:
   enabled: true
   zuul: true
-  context: "gis-integration"
+  context: "egov-gisintegration"
 
 # Init Containers Configs
 initContainers:
