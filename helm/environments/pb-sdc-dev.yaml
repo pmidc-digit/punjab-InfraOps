@@ -58,6 +58,7 @@ cluster-configs:
               asset-services: "http://asset-services:8080/"
               asset-services-maha: "http://asset-services-maha:8080/"
               billing-service: "http://billing-service:8080/"
+              billing-service-v2: "http://billing-service-v2:8080/"
               collection-services: "http://collection-services:8080/"
               collection-masters: "http://collection-masters:8080/"
               collection-search-indexer: "http://collection-search-indexer:8080/"
@@ -133,9 +134,11 @@ cluster-configs:
               zuul: "http://zuul:8080/"
               chb-services: "http://chb-services:8080/"
               ws-calculator: "http://ws-calculator.egov:8080/"
+              ws-calculator-v2: "http://ws-calculator-v2.egov:8080/"
               ws-services: "http://ws-services.egov:8080/"
               sw-services: "http://sw-services.egov:8080/"
               sw-calculator: "http://sw-calculator.egov:8080/"
+              sw-calculator-v2: "http://sw-calculator-v2.egov:8080/"
               pdf-service: "http://pdf-service.egov:8080/"
               property-services: "http://property-services.egov:8080/"
               egov-url-shortening: "http://egov-url-shortening:8080/"
@@ -198,7 +201,25 @@ billing-service:
   spring-datasource-tomcat-max-active: "10"  
   tracing-enabled: "true"
   bs-businesscode-demand-updateurl: '{ "rl-services":"http://rl-calculator.egov:8080/rl-calculator/v1/_updatedemand","PT":"http://pt-calculator-v2:8080/pt-calculator-v2/propertytax/_updatedemand","WS":"http://ws-calculator.egov:8080/ws-calculator/waterCalculator/_updateDemand","SW":"http://sw-calculator.egov:8080/sw-calculator/sewerageCalculator/_updateDemand","TL":"","NDC":"http://ndc-calculator.egov:8080/ndc-calculator/v1/_updatedemand","ndc-services":"http://ndc-calculator.egov:8080/ndc-calculator/v1/_updatedemand","pet-services":"http://pet-services:8080/pet-services/pet-registration/_updatedemand","obpas_noc":"http://noc-calculator.egov:8080//noc-calculator/v1/_updatedemand","adv-services":"http://adv-services.egov:8080//adv-services/booking/_updatedemand"}'
-# <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+#billing-service-v2 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+billing-service-v2:
+  replicas: 1
+  memory_limits: 512Mi
+  resources: |
+    limits:
+      cpu: 500m
+      memory: 512Mi
+    requests:
+      cpu: 500m
+      memory: 512Mi  
+  heap: "-Xmx350m -Xms350m -XX:TieredStopAtLevel=1"
+  java-args: "-Dspring.profiles.active=production"
+  server-tomcat-max-threads: "30"
+  server-tomcat-max-connections: "1500"
+  spring-datasource-tomcat-max-active: "10"  
+  tracing-enabled: "true"
+  bs-businesscode-demand-updateurl: '{ "rl-services":"http://rl-calculator.egov:8080/rl-calculator/v1/_updatedemand","PT":"http://pt-calculator-v2:8080/pt-calculator-v2/propertytax/_updatedemand","WS":"http://ws-calculator.egov:8080/ws-calculator/waterCalculator/_updateDemand","SW":"http://sw-calculator.egov:8080/sw-calculator/sewerageCalculator/_updateDemand","TL":"","NDC":"http://ndc-calculator.egov:8080/ndc-calculator/v1/_updatedemand","ndc-services":"http://ndc-calculator.egov:8080/ndc-calculator/v1/_updatedemand","pet-services":"http://pet-services:8080/pet-services/pet-registration/_updatedemand","obpas_noc":"http://noc-calculator.egov:8080//noc-calculator/v1/_updatedemand","adv-services":"http://adv-services.egov:8080//adv-services/booking/_updatedemand"}'
 
 # core >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 egov-accesscontrol:
@@ -990,6 +1011,11 @@ ws-calculator:
   java-args: "-Dspring.profiles.active=production"
   heap: "-Xmx512m -Xms512m"
 
+ws-calculator-v2:
+  replicas: 1
+  java-args: "-Dspring.profiles.active=production"
+  heap: "-Xmx512m -Xms512m"  
+
 sw-services:
   replicas: 1
   java-args: "-Dspring.profiles.active=production"
@@ -998,6 +1024,11 @@ sw-services:
   is-external-workflow-enabled: "true"
 
 sw-calculator:
+  replicas: 1
+  java-args: "-Dspring.profiles.active=production"
+  heap: "-Xmx512m -Xms512m"
+
+sw-calculator-v2:
   replicas: 1
   java-args: "-Dspring.profiles.active=production"
   heap: "-Xmx512m -Xms512m"
