@@ -12,7 +12,7 @@ ingress:
 # Init Containers Configs
 initContainers:
   dbMigration:
-    enabled: true
+    enabled: false
     schemaTable: "sw_calculator_v2_schema"
     image:
       repository: "sw-calculator-v2-db"
