@@ -63,10 +63,7 @@ env: |
         name: egov-service-host
         key: egov-localization
   - name: EGOV_BILLINGSERVICE_HOST
-    valueFrom:
-      configMapKeyRef:
-        name: egov-service-host
-        key: billing-service-v2
+    value: "http://billing-service-v2:8080/"
   - name: EGOV_WS_HOST
     valueFrom:
       configMapKeyRef:
