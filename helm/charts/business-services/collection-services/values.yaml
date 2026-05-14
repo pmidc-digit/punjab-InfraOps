@@ -38,6 +38,8 @@ receiptnumber-servicebased: "false"
 
 # Additional Container Envs
 env: |
+  - name: EGOV_SERVICES_HOSTNAME
+    value: "http://pdf-service.egov:8080/"
   - name: WS_SERVICE_HOST
     valueFrom:
       configMapKeyRef:
