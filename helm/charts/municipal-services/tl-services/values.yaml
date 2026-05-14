@@ -39,6 +39,10 @@ tl-msg-pay-link: "citizen/withoutAuth/egov-common/pay?consumerCode=$consumercode
 
 # Additional Container Envs
 env: |
+  - name: EGOV_PDF_INTERNAL_HOST
+    value: "http://pdf-service.egov:8080/"
+  - name: EGOV_FILE_INTERNAL_HOST
+    value: "http://egov-filestore.egov:8080/"
   - name: EGOV_IDGEN_HOST
     valueFrom:
       configMapKeyRef:
