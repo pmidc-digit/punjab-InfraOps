@@ -229,11 +229,11 @@ egov-filestore:
   replicas: 3
   resources: |
     limits:
-      cpu: 1200m
-      memory: 2250Mi
+      cpu: 1300m
+      memory: 3900Mi
     requests:
-      cpu: 900m
-      memory: 2250Mi
+      cpu: 1200m
+      memory: 3850Mi
   heap: "-Xmx3800m -Xms3800m -XX:TieredStopAtLevel=1"
   volume: /opt/eGov/filestore
   healthChecks:
