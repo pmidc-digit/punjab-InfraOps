@@ -230,7 +230,7 @@ egov-filestore:
   resources: |
     limits:
       cpu: 1300m
-      memory: 3900Mi
+      memory: 4900Mi
     requests:
       cpu: 1200m
       memory: 3850Mi
