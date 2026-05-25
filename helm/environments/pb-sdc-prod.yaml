@@ -1729,11 +1729,11 @@ egov-edcr:
   replicas: 4
   resources: |
     limits:
-      cpu: 2000m
-      memory: 5Gi
+      cpu: 4000m
+      memory: 10Gi
     requests:
-      cpu: 2000m
-      memory: 5Gi  
+      cpu: 4000m
+      memory: 10Gi  
   ingress:
     enabled: true
     zuul: true
