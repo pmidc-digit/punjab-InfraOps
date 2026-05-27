@@ -7,7 +7,6 @@ cluster-configs:
         egov-config:
             data:
               sms-enabled: "true"
-              
               db-url: "jdbc:postgresql://pb-micro-prod-db.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com:5432/egov_prod_db"
               db-read-url: "jdbc:postgresql://pb-micro-prod-db-rr.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com:5432/egov_prod_db"
               erp-db-url: "jdbc:postgresql://pb-micro-prod-db.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com:5432/finance_egov_prod_db"
