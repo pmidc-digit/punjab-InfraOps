@@ -71,8 +71,6 @@ env: |
       configMapKeyRef:
         name: egov-service-host
         key: sw-services
-  - name: SPRING_KAFKA_CONSUMER_GROUP_ID
-    value: egov-sw-calculator
   - name: SPRING_KAFKA_PRODUCER_KEY_SERIALIZER
     value: org.apache.kafka.common.serialization.StringSerializer
   - name: SPRING_KAFKA_PRODUCER_VALUE_SERIALIZER
