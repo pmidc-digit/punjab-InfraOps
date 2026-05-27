@@ -78,8 +78,6 @@ env: |
         name: egov-config
         key: tracer-errors-provideexceptionindetails
   {{- end }}
-  - name: SPRING_KAFKA_CONSUMER_GROUP_ID
-    value: egov-ws-calculator
   - name: EGOV_METERSERVICE_CREATEMETERCONNECTION
     value: save-ws-meter
   - name: SPRING_KAFKA_PRODUCER_KEY_SERIALIZER
