@@ -1511,10 +1511,10 @@ egov-edcr:
   replicas: 1
   resources: |
     limits:
-      cpu: 4000m
+      cpu: 2000m
       memory: 10Gi
     requests:
-      cpu: 4000m
+      cpu: 2000m
       memory: 10Gi 
   ingress:
     enabled: true
