@@ -40,8 +40,8 @@ env: |
   - name: ELASTICSEARCH_USERNAME
     value: elastic
   - name: ELASTICSEARCH_PASSWORD
-    valueFrom:
-      secret:
+    valueFrom: 
+      secretKeyRef:
         name: es-password
         key: password
   - name: STATE_LEVEL_TENANT_ID
