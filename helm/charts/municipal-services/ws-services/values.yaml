@@ -37,6 +37,13 @@ env: |
       configMapKeyRef:
         name: egov-service-host
         key: egov-idgen
+  - name: ELASTICSEARCH_USERNAME
+    value: elastic
+  - name: ELASTICSEARCH_PASSWORD
+    valueFrom:
+      secret:
+        name: es-password
+        key: password
   - name: STATE_LEVEL_TENANT_ID
     valueFrom:
       configMapKeyRef:
