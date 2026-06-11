@@ -23,6 +23,16 @@ resources: |
 min-pool-connection: "10"
 max-pool-connection: "200"
 env: |
+  - name: EGOV_USER_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: egov-user
+  - name: EGOV_BPA_HOST
+    valueFrom:
+      configMapKeyRef:
+        name: egov-service-host
+        key: bpa-services
   - name: PLAN_PDF
     value: "false"
   - name: DB_URL
