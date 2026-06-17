@@ -528,7 +528,7 @@ egov-pg-service:
   replicas: 3
   axis: true
   ccavanue: true
-  heap: "-Xmx192m -Xms192m -XX:TieredStopAtLevel=1"
+  heap: "-Xmx768m -Xms768m -XX:TieredStopAtLevel=1"
   java-args: "-Dspring.profiles.active=production"
   payu-url: "secure.payu.in"
   payu-url-status: "info.payu.in"
