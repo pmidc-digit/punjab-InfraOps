@@ -52,6 +52,11 @@ env: |
       configMapKeyRef:
         name: egov-service-host
         key: bpa-services
+  - name: "ELASTICSEARCH_PASSWORD"
+    valueFrom:
+      secretKeyRef: 
+        name: es-password
+        key: password
   - name: EGOV_SERVICES_INFRA_INDEXER_HOST
     valueFrom:
       configMapKeyRef:
