@@ -42,6 +42,8 @@ java-debug: "true"
 
 # Additional Container Envs
 env: |
+  - name: EGOV_PG_RECONCILIATION_SYSTEM_USER_UUID
+    value: f831b87d-5334-4406-9ee9-8f35138e5922
   - name: SPRING_KAFKA_CONSUMER_GROUP_ID
     value: egov-pg-service
   - name: SPRING_KAFKA_PRODUCER_KEY_SERIALIZER
