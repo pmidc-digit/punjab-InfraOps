@@ -32,6 +32,14 @@ java-args: "-Dspring.profiles.active=monitoring"
 
 # Additional Container Envs
 env: |
+  - name: KAFKA_LISTENER_CONCURRENCY
+    value: "1"
+  - name: SW_TENANT_THREAD_POOL_SIZE
+    value: "5"
+  - name: SW_CONNECTION_THREAD_POOL_SIZE
+    value: "3"
+  - name: EGOV_BULK_SAVE_DEMAND_COUNT
+    value: "50"
   - name: SPRING_KAFKA_CONSUMER_GROUP_ID
     value: egov-sw-calculator-v2
   - name: EGOV_IDGEN_HOST
