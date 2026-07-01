@@ -39,6 +39,15 @@ java-args: "-Dspring.profiles.active=monitoring"
 
 # Additional Container Envs
 env: |
+  - name: EGOV_NAYANAPI_HOST
+    value: "https://dashboard.nayancam.com"
+  {{- if index .Values "api-key" }}
+  - name: EGOV_NAYANAPI_API_KEY
+    valueFrom: 
+      secretKeyRef: 
+        name: nayanapi
+        key: api-key
+  {{- end }}
   - name: SPRING_KAFKA_CONSUMER_GROUP_ID
     value: egov-swach-services
   - name: SPRING_KAFKA_PRODUCER_KEY_SERIALIZER
