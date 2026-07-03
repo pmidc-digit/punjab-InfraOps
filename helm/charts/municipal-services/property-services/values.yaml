@@ -35,6 +35,13 @@ citizen-allowed-search-params: ""
 
 # Additional Container Envs
 env: |
+  - name: ELASTICSEARCH_USERNAME
+    value: elastic
+  - name: ELASTICSEARCH_PASSWORD
+    valueFrom: 
+      secretKeyRef:
+        name: es-password
+        key: password
   - name: WORKFLOW_HOST
     valueFrom:
       configMapKeyRef:
