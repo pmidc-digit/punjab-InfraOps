@@ -198,7 +198,7 @@ billing-service:
 
 # billingservices >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 billing-service-v2:
-  replicas: 5
+  replicas: 7
   memory_limits: "4000Mi"
   resources: |
     limits:
