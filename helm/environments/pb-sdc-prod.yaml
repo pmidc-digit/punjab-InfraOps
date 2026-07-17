@@ -1037,13 +1037,13 @@ ws-services:
   is-external-workflow-enabled: "true"
 
 ws-calculator:
-  replicas: 7
+  replicas: 5
   memory_limits: "2Gi"
   java-args: "-Dspring.profiles.active=production"
   heap: "-Xmx1800m -Xms1800m -Xmn1600m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
 
 ws-calculator-v2:
-  replicas: 5
+  replicas: 7
   memory_limits: "2Gi"
   java-args: "-Dspring.profiles.active=production"
   heap: "-Xmx1800m -Xms1800m -Xmn1600m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
@@ -1056,13 +1056,13 @@ sw-services:
   is-external-workflow-enabled: "true"
 
 sw-calculator:
-  replicas: 7
+  replicas: 5
   memory_limits: "1Gi"
   java-args: "-Dspring.profiles.active=production"
   heap: "-Xmx756m -Xms756m -Xmn600m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
 
 sw-calculator-v2:
-  replicas: 5
+  replicas: 7
   memory_limits: "1Gi"
   java-args: "-Dspring.profiles.active=production"
   heap: "-Xmx756m -Xms756m -Xmn600m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
