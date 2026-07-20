@@ -1043,8 +1043,8 @@ ws-calculator:
   heap: "-Xmx1800m -Xms1800m -Xmn1600m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
 
 ws-calculator-v2:
-  replicas: 9
-  memory_limits: "2Gi"
+  replicas: 6
+  memory_limits: "3Gi"
   java-args: "-Dspring.profiles.active=production"
   heap: "-Xmx1800m -Xms1800m -Xmn1600m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
 
@@ -1062,10 +1062,10 @@ sw-calculator:
   heap: "-Xmx756m -Xms756m -Xmn600m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
 
 sw-calculator-v2:
-  replicas: 9
-  memory_limits: "1Gi"
+  replicas: 6
+  memory_limits: "3Gi"
   java-args: "-Dspring.profiles.active=production"
-  heap: "-Xmx756m -Xms756m -Xmn600m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
+  heap: "-Xmx1800m -Xms1800m -Xmn1600m -XX:TieredStopAtLevel=1 -server -XX:+UseG1GC"
 # garbage-collection >>>>>>>>>>>>>>>>>>>>>>>>>>>>
 gc-services:
   replicas: 3
