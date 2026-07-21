@@ -39,7 +39,7 @@ env: |
   - name: SW_CONNECTION_THREAD_POOL_SIZE
     value: "3"
   - name: EGOV_BULK_SAVE_DEMAND_COUNT
-    value: "50"
+    value: "20"
   - name: SPRING_KAFKA_CONSUMER_GROUP_ID
     value: egov-sw-calculator-v2
   - name: EGOV_IDGEN_HOST
