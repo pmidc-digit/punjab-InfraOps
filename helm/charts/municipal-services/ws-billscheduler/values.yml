@@ -41,7 +41,7 @@ env: |
   - name: EGOV_BULK_SAVE_DEMAND_COUNT
     value: "50"
   - name: SPRING_KAFKA_CONSUMER_GROUP_ID
-    value: egov-ws-calculator-v2
+    value: egov-ws-billscheduler
   - name: EGOV_IDGEN_HOST
     valueFrom:
       configMapKeyRef:
