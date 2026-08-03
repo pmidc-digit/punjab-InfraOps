@@ -135,6 +135,7 @@ cluster-configs:
               chb-services: "http://chb-services:8080/"
               ws-calculator: "http://ws-calculator.egov:8080/"
               ws-calculator-v2: "http://ws-calculator-v2.egov:8080/"
+              ws-billscheduler: "http://ws-billscheduler.egov:8080/"
               ws-services: "http://ws-services.egov:8080/"
               sw-services: "http://sw-services.egov:8080/"
               sw-calculator: "http://sw-calculator.egov:8080/"
@@ -1015,6 +1016,11 @@ ws-calculator-v2:
   replicas: 1
   java-args: "-Dspring.profiles.active=production"
   heap: "-Xmx512m -Xms512m"  
+
+ws-billscheduler:
+  replicas: 1
+  java-args: "-Dspring.profiles.active=production"
+  heap: "-Xmx512m -Xms512m" 
 
 sw-services:
   replicas: 1
