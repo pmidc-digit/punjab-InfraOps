@@ -1611,6 +1611,7 @@ microservice: |
   filestoreservice.beanname=egovMicroServiceStore
 # eGov-eDCR Tenants
 edcrTenants: |
+  tenant.testing.sdc-uat.lgpunjab.gov.in=testing
   common.domain.name=sdc-uat.lgpunjab.gov.in
   tenant.sdc-uat.lgpunjab.gov.in=state
   tenant.pb.sdc-uat.lgpunjab.gov.in=pb
