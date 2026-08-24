@@ -17,22 +17,50 @@ heap: "-Xmx192m -Xms192m"
 
 # Additional Container Envs
 env: |
+  - name: NIC_MAIL_ENABLED
+    value: "true"
+  - name: MAIL_NIC_HOST_OTP
+    value: relayotps.nic.in
+  - name: MAIL_NIC_HOST_SMTPSGW
+    value: relaysmtpsgw.nic.in
+  - name: MAIL.GMAIL.HOST
+    value: smtp.gmail.com
   - name: KAFKA_TOPICS_NOTIFICATION_MAIL_NAME
     value: org.egov.core.notification.email
   - name: KAFKA_TOPICS_NOTIFICATION_MAIL_ID
     value: egov.core.notification.email
   - name: KAFKA_TOPICS_NOTIFICATION_MAIL_GROUP
     value: email_group1
-  - name: MAIL_SENDER_USERNAME
+  - name: MAIL_NIC_SENDER_USERNAME
     valueFrom:
       secretKeyRef:
         name: egov-notification-mail
-        key: mailsenderusername                   
-  - name: MAIL_SENDER_PASSWORD
+        key: mail.nic.sender.username
+  - name: MAIL_NIC_SMTP_FROM
     valueFrom:
       secretKeyRef:
         name: egov-notification-mail
-        key: mailsenderpassword
+        key: mail.nic.smtp.from
+  - name: MAIL_NIC_SENDER_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: egov-notification-mail
+        key: mail.nic.sender.password
+  - name: MAIL_GMAIL_SENDER_USERNAME
+    valueFrom:
+      secretKeyRef:
+        name: egov-notification-mail
+        key: mail.gmail.sender.username
+  - name: MAIL_GMAIL_SMTP_FROM
+    valueFrom:
+      secretKeyRef:
+        name: egov-notification-mail
+        key: mail.gmail.smtp.from
+  - name: MAIL_GMAIL_SENDER_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: egov-notification-mail
+        key: mail.gmail.sender.password
   {{- if index .Values "mail-port" }}
   - name: MAIL_PORT
     value: {{ index .Values "mail-port" | quote }}
