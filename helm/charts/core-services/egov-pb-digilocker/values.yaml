@@ -21,6 +21,8 @@ heap: "-Xmx192m -Xms192m"
 
 # Additional Container Envs
 env: |
+  - name: USER_SEARCH_ENDPOINT
+    value: /user/v1/_search
   - name: EGOV_SERVICES_HOSTNAME
     valueFrom:
       configMapKeyRef:
