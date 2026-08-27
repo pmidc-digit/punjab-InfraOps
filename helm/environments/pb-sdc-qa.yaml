@@ -558,7 +558,7 @@ egov-user-enc:
   egov-state-level-tenant-id: "pb"
   decryption-abac-enabled: "false"
   account-unlock-cool-down-period-minutes: 5
-  db-url: "jdbc:postgresql://pb-uat-v2-db-new2.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com:5432/egov_prod_db_new?currentSchema=case_management"       
+  db-url: "jdbc:postgresql://10.44.237.25:5432/egov_prod_db_new?currentSchema=case_management"       
 
 egov-searcher:
   replicas: 1
@@ -1022,7 +1022,7 @@ rl-calculator:
 
 egf-master:
   replicas: 1
-  db-url: "jdbc:postgresql://pb-uat-v2-db-new2.cq2b7v4okuhm.ap-south-1.rds.amazonaws.com:5432/egov_prod_db_new"
+  db-url: "jdbc:postgresql://10.44.237.25:5432/egov_prod_db_new"
   memory_limits: 256Mi
   heap: "-Xmx128m -Xms128m -XX:TieredStopAtLevel=1"
 
