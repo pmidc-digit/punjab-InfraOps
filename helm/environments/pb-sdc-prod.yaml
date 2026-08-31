@@ -930,7 +930,7 @@ rainmaker-pgr:
   reopen-complaint-enabled: "true"
   comment-by-employee-notif-enabled: "false"
   notification-allowed-on-status: "open_old,assigned_old,rejected_old,resolved_old,closed_old"
-  heap: "-Xmx192m -Xms192m -XX:TieredStopAtLevel=1"
+  heap: "-Xmx2024m -Xms1024m -XX:TieredStopAtLevel=1"
   java-args: "-Dspring.profiles.active=production"
   tracing-enabled: "true"
 
