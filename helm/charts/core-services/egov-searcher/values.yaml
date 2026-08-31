@@ -27,6 +27,16 @@ heap: "-Xmx384m -Xms256m"
 
 # Additional Container Envs
 env: |
+  - name: EGOV_MDMS_HOST
+    valueFrom:
+      configMapKeyRef:
+        key: egov-mdms-service
+        name: egov-service-host
+  - name: EGOV_ENC_HOST
+    valueFrom:
+      configMapKeyRef:
+        key: egov-enc-service
+        name: egov-service-host
   - name: SEARCH_YAML_PATH
     value: {{ index .Values "search-yaml-path" | quote }}
   - name: JAVA_OPTS
