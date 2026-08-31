@@ -923,13 +923,11 @@ report-v2:
 # rainmaker-pgr >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 rainmaker-pgr:
   replicas: 3
-  resources:
+  resources: |
     limits:
-      cpu: "1"
-      memory: 3Gi
+      memory: 2512Mi
     requests:
-      cpu: "1"
-      memory: 2015Mi
+      memory: 2512Mi
   notification-sms-enabled: "true"
   notification-email-enabled: "false"
   new-complaint-enabled: "true"
