@@ -36,7 +36,7 @@ comment-by-employee-notif-enabled: "false"
 notification-allowed-on-status: "open_old,assigned_old,rejected_old,resolved_old,closed_old"
 heap: "-Xmx192m -Xms192m"
 java-args: "-Dspring.profiles.active=monitoring"
-
+dgr-search-grievance-url: "${dgr.host}/api/LocalGovt/GetGrievanceIdByMobileAndReferenceId"
 # Additional Container Envs
 env: |
   - name: SPRING_KAFKA_CONSUMER_GROUP_ID
@@ -97,6 +97,8 @@ env: |
       configMapKeyRef:
         name: egov-service-host
         key: egov-user
+  - name: DGR_SEARCH_GRIEVANCE_URL
+    value: {{ index .Values "dgr-search-grievance-url" | quote }}
   - name: NOTIFICATION_SMS_ENABLED
     value: {{ index .Values "notification-sms-enabled" | quote }}
   - name: NOTIFICATION_EMAIL_ENABLED
