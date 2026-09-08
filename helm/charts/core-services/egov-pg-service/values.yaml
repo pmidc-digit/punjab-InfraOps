@@ -172,6 +172,8 @@ env: |
     value: {{ index .Values "ccavanue-url" | quote }}
   - name: CCAVANUE_GATEWAY_STATUS_URL
     value: {{ index .Values "ccavanue-url-status" | quote }}
+  - name: CCAVANUE_URL_STATUS
+    value: {{ index .Values "ccavanue-url-status" | quote }}
   - name: CCAVANUE_REDIRECT_URL
     value: {{ index .Values "ccavanue-url-redirect" | quote }}
   - name: CCAVANUE_CANCEL_URL
