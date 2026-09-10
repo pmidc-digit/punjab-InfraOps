@@ -13,7 +13,7 @@ ingress:
 # Init Containers Configs
 initContainers:
   dbMigration:
-    enabled: true
+    enabled: false
     schemaTable: "egov_property_rate_search_schema"
     image:
       repository: "egov-property-rate-search-db"
