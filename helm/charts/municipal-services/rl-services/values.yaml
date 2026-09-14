@@ -13,7 +13,7 @@ ingress:
 # Init Containers Configs
 initContainers:
   dbMigration:
-    enabled: false
+    enabled: true
     schemaTable: "rl_services_schema"
     image:
       repository: "rl-services-db"
