@@ -1592,7 +1592,7 @@ bpa-calculator:
 
 egov-edcr:
   replicas: 1
-  resources: |
+  resources:
     limits:
       cpu: 4000m
       memory: 10Gi
