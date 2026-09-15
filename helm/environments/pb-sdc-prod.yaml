@@ -1752,6 +1752,50 @@ microservice: |
 
 # eGov-eDCR Tenants
 edcrTenants: |
+  tenant.dirbapwssb.mseva.lgpunjab.gov.in=dirbapwssb
+  tenant.ferozepurpwssb.mseva.lgpunjab.gov.in=ferozepurpwssb
+  tenant.itabohar.mseva.lgpunjab.gov.in=itabohar
+  tenant.itamritsar.mseva.lgpunjab.gov.in=itamritsar
+  tenant.itbarnala.mseva.lgpunjab.gov.in=itbarnala
+  tenant.itbatala.mseva.lgpunjab.gov.in=itbatala
+  tenant.itbathinda.mseva.lgpunjab.gov.in=itbathinda
+  tenant.itfaridkot.mseva.lgpunjab.gov.in=itfaridkot
+  tenant.itfazilka.mseva.lgpunjab.gov.in=itfazilka
+  tenant.itgurdaspur.mseva.lgpunjab.gov.in=itgurdaspur
+  tenant.ithoshiarpur.mseva.lgpunjab.gov.in=ithoshiarpur
+  tenant.itjalandhar.mseva.lgpunjab.gov.in=itjalandhar
+  tenant.itkapurthala.mseva.lgpunjab.gov.in=itkapurthala
+  tenant.itkartarpur.mseva.lgpunjab.gov.in=itkartarpur
+  tenant.itkhanna.mseva.lgpunjab.gov.in=itkhanna
+  tenant.itkotkapura.mseva.lgpunjab.gov.in=itkotkapura
+  tenant.itludhiana.mseva.lgpunjab.gov.in=itludhiana
+  tenant.itmalerkotla.mseva.lgpunjab.gov.in=itmalerkotla
+  tenant.itmoga.mseva.lgpunjab.gov.in=itmoga
+  tenant.itnabha.mseva.lgpunjab.gov.in=itnabha
+  tenant.itnangal.mseva.lgpunjab.gov.in=itnangal
+  tenant.itnawanshahr.mseva.lgpunjab.gov.in=itnawanshahr
+  tenant.itpathankot.mseva.lgpunjab.gov.in=itpathankot
+  tenant.itpatiala.mseva.lgpunjab.gov.in=itpatiala
+  tenant.itphagwara.mseva.lgpunjab.gov.in=itphagwara
+  tenant.itrajpura.mseva.lgpunjab.gov.in=itrajpura
+  tenant.itropar.mseva.lgpunjab.gov.in=itropar
+  tenant.itsamana.mseva.lgpunjab.gov.in=itsamana
+  tenant.itsangrur.mseva.lgpunjab.gov.in=itsangrur
+  tenant.ittarntaran.mseva.lgpunjab.gov.in=ittarntaran
+  tenant.arniwala.mseva.lgpunjab.gov.in=arniwala
+  tenant.bhagtabhai.mseva.lgpunjab.gov.in=bhagtabhai
+  tenant.mandigobindgarh.mseva.lgpunjab.gov.in=mandigobindgarh
+  tenant.jandialaguru.mseva.lgpunjab.gov.in=jandialaguru
+  tenant.khamano.mseva.lgpunjab.gov.in=khamano
+  tenant.kiratpur.mseva.lgpunjab.gov.in=kiratpur
+  tenant.mullanpur.mseva.lgpunjab.gov.in=mullanpur
+  tenant.ramdass.mseva.lgpunjab.gov.in=ramdass
+  tenant.ropar.mseva.lgpunjab.gov.in=ropar
+  tenant.sangatmandi.mseva.lgpunjab.gov.in=sangatmandi
+  tenant.sirhind.mseva.lgpunjab.gov.in=sirhind
+  tenant.muktsar.mseva.lgpunjab.gov.in=muktsar
+  tenant.sultanpurlodhi.mseva.lgpunjab.gov.in=sultanpurlodhi
+  tenant.ferozepur.mseva.lgpunjab.gov.in=ferozepur
   common.domain.name=mseva.lgpunjab.gov.in
   tenant.testing.mseva.lgpunjab.gov.in=testing
   tenant.mseva.lgpunjab.gov.in=state
@@ -1765,7 +1809,7 @@ edcrTenants: |
   tenant.amargarh.mseva.lgpunjab.gov.in=amargarh
   tenant.amloh.mseva.lgpunjab.gov.in=amloh
   tenant.amritsar.mseva.lgpunjab.gov.in=amritsar
-  tenant.amritsarregion.mseva.lgpunjab.gov.in=amritsarregion
+  #tenant.amritsarregion.mseva.lgpunjab.gov.in=amritsarregion
   tenant.anandpursahib.mseva.lgpunjab.gov.in=anandpursahib
   tenant.arniwalasheikhsubhan.mseva.lgpunjab.gov.in=arniwalasheikhsubhan
   tenant.bababakalasahib.mseva.lgpunjab.gov.in=bababakalasahib
@@ -1781,7 +1825,7 @@ edcrTenants: |
   tenant.bassipathana.mseva.lgpunjab.gov.in=bassipathana
   tenant.batala.mseva.lgpunjab.gov.in=batala
   tenant.bathinda.mseva.lgpunjab.gov.in=bathinda
-  tenant.bathindaregion.mseva.lgpunjab.gov.in=bathindaregion
+  #tenant.bathindaregion.mseva.lgpunjab.gov.in=bathindaregion
   tenant.begowal.mseva.lgpunjab.gov.in=begowal
   tenant.bhadaur.mseva.lgpunjab.gov.in=bhadaur
   tenant.bhadson.mseva.lgpunjab.gov.in=bhadson
@@ -1816,7 +1860,7 @@ edcrTenants: |
   tenant.fatehgarhpanjtoor.mseva.lgpunjab.gov.in=fatehgarhpanjtoor
   tenant.fazilka.mseva.lgpunjab.gov.in=fazilka
   tenant.firozpur.mseva.lgpunjab.gov.in=firozpur
-  tenant.firozpurregion.mseva.lgpunjab.gov.in=firozpurregion
+  #tenant.firozpurregion.mseva.lgpunjab.gov.in=firozpurregion
   tenant.gardhiwala.mseva.lgpunjab.gov.in=gardhiwala
   tenant.garhshankar.mseva.lgpunjab.gov.in=garhshankar
   tenant.ghagga.mseva.lgpunjab.gov.in=ghagga
@@ -1835,7 +1879,7 @@ edcrTenants: |
   tenant.jaitu.mseva.lgpunjab.gov.in=jaitu
   tenant.jalalabad.mseva.lgpunjab.gov.in=jalalabad
   tenant.jalandhar.mseva.lgpunjab.gov.in=jalandhar
-  tenant.jalandharregion.mseva.lgpunjab.gov.in=jalandharregion
+  #tenant.jalandharregion.mseva.lgpunjab.gov.in=jalandharregion
   tenant.jandiala.mseva.lgpunjab.gov.in=jandiala
   tenant.joga.mseva.lgpunjab.gov.in=joga
   tenant.kapurthala.mseva.lgpunjab.gov.in=kapurthala
@@ -1858,7 +1902,7 @@ edcrTenants: |
   tenant.lohiankhass.mseva.lgpunjab.gov.in=lohiankhass
   tenant.longowal.mseva.lgpunjab.gov.in=longowal
   tenant.ludhiana.mseva.lgpunjab.gov.in=ludhiana
-  tenant.ludhianaregion.mseva.lgpunjab.gov.in=ludhianaregion
+  #tenant.ludhianaregion.mseva.lgpunjab.gov.in=ludhianaregion
   tenant.ropar.mseva.lgpunjab.gov.in=ropar
   tenant.machhiwara.mseva.lgpunjab.gov.in=machhiwara
   tenant.mahilpur.mseva.lgpunjab.gov.in=mahilpur
@@ -1880,7 +1924,7 @@ edcrTenants: |
   tenant.morinda.mseva.lgpunjab.gov.in=morinda
   tenant.mudki.mseva.lgpunjab.gov.in=mudki
   tenant.mukerian.mseva.lgpunjab.gov.in=mukerian
-  tenant.mullanpurdakha.mseva.lgpunjab.gov.in=mullanpurdakha
+  #tenant.mullanpurdakha.mseva.lgpunjab.gov.in=mullanpurdakha
   tenant.nabha.mseva.lgpunjab.gov.in=nabha
   tenant.nadala.mseva.lgpunjab.gov.in=nadala
   tenant.nakodar.mseva.lgpunjab.gov.in=nakodar
@@ -1893,7 +1937,7 @@ edcrTenants: |
   tenant.nurmahal.mseva.lgpunjab.gov.in=nurmahal
   tenant.pathankot.mseva.lgpunjab.gov.in=pathankot
   tenant.patiala.mseva.lgpunjab.gov.in=patiala
-  tenant.patialaregion.mseva.lgpunjab.gov.in=patialaregion
+  #tenant.patialaregion.mseva.lgpunjab.gov.in=patialaregion
   tenant.patran.mseva.lgpunjab.gov.in=patran
   tenant.patti.mseva.lgpunjab.gov.in=patti
   tenant.payal.mseva.lgpunjab.gov.in=payal
@@ -1909,7 +1953,7 @@ edcrTenants: |
   tenant.rampura.mseva.lgpunjab.gov.in=rampura
   tenant.rampuraphul.mseva.lgpunjab.gov.in=rampuraphul
   tenant.rayya.mseva.lgpunjab.gov.in=rayya
-  tenant.rupnagar.mseva.lgpunjab.gov.in=rupnagar
+  #tenant.rupnagar.mseva.lgpunjab.gov.in=rupnagar
   tenant.mohali.mseva.lgpunjab.gov.in=mohali
   tenant.sahnewal.mseva.lgpunjab.gov.in=sahnewal
   tenant.samana.mseva.lgpunjab.gov.in=samana
@@ -1924,7 +1968,7 @@ edcrTenants: |
   tenant.srihargobindpur.mseva.lgpunjab.gov.in=srihargobindpur
   tenant.srimuktsarsahib.mseva.lgpunjab.gov.in=srimuktsarsahib
   tenant.sujanpur.mseva.lgpunjab.gov.in=sujanpur
-  tenant.sultanpur.mseva.lgpunjab.gov.in=sultanpur
+  #tenant.sultanpur.mseva.lgpunjab.gov.in=sultanpur
   tenant.sunam.mseva.lgpunjab.gov.in=sunam
   tenant.talwandibhai.mseva.lgpunjab.gov.in=talwandibhai
   tenant.talwandisabo.mseva.lgpunjab.gov.in=talwandisabo
