@@ -48,6 +48,11 @@ employee-apilink-new: "https://mseva.lgpunjab.gov.in/employee/"
 eseva-api-endpoint: "/externalapi/api/LocalGovernment/AuthenticateUser"
 # Additional Container Envs
 env: |
+  - name: CITIZEN_LOGIN_PASSWORD_OTP_FIXED_VALUE
+    valueFrom:
+      secretKeyRef:
+        key: otp
+        name: employee-password-otp
   - name: EGOV_HRMS_UAT_EMPLOYEE_LINK_APP
     value: {{ index .Values "employee-apilink-new" | quote }}
   - name: EGOV_HRMS_SSO_MSEVA_DECRYPTION_KEY
