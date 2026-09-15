@@ -33,6 +33,8 @@ egov.idgen.bpa.applicationNum.format: "PB-BP-[cy:yyyy-MM-dd]-[SEQ_EG_BP_APN]"
 
 # Additional Container Envs
 env: |
+  - name: EGOV_LAYOUT_FUZZYSEARCH_ISFUZZYENABLED
+    value: "false"
   - name: DB_HOST
     valueFrom:
       configMapKeyRef:
