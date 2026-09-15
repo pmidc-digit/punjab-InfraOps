@@ -23,8 +23,8 @@ resources: |
 min-pool-connection: "10"
 max-pool-connection: "200"
 env: |
-  -name: SOURCE_VALIDATION
-   value: true
+  - name: SOURCE_VALIDATION
+    value: true
   - name: EGOV_USER_HOST
     valueFrom:
       configMapKeyRef:
