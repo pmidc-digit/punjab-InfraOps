@@ -135,8 +135,6 @@ env: |
     value: "enc-user-audit-data"         
   - name: SPRING_KAFKA_CONSUMER_GROUP_ID
     value: "egov-user"
-  - name: ACCOUNT_UNLOCK_COOL_DOWN_PERIOD_MINUTES
-    value: {{ index .Values "account-unlock-cool-down-period-minutes" | quote }}
   - name: SPRING_KAFKA_PRODUCER_KEY_SERIALIZER
     value: org.apache.kafka.common.serialization.StringSerializer
   - name: SPRING_KAFKA_PRODUCER_VALUE_SERIALIZER
@@ -176,10 +174,6 @@ env: |
   {{- if index .Values "citizen-registration-withlogin" }}
   - name: CITIZEN_REGISTRATION_WITHLOGIN_ENABLED
     value: {{ index .Values "citizen-registration-withlogin" | quote }}
-  {{- end }}
-  {{- if index .Values "citizen-otp-fixed" }}
-  - name: CITIZEN_LOGIN_PASSWORD_OTP_FIXED_VALUE
-    value: {{ index .Values "citizen-otp-fixed" | quote }}
   {{- end }}
   {{- if index .Values "citizen-otp-fixed-enabled" }}
   - name: CITIZEN_LOGIN_PASSWORD_OTP_FIXED_ENABLED
