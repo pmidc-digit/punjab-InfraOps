@@ -44,7 +44,7 @@ env: |
       configMapKeyRef:
         name: egov-service-host
         key: pdf-service
-  - name: EGOV_FILE_INTERNAL_HOST
+  - name: EGOV_FILESTORE_INTERNAL_HOST
     valueFrom:
       configMapKeyRef:
         name: egov-service-host
