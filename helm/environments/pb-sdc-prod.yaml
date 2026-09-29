@@ -268,7 +268,7 @@ egov-location:
 
 egov-notification-sms:
   memory_limits: 1Gi
-  sms-provider-url: "https://smsgw.sms.gov.in/failsafe/HttpLink"
+  sms-provider-url: "https://api1.sms.gov.in/failsafe/HttpLink"
   sms-sender: "PBGOVT"
   sms-sender-requesttype: "GET"
   sms-custom-config: "true"
