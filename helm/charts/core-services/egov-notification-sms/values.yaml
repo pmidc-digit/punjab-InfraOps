@@ -45,6 +45,11 @@ env: |
     value: {{ index .Values "sms-provider-url" | quote }}
   - name: SMS_PROVIDER_URL_OTP
     value: {{ index .Values "sms-provider-url" | quote }}
+  - name: SMS_PROVIDER_PASSWORD_OTP
+    valueFrom:
+      secretKeyRef:
+        name: egov-notification-sms
+        key: password 
   - name: SMS_PROVIDER_USERNAME
     valueFrom:
       secretKeyRef:
