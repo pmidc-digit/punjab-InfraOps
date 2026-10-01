@@ -32,6 +32,11 @@ java-args: "-Dspring.profiles.active=monitoring"
 
 # Additional Container Envs
 env: |
+  - name: EGOV_ES_HOST
+    valueFrom:
+      configMapKeyRef:
+        key: es-indexer-host-v2
+        name: egov-config
   - name: EGOV_IDGEN_HOST
     valueFrom:
       configMapKeyRef:
