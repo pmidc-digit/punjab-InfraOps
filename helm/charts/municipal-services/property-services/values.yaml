@@ -167,4 +167,7 @@ env: |
     value: "true" 
   {{- end }}
   - name: ELASTICSEARCH_HOST
-    value: "http://elasticsearch-data-v2.es-cluster-v2:9200/" 
+    valueFrom:
+      configMapKeyRef:
+        name: egov-config
+        key: es-indexer-host-v2
