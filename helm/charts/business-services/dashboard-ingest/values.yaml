@@ -39,12 +39,12 @@ env: |
     valueFrom:
       configMapKeyRef:
         name: egov-config
-        key: es-indexer-host
+        key: es-indexer-host-v2
   - name: SERVICES_ESINDEXER_HOST_NAME
     valueFrom:
       configMapKeyRef:
         name: egov-config
-        key: es-indexer-host
+        key: es-indexer-host-v2
   - name: SERVICES_ESINDEXER_HOST_PORT
     value: "9200"
   - name: ES_TARGET_INDEX_NAME
