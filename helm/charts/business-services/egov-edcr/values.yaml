@@ -23,10 +23,12 @@ resources: |
 min-pool-connection: "10"
 max-pool-connection: "200"
 env: |
-  - name: EDCR_WORKSHEET_VALIDATION_ENABLED
+  - name: EDCR_PAGESIZE_VALIDATION_ENABLED   
     value: "false"
-  - name: SOURCE_VALIDATION
+  - name: EDCR_WORKSHEET_VALIDATION_ENABLED
     value: "true"
+  - name: SOURCE_VALIDATION
+    value: "false"
   - name: EGOV_USER_HOST
     valueFrom:
       configMapKeyRef:
