@@ -106,9 +106,19 @@ env: |
     value: {{ index .Values "is-bucket-fixed" | quote }}
   {{- end }}
   {{- if index .Values "fixed-bucketname" }}
+  - name: BILL_AUTO_DELETE_ENABLED
+    value: "true"  
   - name: FIXED_BUCKETNAME
     value: {{ index .Values "fixed-bucketname" | quote }}
   {{- end }}
+  - name: FIXED_TICKET_BUCKETNAME
+    value: pmidc-ticket-images
+  - name: DELETE_AUTHORIZED_USER_UUID
+    value: "42cc442b-6734-4c26-8f1f-cccc995661ee"
+  - name: DELETE_AUTHORIZED_USER_ID
+    value: "1129330"
+  - name: DELETE_AUTHORIZED_ROLE_CODE
+    value: "SYSTEM"
   - name: JAVA_OPTS
     value: {{ index .Values "heap" | quote }}
   - name: ALLOWED_FORMATS_MAP
