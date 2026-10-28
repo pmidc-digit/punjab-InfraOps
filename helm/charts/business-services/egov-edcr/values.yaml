@@ -22,13 +22,14 @@ resources: |
     memory: "10Gi"
 min-pool-connection: "10"
 max-pool-connection: "200"
+source-validation: false
 env: |
   - name: EDCR_PAGESIZE_VALIDATION_ENABLED   
     value: "false"
   - name: EDCR_WORKSHEET_VALIDATION_ENABLED
     value: "true"
   - name: SOURCE_VALIDATION
-    value: "false"
+    value: value: {{ index .Values "source-validation" | quote }}
   - name: EGOV_USER_HOST
     valueFrom:
       configMapKeyRef:
