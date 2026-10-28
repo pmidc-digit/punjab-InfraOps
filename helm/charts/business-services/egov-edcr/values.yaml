@@ -28,7 +28,7 @@ env: |
   - name: EDCR_WORKSHEET_VALIDATION_ENABLED
     value: "true"
   - name: SOURCE_VALIDATION
-    value: "false"
+    value: "true"
   - name: EGOV_USER_HOST
     valueFrom:
       configMapKeyRef:
