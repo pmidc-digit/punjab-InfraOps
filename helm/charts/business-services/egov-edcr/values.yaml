@@ -22,7 +22,7 @@ resources: |
     memory: "10Gi"
 min-pool-connection: "10"
 max-pool-connection: "200"
-source-validation: false
+source-validation: "false"
 env: |
   - name: EDCR_PAGESIZE_VALIDATION_ENABLED   
     value: "false"
