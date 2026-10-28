@@ -38,7 +38,7 @@ healthChecks:
   readinessProbePath: "/health"
 custom-filter-property: "false"
 posthook-config: ""
-prehook-config: ""
+prehook-config-1: ""
 heap: "-Xmx192m -Xms192m"
 appType: "java-spring"
 tracing-enabled: true
@@ -69,7 +69,7 @@ env: |
   - name: URL_POSTHOOK_LISTS
     value: {{ index .Values "posthook-config" | quote }}
   - name: URL_PREHOOK_LISTS        
-    value: {{ index .Values "prehook-config" | quote }}
+    value: {{ index .Values "prehook-config-1" | quote }}
   - name: ZUUL_ROUTES_TL_CALCULATOR_URL
     value: http://tl-calculator:8080/                                  
   - name: SERVER_PORT
