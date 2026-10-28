@@ -29,7 +29,7 @@ env: |
   - name: EDCR_WORKSHEET_VALIDATION_ENABLED
     value: "true"
   - name: SOURCE_VALIDATION
-    value: value: {{ index .Values "source-validation" | quote }}
+    value: {{ index .Values "source-validation" | quote }}
   - name: EGOV_USER_HOST
     valueFrom:
       configMapKeyRef:
