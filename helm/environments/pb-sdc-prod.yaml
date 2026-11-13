@@ -1763,6 +1763,7 @@ microservice: |
 
 # eGov-eDCR Tenants
 edcrTenants: |
+  tenant.quadian.mseva.lgpunjab.gov.in=quadian
   tenant.dirbapwssb.mseva.lgpunjab.gov.in=dirbapwssb
   tenant.ferozepurpwssb.mseva.lgpunjab.gov.in=ferozepurpwssb
   tenant.itabohar.mseva.lgpunjab.gov.in=itabohar
@@ -1954,7 +1955,7 @@ edcrTenants: |
   tenant.payal.mseva.lgpunjab.gov.in=payal
   tenant.phagwara.mseva.lgpunjab.gov.in=phagwara
   tenant.phillaur.mseva.lgpunjab.gov.in=phillaur
-  tenant.qadian.mseva.lgpunjab.gov.in=qadian
+  #tenant.qadian.mseva.lgpunjab.gov.in=qadian
   tenant.rahon.mseva.lgpunjab.gov.in=rahon
   tenant.raikot.mseva.lgpunjab.gov.in=raikot
   tenant.rajasansi.mseva.lgpunjab.gov.in=rajasansi
