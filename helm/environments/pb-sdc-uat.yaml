@@ -1613,6 +1613,7 @@ microservice: |
   filestoreservice.beanname=egovMicroServiceStore
 # eGov-eDCR Tenants
 edcrTenants: |
+  tenant.quadian.sdc-uat.lgpunjab.gov.in=quadian
   tenant.dirbapwssb.sdc-uat.lgpunjab.gov.in=dirbapwssb
   tenant.ferozepurpwssb.sdc-uat.lgpunjab.gov.in=ferozepurpwssb
   tenant.itabohar.sdc-uat.lgpunjab.gov.in=itabohar
@@ -1804,7 +1805,7 @@ edcrTenants: |
   tenant.payal.sdc-uat.lgpunjab.gov.in=payal
   tenant.phagwara.sdc-uat.lgpunjab.gov.in=phagwara
   tenant.phillaur.sdc-uat.lgpunjab.gov.in=phillaur
-  tenant.qadian.sdc-uat.lgpunjab.gov.in=qadian
+  #tenant.qadian.sdc-uat.lgpunjab.gov.in=qadian
   tenant.rahon.sdc-uat.lgpunjab.gov.in=rahon
   tenant.raikot.sdc-uat.lgpunjab.gov.in=raikot
   tenant.rajasansi.sdc-uat.lgpunjab.gov.in=rajasansi
