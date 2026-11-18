@@ -42,6 +42,14 @@ java-debug: "true"
 
 # Additional Container Envs
 env: |
+  - name: CCAVANUE_URL
+    value: "secure.ccavenue.com"
+  - name: CCAVANUE_URL_STATUS
+    value: "https://api.ccavenue.com/apis/servlet/DoWebTrans"
+  - name: CCAVANUE_PATH_PAY
+    value: "/transaction/transaction.do?"
+  - name: CCAVANUE_PATH_STATUS
+    value: "merchant/postservice.php"
   - name: EGOV_PG_RECONCILIATION_SYSTEM_USER_UUID
     value: f831b87d-5334-4406-9ee9-8f35138e5922
   - name: SPRING_KAFKA_CONSUMER_GROUP_ID
