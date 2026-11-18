@@ -533,6 +533,7 @@ egov-pg-service:
   java-args: "-Dspring.profiles.active=production"
   payu-url: "secure.payu.in"
   payu-url-status: "info.payu.in"
+  ccavanue-url-status: "https://api.ccavenue.com/apis/servlet/DoWebTrans"
 
 egov-url-shortening:
   replicas: 2
