@@ -184,6 +184,7 @@ cluster-configs:
               gc-calculator: "http://gc-calculator.egov:8080/"
               rl-services: "http://rl-services.egov:8080/"
               rl-calculator: "http://rl-calculator.egov:8080/"
+              invest-punjab-integration: "http://invest-punjab-integration.egov:8080/"
 
 
 # billingservices >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -1084,6 +1085,12 @@ rl-calculator:
   java-args: "-Dspring.profiles.active=production"
   heap: "-Xmx900m -Xms900m -XX:TieredStopAtLevel=1"
   memory_limits: "1024Mi"
+
+invest-punjab-integration:
+  replicas: 1
+  java-args: "-Dspring.profiles.active=production"
+  heap: "-Xmx900m -Xms900m -XX:TieredStopAtLevel=1"
+  memory_limits: "1024Mi"  
 # financials >>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 egf-master:
